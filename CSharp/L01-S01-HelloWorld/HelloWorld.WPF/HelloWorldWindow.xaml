@@ -1,8 +1,10 @@
 ﻿<Window x:Class="HelloWorld.WPF.HelloWorldWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="HelloWorldWindow" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+        Title="Hello World" Height="300" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="200" MinWidth="200">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Content="Hello World" Height="30" Margin="0,0,0,20" Width="100" />
+        <Button Content="Привет мир" Height="30" Margin="0,0,0,20" Width="100" />
+        <Button Content="こんにちは世界" Height="30" Margin="0,0,0,0" Width="100" />
+    </StackPanel>
 </Window>
