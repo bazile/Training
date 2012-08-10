@@ -9,8 +9,38 @@ namespace LanguageStatementsDemo
 
 		static void Main(string[] args)
 		{
-			DemoForLoop();
-			DemoWhileLoop();
+			DemoOperators();
+			//DemoForLoop();
+			//DemoWhileLoop();
+		}
+
+		private static void DemoOperators()
+		{
+			int x = 1; // +1
+			int y = -2;
+			int z = x + y;
+
+			y = y + z;
+			y += z;
+
+			if (z >= 0) z = 1;
+				else z = -1;
+
+			z = z >= 0 ? 1 : -1;
+
+			string s1 = "Good";
+			string s2;
+			string[] timeOfDayGreeting = new string[] {"morning", "afternoon", "evening"};
+			int currentHour = DateTime.Now.Hour;
+			if (currentHour < 12)
+				s2 = timeOfDayGreeting[0];
+			else if (currentHour >= 12 && currentHour <= 18)
+				s2 = timeOfDayGreeting[1];
+			else
+				s2 = timeOfDayGreeting[2];
+			string greeting = s1 + " " + s2;
+			Console.WriteLine(greeting);
+			Console.WriteLine("{0} {1}", s1, s2);
 		}
 
 		/// <summary>
