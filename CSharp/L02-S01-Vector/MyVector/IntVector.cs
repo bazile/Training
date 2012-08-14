@@ -31,16 +31,16 @@ namespace MyVector
 
 		/// <summary>Создает пустой Vector заданного размера</summary>
 		/// <param name="initialSize">Текуший размер вектора</param>
-        public IntVector(int initialSize)
+		public IntVector(int initialSize)
 		{
 			Size = 0;
-            _numbers = new int[initialSize];
-        }
+			_numbers = new int[initialSize];
+		}
 
 		/// <summary>Создает Vector заданного размера заполненный указанным значением</summary>
 		/// <param name="initialSize"></param>
 		/// <param name="value"></param>
-        public IntVector(int initialSize, int value)
+		public IntVector(int initialSize, int value)
 			: this(initialSize)
 		{
 			for (int i=0; i<initialSize; i++)
@@ -54,20 +54,26 @@ namespace MyVector
 
 		#region Properties
 
-		/// <summary>Текущее количество элементов в векторе</summary>
-        public int Size
-        {
-            get { return _lastFreeIndex; }
+		/// <summary>Возвращает количеств элементов под которые выделена память</summary>
+		public int Capacity
+		{
+			get { return _numbers.Length; }
+		}
+
+		/// <summary>Возвращает текущее количество элементов в векторе</summary>
+		public int Size
+		{
+			get { return _lastFreeIndex; }
 			private set { _lastFreeIndex = value; }
-        }
+		}
 
 		/// <summary>Возвращает элемент по заданному индексу. Нумерация элементов начинается с нуля.</summary>
 		/// <param name="index">Порядковый номер элемента в векторе</param>
 		/// <returns></returns>
 		/// <exception cref="System.IndexOutOfRangeException">Если заданный индекс выходит за пределы размеров вектора</exception>
 		public int this[int index]
-        {
-            get
+		{
+			get
 			{
 				if (index<0 || index >= Size)
 				{
@@ -75,15 +81,15 @@ namespace MyVector
 				}
 
 				return _numbers[index];
-            }
-            set
+			}
+			set
 			{
-                if (index < Size && index >= 0)
-                {
-	                _numbers[index] = value;
-                }
-            }
-        }
+				if (index < Size && index >= 0)
+				{
+					_numbers[index] = value;
+				}
+			}
+		}
 
 		#endregion
 
@@ -120,14 +126,14 @@ namespace MyVector
 		/// <summary>Возвращает сумму всех чисел хранящихся в векторе</summary>
 		/// <returns></returns>
 		public int GetSum()
-        {
-            int sum = 0;
-            for (int i = 0; i < _numbers.Length; i++)
-            {
-	            sum += _numbers[i];
-            }
-            return sum;
-        }
+		{
+			int sum = 0;
+			for (int i = 0; i < _numbers.Length; i++)
+			{
+				sum += _numbers[i];
+			}
+			return sum;
+		}
 
 		#endregion
 
