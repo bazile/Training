@@ -203,11 +203,11 @@ namespace MyVector
 
 		private static bool AreEquals(IntVector a, IntVector b)
 		{
-			if (Object.ReferenceEquals(a, b)) return true;
+			if (ReferenceEquals(a, b)) return true;
 
 			// Мы не можем использовать здесь конструкцию if (a==null || b==null) т.к. это приведет к зацикливанию программы
-			if (Object.ReferenceEquals(a, null)) return false;
-			if (Object.ReferenceEquals(b, null)) return false;
+			if (ReferenceEquals(a, null)) return false;
+			if (ReferenceEquals(b, null)) return false;
 
 			if (a.Size != b.Size) return false;
 
