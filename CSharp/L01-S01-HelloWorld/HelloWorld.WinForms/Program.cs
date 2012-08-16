@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace HelloWorld.WinForms
@@ -11,6 +13,8 @@ namespace HelloWorld.WinForms
 		[STAThread]
 		static void Main()
 		{
+			Thread.CurrentThread.CurrentCulture = new CultureInfo("ja-JP");
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new HelloWorldForm());
