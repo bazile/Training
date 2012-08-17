@@ -19,6 +19,9 @@ namespace StringDemo
 			//String.IsNullOrEmpty(s1);
 			//String.IsNullOrWhiteSpace(s1);
 
+			string sentence = "Кто давал совет 'играться, играться и еще раз играться'?";
+			sentence = sentence.Replace("играться", "учиться");
+
 			StringInternDemo();
 
 			SecureStringDemo();
