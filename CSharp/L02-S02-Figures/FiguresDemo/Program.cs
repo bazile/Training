@@ -23,7 +23,7 @@ namespace FiguresDemo
 			foreach (var figure in figures)
 			{
 				Debug.WriteLine(figure.WhoAmI());
-				Console.WriteLine("Who Am I = {2}. Type is {0}. Area={1:F2}", figure.GetType(), figure.GetArea(), figure.WhoAmI());
+				Console.WriteLine("Who Am I = {2}. Type is {0}. Area={1:F2}", figure.GetType(), figure.ComputeArea(), figure.WhoAmI());
 			}
 		}
 	}

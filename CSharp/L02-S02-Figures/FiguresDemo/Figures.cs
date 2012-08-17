@@ -11,7 +11,7 @@ namespace FiguresDemo
 {
     public abstract class Figure
     {
-	    public abstract double GetArea();
+	    public abstract double ComputeArea();
 
 		public string WhoAmI()
 		{
@@ -30,9 +30,9 @@ namespace FiguresDemo
 			Size = size;
 		}
 
-		public override double GetArea()
+		public override double ComputeArea()
 		{
-			Debug.WriteLine("Square.GetArea()");
+			Debug.WriteLine("Square.ComputeArea()");
 			return Size*Size;
 		}
 
@@ -55,9 +55,9 @@ namespace FiguresDemo
 			MinorRadius = minorRadius;
 		}
 
-		public override double GetArea()
+		public override double ComputeArea()
 		{
-			Debug.WriteLine("Ellipse.GetArea()");
+			Debug.WriteLine("Ellipse.ComputeArea()");
 			return Math.PI*MajorRadius*MinorRadius;
 		}
 
@@ -79,9 +79,9 @@ namespace FiguresDemo
 		{
 		}
 
-		//public override double GetArea()
+		//public override double ComputeArea()
 		//{
-		//	Debug.WriteLine("Circle.GetArea()");
+		//	Debug.WriteLine("Circle.ComputeArea()");
 		//	return Math.PI*Radius*Radius;
 		//}
 
