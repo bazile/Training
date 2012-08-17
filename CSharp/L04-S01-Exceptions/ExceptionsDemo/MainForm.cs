@@ -39,7 +39,8 @@ namespace ExceptionsDemo
 			}
 			catch (DivideByZeroException)
 			{
-				
+				// Игнорируем деление на ноль
+				// В реальном приложении лучше проверить что делитель равен нулю перед выполнением деления
 			}
 			finally
 			{
