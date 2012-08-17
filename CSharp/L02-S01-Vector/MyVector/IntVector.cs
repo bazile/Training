@@ -6,7 +6,7 @@ using System.Text;
 namespace MyVector
 {
 	/// <summary>
-	/// Класс Vector дает возможность хранить произвольное количество целых чисел и считать их сумму
+	/// Класс IntVector дает возможность хранить произвольное количество целых чисел и считать их сумму
 	/// </summary>
 	/// <example>
 	/// IntVector vector = new IntVector(3);
@@ -21,6 +21,7 @@ namespace MyVector
 	/// </remarks>
 	public partial class IntVector : IEnumerable<int>
 	{
+		/// <summary>На сколько увеличивать внутренний массив при нехватке места</summary>
 		private const int GrowBy = 10;
 
 		/// <summary>Содержимое вектора</summary>

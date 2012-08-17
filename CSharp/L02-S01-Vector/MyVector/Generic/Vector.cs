@@ -6,9 +6,24 @@ using System.Text;
 
 namespace MyVector.Generic
 {
+	/// <summary>
+	/// Класс Vector дает возможность хранить произвольное количество элементов любого типа
+	/// </summary>
+	/// <example>
+	/// Vector&lt;int&gt; vector = new Vector&lt;int&gt;(3);
+	/// vector.Push(101);
+	/// vector.Push(102);
+	/// vector.Push(103);
+	/// int i = vector.Pop(); // i = 103;
+	/// </example>
+	/// <remarks>
+	/// Данный класс является незаконченныи примером.
+	/// Используйте класс System.Collections.Generic.List&lt;T&gt;
+	/// </remarks>
 	public class Vector<T> : IEnumerable<T>
 		where T : IComparable<T>
 	{
+		/// <summary>На сколько увеличивать внутренний массив при нехватке места</summary>
 		private const int GrowBy = 10;
 
 		/// <summary>Содержимое вектора</summary>
