@@ -1,0 +1,16 @@
+﻿using System.Windows.Forms;
+
+namespace LifeGame
+{
+	public partial class MainForm : Form
+	{
+		public MainForm()
+		{
+			InitializeComponent();
+
+			var l = new LifeBoard();
+			l.Seed();
+			l.Tick();
+		}
+	}
+}
