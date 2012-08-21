@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace LifeGame
 {
@@ -8,9 +9,18 @@ namespace LifeGame
 		{
 			InitializeComponent();
 
-			var l = new LifeBoard();
-			l.Seed();
-			l.Tick();
+			//var l = new LifeBoard();
+			//l.Seed();
+			//l.Tick();
+		}
+
+		private void OnPanelBoardPaint(object sender, PaintEventArgs e)
+		{
+		}
+
+		private void OnExitMenuItemClick(object sender, System.EventArgs e)
+		{
+			Close();
 		}
 	}
 }
