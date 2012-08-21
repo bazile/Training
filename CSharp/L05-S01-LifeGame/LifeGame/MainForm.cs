@@ -14,10 +14,6 @@ namespace LifeGame
 			//l.Tick();
 		}
 
-		private void OnPanelBoardPaint(object sender, PaintEventArgs e)
-		{
-		}
-
 		private void OnExitMenuItemClick(object sender, System.EventArgs e)
 		{
 			Close();
