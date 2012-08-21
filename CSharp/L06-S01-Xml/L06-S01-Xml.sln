@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlTextReader.Sample01", "XmlTextReader.Sample01\XmlTextReader.Sample01.csproj", "{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{DFB592AB-EB0B-43BF-8594-30ABCAF8E5E8}"
+	ProjectSection(SolutionItems) = preProject
+		Shared\Xml-tool.ico = Shared\Xml-tool.ico
+		Shared\customers.xml = Shared\customers.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSamplesLib", "XmlSamplesLib\XmlSamplesLib.csproj", "{FB336970-C8A0-4E4C-AEE0-1D40DD2B558E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlTextReader.Sample02", "XmlTextReader.Sample02\XmlTextReader.Sample02.csproj", "{6F638E94-12B9-4050-B42E-37CBDEC184CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F638E94-12B9-4050-B42E-37CBDEC184CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F638E94-12B9-4050-B42E-37CBDEC184CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F638E94-12B9-4050-B42E-37CBDEC184CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F638E94-12B9-4050-B42E-37CBDEC184CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB336970-C8A0-4E4C-AEE0-1D40DD2B558E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB336970-C8A0-4E4C-AEE0-1D40DD2B558E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB336970-C8A0-4E4C-AEE0-1D40DD2B558E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB336970-C8A0-4E4C-AEE0-1D40DD2B558E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
