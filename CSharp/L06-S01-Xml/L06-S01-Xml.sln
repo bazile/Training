@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{DFB592
 	ProjectSection(SolutionItems) = preProject
 		Shared\Xml-tool.ico = Shared\Xml-tool.ico
 		Shared\customers.xml = Shared\customers.xml
+		Shared\customers.xsd = Shared\customers.xsd
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSamplesLib", "XmlSamplesLib\XmlSamplesLib.csproj", "{FB336970-C8A0-4E4C-AEE0-1D40DD2B558E}"

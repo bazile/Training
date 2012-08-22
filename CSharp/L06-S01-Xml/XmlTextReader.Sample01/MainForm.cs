@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using System.Xml;
 using XmlSamples.Shared;
 
 namespace XmlSamples.Sample01
 {
+	//TODO: correct support of list view grours when they are initially disabled
+
 	public partial class MainForm : Form
 	{
 		public MainForm()
@@ -18,8 +21,12 @@ namespace XmlSamples.Sample01
 		private void OnMainFormLoad(object sender, EventArgs e)
 		{
 			string customersXmlPath = Util.GetPathToCustomersXml();
-			List<Customer> customers = GetCustomersUsingXmlTextReader(customersXmlPath);
+			string customersXsdPath = Util.GetPathToCustomersXsd();
+
+			List<Customer> customers = GetCustomersUsingXmlReader(customersXmlPath);
+			//List<Customer> customers = GetCustomersUsingXmlReader(customersXmlPath, customersXsdPath);
 			//List<Customer> customers = GetCustomersUsingXmlDocument(customersXmlPath);
+
 			DisplayCustomers(customers);
 		}
 
@@ -36,47 +43,57 @@ namespace XmlSamples.Sample01
 
 		#endregion
 
-		private void DisplayCustomers(List<Customer> customers)
+		private void DisplayCustomers(IEnumerable<Customer> customers)
 		{
-			Dictionary<string, ListViewGroup> groupsDict = new Dictionary<string, ListViewGroup>();
+			Debug.Assert(customers != null);
 
-			foreach (Customer customer in customers)
+			try
 			{
-				ListViewItem item = new ListViewItem();
-				item.Text = customer.CustomerId;
-				item.SubItems.Add(customer.CompanyName);
+				customersListView.BeginUpdate(); // !!!
 
-				ListViewGroup itemGroup;
-				if (!groupsDict.TryGetValue(customer.Country, out itemGroup))
+				var groupsDict = new Dictionary<string, ListViewGroup>();
+
+				foreach (Customer customer in customers)
 				{
-					itemGroup = new ListViewGroup(customer.Country);
-					groupsDict.Add(customer.Country, itemGroup);
-					customersListView.Groups.Add(itemGroup);
-				}
-				item.Group = itemGroup;
+					var item = new ListViewItem { Text = customer.CustomerId };  // !!!
+					item.SubItems.Add(customer.CompanyName);
 
-				customersListView.Items.Add(item);
+					ListViewGroup itemGroup;
+					if (!groupsDict.TryGetValue(customer.Country, out itemGroup))
+					{
+						itemGroup = new ListViewGroup(customer.Country);
+						groupsDict.Add(customer.Country, itemGroup);
+						customersListView.Groups.Add(itemGroup);
+					}
+					item.Group = itemGroup;
+
+					customersListView.Items.Add(item);
+				}
+			}
+			finally
+			{
+				customersListView.EndUpdate();  // !!!
 			}
 		}
 
 		/// <summary>
-		/// Возращает список клиентов прочитанный из указанного XML файла с помощью класса XmlDocument
+		/// Возвращает список клиентов прочитанный из указанного XML файла с помощью класса XmlDocument
 		/// </summary>
 		/// <param name="customersXmlPath">Путь к файлу customers.xml</param>
 		/// <returns>Cписок клиентов</returns>
 		/// <remarks>Обратите внимание, что мы всегда возврашаем коллекцию даже если ничего не прочитали из файла</remarks>
 		private List<Customer> GetCustomersUsingXmlDocument(string customersXmlPath)
 		{
-			List<Customer> customers = new List<Customer>();
+			var customers = new List<Customer>();
 
-			XmlDocument xmlDoc = new XmlDocument();
+			var xmlDoc = new XmlDocument();
 			xmlDoc.Load(customersXmlPath);
 
 			XmlNodeList customerNodes = xmlDoc.DocumentElement.GetElementsByTagName("Customer");
 			foreach (XmlElement customerNode in customerNodes)
 			{
-				Customer customer = new Customer();
-				customer.CustomerId = customerNode.GetAttribute("CustomerID");
+				var customer = new Customer();
+				customer.CustomerId = customerNode.GetAttribute("CustomerId");
 				customer.CompanyName = customerNode.GetElementsByTagName("CompanyName")[0].InnerText;
 				customer.Country = customerNode.GetElementsByTagName("Country")[0].InnerText;
 
@@ -87,15 +104,15 @@ namespace XmlSamples.Sample01
 		}
 
 		/// <summary>
-		/// Возращает список клиентов прочитанный из указанного XML файла с помощью класса XmlTextReader
+		/// Возвращает список клиентов прочитанный из указанного XML файла с помощью класса XmlTextReader
 		/// </summary>
 		/// <param name="customersXmlPath">Путь к файлу customers.xml</param>
 		/// <returns>Cписок клиентов</returns>
 		/// <remarks>Обратите внимание, что мы всегда возврашаем коллекцию даже если ничего не прочитали из файла</remarks>
-		private List<Customer> GetCustomersUsingXmlTextReader(string customersXmlPath)
+		private List<Customer> GetCustomersUsingXmlReader(string customersXmlPath)
 		{
-			List<Customer> customers = new List<Customer>();
-			using (XmlTextReader reader = new XmlTextReader(customersXmlPath))
+			var customers = new List<Customer>();
+			using (XmlReader reader = XmlReader.Create(customersXmlPath))
 			{
 				while (reader.Read())
 				{
@@ -107,8 +124,8 @@ namespace XmlSamples.Sample01
 							{
 								if (innerReader.Read())
 								{
-									Customer customer = new Customer();
-									customer.CustomerId = innerReader.GetAttribute("CustomerID");
+									var customer = new Customer();
+									customer.CustomerId = innerReader.GetAttribute("CustomerId");
 
 									innerReader.ReadToFollowing("CompanyName");
 									customer.CompanyName = innerReader.ReadElementContentAsString();
@@ -126,5 +143,56 @@ namespace XmlSamples.Sample01
 
 			return customers;
 		}
+
+		/// <summary>
+		/// Возвращает список клиентов прочитанный из указанного XML файла с помощью класса XmlTextReader
+		/// </summary>
+		/// <param name="customersXmlPath">Путь к файлу customers.xml</param>
+		/// <returns>Cписок клиентов</returns>
+		/// <remarks>Обратите внимание, что мы всегда возврашаем коллекцию даже если ничего не прочитали из файла</remarks>
+		private List<Customer> GetCustomersUsingXmlReader(string customersXmlPath, string customersXsdPath)
+		{
+			var customers = new List<Customer>();
+			
+			XmlReaderSettings readerSettings = null;
+			if (customersXsdPath != null)
+			{
+				readerSettings = new XmlReaderSettings();
+				readerSettings.Schemas.Add("http://tc.belhard.com/2012/Customers", customersXsdPath);
+				readerSettings.ValidationType = ValidationType.Schema;
+			}
+			
+			using (var reader = XmlReader.Create(customersXmlPath, readerSettings))
+			{
+				while (reader.Read())
+				{
+					if (reader.NodeType == XmlNodeType.Element)
+					{
+						if (reader.Name == "Customer")
+						{
+							using (XmlReader innerReader = reader.ReadSubtree())
+							{
+								if (innerReader.Read())
+								{
+									var customer = new Customer();
+									customer.CustomerId = innerReader.GetAttribute("CustomerId");
+
+									innerReader.ReadToFollowing("CompanyName");
+									customer.CompanyName = innerReader.ReadElementContentAsString();
+
+									innerReader.ReadToFollowing("Country");
+									customer.Country = innerReader.ReadElementContentAsString();
+
+									customers.Add(customer);
+								}
+							}
+						} // if (reader.Name == "Customer")
+					} // if (reader.NodeType == XmlNodeType.Element)
+				}
+			}
+
+			return customers;
+		}
+
 	}
 }

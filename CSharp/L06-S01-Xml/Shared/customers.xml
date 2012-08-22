@@ -1,5 +1,5 @@
-﻿<Customers>
-	<Customer CustomerID="ALFKI">
+﻿<Customers xmlns="http://tc.belhard.com/2012/Customers">
+	<Customer CustomerId="ALFKI">
 		<CompanyName>Alfreds Futterkiste</CompanyName>
 		<ContactName>Maria Anders</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -12,7 +12,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="ANATR">
+	<Customer CustomerId="ANATR">
 		<CompanyName>Ana Trujillo Emparedados y helados</CompanyName>
 		<ContactName>Ana Trujillo</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -25,7 +25,7 @@
 			<Country>Mexico</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="ANTON">
+	<Customer CustomerId="ANTON">
 		<CompanyName>Antonio Moreno Taquería</CompanyName>
 		<ContactName>Antonio Moreno</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -37,7 +37,7 @@
 			<Country>Mexico</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="AROUT">
+	<Customer CustomerId="AROUT">
 		<CompanyName>Around the Horn</CompanyName>
 		<ContactName>Thomas Hardy</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -50,7 +50,7 @@
 			<Country>UK</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="BERGS">
+	<Customer CustomerId="BERGS">
 		<CompanyName>Berglunds snabbköp</CompanyName>
 		<ContactName>Christina Berglund</ContactName>
 		<ContactTitle>Order Administrator</ContactTitle>
@@ -63,7 +63,7 @@
 			<Country>Sweden</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="BLAUS">
+	<Customer CustomerId="BLAUS">
 		<CompanyName>Blauer See Delikatessen</CompanyName>
 		<ContactName>Hanna Moos</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -76,7 +76,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="BLONP">
+	<Customer CustomerId="BLONP">
 		<CompanyName>Blondesddsl père et fils</CompanyName>
 		<ContactName>Frédérique Citeaux</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -89,7 +89,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="BOLID">
+	<Customer CustomerId="BOLID">
 		<CompanyName>Bólido Comidas preparadas</CompanyName>
 		<ContactName>Martín Sommer</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -102,7 +102,7 @@
 			<Country>Spain</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="BONAP">
+	<Customer CustomerId="BONAP">
 		<CompanyName>Bon app&apos;</CompanyName>
 		<ContactName>Laurence Lebihan</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -115,7 +115,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="BOTTM">
+	<Customer CustomerId="BOTTM">
 		<CompanyName>Bottom-Dollar Markets</CompanyName>
 		<ContactName>Elizabeth Lincoln</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -129,7 +129,7 @@
 			<Country>Canada</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="BSBEV">
+	<Customer CustomerId="BSBEV">
 		<CompanyName>B&apos;s Beverages</CompanyName>
 		<ContactName>Victoria Ashworth</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -141,7 +141,7 @@
 			<Country>UK</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="CACTU">
+	<Customer CustomerId="CACTU">
 		<CompanyName>Cactus Comidas para llevar</CompanyName>
 		<ContactName>Patricio Simpson</ContactName>
 		<ContactTitle>Sales Agent</ContactTitle>
@@ -154,7 +154,7 @@
 			<Country>Argentina</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="CENTC">
+	<Customer CustomerId="CENTC">
 		<CompanyName>Centro comercial Moctezuma</CompanyName>
 		<ContactName>Francisco Chang</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -167,7 +167,7 @@
 			<Country>Mexico</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="CHOPS">
+	<Customer CustomerId="CHOPS">
 		<CompanyName>Chop-suey Chinese</CompanyName>
 		<ContactName>Yang Wang</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -179,7 +179,7 @@
 			<Country>Switzerland</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="COMMI">
+	<Customer CustomerId="COMMI">
 		<CompanyName>Comércio Mineiro</CompanyName>
 		<ContactName>Pedro Afonso</ContactName>
 		<ContactTitle>Sales Associate</ContactTitle>
@@ -192,7 +192,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="CONSH">
+	<Customer CustomerId="CONSH">
 		<CompanyName>Consolidated Holdings</CompanyName>
 		<ContactName>Elizabeth Brown</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -205,7 +205,7 @@
 			<Country>UK</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="DRACD">
+	<Customer CustomerId="DRACD">
 		<CompanyName>Drachenblut Delikatessen</CompanyName>
 		<ContactName>Sven Ottlieb</ContactName>
 		<ContactTitle>Order Administrator</ContactTitle>
@@ -218,7 +218,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="DUMON">
+	<Customer CustomerId="DUMON">
 		<CompanyName>Du monde entier</CompanyName>
 		<ContactName>Janine Labrune</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -231,7 +231,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="EASTC">
+	<Customer CustomerId="EASTC">
 		<CompanyName>Eastern Connection</CompanyName>
 		<ContactName>Ann Devon</ContactName>
 		<ContactTitle>Sales Agent</ContactTitle>
@@ -244,7 +244,7 @@
 			<Country>UK</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="ERNSH">
+	<Customer CustomerId="ERNSH">
 		<CompanyName>Ernst Handel</CompanyName>
 		<ContactName>Roland Mendel</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -257,7 +257,7 @@
 			<Country>Austria</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FAMIA">
+	<Customer CustomerId="FAMIA">
 		<CompanyName>Familia Arquibaldo</CompanyName>
 		<ContactName>Aria Cruz</ContactName>
 		<ContactTitle>Marketing Assistant</ContactTitle>
@@ -270,7 +270,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FISSA">
+	<Customer CustomerId="FISSA">
 		<CompanyName>FISSA Fabrica Inter. Salchichas S.A.</CompanyName>
 		<ContactName>Diego Roel</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -283,7 +283,7 @@
 			<Country>Spain</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FOLIG">
+	<Customer CustomerId="FOLIG">
 		<CompanyName>Folies gourmandes</CompanyName>
 		<ContactName>Martine Rancé</ContactName>
 		<ContactTitle>Assistant Sales Agent</ContactTitle>
@@ -296,7 +296,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FOLKO">
+	<Customer CustomerId="FOLKO">
 		<CompanyName>Folk och fä HB</CompanyName>
 		<ContactName>Maria Larsson</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -308,7 +308,7 @@
 			<Country>Sweden</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FRANK">
+	<Customer CustomerId="FRANK">
 		<CompanyName>Frankenversand</CompanyName>
 		<ContactName>Peter Franken</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -321,7 +321,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FRANR">
+	<Customer CustomerId="FRANR">
 		<CompanyName>France restauration</CompanyName>
 		<ContactName>Carine Schmitt</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -334,7 +334,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FRANS">
+	<Customer CustomerId="FRANS">
 		<CompanyName>Franchi S.p.A.</CompanyName>
 		<ContactName>Paolo Accorti</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -347,7 +347,7 @@
 			<Country>Italy</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="FURIB">
+	<Customer CustomerId="FURIB">
 		<CompanyName>Furia Bacalhau e Frutos do Mar</CompanyName>
 		<ContactName>Lino Rodriguez</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -360,7 +360,7 @@
 			<Country>Portugal</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="GALED">
+	<Customer CustomerId="GALED">
 		<CompanyName>Galería del gastrónomo</CompanyName>
 		<ContactName>Eduardo Saavedra</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -373,7 +373,7 @@
 			<Country>Spain</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="GODOS">
+	<Customer CustomerId="GODOS">
 		<CompanyName>Godos Cocina Típica</CompanyName>
 		<ContactName>José Pedro Freyre</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -385,7 +385,7 @@
 			<Country>Spain</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="GOURL">
+	<Customer CustomerId="GOURL">
 		<CompanyName>Gourmet Lanchonetes</CompanyName>
 		<ContactName>André Fonseca</ContactName>
 		<ContactTitle>Sales Associate</ContactTitle>
@@ -398,7 +398,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="GREAL">
+	<Customer CustomerId="GREAL">
 		<CompanyName>Great Lakes Food Market</CompanyName>
 		<ContactName>Howard Snyder</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -411,7 +411,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="GROSR">
+	<Customer CustomerId="GROSR">
 		<CompanyName>GROSELLA-Restaurante</CompanyName>
 		<ContactName>Manuel Pereira</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -425,7 +425,7 @@
 			<Country>Venezuela</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="HANAR">
+	<Customer CustomerId="HANAR">
 		<CompanyName>Hanari Carnes</CompanyName>
 		<ContactName>Mario Pontes</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -439,7 +439,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="HILAA">
+	<Customer CustomerId="HILAA">
 		<CompanyName>HILARION-Abastos</CompanyName>
 		<ContactName>Carlos Hernández</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -453,7 +453,7 @@
 			<Country>Venezuela</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="HUNGC">
+	<Customer CustomerId="HUNGC">
 		<CompanyName>Hungry Coyote Import Store</CompanyName>
 		<ContactName>Yoshi Latimer</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -467,7 +467,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="HUNGO">
+	<Customer CustomerId="HUNGO">
 		<CompanyName>Hungry Owl All-Night Grocers</CompanyName>
 		<ContactName>Patricia McKenna</ContactName>
 		<ContactTitle>Sales Associate</ContactTitle>
@@ -480,7 +480,7 @@
 			<Country>Ireland</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="ISLAT">
+	<Customer CustomerId="ISLAT">
 		<CompanyName>Island Trading</CompanyName>
 		<ContactName>Helen Bennett</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -493,7 +493,7 @@
 			<Country>UK</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="KOENE">
+	<Customer CustomerId="KOENE">
 		<CompanyName>Königlich Essen</CompanyName>
 		<ContactName>Philip Cramer</ContactName>
 		<ContactTitle>Sales Associate</ContactTitle>
@@ -505,7 +505,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LACOR">
+	<Customer CustomerId="LACOR">
 		<CompanyName>La corne d&apos;abondance</CompanyName>
 		<ContactName>Daniel Tonini</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -518,7 +518,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LAMAI">
+	<Customer CustomerId="LAMAI">
 		<CompanyName>La maison d&apos;Asie</CompanyName>
 		<ContactName>Annette Roulet</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -531,7 +531,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LAUGB">
+	<Customer CustomerId="LAUGB">
 		<CompanyName>Laughing Bacchus Wine Cellars</CompanyName>
 		<ContactName>Yoshi Tannamuri</ContactName>
 		<ContactTitle>Marketing Assistant</ContactTitle>
@@ -545,7 +545,7 @@
 			<Country>Canada</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LAZYK">
+	<Customer CustomerId="LAZYK">
 		<CompanyName>Lazy K Kountry Store</CompanyName>
 		<ContactName>John Steel</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -559,7 +559,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LEHMS">
+	<Customer CustomerId="LEHMS">
 		<CompanyName>Lehmanns Marktstand</CompanyName>
 		<ContactName>Renate Messner</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -572,7 +572,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LETSS">
+	<Customer CustomerId="LETSS">
 		<CompanyName>Let&apos;s Stop N Shop</CompanyName>
 		<ContactName>Jaime Yorres</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -585,7 +585,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LILAS">
+	<Customer CustomerId="LILAS">
 		<CompanyName>LILA-Supermercado</CompanyName>
 		<ContactName>Carlos González</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -599,7 +599,7 @@
 			<Country>Venezuela</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LINOD">
+	<Customer CustomerId="LINOD">
 		<CompanyName>LINO-Delicateses</CompanyName>
 		<ContactName>Felipe Izquierdo</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -613,7 +613,7 @@
 			<Country>Venezuela</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="LONEP">
+	<Customer CustomerId="LONEP">
 		<CompanyName>Lonesome Pine Restaurant</CompanyName>
 		<ContactName>Fran Wilson</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -627,7 +627,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="MAGAA">
+	<Customer CustomerId="MAGAA">
 		<CompanyName>Magazzini Alimentari Riuniti</CompanyName>
 		<ContactName>Giovanni Rovelli</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -640,7 +640,7 @@
 			<Country>Italy</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="MAISD">
+	<Customer CustomerId="MAISD">
 		<CompanyName>Maison Dewey</CompanyName>
 		<ContactName>Catherine Dewey</ContactName>
 		<ContactTitle>Sales Agent</ContactTitle>
@@ -653,7 +653,7 @@
 			<Country>Belgium</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="MEREP">
+	<Customer CustomerId="MEREP">
 		<CompanyName>Mère Paillarde</CompanyName>
 		<ContactName>Jean Fresnière</ContactName>
 		<ContactTitle>Marketing Assistant</ContactTitle>
@@ -667,7 +667,7 @@
 			<Country>Canada</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="MORGK">
+	<Customer CustomerId="MORGK">
 		<CompanyName>Morgenstern Gesundkost</CompanyName>
 		<ContactName>Alexander Feuer</ContactName>
 		<ContactTitle>Marketing Assistant</ContactTitle>
@@ -679,7 +679,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="NORTS">
+	<Customer CustomerId="NORTS">
 		<CompanyName>North/South</CompanyName>
 		<ContactName>Simon Crowther</ContactName>
 		<ContactTitle>Sales Associate</ContactTitle>
@@ -692,7 +692,7 @@
 			<Country>UK</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="OCEAN">
+	<Customer CustomerId="OCEAN">
 		<CompanyName>Océano Atlántico Ltda.</CompanyName>
 		<ContactName>Yvonne Moncada</ContactName>
 		<ContactTitle>Sales Agent</ContactTitle>
@@ -705,7 +705,7 @@
 			<Country>Argentina</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="OLDWO">
+	<Customer CustomerId="OLDWO">
 		<CompanyName>Old World Delicatessen</CompanyName>
 		<ContactName>Rene Phillips</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -719,7 +719,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="OTTIK">
+	<Customer CustomerId="OTTIK">
 		<CompanyName>Ottilies Käseladen</CompanyName>
 		<ContactName>Henriette Pfalzheim</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -732,7 +732,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="PARIS">
+	<Customer CustomerId="PARIS">
 		<CompanyName>Paris spécialités</CompanyName>
 		<ContactName>Marie Bertrand</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -745,7 +745,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="PERIC">
+	<Customer CustomerId="PERIC">
 		<CompanyName>Pericles Comidas clásicas</CompanyName>
 		<ContactName>Guillermo Fernández</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -758,7 +758,7 @@
 			<Country>Mexico</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="PICCO">
+	<Customer CustomerId="PICCO">
 		<CompanyName>Piccolo und mehr</CompanyName>
 		<ContactName>Georg Pipps</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -771,7 +771,7 @@
 			<Country>Austria</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="PRINI">
+	<Customer CustomerId="PRINI">
 		<CompanyName>Princesa Isabel Vinhos</CompanyName>
 		<ContactName>Isabel de Castro</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -783,7 +783,7 @@
 			<Country>Portugal</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="QUEDE">
+	<Customer CustomerId="QUEDE">
 		<CompanyName>Que Delícia</CompanyName>
 		<ContactName>Bernardo Batista</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -797,7 +797,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="QUEEN">
+	<Customer CustomerId="QUEEN">
 		<CompanyName>Queen Cozinha</CompanyName>
 		<ContactName>Lúcia Carvalho</ContactName>
 		<ContactTitle>Marketing Assistant</ContactTitle>
@@ -810,7 +810,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="QUICK">
+	<Customer CustomerId="QUICK">
 		<CompanyName>QUICK-Stop</CompanyName>
 		<ContactName>Horst Kloss</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -822,7 +822,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="RANCH">
+	<Customer CustomerId="RANCH">
 		<CompanyName>Rancho grande</CompanyName>
 		<ContactName>Sergio Gutiérrez</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -835,7 +835,7 @@
 			<Country>Argentina</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="RATTC">
+	<Customer CustomerId="RATTC">
 		<CompanyName>Rattlesnake Canyon Grocery</CompanyName>
 		<ContactName>Paula Wilson</ContactName>
 		<ContactTitle>Assistant Sales Representative</ContactTitle>
@@ -849,7 +849,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="REGGC">
+	<Customer CustomerId="REGGC">
 		<CompanyName>Reggiani Caseifici</CompanyName>
 		<ContactName>Maurizio Moroni</ContactName>
 		<ContactTitle>Sales Associate</ContactTitle>
@@ -862,7 +862,7 @@
 			<Country>Italy</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="RICAR">
+	<Customer CustomerId="RICAR">
 		<CompanyName>Ricardo Adocicados</CompanyName>
 		<ContactName>Janete Limeira</ContactName>
 		<ContactTitle>Assistant Sales Agent</ContactTitle>
@@ -875,7 +875,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="RICSU">
+	<Customer CustomerId="RICSU">
 		<CompanyName>Richter Supermarkt</CompanyName>
 		<ContactName>Michael Holz</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -887,7 +887,7 @@
 			<Country>Switzerland</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="ROMEY">
+	<Customer CustomerId="ROMEY">
 		<CompanyName>Romero y tomillo</CompanyName>
 		<ContactName>Alejandra Camino</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -900,7 +900,7 @@
 			<Country>Spain</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="SANTG">
+	<Customer CustomerId="SANTG">
 		<CompanyName>Santé Gourmet</CompanyName>
 		<ContactName>Jonas Bergulfsen</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -913,7 +913,7 @@
 			<Country>Norway</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="SAVEA">
+	<Customer CustomerId="SAVEA">
 		<CompanyName>Save-a-lot Markets</CompanyName>
 		<ContactName>Jose Pavarotti</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -926,7 +926,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="SEVES">
+	<Customer CustomerId="SEVES">
 		<CompanyName>Seven Seas Imports</CompanyName>
 		<ContactName>Hari Kumar</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -939,7 +939,7 @@
 			<Country>UK</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="SIMOB">
+	<Customer CustomerId="SIMOB">
 		<CompanyName>Simons bistro</CompanyName>
 		<ContactName>Jytte Petersen</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -952,7 +952,7 @@
 			<Country>Denmark</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="SPECD">
+	<Customer CustomerId="SPECD">
 		<CompanyName>Spécialités du monde</CompanyName>
 		<ContactName>Dominique Perrier</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -965,7 +965,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="SPLIR">
+	<Customer CustomerId="SPLIR">
 		<CompanyName>Split Rail Beer &amp; Ale</CompanyName>
 		<ContactName>Art Braunschweiger</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -979,7 +979,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="SUPRD">
+	<Customer CustomerId="SUPRD">
 		<CompanyName>Suprêmes délices</CompanyName>
 		<ContactName>Pascale Cartrain</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -992,7 +992,7 @@
 			<Country>Belgium</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="THEBI">
+	<Customer CustomerId="THEBI">
 		<CompanyName>The Big Cheese</CompanyName>
 		<ContactName>Liz Nixon</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -1005,7 +1005,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="THECR">
+	<Customer CustomerId="THECR">
 		<CompanyName>The Cracker Box</CompanyName>
 		<ContactName>Liu Wong</ContactName>
 		<ContactTitle>Marketing Assistant</ContactTitle>
@@ -1019,7 +1019,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="TOMSP">
+	<Customer CustomerId="TOMSP">
 		<CompanyName>Toms Spezialitäten</CompanyName>
 		<ContactName>Karin Josephs</ContactName>
 		<ContactTitle>Marketing Manager</ContactTitle>
@@ -1032,7 +1032,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="TORTU">
+	<Customer CustomerId="TORTU">
 		<CompanyName>Tortuga Restaurante</CompanyName>
 		<ContactName>Miguel Angel Paolino</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -1044,7 +1044,7 @@
 			<Country>Mexico</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="TRADH">
+	<Customer CustomerId="TRADH">
 		<CompanyName>Tradição Hipermercados</CompanyName>
 		<ContactName>Anabela Domingues</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -1058,7 +1058,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="TRAIH">
+	<Customer CustomerId="TRAIH">
 		<CompanyName>Trail&apos;s Head Gourmet Provisioners</CompanyName>
 		<ContactName>Helvetius Nagy</ContactName>
 		<ContactTitle>Sales Associate</ContactTitle>
@@ -1072,7 +1072,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="VAFFE">
+	<Customer CustomerId="VAFFE">
 		<CompanyName>Vaffeljernet</CompanyName>
 		<ContactName>Palle Ibsen</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -1085,7 +1085,7 @@
 			<Country>Denmark</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="VICTE">
+	<Customer CustomerId="VICTE">
 		<CompanyName>Victuailles en stock</CompanyName>
 		<ContactName>Mary Saveley</ContactName>
 		<ContactTitle>Sales Agent</ContactTitle>
@@ -1098,7 +1098,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="VINET">
+	<Customer CustomerId="VINET">
 		<CompanyName>Vins et alcools Chevalier</CompanyName>
 		<ContactName>Paul Henriot</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -1111,7 +1111,7 @@
 			<Country>France</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="WANDK">
+	<Customer CustomerId="WANDK">
 		<CompanyName>Die Wandernde Kuh</CompanyName>
 		<ContactName>Rita Müller</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
@@ -1124,7 +1124,7 @@
 			<Country>Germany</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="WARTH">
+	<Customer CustomerId="WARTH">
 		<CompanyName>Wartian Herkku</CompanyName>
 		<ContactName>Pirkko Koskitalo</ContactName>
 		<ContactTitle>Accounting Manager</ContactTitle>
@@ -1137,7 +1137,7 @@
 			<Country>Finland</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="WELLI">
+	<Customer CustomerId="WELLI">
 		<CompanyName>Wellington Importadora</CompanyName>
 		<ContactName>Paula Parente</ContactName>
 		<ContactTitle>Sales Manager</ContactTitle>
@@ -1150,7 +1150,7 @@
 			<Country>Brazil</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="WHITC">
+	<Customer CustomerId="WHITC">
 		<CompanyName>White Clover Markets</CompanyName>
 		<ContactName>Karl Jablonski</ContactName>
 		<ContactTitle>Owner</ContactTitle>
@@ -1164,7 +1164,7 @@
 			<Country>USA</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="WILMK">
+	<Customer CustomerId="WILMK">
 		<CompanyName>Wilman Kala</CompanyName>
 		<ContactName>Matti Karttunen</ContactName>
 		<ContactTitle>Owner/Marketing Assistant</ContactTitle>
@@ -1177,7 +1177,7 @@
 			<Country>Finland</Country>
 		</FullAddress>
 	</Customer>
-	<Customer CustomerID="WOLZA">
+	<Customer CustomerId="WOLZA">
 		<CompanyName>Wolski  Zajazd</CompanyName>
 		<ContactName>Zbyszek Piestrzeniewicz</ContactName>
 		<ContactTitle>Owner</ContactTitle>

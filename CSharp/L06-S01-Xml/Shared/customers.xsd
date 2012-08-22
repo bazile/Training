@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+		attributeFormDefault="unqualified"
+		elementFormDefault="qualified"
+		targetNamespace="http://tc.belhard.com/2012/Customers"
+		xmlns="http://tc.belhard.com/2012/Customers"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="Type-CustomerId">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="5" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:element name="Customers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="Customer">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CompanyName" type="xs:string" />
+							<xs:element name="ContactName" type="xs:string" />
+							<xs:element name="ContactTitle" type="xs:string" />
+							<xs:element name="Phone" type="xs:string" />
+							<xs:element minOccurs="0" name="Fax" type="xs:string" />
+							<xs:element name="FullAddress">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Address" type="xs:string" />
+										<xs:element name="City" type="xs:string" />
+										<xs:element minOccurs="0" name="Region" type="xs:string" />
+										<xs:element minOccurs="0" name="PostalCode" type="xs:string" />
+										<xs:element name="Country" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+
+						<xs:attribute name="CustomerId" type="Type-CustomerId" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

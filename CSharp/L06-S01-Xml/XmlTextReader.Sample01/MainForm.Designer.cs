@@ -54,7 +54,7 @@
             listViewGroup1});
 			this.customersListView.Location = new System.Drawing.Point(0, 24);
 			this.customersListView.Name = "customersListView";
-			this.customersListView.Size = new System.Drawing.Size(551, 284);
+			this.customersListView.Size = new System.Drawing.Size(551, 367);
 			this.customersListView.TabIndex = 0;
 			this.customersListView.UseCompatibleStateImageBehavior = false;
 			this.customersListView.View = System.Windows.Forms.View.Details;
@@ -93,7 +93,7 @@
 			this.showGroupsToolStripMenuItem.Checked = true;
 			this.showGroupsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.showGroupsToolStripMenuItem.Name = "showGroupsToolStripMenuItem";
-			this.showGroupsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.showGroupsToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
 			this.showGroupsToolStripMenuItem.Text = "Show &groups";
 			this.showGroupsToolStripMenuItem.Click += new System.EventHandler(this.OnShowGroupsToolStripMenuItemClick);
 			// 
@@ -108,7 +108,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(551, 308);
+			this.ClientSize = new System.Drawing.Size(551, 391);
 			this.Controls.Add(this.customersListView);
 			this.Controls.Add(this.mainMenuStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
