@@ -14,12 +14,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSamplesLib", "XmlSamples
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlTextReader.Sample02", "XmlTextReader.Sample02\XmlTextReader.Sample02.csproj", "{6F638E94-12B9-4050-B42E-37CBDEC184CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlSerialization.Sample03", "XmlSerialization.Sample03\XmlSerialization.Sample03.csproj", "{26AB3E3E-A00B-4245-88DD-8BE386894F7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26AB3E3E-A00B-4245-88DD-8BE386894F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26AB3E3E-A00B-4245-88DD-8BE386894F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26AB3E3E-A00B-4245-88DD-8BE386894F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26AB3E3E-A00B-4245-88DD-8BE386894F7F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281DF7EF-A43A-45B4-A6CB-FB2A0F44E36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
