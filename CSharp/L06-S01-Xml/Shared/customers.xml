@@ -1,5 +1,5 @@
 ﻿<Customers xmlns="http://tc.belhard.com/2012/Customers">
-	<Customer CustomerId="ALFKI">
+	<Customer CustomerId="ALFKI2">
 		<CompanyName>Alfreds Futterkiste</CompanyName>
 		<ContactName>Maria Anders</ContactName>
 		<ContactTitle>Sales Representative</ContactTitle>
