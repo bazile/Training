@@ -6,6 +6,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{DFB592AB-EB0B-43BF-8594-30ABCAF8E5E8}"
 	ProjectSection(SolutionItems) = preProject
 		Shared\Xml-tool.ico = Shared\Xml-tool.ico
+		Shared\customers-as-html.xslt = Shared\customers-as-html.xslt
 		Shared\customers.xml = Shared\customers.xml
 		Shared\customers.xsd = Shared\customers.xsd
 	EndProjectSection

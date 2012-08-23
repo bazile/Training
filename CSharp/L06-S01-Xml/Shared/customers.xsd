@@ -5,6 +5,7 @@
 		targetNamespace="http://tc.belhard.com/2012/Customers"
 		xmlns="http://tc.belhard.com/2012/Customers"
 		xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
 	<xs:simpleType name="Type-CustomerId">
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1" />
