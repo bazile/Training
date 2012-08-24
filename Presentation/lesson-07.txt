@@ -1,0 +1,4 @@
+- nullable<t>
+- optional параметры
+- xml serialization
+- xml комментарии
