@@ -15,7 +15,7 @@ namespace SatelliteAssembliesDemo
 		{
 			//Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
 			//Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
-			//Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-ES");
+			Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-ES");
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);

@@ -29,6 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.textBoxMessage = new System.Windows.Forms.TextBox();
+			this.pictureBox = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBoxMessage
@@ -41,15 +43,29 @@
 			this.textBoxMessage.Size = new System.Drawing.Size(573, 316);
 			this.textBoxMessage.TabIndex = 0;
 			// 
+			// pictureBox
+			// 
+			this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.pictureBox.BackColor = System.Drawing.Color.DarkGray;
+			this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox.Location = new System.Drawing.Point(448, 233);
+			this.pictureBox.Name = "pictureBox";
+			this.pictureBox.Size = new System.Drawing.Size(125, 83);
+			this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox.TabIndex = 1;
+			this.pictureBox.TabStop = false;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(573, 316);
+			this.Controls.Add(this.pictureBox);
 			this.Controls.Add(this.textBoxMessage);
 			this.Name = "MainForm";
 			this.Text = "i18n demo";
 			this.Load += new System.EventHandler(this.OnMainFormLoad);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -58,6 +74,7 @@
 		#endregion
 
 		private System.Windows.Forms.TextBox textBoxMessage;
+		private System.Windows.Forms.PictureBox pictureBox;
 
 	}
 }

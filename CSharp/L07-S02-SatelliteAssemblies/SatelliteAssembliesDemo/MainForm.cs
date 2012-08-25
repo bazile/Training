@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
 
 namespace SatelliteAssembliesDemo
 {
+	// TODO: список цитат на разных языках с выбором случайной
 	public partial class MainForm : Form
 	{
 		public MainForm()
@@ -14,7 +16,10 @@ namespace SatelliteAssembliesDemo
 		private void OnMainFormLoad(object sender, EventArgs e)
 		{
 			var rm = new ResourceManager(typeof(SatelliteAssembliesDemo));
-			textBoxMessage.Text = rm.GetString("MessageText"); 
+			textBoxMessage.Text = rm.GetString("MessageText");
+			pictureBox.Image = (Image)rm.GetObject("Flag");
+
+			//this.pictureBox.Image = global::SatelliteAssembliesDemo.SatelliteAssembliesDemo.Flag_of_USA;
 		}
 	}
 }

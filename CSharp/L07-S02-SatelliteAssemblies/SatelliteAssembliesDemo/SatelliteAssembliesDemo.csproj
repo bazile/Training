@@ -58,6 +58,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SatelliteAssembliesDemo.resx</DependentUpon>
     </Compile>
+    <Compile Include="SatelliteAssembliesDemo.fr-FR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SatelliteAssembliesDemo.fr-FR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SatelliteAssembliesDemo.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SatelliteAssembliesDemo.ru-RU.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,12 +81,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SatelliteAssembliesDemo.fr-FR.resx" />
+    <EmbeddedResource Include="SatelliteAssembliesDemo.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SatelliteAssembliesDemo.fr-FR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SatelliteAssembliesDemo.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>SatelliteAssembliesDemo.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SatelliteAssembliesDemo.ru-RU.resx" />
+    <EmbeddedResource Include="SatelliteAssembliesDemo.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SatelliteAssembliesDemo.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,7 +105,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag-of-Russia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag-of-France.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag-of-USA.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
