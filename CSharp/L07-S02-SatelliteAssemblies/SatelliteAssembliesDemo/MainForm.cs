@@ -18,8 +18,6 @@ namespace SatelliteAssembliesDemo
 			var rm = new ResourceManager(typeof(SatelliteAssembliesDemo));
 			textBoxMessage.Text = rm.GetString("MessageText");
 			pictureBox.Image = (Image)rm.GetObject("Flag");
-
-			//this.pictureBox.Image = global::SatelliteAssembliesDemo.SatelliteAssembliesDemo.Flag_of_USA;
 		}
 	}
 }
