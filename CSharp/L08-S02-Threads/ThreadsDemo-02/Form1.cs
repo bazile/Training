@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 
-namespace ThreadsDemo_02
+namespace ThreadsDemo.WinForms.Invoke
 {
 	public partial class Form1 : Form
 	{

@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Threading;
 
-namespace ThreadsDemo_01
+namespace ThreadsDemo.ConsoleMessages
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
-			Thread backThread = new Thread(new ThreadStart(PrintMessage));
-			Thread paramThread = new Thread(new ParameterizedThreadStart(PrintMessage));
+			var backThread = new Thread(new ThreadStart(PrintMessage));
+			//backThread.IsBackground = true;
+
+			//var paramThread = new Thread(new ParameterizedThreadStart(PrintMessage));
+			//paramThread.IsBackground = true;
+
+			var paramThread = new Thread(new ParameterizedThreadStart(PrintComplexMessage));
+			//paramThread.IsBackground = true;
+
 			backThread.Start();
-			paramThread.Start("I'm parameterized thread!");
+			//paramThread.Start("I'm parameterized thread!");
+			paramThread.Start(new PrintMessageData { Message = "I'm super-parameterized thread!", When = DateTime.Now});
 
 			for (int i = 0; i < 100; i++)
 			{
@@ -36,6 +44,21 @@ namespace ThreadsDemo_01
 			{
 				Console.WriteLine(text);
 			}
+		}
+
+		public static void PrintComplexMessage(object obj)
+		{
+			var data = (PrintMessageData)obj;
+			for (int i = 0; i < 100; i++)
+			{
+				Console.WriteLine("{0:g} - {1}", data.When, data.Message);
+			}
+		}
+
+		private class PrintMessageData
+		{
+			public string Message;
+			public DateTime When;
 		}
 	}
 }

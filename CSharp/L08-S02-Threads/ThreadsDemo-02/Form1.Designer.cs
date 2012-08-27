@@ -1,4 +1,4 @@
-﻿namespace ThreadsDemo_02
+﻿namespace ThreadsDemo.WinForms.Invoke
 {
 	partial class Form1
 	{
