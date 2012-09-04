@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 // TODO: different algorithm selection
 // TODO: FPS counter
 // TODO: Different draw mode: simple, double-buffering, DirectX?
-
+// http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 namespace LifeGame
 {
