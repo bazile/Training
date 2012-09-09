@@ -1,0 +1,3 @@
+- SortArray(), Console.WriteLine()
+- StringBuilder(int size)
+- Thread.IsBackround, Thread.Abort()

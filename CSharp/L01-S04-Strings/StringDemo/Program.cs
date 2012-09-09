@@ -25,6 +25,9 @@ namespace StringDemo
 			StringInternDemo();
 
 			SecureStringDemo();
+
+			// StringBuilder
+			// Явный размер - пример с byteToHex
 		}
 
 		private static void StringInternDemo()
