@@ -1,5 +1,5 @@
 app.aps
 
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
-Debug
-Release
+Debug/
+Release/
