@@ -1,3 +1,6 @@
 - SortArray(), Console.WriteLine()
 - StringBuilder(int size)
 - Thread.IsBackround, Thread.Abort()
+- Multi-start in VS
+- IDisposable, using & object initializer
+- Service Reference
