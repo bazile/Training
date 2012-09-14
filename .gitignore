@@ -1,4 +1,4 @@
-Tools
+Tools/
 
 # User-specific files
 *.suo
@@ -6,6 +6,7 @@ Tools
 *.vbproj.user
 *.vcxproj.user
 *.DotSettings.user
+*.csproj.DotSettings
 
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 bin/
