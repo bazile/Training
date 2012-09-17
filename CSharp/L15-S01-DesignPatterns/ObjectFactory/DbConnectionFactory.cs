@@ -26,7 +26,7 @@ namespace ObjectFactory
 
 			connectionString = connectionString.Replace("$DbRoot$", GetDbRootFolder());
 
-			if (provider == "msssql")
+			if (provider == "mssql")
 			{
 				var sqlConn = new SqlConnection(connectionString);
 				return sqlConn;
