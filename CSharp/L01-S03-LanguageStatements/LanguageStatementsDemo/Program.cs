@@ -99,6 +99,14 @@ namespace LanguageStatementsDemo
 			}
 			Console.WriteLine("Максимальный возраст " + maxAge);
 
+			// for (int i = 0; i < names.Length; i++) Console.WriteLine(names[i]);
+			int j = 0;
+			while (j < names.Length)
+			{
+				Console.WriteLine(names[j]);
+
+				j++;
+			}
 			// Задание: выведите максимальный и минимальный возраст в одной строке используя строку с шаблонами подстановки
 		}
 	}
