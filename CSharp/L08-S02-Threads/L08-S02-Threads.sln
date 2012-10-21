@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsDemo-01.Msg", "ThreadsDemo-01\ThreadsDemo-01.Msg.csproj", "{2C32638B-ED84-47EA-BFA3-9B77BE59BFB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsDemo-02.Invoke", "ThreadsDemo-02\ThreadsDemo-02.Invoke.csproj", "{81DB31B0-1433-402A-BF6D-397F21EAF57D}"

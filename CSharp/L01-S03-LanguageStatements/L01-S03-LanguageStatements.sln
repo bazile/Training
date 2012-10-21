@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageStatementsDemo", "LanguageStatementsDemo\LanguageStatementsDemo.csproj", "{D16B6111-AADB-4A6C-B00E-37F8950553AD}"
 EndProject
 Global

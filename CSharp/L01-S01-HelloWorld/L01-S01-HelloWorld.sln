@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Console", "HelloWorld.Console\HelloWorld.Console.csproj", "{BAD9D8B4-A505-4126-9276-BA90884C9613}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.WinForms", "HelloWorld.WinForms\HelloWorld.WinForms.csproj", "{4647B17D-3FE6-4A64-9D78-9F2655952AD9}"

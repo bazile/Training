@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiguresDemo", "FiguresDemo\FiguresDemo.csproj", "{511781DA-6080-4BC3-8EFA-7C92DC66C1B6}"
 EndProject
 Global

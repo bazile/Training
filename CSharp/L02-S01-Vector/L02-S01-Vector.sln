@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector.Console", "Vector.Console\Vector.Console.csproj", "{DC5C251D-CF29-4C04-96C3-C64264618E1F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector.Tests", "Vector.Tests\Vector.Tests.csproj", "{C8ACC8C8-5340-4DF9-BD56-B617507BD62B}"
