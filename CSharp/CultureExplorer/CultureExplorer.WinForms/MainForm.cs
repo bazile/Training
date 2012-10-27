@@ -46,7 +46,7 @@ namespace CultureExplorer.WinForms
 
 		private void OnCulturesTreeViewAfterSelect(object sender, TreeViewEventArgs e)
 		{
-			cultureInfoBindingSource.DataSource = e.Node.Tag;
+			cultureInfoControl.SetDataSource((CultureInfo)e.Node.Tag);
 		}
 
 		#endregion

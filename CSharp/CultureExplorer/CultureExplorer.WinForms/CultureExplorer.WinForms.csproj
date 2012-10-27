@@ -45,6 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CultureInfoComparer.cs" />
+    <Compile Include="CultureInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CultureInfoControl.Designer.cs">
+      <DependentUpon>CultureInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CultureInfoViewModel.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CultureInfoControl.resx">
+      <DependentUpon>CultureInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,7 +75,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Properties\DataSources\System.Globalization.CultureInfo.datasource" />
+    <None Include="Properties\DataSources\CultureInfoViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +86,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

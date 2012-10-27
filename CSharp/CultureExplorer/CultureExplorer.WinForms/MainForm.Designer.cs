@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
+			this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.panel = new System.Windows.Forms.Panel();
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
 			this.treeViewCultures = new System.Windows.Forms.TreeView();
@@ -37,15 +37,14 @@
 			this.menuItemExplorer = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuItemView = new System.Windows.Forms.ToolStripMenuItem();
-			this.cultureInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-			this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.cultureInfoControl = new CultureExplorer.WinForms.CultureInfoControl();
 			this.statusStrip.SuspendLayout();
 			this.panel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
 			this.splitContainer.Panel1.SuspendLayout();
+			this.splitContainer.Panel2.SuspendLayout();
 			this.splitContainer.SuspendLayout();
 			this.mainMenu.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.cultureInfoBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// statusStrip
@@ -57,6 +56,12 @@
 			this.statusStrip.Size = new System.Drawing.Size(440, 22);
 			this.statusStrip.TabIndex = 0;
 			this.statusStrip.Text = "statusStrip1";
+			// 
+			// statusLabel
+			// 
+			this.statusLabel.Name = "statusLabel";
+			this.statusLabel.Size = new System.Drawing.Size(121, 17);
+			this.statusLabel.Text = "Number of cultures: ?";
 			// 
 			// panel
 			// 
@@ -77,6 +82,10 @@
 			// 
 			this.splitContainer.Panel1.Controls.Add(this.treeViewCultures);
 			this.splitContainer.Panel1MinSize = 150;
+			// 
+			// splitContainer.Panel2
+			// 
+			this.splitContainer.Panel2.Controls.Add(this.cultureInfoControl);
 			this.splitContainer.Size = new System.Drawing.Size(440, 299);
 			this.splitContainer.SplitterDistance = 150;
 			this.splitContainer.TabIndex = 0;
@@ -122,15 +131,13 @@
 			this.menuItemView.Size = new System.Drawing.Size(44, 20);
 			this.menuItemView.Text = "&View";
 			// 
-			// cultureInfoBindingSource
+			// cultureInfoControl
 			// 
-			this.cultureInfoBindingSource.DataSource = typeof(System.Globalization.CultureInfo);
-			// 
-			// statusLabel
-			// 
-			this.statusLabel.Name = "statusLabel";
-			this.statusLabel.Size = new System.Drawing.Size(121, 17);
-			this.statusLabel.Text = "Number of cultures: ?";
+			this.cultureInfoControl.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cultureInfoControl.Location = new System.Drawing.Point(0, 0);
+			this.cultureInfoControl.Name = "cultureInfoControl";
+			this.cultureInfoControl.Size = new System.Drawing.Size(286, 299);
+			this.cultureInfoControl.TabIndex = 1;
 			// 
 			// MainForm
 			// 
@@ -147,11 +154,11 @@
 			this.statusStrip.PerformLayout();
 			this.panel.ResumeLayout(false);
 			this.splitContainer.Panel1.ResumeLayout(false);
+			this.splitContainer.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
 			this.splitContainer.ResumeLayout(false);
 			this.mainMenu.ResumeLayout(false);
 			this.mainMenu.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.cultureInfoBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -167,8 +174,8 @@
 		private System.Windows.Forms.ToolStripMenuItem menuItemExplorer;
 		private System.Windows.Forms.ToolStripMenuItem menuItemExit;
 		private System.Windows.Forms.ToolStripMenuItem menuItemView;
-		private System.Windows.Forms.BindingSource cultureInfoBindingSource;
 		private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+		private CultureInfoControl cultureInfoControl;
 	}
 }
 
