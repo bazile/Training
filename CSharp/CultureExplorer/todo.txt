@@ -1,0 +1,5 @@
+- Display CultureInfo in list view
+- Group culture info
+- Add more details about culture
+
+- Implement WPF version
