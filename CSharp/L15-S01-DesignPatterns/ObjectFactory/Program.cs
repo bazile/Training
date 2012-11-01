@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Data;
+using Ninject;
 
 namespace ObjectFactory
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
-			using (var dbConn = DbConnectionFactory.GetDbConnection())
+			IKernel kernel = new StandardKernel(new DbConnectionModule());
+
+			using (var dbConn = kernel.Get<IDbConnection>())
 			{
 				dbConn.Open();
 
