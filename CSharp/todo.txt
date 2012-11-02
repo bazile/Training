@@ -2,3 +2,5 @@
 	http://msdn.microsoft.com/en-us/library/windows/desktop/bb756929.aspx
 - shortcut management
 - string samples (sorting, comparing)
+- XML creation
+- MEF plugin sample
