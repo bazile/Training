@@ -71,6 +71,11 @@ namespace ProcessesDemo
 			RefreshProcessList();
 		}
 
+		private void OnAutoRefreshToolStripMenuItemCheckedChanged(object sender, EventArgs e)
+		{
+			refreshTimer.Enabled = autoRefreshToolStripMenuItem.Checked;
+		}
+
 		#endregion
 
 		private void RefreshProcessList()

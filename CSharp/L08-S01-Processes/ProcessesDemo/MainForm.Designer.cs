@@ -31,6 +31,8 @@
 			this.components = new System.ComponentModel.Container();
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.autoRefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshTimer = new System.Windows.Forms.Timer(this.components);
 			this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
@@ -49,6 +51,7 @@
 			// 
 			this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.runToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.exitToolStripMenuItem});
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
@@ -59,9 +62,28 @@
 			// runToolStripMenuItem
 			// 
 			this.runToolStripMenuItem.Name = "runToolStripMenuItem";
+			this.runToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
 			this.runToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
 			this.runToolStripMenuItem.Text = "&Run ...";
 			this.runToolStripMenuItem.Click += new System.EventHandler(this.OnRunToolStripMenuItemClick);
+			// 
+			// viewToolStripMenuItem
+			// 
+			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoRefreshToolStripMenuItem});
+			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.viewToolStripMenuItem.Text = "&View";
+			// 
+			// autoRefreshToolStripMenuItem
+			// 
+			this.autoRefreshToolStripMenuItem.Checked = true;
+			this.autoRefreshToolStripMenuItem.CheckOnClick = true;
+			this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
+			this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.autoRefreshToolStripMenuItem.Text = "Auto &refresh";
+			this.autoRefreshToolStripMenuItem.CheckedChanged += new System.EventHandler(this.OnAutoRefreshToolStripMenuItemCheckedChanged);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -120,6 +142,7 @@
 			// 
 			// columnHeaderId
 			// 
+			this.columnHeaderId.Tag = "number";
 			this.columnHeaderId.Text = "PID";
 			this.columnHeaderId.Width = 120;
 			// 
@@ -130,6 +153,7 @@
 			// 
 			// columnHeaderThreadCount
 			// 
+			this.columnHeaderThreadCount.Tag = "number";
 			this.columnHeaderThreadCount.Text = "# of Threads";
 			this.columnHeaderThreadCount.Width = 120;
 			// 
@@ -169,6 +193,8 @@
 		private System.Windows.Forms.ColumnHeader columnHeaderId;
 		private System.Windows.Forms.ColumnHeader columnHeaderName;
 		private System.Windows.Forms.ColumnHeader columnHeaderThreadCount;
+		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem autoRefreshToolStripMenuItem;
 	}
 }
 

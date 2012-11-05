@@ -103,8 +103,7 @@
 			// openFileDialog
 			// 
 			this.openFileDialog.AddExtension = false;
-			this.openFileDialog.FileName = "openFileDialog";
-			this.openFileDialog.Filter = "Executables|*.exe";
+			this.openFileDialog.Filter = "Executables|*.exe|All files|*.*";
 			// 
 			// RunForm
 			// 

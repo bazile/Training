@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Windows.Forms;
 
 namespace ProcessesDemo
@@ -38,21 +39,44 @@ namespace ProcessesDemo
 			var itemX = (ListViewItem)x;
 			var itemY = (ListViewItem)y;
 
-			int compareResult = _objectCompare.Compare(itemX.SubItems[_columnToSort].Text, itemY.SubItems[_columnToSort].Text);
+			if (itemX.ListView.Columns[_columnToSort].Tag == "number")
+			{
+				return CompareNumbers(itemX, itemY);
+			}
 
-			// Calculate correct return value based on object comparison
+			return CompareText(itemX, itemY);
+		}
+
+		private int CompareNumbers(ListViewItem itemX, ListViewItem itemY)
+		{
+			int x = Int32.Parse(itemX.SubItems[_columnToSort].Text);
+			int y = Int32.Parse(itemY.SubItems[_columnToSort].Text);
+			int compareResult = x.CompareTo(y);
 			if (_orderOfSort == SortOrder.Ascending)
 			{
-				// Ascending sort is selected, return normal result of compare operation
 				return compareResult;
 			}
 			if (_orderOfSort == SortOrder.Descending)
 			{
-				// Descending sort is selected, return negative result of compare operation
 				return (-compareResult);
 			}
 
-			// Return '0' to indicate they are equal
+			return 0;
+			
+		}
+
+		private int CompareText(ListViewItem itemX, ListViewItem itemY)
+		{
+			int compareResult = _objectCompare.Compare(itemX.SubItems[_columnToSort].Text, itemY.SubItems[_columnToSort].Text);
+			if (_orderOfSort == SortOrder.Ascending)
+			{
+				return compareResult;
+			}
+			if (_orderOfSort == SortOrder.Descending)
+			{
+				return (-compareResult);
+			}
+
 			return 0;
 		}
 
