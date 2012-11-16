@@ -5,3 +5,4 @@
 - XML creation
 - MEF plugin sample
 - Math sammple to show threading perfomance gain
+- EventSet class (Richter)
