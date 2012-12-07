@@ -15,6 +15,7 @@ namespace XmlSamples.Sample01
 		/// <param name="customersXsdPath">ѕуть к файлу customers.xsd</param>
 		/// <returns>Cписок клиентов</returns>
 		/// <remarks>ќбратите внимание, что мы всегда возврашаем коллекцию даже если ничего не прочитали из файла</remarks>
+		/// <exception cref="InvalidCustomerFileException">¬ходной файл не соответствует XML схеме</exception>
 		public static List<Customer> GetCustomersUsingXmlDocument(string customersXmlPath, string customersXsdPath = null)
 		{
 			var customers = new List<Customer>();
@@ -31,7 +32,7 @@ namespace XmlSamples.Sample01
 				}
 				catch (XmlSchemaValidationException ex)
 				{
-					throw new CustomerLoadFailedException("Customer.xml has some errors", ex);
+					throw new InvalidCustomerFileException("Customer.xml has some errors", ex);
 				}
 			}
 
@@ -68,6 +69,7 @@ namespace XmlSamples.Sample01
 		/// <param name="customersXsdPath">ѕуть к файлу customers.xsd</param>
 		/// <returns>Cписок клиентов</returns>
 		/// <remarks>ќбратите внимание, что мы всегда возврашаем коллекцию даже если ничего не прочитали из файла</remarks>
+		/// <exception cref="InvalidCustomerFileException">¬ходной файл не соответствует XML схеме</exception>
 		public static List<Customer> GetCustomersUsingXmlReader(string customersXmlPath, string customersXsdPath = null)
 		{
 			var customers = new List<Customer>();
@@ -113,7 +115,7 @@ namespace XmlSamples.Sample01
 			}
 			catch(XmlSchemaValidationException ex)
 			{
-				throw new CustomerLoadFailedException("Customer.xml has some errors", ex);
+				throw new InvalidCustomerFileException("Customer.xml has some errors", ex);
 			}
 
 			return customers;

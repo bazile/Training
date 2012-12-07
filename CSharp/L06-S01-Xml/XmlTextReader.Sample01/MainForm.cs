@@ -31,7 +31,7 @@ namespace XmlSamples.Sample01
 				//customers = CustomerReader.GetCustomersUsingXmlReader(customersXmlPath, customersXsdPath);
 				customers = CustomerReader.GetCustomersUsingXmlDocument(customersXmlPath, customersXsdPath);
 			}
-			catch(CustomerLoadFailedException)
+			catch(InvalidCustomerFileException)
 			{
 				return;
 			}
