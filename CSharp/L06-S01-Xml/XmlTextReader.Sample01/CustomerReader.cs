@@ -40,23 +40,9 @@ namespace XmlSamples.Sample01
 			nsmgr.AddNamespace("c", CUSTOMERS_NAMESPACE);
 
 			XmlNodeList customerNodes = xmlDoc.DocumentElement.SelectNodes("c:Customer", nsmgr);
-			foreach (XmlElement customerNode in customerNodes)
+			foreach (XmlElement customerElement in customerNodes)
 			{
-				var customer = new Customer { CustomerId = customerNode.GetAttribute("CustomerId") };
-
-				XmlNode companyNameNode = customerNode.SelectSingleNode("c:CompanyName", nsmgr);
-				if (companyNameNode != null)
-				{
-					customer.CompanyName = companyNameNode.InnerText;
-				}
-
-				XmlNode countryNode = customerNode.SelectSingleNode("c:FullAddress/c:Country", nsmgr);
-				if (countryNode != null)
-				{
-					customer.Country = countryNode.InnerText;
-				}
-
-				customers.Add(customer);
+				customers.Add(CreateCustomerFromXmlElement(customerElement, nsmgr));
 			}
 
 			return customers;
@@ -119,6 +105,64 @@ namespace XmlSamples.Sample01
 			}
 
 			return customers;
+		}
+
+		/// <summary>
+		/// Возвращает список клиентов прочитанный из указанного XML файла с помощью классов XmlTextReader и XmlDocument
+		/// </summary>
+		/// <param name="customersXmlPath">Путь к файлу customers.xml</param>
+		/// <returns>Cписок клиентов</returns>
+		/// <remarks>Обратите внимание, что мы всегда возврашаем коллекцию даже если ничего не прочитали из файла</remarks>
+		public static List<Customer> GetCustomersUsingXmlReaderAndXmlDocument(string customersXmlPath)
+		{
+			var customers = new List<Customer>();
+
+			using (var reader = XmlReader.Create(customersXmlPath))
+			{
+				while (reader.Read())
+				{
+					if (reader.NodeType == XmlNodeType.Element)
+					{
+						if (reader.Name == "Customer")
+						{
+							XmlDocument xmlDoc = new XmlDocument();
+							xmlDoc.LoadXml(reader.ReadOuterXml());
+
+							var nsmgr = new XmlNamespaceManager(xmlDoc.NameTable);
+							nsmgr.AddNamespace("c", CUSTOMERS_NAMESPACE);
+
+							customers.Add(CreateCustomerFromXmlElement(xmlDoc.DocumentElement, nsmgr));
+						} // if (reader.Name == "Customer")
+					} // if (reader.NodeType == XmlNodeType.Element)
+				}
+			}
+
+			return customers;
+		}
+
+		/// <summary>
+		/// Создает экземпляр Customer на основе XmlElement'a
+		/// </summary>
+		/// <param name="customerElement"></param>
+		/// <param name="nsmgr"></param>
+		/// <returns></returns>
+		private static Customer CreateCustomerFromXmlElement(XmlElement customerElement, XmlNamespaceManager nsmgr)
+		{
+			var customer = new Customer { CustomerId = customerElement.GetAttribute("CustomerId") };
+
+			XmlNode companyNameNode = customerElement.SelectSingleNode("c:CompanyName", nsmgr);
+			if (companyNameNode != null)
+			{
+				customer.CompanyName = companyNameNode.InnerText;
+			}
+
+			XmlNode countryNode = customerElement.SelectSingleNode("c:FullAddress/c:Country", nsmgr);
+			if (countryNode != null)
+			{
+				customer.Country = countryNode.InnerText;
+			}
+
+			return customer;
 		}
 	}
 }
