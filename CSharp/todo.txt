@@ -6,3 +6,4 @@
 - MEF plugin sample
 - Math sammple to show threading perfomance gain
 - EventSet class (Richter)
+- RSS from internet (ht tp://rss.slashdot.org/Slashdot/slashdot ?)
