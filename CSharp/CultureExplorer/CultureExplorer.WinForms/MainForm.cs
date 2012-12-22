@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -10,6 +11,12 @@ namespace CultureExplorer.WinForms
 
 		public MainForm()
 		{
+			TypeDescriptor.AddProvider(new CultureExplorerTypeDescriptionProvider<Calendar,CalendarTypeDescriptor>(), typeof(Calendar));
+			TypeDescriptor.AddProvider(new CultureExplorerTypeDescriptionProvider<CompareInfo,CompareInfoTypeDescriptor>(), typeof(CompareInfo));
+			TypeDescriptor.AddProvider(new CultureExplorerTypeDescriptionProvider<DateTimeFormatInfo,DateTimeFormatInfoTypeDescriptor>(), typeof(DateTimeFormatInfo));
+			TypeDescriptor.AddProvider(new CultureExplorerTypeDescriptionProvider<NumberFormatInfo,NumberFormatInfoTypeDescriptor>(), typeof(NumberFormatInfo));
+			TypeDescriptor.AddProvider(new CultureExplorerTypeDescriptionProvider<TextInfo,TextInfoTypeDescriptor>(), typeof(TextInfo));
+
 			InitializeComponent();
 
 			InitViewMenu();
@@ -46,16 +53,18 @@ namespace CultureExplorer.WinForms
 
 		private void OnCulturesTreeViewAfterSelect(object sender, TreeViewEventArgs e)
 		{
-			cultureInfoControl.SetDataSource((CultureInfo)e.Node.Tag);
+			//cultureInfoControl.SetDataSource((CultureInfo)e.Node.Tag);
+			propertyGridCulture.SelectedObject = e.Node.Tag;
 		}
 
 		#endregion
 
 		private void InitViewMenu()
 		{
-			AddViewMenuItem("&All", true, CultureTypes.AllCultures);
-			AddViewMenuItem("&Neutral", false, CultureTypes.NeutralCultures);
-			AddViewMenuItem("&Specific", false, CultureTypes.SpecificCultures);
+			AddViewMenuItem("&All cultures"            , true , CultureTypes.AllCultures);
+			AddViewMenuItem("&Neutral cultures"        , false, CultureTypes.NeutralCultures);
+			AddViewMenuItem("&Specific cultures"       , false, CultureTypes.SpecificCultures);
+			AddViewMenuItem("Installed &Win32 cultures", false, CultureTypes.InstalledWin32Cultures);
 		}
 
 		private void AddViewMenuItem(string text, bool isChecked, CultureTypes cultureType)
@@ -85,8 +94,7 @@ namespace CultureExplorer.WinForms
 				TreeNode parentNode = null;
 				foreach (CultureInfo ci in cultures)
 				{
-					var node = new TreeNode {Text = ci.Name};
-					node.Tag = ci;
+					var node = new TreeNode {Text = ci.Name, Tag = ci};
 					if (String.IsNullOrEmpty(node.Text))
 					{
 						node.Text = "<empty>";

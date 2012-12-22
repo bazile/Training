@@ -45,13 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CultureInfoComparer.cs" />
-    <Compile Include="CultureInfoControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CultureInfoControl.Designer.cs">
-      <DependentUpon>CultureInfoControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CultureInfoViewModel.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,9 +53,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CultureInfoControl.resx">
-      <DependentUpon>CultureInfoControl.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="TypeConverters.cs" />
+    <Compile Include="CultureExplorerTypeDescriptionProvider.cs" />
+    <Compile Include="ReadOnlyPropertyDescriptor.cs" />
+    <Compile Include="TypeDescriptors.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -33,11 +33,11 @@
 			this.panel = new System.Windows.Forms.Panel();
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
 			this.treeViewCultures = new System.Windows.Forms.TreeView();
+			this.propertyGridCulture = new System.Windows.Forms.PropertyGrid();
 			this.mainMenu = new System.Windows.Forms.MenuStrip();
 			this.menuItemExplorer = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuItemExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuItemView = new System.Windows.Forms.ToolStripMenuItem();
-			this.cultureInfoControl = new CultureExplorer.WinForms.CultureInfoControl();
 			this.statusStrip.SuspendLayout();
 			this.panel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -51,9 +51,9 @@
 			// 
 			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-			this.statusStrip.Location = new System.Drawing.Point(0, 323);
+			this.statusStrip.Location = new System.Drawing.Point(0, 625);
 			this.statusStrip.Name = "statusStrip";
-			this.statusStrip.Size = new System.Drawing.Size(440, 22);
+			this.statusStrip.Size = new System.Drawing.Size(828, 22);
 			this.statusStrip.TabIndex = 0;
 			this.statusStrip.Text = "statusStrip1";
 			// 
@@ -69,7 +69,7 @@
 			this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel.Location = new System.Drawing.Point(0, 24);
 			this.panel.Name = "panel";
-			this.panel.Size = new System.Drawing.Size(440, 299);
+			this.panel.Size = new System.Drawing.Size(828, 601);
 			this.panel.TabIndex = 1;
 			// 
 			// splitContainer
@@ -85,9 +85,9 @@
 			// 
 			// splitContainer.Panel2
 			// 
-			this.splitContainer.Panel2.Controls.Add(this.cultureInfoControl);
-			this.splitContainer.Size = new System.Drawing.Size(440, 299);
-			this.splitContainer.SplitterDistance = 150;
+			this.splitContainer.Panel2.Controls.Add(this.propertyGridCulture);
+			this.splitContainer.Size = new System.Drawing.Size(828, 601);
+			this.splitContainer.SplitterDistance = 282;
 			this.splitContainer.TabIndex = 0;
 			// 
 			// treeViewCultures
@@ -95,9 +95,21 @@
 			this.treeViewCultures.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.treeViewCultures.Location = new System.Drawing.Point(0, 0);
 			this.treeViewCultures.Name = "treeViewCultures";
-			this.treeViewCultures.Size = new System.Drawing.Size(150, 299);
+			this.treeViewCultures.Size = new System.Drawing.Size(282, 601);
 			this.treeViewCultures.TabIndex = 0;
 			this.treeViewCultures.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.OnCulturesTreeViewAfterSelect);
+			// 
+			// propertyGridCulture
+			// 
+			this.propertyGridCulture.CommandsVisibleIfAvailable = false;
+			this.propertyGridCulture.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.propertyGridCulture.HelpVisible = false;
+			this.propertyGridCulture.Location = new System.Drawing.Point(0, 0);
+			this.propertyGridCulture.Name = "propertyGridCulture";
+			this.propertyGridCulture.PropertySort = System.Windows.Forms.PropertySort.Alphabetical;
+			this.propertyGridCulture.Size = new System.Drawing.Size(542, 601);
+			this.propertyGridCulture.TabIndex = 2;
+			this.propertyGridCulture.ToolbarVisible = false;
 			// 
 			// mainMenu
 			// 
@@ -106,7 +118,7 @@
             this.menuItemView});
 			this.mainMenu.Location = new System.Drawing.Point(0, 0);
 			this.mainMenu.Name = "mainMenu";
-			this.mainMenu.Size = new System.Drawing.Size(440, 24);
+			this.mainMenu.Size = new System.Drawing.Size(828, 24);
 			this.mainMenu.TabIndex = 2;
 			this.mainMenu.Text = "menuStrip1";
 			// 
@@ -131,19 +143,11 @@
 			this.menuItemView.Size = new System.Drawing.Size(44, 20);
 			this.menuItemView.Text = "&View";
 			// 
-			// cultureInfoControl
-			// 
-			this.cultureInfoControl.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.cultureInfoControl.Location = new System.Drawing.Point(0, 0);
-			this.cultureInfoControl.Name = "cultureInfoControl";
-			this.cultureInfoControl.Size = new System.Drawing.Size(286, 299);
-			this.cultureInfoControl.TabIndex = 1;
-			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(440, 345);
+			this.ClientSize = new System.Drawing.Size(828, 647);
 			this.Controls.Add(this.panel);
 			this.Controls.Add(this.statusStrip);
 			this.Controls.Add(this.mainMenu);
@@ -175,7 +179,7 @@
 		private System.Windows.Forms.ToolStripMenuItem menuItemExit;
 		private System.Windows.Forms.ToolStripMenuItem menuItemView;
 		private System.Windows.Forms.ToolStripStatusLabel statusLabel;
-		private CultureInfoControl cultureInfoControl;
+		private System.Windows.Forms.PropertyGrid propertyGridCulture;
 	}
 }
 
