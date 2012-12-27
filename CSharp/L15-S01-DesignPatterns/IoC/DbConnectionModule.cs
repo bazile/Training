@@ -6,7 +6,7 @@ using System.IO;
 using System.Reflection;
 using Ninject.Modules;
 
-namespace ObjectFactory
+namespace Belhard.DesignPatterns.IoC
 {
 	internal class DbConnectionModule : NinjectModule
 	{

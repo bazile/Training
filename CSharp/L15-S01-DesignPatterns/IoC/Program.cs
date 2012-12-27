@@ -2,7 +2,7 @@
 using System.Data;
 using Ninject;
 
-namespace ObjectFactory
+namespace Belhard.DesignPatterns.IoC
 {
 	class Program
 	{
