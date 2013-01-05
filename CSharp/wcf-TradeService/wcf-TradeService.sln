@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeService", "TradeService\TradeService.csproj", "{F35351F0-4547-40B2-8F21-9FC27C6A631A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeService.ConsoleHost", "TradeService.ConsoleHost\TradeService.ConsoleHost.csproj", "{83904100-549A-4494-9391-79321F4B651E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeService.Client", "TradeService.Client\TradeService.Client.csproj", "{01A40527-8B7A-4B4A-B5A1-ED46646A2E8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F35351F0-4547-40B2-8F21-9FC27C6A631A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35351F0-4547-40B2-8F21-9FC27C6A631A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35351F0-4547-40B2-8F21-9FC27C6A631A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35351F0-4547-40B2-8F21-9FC27C6A631A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83904100-549A-4494-9391-79321F4B651E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83904100-549A-4494-9391-79321F4B651E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83904100-549A-4494-9391-79321F4B651E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83904100-549A-4494-9391-79321F4B651E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A40527-8B7A-4B4A-B5A1-ED46646A2E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A40527-8B7A-4B4A-B5A1-ED46646A2E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A40527-8B7A-4B4A-B5A1-ED46646A2E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A40527-8B7A-4B4A-B5A1-ED46646A2E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
