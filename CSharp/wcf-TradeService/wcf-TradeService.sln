@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeService", "TradeService\TradeService.csproj", "{F35351F0-4547-40B2-8F21-9FC27C6A631A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeService.ConsoleHost", "TradeService.ConsoleHost\TradeService.ConsoleHost.csproj", "{83904100-549A-4494-9391-79321F4B651E}"
