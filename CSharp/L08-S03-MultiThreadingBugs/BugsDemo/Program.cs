@@ -28,27 +28,28 @@ namespace BugsDemo
 
 			#region Неатомарная запись и чтение
 
-			var obj = new AtomicityExample();
-			const int runTimes = 10000000;
-			Task setGuidOfZero = Task.Factory.StartNew(() => Parallel.For(0, runTimes, i => obj.SetValue(Guid.Empty)));
-			Task setGuidOfFive = Task.Factory.StartNew(() => Parallel.For(0, runTimes, i => obj.SetValue(new Guid("{55555555-5555-5555-5555-555555555555}"))));
-			Task readAndPrintGuid = Task.Factory.StartNew(
-				() => Parallel.For(0, runTimes, 
-					i =>
-						{
-							Guid guid = obj.GetValue();
-							byte[] bytes = guid.ToByteArray();
-							for (int k=1; k<bytes.Length; k++)
-							{
-								if (bytes[k - 1] != bytes[k])
-								{
-									Console.WriteLine(guid);
-								}
-							}
-						}
-				)
-			);
-			Task.WaitAll(setGuidOfZero, setGuidOfFive, readAndPrintGuid);
+			//var obj = new ClassWithNonAtomicGuidAccess();
+			////var obj = new ClassWithAtomicGuidAccess();
+			//const int runTimes = 10000000;
+			//Task setGuidOfZero = Task.Factory.StartNew(() => Parallel.For(0, runTimes, i => obj.SetValue(Guid.Empty)));
+			//Task readAndPrintGuid = Task.Factory.StartNew(
+			//	() => Parallel.For(0, runTimes, 
+			//		i =>
+			//			{
+			//				Guid guid = obj.GetValue();
+			//				byte[] bytes = guid.ToByteArray();
+			//				for (int k=1; k<bytes.Length; k++)
+			//				{
+			//					if (bytes[k - 1] != bytes[k])
+			//					{
+			//						Console.WriteLine(guid);
+			//					}
+			//				}
+			//			}
+			//	)
+			//);
+			//Task setGuidOfFive = Task.Factory.StartNew(() => Parallel.For(0, runTimes, i => obj.SetValue(new Guid("{55555555-5555-5555-5555-555555555555}"))));
+			//Task.WaitAll(setGuidOfZero, setGuidOfFive, readAndPrintGuid);
 
 			#endregion
 		}
