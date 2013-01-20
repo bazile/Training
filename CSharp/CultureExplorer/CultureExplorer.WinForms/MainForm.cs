@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
+using CultureExplorer.WinForms.Properties;
 
 namespace CultureExplorer.WinForms
 {
@@ -28,6 +29,9 @@ namespace CultureExplorer.WinForms
 
 		private void OnMainFormLoad(object sender, EventArgs e)
 		{
+			//var x = new Settings();
+			//x.
+			//Settings.Default
 			DisplayCultures(CultureTypes.AllCultures);
 		}
 
