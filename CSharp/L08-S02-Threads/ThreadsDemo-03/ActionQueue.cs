@@ -11,7 +11,7 @@ namespace ThreadsDemo.Queue
 		private readonly EventWaitHandle _waitHandle = new AutoResetEvent(false);   //Объект для синхронизации
 		private readonly Action<T> _action;                 //Делегат на метод - обработчик
 
-		public ActionQueue(Action<T> action)                //Конструктор
+		public ActionQueue(Action<T> action)
 		{
 			if (action == null)
 			{

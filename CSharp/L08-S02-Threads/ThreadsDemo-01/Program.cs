@@ -8,17 +8,15 @@ namespace ThreadsDemo.ConsoleMessages
 		static void Main()
 		{
 			var backThread = new Thread(new ThreadStart(PrintMessage));
-			//backThread.IsBackground = true;
-
-			//var paramThread = new Thread(new ParameterizedThreadStart(PrintMessage));
-			//paramThread.IsBackground = true;
-
-			var paramThread = new Thread(new ParameterizedThreadStart(PrintComplexMessage));
-			//paramThread.IsBackground = true;
-
+			backThread.IsBackground = true;
 			backThread.Start();
-			//paramThread.Start("I'm parameterized thread!");
-			paramThread.Start(new PrintMessageData { Message = "I'm super-parameterized thread!", When = DateTime.Now});
+
+			var paramThread = new Thread(new ParameterizedThreadStart(PrintMessage));
+			paramThread.IsBackground = true;
+			paramThread.Start("I'm parameterized thread!");
+			//var paramThread = new Thread(new ParameterizedThreadStart(PrintComplexMessage));
+			//paramThread.IsBackground = true;
+			//paramThread.Start(new PrintMessageData { Message = "I'm super-parameterized thread!", When = DateTime.Now});
 
 			for (int i = 0; i < 100; i++)
 			{
@@ -30,7 +28,7 @@ namespace ThreadsDemo.ConsoleMessages
 			paramThread.Join();
 		}
 
-		public static void PrintMessage()
+		private static void PrintMessage()
 		{
 			for (int i = 0; i < 100; i++)
 			{
@@ -38,7 +36,7 @@ namespace ThreadsDemo.ConsoleMessages
 			}
 		}
 
-		public static void PrintMessage(object text)
+		private static void PrintMessage(object text)
 		{
 			for (int i = 0; i < 100; i++)
 			{
@@ -46,7 +44,7 @@ namespace ThreadsDemo.ConsoleMessages
 			}
 		}
 
-		public static void PrintComplexMessage(object obj)
+		private static void PrintComplexMessage(object obj)
 		{
 			var data = (PrintMessageData)obj;
 			for (int i = 0; i < 100; i++)
