@@ -2,3 +2,9 @@
 	- Бинарные данные в XML (#6)
 	- Неймспесы
 	- Классы
+
+- #8 (mult-threading)
+	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
+	- Пример неправильного использования Thread.Abort
+	- Примеры для TPL (Parallel, Task, TaskFactory)
+	- Примеры async/await
