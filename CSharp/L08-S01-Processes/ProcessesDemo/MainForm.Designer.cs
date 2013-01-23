@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,13 +39,19 @@
 			this.mainStatusStrip = new System.Windows.Forms.StatusStrip();
 			this.infoToolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.panelForProcessList = new System.Windows.Forms.Panel();
+			this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
 			this.processListView = new System.Windows.Forms.ListView();
 			this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeaderThreadCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.autoRefreshToolStripButton = new System.Windows.Forms.ToolStripButton();
+			this.columnHeaderSessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.mainMenuStrip.SuspendLayout();
 			this.mainStatusStrip.SuspendLayout();
 			this.panelForProcessList.SuspendLayout();
+			this.tableLayoutPanel.SuspendLayout();
+			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenuStrip
@@ -81,7 +88,7 @@
 			this.autoRefreshToolStripMenuItem.CheckOnClick = true;
 			this.autoRefreshToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.autoRefreshToolStripMenuItem.Name = "autoRefreshToolStripMenuItem";
-			this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.autoRefreshToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
 			this.autoRefreshToolStripMenuItem.Text = "Auto &refresh";
 			this.autoRefreshToolStripMenuItem.CheckedChanged += new System.EventHandler(this.OnAutoRefreshToolStripMenuItemCheckedChanged);
 			// 
@@ -115,27 +122,43 @@
 			// 
 			// panelForProcessList
 			// 
-			this.panelForProcessList.Controls.Add(this.processListView);
+			this.panelForProcessList.Controls.Add(this.tableLayoutPanel);
 			this.panelForProcessList.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelForProcessList.Location = new System.Drawing.Point(0, 24);
 			this.panelForProcessList.Name = "panelForProcessList";
 			this.panelForProcessList.Size = new System.Drawing.Size(755, 338);
 			this.panelForProcessList.TabIndex = 3;
 			// 
+			// tableLayoutPanel
+			// 
+			this.tableLayoutPanel.ColumnCount = 1;
+			this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel.Controls.Add(this.processListView, 0, 1);
+			this.tableLayoutPanel.Controls.Add(this.toolStrip1, 0, 0);
+			this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel.Name = "tableLayoutPanel";
+			this.tableLayoutPanel.RowCount = 2;
+			this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+			this.tableLayoutPanel.Size = new System.Drawing.Size(755, 338);
+			this.tableLayoutPanel.TabIndex = 4;
+			// 
 			// processListView
 			// 
 			this.processListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderId,
             this.columnHeaderName,
-            this.columnHeaderThreadCount});
+            this.columnHeaderThreadCount,
+            this.columnHeaderSessionId});
 			this.processListView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.processListView.FullRowSelect = true;
 			this.processListView.GridLines = true;
-			this.processListView.Location = new System.Drawing.Point(0, 0);
+			this.processListView.Location = new System.Drawing.Point(3, 28);
 			this.processListView.MultiSelect = false;
 			this.processListView.Name = "processListView";
-			this.processListView.Size = new System.Drawing.Size(755, 338);
-			this.processListView.TabIndex = 3;
+			this.processListView.Size = new System.Drawing.Size(749, 307);
+			this.processListView.TabIndex = 4;
 			this.processListView.UseCompatibleStateImageBehavior = false;
 			this.processListView.View = System.Windows.Forms.View.Details;
 			this.processListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.OnProcessListViewColumnClick);
@@ -157,6 +180,34 @@
 			this.columnHeaderThreadCount.Text = "# of Threads";
 			this.columnHeaderThreadCount.Width = 120;
 			// 
+			// toolStrip1
+			// 
+			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoRefreshToolStripButton});
+			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.Size = new System.Drawing.Size(755, 25);
+			this.toolStrip1.TabIndex = 5;
+			this.toolStrip1.Text = "toolStrip1";
+			// 
+			// autoRefreshToolStripButton
+			// 
+			this.autoRefreshToolStripButton.Checked = true;
+			this.autoRefreshToolStripButton.CheckOnClick = true;
+			this.autoRefreshToolStripButton.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.autoRefreshToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.autoRefreshToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("autoRefreshToolStripButton.Image")));
+			this.autoRefreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.autoRefreshToolStripButton.Name = "autoRefreshToolStripButton";
+			this.autoRefreshToolStripButton.Size = new System.Drawing.Size(23, 22);
+			this.autoRefreshToolStripButton.Text = "Auto refresh";
+			this.autoRefreshToolStripButton.CheckStateChanged += new System.EventHandler(this.OnAutoRefreshToolStripButtonCheckStateChanged);
+			// 
+			// columnHeaderSessionId
+			// 
+			this.columnHeaderSessionId.Text = "Session Id";
+			this.columnHeaderSessionId.Width = 100;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +216,7 @@
 			this.Controls.Add(this.panelForProcessList);
 			this.Controls.Add(this.mainStatusStrip);
 			this.Controls.Add(this.mainMenuStrip);
+			this.DoubleBuffered = true;
 			this.MainMenuStrip = this.mainMenuStrip;
 			this.Name = "MainForm";
 			this.Text = "Process Demo";
@@ -175,6 +227,10 @@
 			this.mainStatusStrip.ResumeLayout(false);
 			this.mainStatusStrip.PerformLayout();
 			this.panelForProcessList.ResumeLayout(false);
+			this.tableLayoutPanel.ResumeLayout(false);
+			this.tableLayoutPanel.PerformLayout();
+			this.toolStrip1.ResumeLayout(false);
+			this.toolStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -189,12 +245,16 @@
 		private System.Windows.Forms.StatusStrip mainStatusStrip;
 		private System.Windows.Forms.ToolStripStatusLabel infoToolStripStatusLabel;
 		private System.Windows.Forms.Panel panelForProcessList;
+		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem autoRefreshToolStripMenuItem;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
 		private System.Windows.Forms.ListView processListView;
 		private System.Windows.Forms.ColumnHeader columnHeaderId;
 		private System.Windows.Forms.ColumnHeader columnHeaderName;
 		private System.Windows.Forms.ColumnHeader columnHeaderThreadCount;
-		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem autoRefreshToolStripMenuItem;
+		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStripButton autoRefreshToolStripButton;
+		private System.Windows.Forms.ColumnHeader columnHeaderSessionId;
 	}
 }
 

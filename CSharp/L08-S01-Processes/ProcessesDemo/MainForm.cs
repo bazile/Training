@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProcessesDemo
@@ -73,10 +74,22 @@ namespace ProcessesDemo
 
 		private void OnAutoRefreshToolStripMenuItemCheckedChanged(object sender, EventArgs e)
 		{
-			refreshTimer.Enabled = autoRefreshToolStripMenuItem.Checked;
+			SetRefreshTimer(autoRefreshToolStripMenuItem.Checked);
+			autoRefreshToolStripButton.Checked = autoRefreshToolStripMenuItem.Checked;
+		}
+
+		private void OnAutoRefreshToolStripButtonCheckStateChanged(object sender, EventArgs e)
+		{
+			SetRefreshTimer(autoRefreshToolStripButton.Checked);
+			autoRefreshToolStripMenuItem.Checked = autoRefreshToolStripButton.Checked;
 		}
 
 		#endregion
+
+		private void SetRefreshTimer(bool enabled)
+		{
+			refreshTimer.Enabled = enabled;
+		}
 
 		private void RefreshProcessList()
 		{
@@ -87,12 +100,13 @@ namespace ProcessesDemo
 				processListView.Items.Clear();
 
 				int threadCount = 0;
-				Process[] processes = Process.GetProcesses();
+				Process[] processes = Process.GetProcesses().OrderBy(p => String.Format("{0}#{1}", p.SessionId, p.ProcessName)).ToArray();
 				foreach (Process p in processes)
 				{
 					var item = new ListViewItem(p.Id.ToString());
 					item.SubItems.Add(p.ProcessName);
 					item.SubItems.Add(p.Threads.Count.ToString());
+					item.SubItems.Add(p.SessionId.ToString());
 					processListView.Items.Add(item);
 
 					threadCount += p.Threads.Count;
@@ -105,9 +119,10 @@ namespace ProcessesDemo
 				processListView.EndUpdate();
 			}
 
-			_columnSorter.SortColumn = 1;
-			_columnSorter.Order = SortOrder.Ascending;
-			processListView.Sort();
+			//_columnSorter.SortColumn = 1;
+			//_columnSorter.Order = SortOrder.Ascending;
+			//processListView.Sort();
 		}
+
 	}
 }
