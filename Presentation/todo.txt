@@ -1,7 +1,10 @@
-﻿- #6 (XML
+﻿- #6 (XML)
 	- Бинарные данные в XML (#6)
 	- Неймспесы
 	- Классы
+
+- #7 (сборки и  рефлексия)
+	- CodeCOM, code expressions
 
 - #8 (mult-threading)
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
