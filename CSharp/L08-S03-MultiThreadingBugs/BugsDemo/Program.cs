@@ -5,6 +5,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 // ReSharper restore RedundantUsingDirective
 
+// *********************************************************
+// ВНИМАНИЕ!
+// Данный пример является иллюстрацией КАК НЕ НАДО писать код!
+// *********************************************************
+
 namespace BugsDemo
 {
 	class Program
