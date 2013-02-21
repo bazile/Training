@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 // TODO: custom templates with drag-n-drop
 // TODO: cell colors
 // TODO: different algorithm selection
+//		Brian's Brain - http://en.wikipedia.org/wiki/Brian%27s_Brain
+//		Wireworld - http://en.wikipedia.org/wiki/Wireworld
 // TODO: FPS counter
 // TODO: Different draw mode: simple, double-buffering, DirectX?
 // http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
