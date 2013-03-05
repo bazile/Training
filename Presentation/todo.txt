@@ -13,8 +13,9 @@
 	- Примеры async/await
 
 - #9 (SQL)
-	- Joins (диаграмма)
+	- Joins (диаграмма) и исправленные примеры
 	- Тестовая БД
+	- INFORMATION_SCHEMA
 
 - WinForms
 	- Extender Provider
