@@ -12,6 +12,10 @@
 	- Примеры для TPL (Parallel, Task, TaskFactory)
 	- Примеры async/await
 
+- #9 (SQL)
+	- Joins (диаграмма)
+	- Тестовая БД
+
 - WinForms
 	- Extender Provider
 	http://msdn.microsoft.com/en-us/library/ms171836.aspx
