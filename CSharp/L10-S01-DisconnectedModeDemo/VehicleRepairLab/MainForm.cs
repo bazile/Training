@@ -24,11 +24,12 @@ namespace VehicleRepairLab
 		{
 			PopulateDataSet();
 
-			var vehicles = _ds.Tables["Vehicles"];
-			DataView view = new DataView(vehicles);
+			//var vehicles = _ds.Tables["Vehicles"];
+			//DataView view = new DataView(vehicles);
 			//view.Sort = "Make ASC, Year DESC";
 			//view.RowFilter = "Make like 'B%' and Year > 2003";
-			dgVehicles.DataSource = view;
+			dgVehicles.DataSource = _ds;
+			dgVehicles.DataMember = "Vehicles";
 			
 			//dgVehicles.DataSource = _ds;
 			//dgVehicles.DataMember = "Vehicles";
