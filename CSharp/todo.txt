@@ -4,7 +4,7 @@
 - string samples (sorting, comparing)
 - XML creation
 - MEF plugin sample
-- Math sammple to show threading perfomance gain
+- Math sample to show threading perfomance gain
 - EventSet class (Richter)
 - RSS from internet (http://rss.slashdot.org/Slashdot/slashdot ?)
 - Design pattern samples

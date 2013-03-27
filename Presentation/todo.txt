@@ -17,9 +17,19 @@
 
 - #9 (SQL)
 	- Joins (диаграмма) и исправленные примеры
-	- Тестовая БД
+	- Тестовая БД + задания на её основе
 	- INFORMATION_SCHEMA
-
+	- Нормализация
+		1NF First normal form
+		2NF Second normal form
+		3NF Third normal form
+		EKNF Elementary Key Normal Form
+		BCNF Boyce–Codd normal form
+		4NF Fourth normal form
+		5NF Fifth normal form
+		DKNF Domain/key normal form
+		6NF Sixth normal form
+	
 - #12 (WPF)
 	- Перевод
 	- Примеры команд
