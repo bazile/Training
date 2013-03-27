@@ -20,7 +20,7 @@ namespace ThreadsDemo.WinForms.Invoke
 		}
 
 		/// <summary>
-		/// Замена для фукнций вида OnEvent
+		/// Замена для функций вида OnEvent
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="evnt"></param>
