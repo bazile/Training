@@ -1,15 +1,15 @@
 lesson-01.pptx Введение в С# и .NET Framework
-lesson-02.pptx Основы ООП
+lesson-02-oop.pptx Основы ООП
 lesson-03.pptx Углубленные основы ООП. Жизненный цикл объекта
-lesson-04.pptx Средства ввода/вывода
-lesson-05.pptx Делегаты и события
-lesson-06.pptx Работа с XML
-lesson-07.pptx Понятие сборки. Отражение
-lesson-08.pptx Многопоточное программирование
-lesson-09.pptx Введение в SQL
-lesson-10.pptx Доступ к данным с использованием ADO.NET
-lesson-11.pptx Language Integrated Query (LINQ)
-lesson-12.pptx Windows  Presentation Foundation (WPF)
-lesson-13.pptx Windows  Communication Foundation (WCF)
-lesson-14.pptx Архитектура приложений
-lesson-15.pptx Паттерны проектирования
+lesson-04-io.pptx Средства ввода/вывода
+lesson-05-events.pptx Делегаты и события
+lesson-06-xml.pptx Работа с XML
+lesson-07-reflection.pptx Понятие сборки. Отражение
+lesson-08-multithreading.pptx Многопоточное программирование
+lesson-09-sql.pptx Введение в SQL
+lesson-10-adonet.pptx Доступ к данным с использованием ADO.NET
+lesson-11-linq.pptx Language Integrated Query (LINQ)
+lesson-12-wpf.pptx Windows  Presentation Foundation (WPF)
+lesson-13-wcf.pptx Windows  Communication Foundation (WCF)
+lesson-14-architecture.pptx Архитектура приложений
+lesson-15-design-patterns.pptx Паттерны проектирования
