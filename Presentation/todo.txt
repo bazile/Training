@@ -34,6 +34,11 @@
 	- Перевод
 	- Примеры команд
 
+- Visual Studio
+	- T4 Templates
+		http://msdn.microsoft.com/en-us/library/vstudio/bb126478.aspx
+		http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.texttemplating.texttransformation.aspx
+			
 - WinForms
 	- Extender Provider
 	http://msdn.microsoft.com/en-us/library/ms171836.aspx
