@@ -7,6 +7,7 @@
 	- Классы
 
 - #7 (сборки и  рефлексия)
+	- Разница между const и static readonly полями
 	- CodeCOM, code expressions
 
 - #8 (mult-threading)
