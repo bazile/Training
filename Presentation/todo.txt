@@ -1,5 +1,9 @@
-﻿* Добавить имена тем к названиям файлов
-* ISO образ (OS+VS)
+﻿- #1
+	Список книг
+		http://sergeyteplyakov.blogspot.com/2010/03/blog-post.html
+		http://sergeyteplyakov.blogspot.com/2011/04/cnet.html
+	- String.Compare vs	String.Equals
+		http://blogs.msdn.com/b/bclteam/archive/2007/05/31/string-compare-string-equals-josh-free.aspx
 
 - #6 (XML)
 	- Бинарные данные в XML (#6)
@@ -30,10 +34,23 @@
 		5NF Fifth normal form
 		DKNF Domain/key normal form
 		6NF Sixth normal form
+	- Утилиты для работы с БД		
+		- RedGate SQL Search
+		- RedGate SQL Toolbelt, $
+		- Profiler
+
+- #10 - ADO.NET
+	- Tracing
+	- EF Tracing
+		ObjectQuery.ToTraceString
+		http://msdn.microsoft.com/en-us/library/system.data.objects.objectquery.totracestring.aspx
 	
 - #12 (WPF)
 	- Перевод
 	- Примеры команд
+
+- #13 (WCF)
+	http://habrahabr.ru/post/116764/
 
 - Visual Studio
 	- T4 Templates
