@@ -6,10 +6,10 @@ namespace ThreadsDemo.Queue
 {
 	public class ActionQueue<T> : IDisposable where T : class
 	{
-		private readonly Queue<T> _queue = new Queue<T>();  //Очередь объектов
-		private readonly Thread _thread;                    //Поток - потребитель
-		private readonly EventWaitHandle _waitHandle = new AutoResetEvent(false);   //Объект для синхронизации
-		private readonly Action<T> _action;                 //Делегат на метод - обработчик
+		private readonly Queue<T> _queue = new Queue<T>();  // Очередь объектов
+		private readonly Thread _thread;                    // Поток - потребитель
+		private readonly EventWaitHandle _waitHandle = new AutoResetEvent(false);   // Объект для синхронизации
+		private readonly Action<T> _action;                 // Делегат на метод-обработчик
 
 		public ActionQueue(Action<T> action)
 		{
@@ -17,9 +17,9 @@ namespace ThreadsDemo.Queue
 			{
 				throw new ArgumentNullException("action");
 			}
-			_action = action;                   //Устанавливаем делегат на метод-обработчик
+			_action = action;                   // Запоминаем делегат на метод-обработчик
+
 			_thread = new Thread(MainLoop);     //Запускаем поток
-			_thread.IsBackground = true;
 			_thread.Start();
 		}
 

@@ -14,11 +14,18 @@ namespace ThreadsDemo.Queue
 			for (;;)
 			{
 				string line = Console.ReadLine();
-				if (String.IsNullOrEmpty(line)) break;
-
-				foreach (char ch in line)
+				if (String.IsNullOrEmpty(line))
 				{
-					actionQueue.EnqueueElement(ch.ToString());
+					// Даем очереди сигнал закончить обработку
+					actionQueue.EnqueueElement(null);
+					break;
+				}
+				else
+				{
+					foreach (char ch in line)
+					{
+						actionQueue.EnqueueElement(ch.ToString());
+					}
 				}
 			}
 		}

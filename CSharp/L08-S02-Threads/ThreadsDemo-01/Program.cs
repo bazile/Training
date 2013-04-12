@@ -20,7 +20,7 @@ namespace ThreadsDemo.ConsoleMessages
 
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine("I'm main thread!");
+				Console.WriteLine("[{0}] I'm main thread!", i);
 			}
 
 			// Ожидаем завершения потоков
@@ -32,7 +32,7 @@ namespace ThreadsDemo.ConsoleMessages
 		{
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine("I'm background thread!");
+				Console.WriteLine("[{0}] I'm background thread!", i);
 			}
 		}
 
@@ -40,7 +40,7 @@ namespace ThreadsDemo.ConsoleMessages
 		{
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine(text);
+				Console.WriteLine("[{0}] {1}", i, text);
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace ThreadsDemo.ConsoleMessages
 			var data = (PrintMessageData)obj;
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine("{0:g} - {1}", data.When, data.Message);
+				Console.WriteLine("[{0}] {1:g} - {2}", i, data.When, data.Message);
 			}
 		}
 
