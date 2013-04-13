@@ -99,8 +99,12 @@ namespace ProcessesDemo
 			{
 				processListView.Items.Clear();
 
+				// Заполняем ListView списоком процессов
 				int threadCount = 0;
-				Process[] processes = Process.GetProcesses().OrderBy(p => String.Format("{0}#{1}", p.SessionId, p.ProcessName)).ToArray();
+				// Получаем список процеесов отсортированных по номеру сессии и имени процесса
+				Process[] processes = Process.GetProcesses()
+					.OrderBy(p => String.Format("{0}#{1}", p.SessionId, p.ProcessName))
+					.ToArray();
 				foreach (Process p in processes)
 				{
 					var item = new ListViewItem(p.Id.ToString());
@@ -112,6 +116,26 @@ namespace ProcessesDemo
 					threadCount += p.Threads.Count;
 				}
 
+				// Скрываем или показываем колонку с номером сессии в зависимости от наличия 
+				//	процессов запущенных в разных сессиях
+				bool hasDifferentSessions = processes[0].SessionId != processes[processes.Length - 1].SessionId;
+				bool sessionIdColumnVisible = processListView.Columns.Count == 4;
+				if (hasDifferentSessions)
+				{
+					if (!sessionIdColumnVisible)
+					{
+						processListView.Columns.Insert(columnHeaderSessionId.DisplayIndex, columnHeaderSessionId);
+					}
+				}
+				else
+				{
+					if (sessionIdColumnVisible)
+					{
+						processListView.Columns.Remove(columnHeaderSessionId);
+					}
+				}
+
+				// Обновляем статистику в строке статуса
 				infoToolStripStatusLabel.Text = String.Format("Processes - {0}. Threads - {1}", processes.Length, threadCount);
 			}
 			finally

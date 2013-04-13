@@ -57,9 +57,9 @@
 			// mainMenuStrip
 			// 
 			this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.exitToolStripMenuItem});
+			this.runToolStripMenuItem,
+			this.viewToolStripMenuItem,
+			this.exitToolStripMenuItem});
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
 			this.mainMenuStrip.Size = new System.Drawing.Size(755, 24);
@@ -77,7 +77,7 @@
 			// viewToolStripMenuItem
 			// 
 			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoRefreshToolStripMenuItem});
+			this.autoRefreshToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
 			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.viewToolStripMenuItem.Text = "&View";
@@ -107,7 +107,7 @@
 			// mainStatusStrip
 			// 
 			this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.infoToolStripStatusLabel});
+			this.infoToolStripStatusLabel});
 			this.mainStatusStrip.Location = new System.Drawing.Point(0, 362);
 			this.mainStatusStrip.Name = "mainStatusStrip";
 			this.mainStatusStrip.Size = new System.Drawing.Size(755, 22);
@@ -147,10 +147,10 @@
 			// processListView
 			// 
 			this.processListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderId,
-            this.columnHeaderName,
-            this.columnHeaderThreadCount,
-            this.columnHeaderSessionId});
+			this.columnHeaderId,
+			this.columnHeaderName,
+			this.columnHeaderThreadCount,
+			this.columnHeaderSessionId});
 			this.processListView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.processListView.FullRowSelect = true;
 			this.processListView.GridLines = true;
@@ -183,7 +183,7 @@
 			// toolStrip1
 			// 
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoRefreshToolStripButton});
+			this.autoRefreshToolStripButton});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(755, 25);
@@ -257,4 +257,3 @@
 		private System.Windows.Forms.ColumnHeader columnHeaderSessionId;
 	}
 }
-
