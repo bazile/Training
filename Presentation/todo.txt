@@ -9,7 +9,10 @@
 	- Бинарные данные в XML (#6)
 	- Неймспесы
 	- Классы
-
+	- Безопасность XML
+		http://blogs.iis.net/nazim/archive/2013/03/13/safely-handling-untrusted-xml-server-side.aspx
+		Смотри также ниже
+				
 - #7 (сборки и  рефлексия)
 	- Разница между const и static readonly полями
 	- CodeCOM, code expressions
@@ -60,3 +63,45 @@
 - WinForms
 	- Extender Provider
 	http://msdn.microsoft.com/en-us/library/ms171836.aspx
+
+- Xml security
+			DoS:
+			<?xml version="1.0"?> 
+			<!DOCTYPE lolz [ 
+  				<!ENTITY lol "lol"> 
+  				<!ENTITY lol2 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;"> 
+  				<!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;"> 
+  				<!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;"> 
+  				<!ENTITY lol5 "&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;"> 
+  				<!ENTITY lol6 "&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;"> 
+  				<!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;"> 
+  				<!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;"> 
+  				<!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
+			]> 
+			<lolz>&lol9;</lolz>
+
+			Information Disclosure:
+				<!DOCTYPE doc [     
+    				<!ENTITY win SYSTEM “c:\windows\win.ini"> 
+				]> 
+				<doc> 
+					&win; 
+				</doc> 			
+
+
+System.Xml.XmlDocument 
+	Load and LoadXml UNSAFE unless you pass a safe XmlReader (DTD disabled) into it during initialization. 
+	InnerXml is NEVER SAFE. 
+System.Xml.XmlTextReader 
+	UNSAFE by default in .NET 3.5 and below. 
+		You need to set ProhibitDtd=true to make this safe. 
+	.NET 4.0 and above are safe be default. 
+System.Xml.Xsl.XslTransform 
+	UNSAFE as it supports both entities and XSL script. 
+System.Xml.Xsl.XslCompiledTransform 
+	Safe for XSL script since this is blocked by default. 
+	UNSAFE for entity expansion unless a secure resolver is specified. 
+		Pass an instance of XmlSecureResolver or null 
+System.Web.UI.WebControls.XmlDataSource 
+	NEVER SAFE – supports both entities and XSL script. 
+	
