@@ -55,6 +55,12 @@
 - #13 (WCF)
 	http://habrahabr.ru/post/116764/
 
+- #15 (patterns)
+	- Add anti-patterns
+	- Add code anti-patterns
+		http://blogs.msdn.com/b/oldnewthing/archive/2011/12/27/10251210.aspx
+
+
 - Visual Studio
 	- T4 Templates
 		http://msdn.microsoft.com/en-us/library/vstudio/bb126478.aspx
