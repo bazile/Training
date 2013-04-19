@@ -41,6 +41,7 @@
 		- RedGate SQL Search
 		- RedGate SQL Toolbelt, $
 		- Profiler
+		- Command lines: sqlcmd, bcp, wizard, etc
 
 - #10 - ADO.NET
 	- Tracing
