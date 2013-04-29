@@ -2,11 +2,15 @@
 	Список книг
 		http://sergeyteplyakov.blogspot.com/2010/03/blog-post.html
 		http://sergeyteplyakov.blogspot.com/2011/04/cnet.html
+		http://oz.by/books/more1037334.html
+		http://www.ozon.ru/context/detail/id/1871774/
+		http://www.ozon.ru/context/detail/id/20217137/
+		http://www.ozon.ru/context/detail/id/4884925/
 	- String.Compare vs	String.Equals
 		http://blogs.msdn.com/b/bclteam/archive/2007/05/31/string-compare-string-equals-josh-free.aspx
 
 - #6 (XML)
-	- Бинарные данные в XML (#6)
+	- Бинарные данные в XML
 	- Неймспесы
 	- Классы
 	- Безопасность XML
@@ -56,11 +60,13 @@
 - #13 (WCF)
 	http://habrahabr.ru/post/116764/
 
+- #14 (architecture)
+	- Перевод	
+
 - #15 (patterns)
 	- Add anti-patterns
 	- Add code anti-patterns
 		http://blogs.msdn.com/b/oldnewthing/archive/2011/12/27/10251210.aspx
-
 
 - Visual Studio
 	- T4 Templates
