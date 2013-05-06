@@ -68,6 +68,11 @@
 	- Add code anti-patterns
 		http://blogs.msdn.com/b/oldnewthing/archive/2011/12/27/10251210.aspx
 
+- C# duck typing
+	- foreach
+	- dynamic
+	- object initialier (Add method)
+	
 - Visual Studio
 	- T4 Templates
 		http://msdn.microsoft.com/en-us/library/vstudio/bb126478.aspx
