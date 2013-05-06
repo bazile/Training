@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugsDemo", "BugsDemo\BugsDemo.csproj", "{A826234C-1FD7-4FD7-8BA1-D8475BA27F67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticDeadlock", "StaticDeadlock\StaticDeadlock.csproj", "{94B891AB-395B-4B82-80DC-29D7F19656E8}"
