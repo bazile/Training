@@ -8,6 +8,9 @@
 		http://www.ozon.ru/context/detail/id/4884925/
 	- String.Compare vs	String.Equals
 		http://blogs.msdn.com/b/bclteam/archive/2007/05/31/string-compare-string-equals-josh-free.aspx
+	- double vs decimal
+		http://csharpindepth.com/Articles/General/FloatingPoint.aspx
+		http://csharpindepth.com/Articles/General/Decimal.aspx
 
 - #6 (XML)
 	- Бинарные данные в XML
