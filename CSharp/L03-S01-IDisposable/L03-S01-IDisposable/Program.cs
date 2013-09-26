@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace L03_S01_IDisposable
@@ -6,59 +7,103 @@ namespace L03_S01_IDisposable
 	class Program
 	{
 		static void Main()
-		{
-			#region Пример using/IDisposable
+        {
+            #region Работа с потоками без использования using() { ... }
 
-			using (Resource r = new Resource())
-			{
-			    // код внутри using() { ... }
-			}
+            //string fileName = Guid.NewGuid().ToString() + ".txt";
+            //string filePath = Path.Combine(Path.GetTempPath(), fileName);
 
-			#region Код генерируемый компилятором для блока using () { .... }
+            //StreamWriter writer = new StreamWriter(filePath);
+            //writer.WriteLine("Line 1");
+            //writer.WriteLine("Строка 2");
+            //writer.Close();
 
-			//{
-			//	Resource r = new Resource();
-			//	try
-			//	{
-			//		// код внутри using() { ... }
-			//	}
-			//	finally
-			//	{
-			//		r.Dispose();
-			//	}
-			//}
+            //StreamReader reader = new StreamReader(filePath);
+            //while (!reader.EndOfStream)
+            //{
+            //    Console.WriteLine(reader.ReadLine());
+            //}
+            //reader.Close();
 
-			#endregion
+            //File.Delete(filePath);
 
-			#endregion
+            #endregion
 
-			#region Пример using/IDisposable с object initializer
+            #region Работа с потоками используя using() { ... }
 
-			//using (Resource r = new Resource())
-			//{
-			//	r.ThrowException = true;
-			//	// код внутри using() { ... }
-			//}
+            //string fileName = Guid.NewGuid().ToString() + ".txt";
+            //string filePath = Path.Combine(Path.GetTempPath(), fileName);
 
-			#region Код генерируемый компилятором для блока using () { .... }
+            //using (StreamWriter writer = new StreamWriter(filePath))
+            //{
+            //    writer.WriteLine("Line 1");
+            //    writer.WriteLine("Строка 2");
+            //}
 
-			//{
-			//	Resource r = new Resource();
-			//	r.ThrowException = false;
-			//	try
-			//	{
-			//		r.ThrowException = true;
-			//		// код внутри using() { ... }
-			//	}
-			//	finally
-			//	{
-			//		r.Dispose();
-			//	}
-			//}
+            //using (StreamReader reader = new StreamReader(filePath))
+            //{
+            //    while (!reader.EndOfStream)
+            //    {
+            //        Console.WriteLine(reader.ReadLine());
+            //    }
+            //}
 
-			#endregion
+            //File.Delete(filePath);
 
-			#endregion
+            #endregion
+
+            #region Пример using/IDisposable
+
+		    //using (Resource r = new Resource())
+		    //{
+		    //    // код внутри using() { ... }
+		    //}
+
+		    #region Код генерируемый компилятором для блока using () { .... }
+
+            //{
+            //	Resource r = new Resource();
+            //	try
+            //	{
+            //		// код внутри using() { ... }
+            //	}
+            //	finally
+            //	{
+            //		r.Dispose();
+            //	}
+            //}
+
+		    #endregion
+
+		    #endregion
+
+		    #region Пример using/IDisposable с object initializer
+
+            //using (Resource r = new Resource())
+            //{
+            //	r.ThrowException = true;
+            //	// код внутри using() { ... }
+            //}
+
+		    #region Код генерируемый компилятором для блока using () { .... }
+
+            //{
+            //	Resource r = new Resource();
+            //	r.ThrowException = false;
+            //	try
+            //	{
+            //		r.ThrowException = true;
+            //		// код внутри using() { ... }
+            //	}
+            //	finally
+            //	{
+            //		r.Dispose();
+            //	}
+            //}
+
+		    #endregion
+
+		    #endregion
 		}
 	}
 
