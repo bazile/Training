@@ -66,6 +66,11 @@ namespace ComplexNumber.Tests
             ComplexNumber x = new ComplexNumber(0);
             Assert.IsTrue(x != null);
             Assert.IsFalse(x == null);
+
+            x = null;
+            ComplexNumber y = null;
+            Assert.IsTrue(x == y);
+            Assert.IsFalse(x != y);
         }
 
         [Test]
