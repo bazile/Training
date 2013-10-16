@@ -111,6 +111,8 @@
 	- EF Tracing
 		ObjectQuery.ToTraceString
 		http://msdn.microsoft.com/en-us/library/system.data.objects.objectquery.totracestring.aspx
+	- EF		
+		http://www.entityframeworktutorial.net/update-entity-in-entity-framework.aspx		
 	
 - #12 (WPF)
 	- Перевод
