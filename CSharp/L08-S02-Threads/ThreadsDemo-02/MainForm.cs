@@ -1,6 +1,8 @@
 ﻿#define USE_INVOKE // Закоментируйте эту строку чтобы получить ошибку "Cross-thread operation not valid: Control 'XXX' accessed from a thread other than the thread it was created on."
 
 using System;
+using System.Drawing;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -50,5 +52,13 @@ namespace ThreadsDemo.WinForms.Invoke
 		{
 			startButton.Enabled = true;
 		}
+
+        private void OnLoad(object sender, EventArgs e)
+        {
+            this.MinimumSize = new Size(this.Width, this.Height);
+
+            int maxWidth = Screen.AllScreens.Min(scr => scr.WorkingArea.Width);
+            this.MaximumSize = new Size(maxWidth, this.Height);
+        }
 	}
 }

@@ -7,16 +7,17 @@ namespace ThreadsDemo.ConsoleMessages
 	{
 		static void Main()
 		{
-			var backThread = new Thread(new ThreadStart(PrintMessage));
-			backThread.IsBackground = true;
-			backThread.Start();
+			var printMsgThread = new Thread(new ThreadStart(PrintMessage));
+            //printMsgThread.IsBackground = true;
+			printMsgThread.Start();
 
-			var paramThread = new Thread(new ParameterizedThreadStart(PrintMessage));
-			paramThread.IsBackground = true;
-			paramThread.Start("I'm parameterized thread!");
-			//var paramThread = new Thread(new ParameterizedThreadStart(PrintComplexMessage));
-			//paramThread.IsBackground = true;
-			//paramThread.Start(new PrintMessageData { Message = "I'm super-parameterized thread!", When = DateTime.Now});
+            //var printThreadWithParam = new Thread(new ParameterizedThreadStart(PrintMessage));
+            ////printThreadWithParam.IsBackground = true;
+            //printThreadWithParam.Start("I'm parameterized thread!");
+
+            //var printThreadWithComplexParam = new Thread(new ParameterizedThreadStart(PrintComplexMessage));
+            ////printThreadWithComplexParam.IsBackground = true;
+            //printThreadWithComplexParam.Start(new PrintMessageData { Message = "I'm super-parameterized thread!", When = DateTime.Now });
 
 			for (int i = 0; i < 100; i++)
 			{
@@ -24,8 +25,8 @@ namespace ThreadsDemo.ConsoleMessages
 			}
 
 			// Ожидаем завершения потоков
-			backThread.Join();
-			paramThread.Join();
+			printMsgThread.Join();
+			//printThreadWithParam.Join();
 		}
 
 		private static void PrintMessage()
@@ -46,7 +47,7 @@ namespace ThreadsDemo.ConsoleMessages
 
 		private static void PrintComplexMessage(object obj)
 		{
-			var data = (PrintMessageData)obj;
+            var data = (PrintMessageData)obj;
 			for (int i = 0; i < 100; i++)
 			{
 				Console.WriteLine("[{0}] {1:g} - {2}", i, data.When, data.Message);
