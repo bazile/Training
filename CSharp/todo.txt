@@ -1,10 +1,10 @@
+- XML creation
+- string samples (sorting, comparing)
+- Math sample to show threading perfomance gain
+- Design pattern samples
+
 - manifest/UAC sample with elevation point(s)
 	http://msdn.microsoft.com/en-us/library/windows/desktop/bb756929.aspx
 - shortcut management
-- string samples (sorting, comparing)
-- XML creation
 - MEF plugin sample
-- Math sample to show threading perfomance gain
-- EventSet class (Richter)
 - RSS from internet (http://rss.slashdot.org/Slashdot/slashdot ?)
-- Design pattern samples

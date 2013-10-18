@@ -129,6 +129,10 @@
 	- Add code anti-patterns
 		http://blogs.msdn.com/b/oldnewthing/archive/2011/12/27/10251210.aspx
 
+- Misc
+	Hidden Features of C#?
+		http://stackoverflow.com/questions/9033/hidden-features-of-c/10207#10207
+
 - C# duck typing
 	- foreach
 	- dynamic
