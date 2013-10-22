@@ -1,4 +1,7 @@
-﻿- #1
+﻿- All
+	- Вопросы для самопроверки в конце
+
+- #1
 	Список книг
 		http://sergeyteplyakov.blogspot.com/2010/03/blog-post.html
 		http://sergeyteplyakov.blogspot.com/2011/04/cnet.html
@@ -27,6 +30,7 @@
 
 - #6 (XML)
 	- Неймспесы
+	- XML фрагменты (Fragment)
 	- Классы
 	- Безопасность XML
 		http://blogs.iis.net/nazim/archive/2013/03/13/safely-handling-untrusted-xml-server-side.aspx
@@ -133,6 +137,11 @@
 	- Add anti-patterns
 	- Add code anti-patterns
 		http://blogs.msdn.com/b/oldnewthing/archive/2011/12/27/10251210.aspx
+
+- Tools-Windows
+	- Утилиты командной строки
+		- tasklist
+		- shutdown
 
 - Misc
 	Hidden Features of C#?
