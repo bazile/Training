@@ -24,6 +24,7 @@
 	- Сборщик мусора
 		- класс GC
 		- настройки GC
+
 - #6 (XML)
 	- Неймспесы
 	- Классы
@@ -110,6 +111,7 @@
 		- Command lines: sqlcmd, bcp, wizard, etc
 
 - #10 - ADO.NET
+	- Разделить презентацию по ADO.NET на три части: disconnected, connected и EF
 	- Tracing
 	- EF Tracing
 		ObjectQuery.ToTraceString
