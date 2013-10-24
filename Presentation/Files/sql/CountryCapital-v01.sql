@@ -1,16 +1,23 @@
+/*
+
+    СТОЛИЦЫ СТРАН МИРА. Первая версия.
+    Все данные хранятся в одной таблице
+
+*/
+
 USE master
 GO
 CREATE DATABASE BelhardTraining
-	COLLATE Cyrillic_General_CS_AI
+    COLLATE Cyrillic_General_CS_AI
 GO
 USE BelhardTraining
 GO
 
 CREATE TABLE CountryCapital
 (
-    PartOfWorld varchar(20)  NOT NULL,
+    PartOfWorld varchar(20) NOT NULL,
     Country     varchar(30) NOT NULL,
-	CapitalCity varchar(40) NOT NULL
+    CapitalCity varchar(40) NOT NULL
 )
 GO
 
@@ -221,9 +228,7 @@ INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity)
 
 SELECT * FROM CountryCapital
 
-
 /*
 USE master
 DROP DATABASE BelhardTraining
 */
-
