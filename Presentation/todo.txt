@@ -128,9 +128,11 @@
 		- RedGate SQL Toolbelt, $
 		- Profiler
 		- Command lines: sqlcmd, bcp, wizard, etc
+	- Database проекты в Visual Studio
 
 - #10 - ADO.NET
 	- Разделить презентацию по ADO.NET на три части: disconnected, connected и EF
+	- Default и Named экземпляры SQL Server
 	- Tracing
 	- EF Tracing
 		ObjectQuery.ToTraceString
