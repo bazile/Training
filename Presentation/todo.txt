@@ -40,6 +40,9 @@
 		- класс GC
 		- настройки GC
 
+- #5 (events)
+	- События и исключения
+
 - #6 (XML)
 	- Неймспесы
 	- XML фрагменты (Fragment)
@@ -95,7 +98,6 @@
 	- CodeCOM, code expressions
 
 - #8 (mult-threading)
-	- Многопоточность и исключения
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
 	- Пример неправильного использования Thread.Abort
 	- Примеры для TPL (Parallel, Task, TaskFactory)
@@ -109,6 +111,7 @@
 - #9 (SQL)
 	- Joins (диаграмма) и исправленные примеры
 	- Тестовая БД + задания на её основе
+		- Реки, города
 	- INFORMATION_SCHEMA
 	- Нормализация
 		1NF First normal form
