@@ -7,8 +7,8 @@
     <ProjectGuid>{511781DA-6080-4BC3-8EFA-7C92DC66C1B6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FiguresDemo</RootNamespace>
-    <AssemblyName>FiguresDemo</AssemblyName>
+    <RootNamespace>BelhardTraining.FiguresDemo</RootNamespace>
+    <AssemblyName>FiguresDemo01</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -36,7 +36,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Figures.cs" />
