@@ -169,6 +169,8 @@
 		- nbtstat
 		- net
 		- netsh
+		- eventcreate
+			http://technet.microsoft.com/en-us/library/cc755240.aspx
 	- power shell		
 
 - Misc

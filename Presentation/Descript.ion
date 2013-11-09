@@ -1,3 +1,5 @@
+code-style.docx Рекомендуемый стиль программирования
+intro.pptx Введение в курс
 lesson-01.pptx Введение в С# и .NET Framework
 lesson-02-oop.pptx Основы ООП
 lesson-03.pptx Углубленные основы ООП. Жизненный цикл объекта
@@ -13,3 +15,7 @@ lesson-12-wpf.pptx Windows  Presentation Foundation (WPF)
 lesson-13-wcf.pptx Windows  Communication Foundation (WCF)
 lesson-14-architecture.pptx Архитектура приложений
 lesson-15-design-patterns.pptx Паттерны проектирования
+self-check-questions.docx Вопросы для самопроверки
+tools-visual-studio.pptx Visual Studio
+tools-windows-sdk.pptx Windows SDK
+tools-windows.pptx Windows
