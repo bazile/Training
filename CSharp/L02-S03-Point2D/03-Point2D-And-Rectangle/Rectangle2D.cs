@@ -6,7 +6,9 @@ namespace BelhardTraining.PointDemo
     {
         private int _width;
         private int _height;
+
         public Point2D TopLeft { get; set; }
+
         public int Width
         {
             get { return _width; }
@@ -35,7 +37,8 @@ namespace BelhardTraining.PointDemo
 
         public Rectangle2D(int width, int height)
         {
-            
+	        Width = width;
+	        Height = height;
         }
     }
 }
