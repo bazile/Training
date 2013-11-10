@@ -101,6 +101,7 @@
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
 	- Пример неправильного использования Thread.Abort
 	- Примеры для TPL (Parallel, Task, TaskFactory)
+	- [MethodImpl(MethodImplOptions.Synchronized)] => неявный lock(this)
 	- Примеры async/await
 	- Порядок (via http://sergeyteplyakov.blogspot.com/2013/09/blog-post_24.html)
 		APM http://msdn.microsoft.com/en-us/library/ms228963.aspx
@@ -188,6 +189,13 @@
 	DebuggerNonUserCodeAttribute
 	
 - Visual Studio
+	- Введение в Visual Studio 2010 с картинками
+		- Создание проекта
+		- Solution vs Project
+		- Solution Explorer/Properties
+		- Отладчик
+			- Точки останова
+			- Окна Locals/Watch
 	- T4 Templates
 		http://msdn.microsoft.com/en-us/library/vstudio/bb126478.aspx
 		http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.texttemplating.texttransformation.aspx
