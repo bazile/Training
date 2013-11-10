@@ -73,6 +73,22 @@ namespace ComplexNumber.Tests
             Assert.IsFalse(x != y);
         }
 
+		[Test]
+		[Category("Operator overloading")]
+		public void NullIsLessThanComplexNumber()
+		{
+			ComplexNumber x = new ComplexNumber(0);
+			IComparable<ComplexNumber> comparable = x as IComparable<ComplexNumber>;
+			if (comparable == null)
+			{
+				Assert.Inconclusive("Type doesn't implement IComparable<ComplexNumber>");
+			}
+			else
+			{
+				Assert.GreaterOrEqual(comparable.CompareTo(null), 0);
+			}
+		}
+
         [Test]
         [Category("Operator overloading")]
         [TestCaseSource(typeof(ComplexNumberFixtureData), "AddData")]
