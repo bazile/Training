@@ -8,7 +8,7 @@ namespace ExceptionsDemo
 	 *		Имя класса должно заканчиваться на Exception
 	 *		Наследуемся от подходящего Exception-класса
 	 *		Помечаем класс атрибутом Serializable
-	 *		Определяем все четыре конструктора
+	 *		Определяем три public-конструктора
 	*/
 	[Serializable]
 	public class DeepThoughtException : Exception
@@ -25,8 +25,8 @@ namespace ExceptionsDemo
 		{
 		}
 
-		protected DeepThoughtException(SerializationInfo info, StreamingContext context) : base(info, context)
-		{
-		}
+	    protected DeepThoughtException(SerializationInfo info, StreamingContext context) : base(info, context)
+	    {
+	    }
 	}
 }
