@@ -114,6 +114,8 @@
 	- Тестовая БД + задания на её основе
 		- Реки, города
 	- INFORMATION_SCHEMA
+	- Документирование БД
+		http://blogs.lessthandot.com/index.php/DataMgmt/DBAdmin/document-your-sql-server-databases
 	- Нормализация
 		1NF First normal form
 		2NF Second normal form
