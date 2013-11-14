@@ -146,6 +146,10 @@
 - #12 (WPF)
 	- Перевод
 	- Примеры команд
+	- Tools
+		- Blend
+		XAML Spy
+			http://xamlspy.com/learn/xaml-spy-express
 
 - #13 (WCF)
 	http://habrahabr.ru/post/116764/
