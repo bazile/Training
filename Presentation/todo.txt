@@ -165,6 +165,9 @@
 		
 - Tools-Windows
 	- Утилиты командной строки
+		- cmd
+			tab
+			F7
 		- tasklist
 		- shutdown
 		- icacls
@@ -173,6 +176,8 @@
 		- msconfig.exe
 		- findstr.exe
 		- ipconfig
+		- netstat
+			netstat –noa 
 		- nbtstat
 		- net
 		- netsh
