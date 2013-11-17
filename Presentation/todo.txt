@@ -215,4 +215,7 @@
 	- Extender Provider
 	http://msdn.microsoft.com/en-us/library/ms171836.aspx
 
-	
+- Директивы
+	#if
+	#define
+	#warning	
