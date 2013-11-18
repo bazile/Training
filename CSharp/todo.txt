@@ -1,3 +1,5 @@
+- Убрать префикс _ !
+
 - XML creation
 - string samples (sorting, comparing)
 - Math sample to show threading perfomance gain
