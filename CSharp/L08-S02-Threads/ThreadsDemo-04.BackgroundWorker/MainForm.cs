@@ -18,8 +18,7 @@ namespace BelhardTraining.PiCalc
             btnStart.Enabled = false;
             btnCancel.Visible = true;
 
-            //const int numIterations = 10000000;
-            const int numIterations = int.MaxValue;
+            const int numIterations = 10000000;
             backgroundWorker.RunWorkerAsync(numIterations);
         }
 
@@ -39,11 +38,10 @@ namespace BelhardTraining.PiCalc
             {
                 piCalc.Run(numIterations / 100);
 
-                worker.ReportProgress(i, piCalc.Pi);
+                worker.ReportProgress(i, piCalc.PI);
                 if (worker.CancellationPending) break;
             }
-            worker.ReportProgress(100, piCalc.Pi);
-
+            worker.ReportProgress(100, piCalc.PI);
         }
 
         private void OnWorkProgressChanged(object sender, ProgressChangedEventArgs e)
