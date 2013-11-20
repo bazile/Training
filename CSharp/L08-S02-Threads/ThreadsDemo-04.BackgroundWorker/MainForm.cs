@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace BelhardTraining.PiCalc
 {
+    // TODO: Ability to save and resume
+    // TODO: Display progress in task bar
+
     public partial class MainForm : Form
     {
         public MainForm()

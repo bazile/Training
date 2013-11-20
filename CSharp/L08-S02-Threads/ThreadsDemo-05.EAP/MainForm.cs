@@ -35,8 +35,6 @@ namespace BelhardTraining.Downloader
             //comboBox1.SelectedValue = "1mb.txt";
         }
 
-        // TODO: Закончить пример
-
         private void OnButtonDownloadClick(object sender, System.EventArgs e)
         {
             TestFileInfo selectedFile = (TestFileInfo)comboBox1.SelectedValue;
