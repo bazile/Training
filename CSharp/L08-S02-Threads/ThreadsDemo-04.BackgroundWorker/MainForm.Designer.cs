@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.btnStart = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
@@ -112,6 +113,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.btnStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Демонстрация BackgroundWorker";
             this.ResumeLayout(false);
