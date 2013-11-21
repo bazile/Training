@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BelhardTraining.Downloader
@@ -31,27 +32,45 @@ namespace BelhardTraining.Downloader
                     //new TestFileInfo{ FileName="2gb.txt"  , MD5Hash = "b8f1f1faa6dda5426abffb3a7811c1fb" },
                     //new TestFileInfo{ FileName="5gb.txt"  , MD5Hash = "20096e4b3b80a3896dec3d7fdf5d1bfc" },
                 };
-            comboBox1.DataSource = testFiles;
+            cboxFiles.DataSource = testFiles;
             //comboBox1.SelectedValue = "1mb.txt";
         }
 
         private void OnButtonDownloadClick(object sender, System.EventArgs e)
         {
-            TestFileInfo selectedFile = (TestFileInfo)comboBox1.SelectedValue;
+            TestFileInfo selectedFile = (TestFileInfo)cboxFiles.SelectedValue;
 
+            DownloadFile(selectedFile);
+
+            // Запуск загрузки в отдельном потоке "сломает" EAP механизм и мы снова начнем получать исключения
+            //  InvalidOperationException в методах OnDownloadProgressChanged/OnDownloadDataCompleted
+            //Thread dnldThread = new Thread(DownloadFile);
+            //dnldThread.Start(selectedFile);
+
+        }
+
+        private void DownloadFile(TestFileInfo fileToDownload)
+        {
             WebClient webClient = new WebClient();
-            //webClient.DownloadProgressChanged += OnDownloadProgressChanged;
+            webClient.DownloadProgressChanged += OnDownloadProgressChanged;
             webClient.DownloadDataCompleted += OnDownloadDataCompleted;
-            webClient.DownloadDataAsync(new Uri("http://ftp.byfly.by/test/" + selectedFile.FileName), selectedFile);
+
+            // Вызов *Async метода на экземпляре WebClient'a заставляет его "запомнить" поток где был произведен этот вызов
+            //  и выполнять делегаты своих событий в этом потоке. Если вызов идет из UI потока, то у нас отпадает
+            //  необходимость в использовании метода Invoke или других способов выполнения кода в UI потоке.
+            webClient.DownloadDataAsync(new Uri("http://ftp.byfly.by/test/" + fileToDownload.FileName), fileToDownload);
         }
 
         private void OnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            int percent = (int)(100 * ((double)e.BytesReceived / e.TotalBytesToReceive));
+            progressDownload.Value = (int)(progressDownload.Maximum * ((double)e.BytesReceived / e.TotalBytesToReceive));
         }
 
         private void OnDownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
         {
+            progressDownload.Value = progressDownload.Maximum;
+            progressDownload.Update();
+
             TestFileInfo requestedFile = (TestFileInfo)e.UserState;
             byte[] data = e.Result;
 
@@ -61,9 +80,9 @@ namespace BelhardTraining.Downloader
             string hash = ByteArrayToString(hashBytes);
 
             if (requestedFile.MD5Hash.Equals(hash, StringComparison.OrdinalIgnoreCase))
-                MessageBox.Show("Успех!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Успех!", "Загрузка файла", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Ошибка!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка!", "Загрузка файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private static string ByteArrayToString(byte[] bytes)
