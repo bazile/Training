@@ -45,9 +45,16 @@ namespace BelhardTraining.PiCalc
 
         public void Run(int iterations)
         {
-            for (int i = 0; i < iterations; _divison += 2, _sign = -_sign, i++)
+            if (iterations%2 != 0) iterations++;
+
+            for (int i = 0; i < iterations; _divison += 2, i++)
             {
-                _result += _sign * (one / _divison);
+                _result -= one / _divison;
+
+                i++;
+                _divison += 2;
+
+                _result += one / _divison;
             }
         }
 

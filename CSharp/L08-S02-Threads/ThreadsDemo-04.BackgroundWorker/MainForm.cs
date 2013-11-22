@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace BelhardTraining.PiCalc
@@ -32,6 +33,8 @@ namespace BelhardTraining.PiCalc
 
         private void OnDoWork(object sender, DoWorkEventArgs e)
         {
+            //Stopwatch watch = Stopwatch.StartNew();
+
             BackgroundWorker worker = (BackgroundWorker)sender;
             worker.ReportProgress(0);
 
@@ -45,6 +48,9 @@ namespace BelhardTraining.PiCalc
                 if (worker.CancellationPending) break;
             }
             worker.ReportProgress(100, piCalc.PI);
+
+            //watch.Stop();
+            //MessageBox.Show(watch.ElapsedMilliseconds.ToString());
         }
 
         private void OnWorkProgressChanged(object sender, ProgressChangedEventArgs e)
