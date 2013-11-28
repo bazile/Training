@@ -155,6 +155,8 @@
 - #13 (WCF)
 	http://habrahabr.ru/post/116764/
 	http://sergeyteplyakov.blogspot.com/2011/02/wcf.html
+	Пошагово новый сервис
+	Асинхронный вызов методов
 
 - #14 (architecture)
 	- Перевод	
