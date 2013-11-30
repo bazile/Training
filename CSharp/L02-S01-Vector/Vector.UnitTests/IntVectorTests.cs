@@ -1,20 +1,20 @@
 ﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyVector;
-using NUnit.Framework;
 
-namespace UnitTests
+namespace Vector.UnitTests
 {
-	[TestFixture]
-    public class IntVectorFixture
+	[TestClass]
+    public class IntVectorFixture : TestBase
     {
-		[Test]
+		[TestMethod]
 		public void EmptyVectorMustHaveSizeOfZero()
 		{
 			var v = new IntVector(10);
 			Assert.AreEqual(0, v.Size);
 		}
 
-		[Test]
+		[TestMethod]
 		public void MustBeFilledWithTheSingleValue()
 		{
 			const int fillValue = 1234;
@@ -27,7 +27,7 @@ namespace UnitTests
 			}
 		}
 
-		[Test]
+		[TestMethod]
 		public void MustReturnCorrectValues()
 		{
 			var v = new IntVector(2);
@@ -40,15 +40,15 @@ namespace UnitTests
 			Assert.AreEqual(300, v[2]);
 		}
 
-		[Test]
+		[TestMethod]
 		public void MustThrowExceptionIfOutRange()
 		{
 			var v = new IntVector(1);
-			Assert.Catch<IndexOutOfRangeException>(() => { int i = v[1]; });
-			Assert.Catch<InvalidOperationException>(() => v.Pop());
+			AssertCatch<IndexOutOfRangeException>(() => { int i = v[1]; });
+			AssertCatch<InvalidOperationException>(() => v.Pop());
 		}
 
-		[Test]
+		[TestMethod]
 		public void OperatorPlusMustAddValue()
 		{
 			var v = new IntVector(2);
@@ -61,7 +61,7 @@ namespace UnitTests
 			Assert.AreEqual(310, v[2]);
 		}
 
-		[Test]
+		[TestMethod]
 		public void OperatorEquals()
 		{
 			var v1 = new IntVector(3);
@@ -86,7 +86,7 @@ namespace UnitTests
 			Assert.IsFalse(v2 != v1);
 		}
 
-		[Test]
+		[TestMethod]
 		public void GetHashCodeMustBeDifferent()
 		{
 			var v1 = new IntVector(3);

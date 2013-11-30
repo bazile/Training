@@ -1,33 +1,33 @@
 ﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyVector.Generic;
-using NUnit.Framework;
 
-namespace UnitTests
+namespace Vector.UnitTests
 {
-	[TestFixture]
-	public class VectorFixture
+	[TestClass]
+	public class VectorTests : TestBase
 	{
-		[Test]
+		[TestMethod]
 		public void EmptyVectorMustHaveSizeOfZero()
 		{
 			var v = new Vector<byte>(10);
 			Assert.AreEqual(0, v.Size);
 		}
 
-		[Test]
+		[TestMethod]
 		public void MustBeFilledWithTheSingleValue()
 		{
 			const byte fillValue = 123;
 			var v = new Vector<byte>(33, fillValue);
 
 			Assert.AreEqual(33, v.Size);
-			foreach(int value in v)
+			foreach (int value in v)
 			{
 				Assert.AreEqual(fillValue, value);
 			}
 		}
 
-		[Test]
+		[TestMethod]
 		public void MustReturnCorrectValues()
 		{
 			var v = new Vector<byte>(2);
@@ -40,15 +40,15 @@ namespace UnitTests
 			Assert.AreEqual(150, v[2]);
 		}
 
-		[Test]
+		[TestMethod]
 		public void MustThrowExceptionIfOutRange()
 		{
 			var v = new Vector<byte>(1);
-			Assert.Catch<IndexOutOfRangeException>(() => { int i = v[1]; });
-			Assert.Catch<InvalidOperationException>(() => v.Pop());
+			AssertCatch<IndexOutOfRangeException>(() => { int i = v[1]; });
+			AssertCatch<InvalidOperationException>(() => v.Pop());
 		}
 
-		[Test]
+		[TestMethod]
 		public void OperatorEquals()
 		{
 			var v1 = new Vector<byte>(3);
@@ -57,7 +57,7 @@ namespace UnitTests
 			v1.Push(150);
 			Vector<byte> v2 = v1;
 
-			Assert.IsTrue(v1==v2);
+			Assert.IsTrue(v1 == v2);
 			Assert.IsFalse(v1 == null);
 
 			v2 = null;
@@ -73,7 +73,7 @@ namespace UnitTests
 			Assert.IsFalse(v2 != v1);
 		}
 
-		[Test]
+		[TestMethod]
 		public void GetHashCodeMustBeDifferent()
 		{
 			var v1 = new Vector<byte>(3);
@@ -85,7 +85,7 @@ namespace UnitTests
 			v2.Push(5);
 			v2.Push(100);
 			v2.Push(150);
-			
+
 			Assert.AreNotEqual(v1.GetHashCode(), v2.GetHashCode());
 		}
 	}
