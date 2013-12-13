@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-Point2D", "01-Point2D\01-Point2D.csproj", "{96155765-A4AD-41CD-8BC2-0AAACDB9D6EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-Point2D-WithEvent", "02-Point2D-WithEvent\02-Point2D-WithEvent.csproj", "{AC6C483E-A08A-4752-9B7D-DF8DA4F5D9E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96155765-A4AD-41CD-8BC2-0AAACDB9D6EC}.Debug|x86.ActiveCfg = Debug|x86
+		{96155765-A4AD-41CD-8BC2-0AAACDB9D6EC}.Debug|x86.Build.0 = Debug|x86
+		{96155765-A4AD-41CD-8BC2-0AAACDB9D6EC}.Release|x86.ActiveCfg = Release|x86
+		{96155765-A4AD-41CD-8BC2-0AAACDB9D6EC}.Release|x86.Build.0 = Release|x86
+		{AC6C483E-A08A-4752-9B7D-DF8DA4F5D9E7}.Debug|x86.ActiveCfg = Debug|x86
+		{AC6C483E-A08A-4752-9B7D-DF8DA4F5D9E7}.Debug|x86.Build.0 = Debug|x86
+		{AC6C483E-A08A-4752-9B7D-DF8DA4F5D9E7}.Release|x86.ActiveCfg = Release|x86
+		{AC6C483E-A08A-4752-9B7D-DF8DA4F5D9E7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
