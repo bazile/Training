@@ -43,7 +43,7 @@ namespace BelhardTraining.PointDemo
 
         private static void PrintDistance(int x1, int y1, ConsoleColor color1, int x2, int y2, ConsoleColor color2)
         {
-            Console.Write("Расстояние между точками");
+            Console.Write("Расстояние между точками ");
             PrintCoordinates(x1, y1, color1);
             Console.Write(" и ");
             PrintCoordinates(x2, y2, color2);
