@@ -8,24 +8,28 @@ namespace ThreadsDemo.ConsoleMessages
 		static void Main()
 		{
 			var printMsgThread = new Thread(new ThreadStart(PrintMessage));
-            //printMsgThread.IsBackground = true;
+			//printMsgThread.IsBackground = true;
+			printMsgThread.Name = "Поток #2";
 			printMsgThread.Start();
 
-            //var printThreadWithParam = new Thread(new ParameterizedThreadStart(PrintMessage));
-            ////printThreadWithParam.IsBackground = true;
-            //printThreadWithParam.Start("I'm parameterized thread!");
+			//var printThreadWithParam = new Thread(new ParameterizedThreadStart(PrintMessage));
+			////printThreadWithParam.IsBackground = true;
+			//printThreadWithParam.Name = "Поток #3";
+			//printThreadWithParam.Start("Дополнительный поток с другим сообщением!");
 
-            //var printThreadWithComplexParam = new Thread(new ParameterizedThreadStart(PrintComplexMessage));
-            ////printThreadWithComplexParam.IsBackground = true;
-            //printThreadWithComplexParam.Start(new PrintMessageData { Message = "I'm super-parameterized thread!", When = DateTime.Now });
+			//var printThreadWithComplexParam = new Thread(new ParameterizedThreadStart(PrintComplexMessage));
+			////printThreadWithComplexParam.IsBackground = true;
+			////printThreadWithComplexParam.Start(new PrintMessageData { Message = "I'm super-parameterized thread!", When = new DateTime(2014, 3, 18) });
+			//printThreadWithComplexParam.Name = "Поток #4";
+			//printThreadWithComplexParam.Start("hggjdf");
 
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine("[{0}] I'm main thread!", i);
+				Console.WriteLine("[{0:00}] Главный (UI) поток!", i);
 			}
 
 			// Ожидаем завершения потоков
-			printMsgThread.Join();
+			//printMsgThread.Join();
 			//printThreadWithParam.Join();
 		}
 
@@ -33,7 +37,7 @@ namespace ThreadsDemo.ConsoleMessages
 		{
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine("[{0}] I'm background thread!", i);
+				Console.WriteLine("[{0:00}] Дополнительный поток!", i);
 			}
 		}
 
@@ -41,16 +45,16 @@ namespace ThreadsDemo.ConsoleMessages
 		{
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine("[{0}] {1}", i, text);
+				Console.WriteLine("[{0:00}] {1}", i, text);
 			}
 		}
 
 		private static void PrintComplexMessage(object obj)
 		{
-            var data = (PrintMessageData)obj;
+			var data = (PrintMessageData)obj;
 			for (int i = 0; i < 100; i++)
 			{
-				Console.WriteLine("[{0}] {1:g} - {2}", i, data.When, data.Message);
+				Console.WriteLine("[{0:00}] {1:g} - {2}", i, data.When, data.Message);
 			}
 		}
 
