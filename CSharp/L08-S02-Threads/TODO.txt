@@ -1,0 +1,10 @@
+Работа с IAsyncResult
+			DateTime d = new DateTime(2011, 1, 31);
+			CultureInfo ci = new CultureInfo("en-US");
+			string uri = String.Format(ci, "http://www.nbrb.by/Services/XmlExRates.aspx?ondate={0:d}", d);
+
+			//http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/03/2002 // dd/mm/yyyy
+
+			//HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
+			//req.BeginGetRequestStream();
+
