@@ -233,12 +233,14 @@ namespace ComplexNumber.Tests
 
         [Test]
         [Category("System.Object overrides")]
+        [Category("ToString() implementation")]
         public void OverridesToString()
         {
             AssertMethodOverride("ToString");
         }
 
         [Test]
+        [Category("ToString() implementation")]
         [TestCaseSource(typeof(ComplexNumberFixtureData), "ToStringData")]
         public string AssertFormatting(ComplexNumber number, string formatSpecifier)
         {
@@ -246,6 +248,25 @@ namespace ComplexNumber.Tests
                        ? number.ToString()
                        : number.ToString(formatSpecifier, CultureInfo.InvariantCulture);
         }
+
+		[Test]
+		[Category("ToString() implementation")]
+		public void ToStringThrowsFormatExceptionForUnknownFormat()
+		{
+			ImplementsIFormattable();
+
+			Assert.Throws<FormatException>(
+				() =>
+				{
+					var num = new ComplexNumber(1, 1);
+					var iformattable = num as IFormattable;
+					if (iformattable != null)
+					{
+						string result = iformattable.ToString("X", null);
+					}
+				}
+			);
+		}
 
 		private static void AssertMethodOverride(string methodName, params Type[] arguments)
 		{
