@@ -7,23 +7,23 @@ using NUnit.Framework;
 
 namespace ComplexNumber.Tests
 {
-    //
-    // Unit-тесты для класса ComplexNumber
-    //
-    // Для запуска тестов установите одну из программ:
-    //
-    //  а) NUnit. Бесплатная библиотека с GUI утилитой для запуска тестов.
-    //     http://www.nunit.org/
-    //
-    //          ИЛИ
-    //
-    //  б) ReSharper. Платное дополнение к Visual Studio.
-    //     http://www.jetbrains.com/resharper/
-    //
+	//
+	// Unit-тесты для класса ComplexNumber
+	//
+	// Для запуска тестов установите одну из программ:
+	//
+	//  а) NUnit. Бесплатная библиотека с GUI утилитой для запуска тестов.
+	//     http://www.nunit.org/
+	//
+	//          ИЛИ
+	//
+	//  б) ReSharper. Платное дополнение к Visual Studio.
+	//     http://www.jetbrains.com/resharper/
+	//
 
-    [TestFixture]
-    public class ComplexNumberFixture
-    {
+	[TestFixture]
+	public class ComplexNumberFixture
+	{
 		[Test]
 		[Ignore]
 		public void MainImplementation()
@@ -33,61 +33,58 @@ namespace ComplexNumber.Tests
 
 			//if (y == null)
 			//{
-			//    y = new ComplexNumber(7, 8.1);
-
-			//    ComplexNumber z = x + y;
-			//    Console.WriteLine(z); // 17.5+i8.1
-
-			//    z -= 20;
-			//    Console.WriteLine(z); // -2.5+i8.1
-
-			//    z.Real += 13;
-			//    z.Imaginary -= 8.1;
-			//    Console.WriteLine(z); // 10.5
-
-			//    if (z == x && z != y)
-			//    {
-			//        Console.WriteLine("{0:A}", z - y); // 3.5-i8.1
-			//        Console.WriteLine("{0:P}", z - y); // (3.5, -8.1)
-			//    }
+			//	y = new ComplexNumber(7, 8.1);
+			//
+			//	ComplexNumber z = x + y;
+			//	Console.WriteLine(z); // 17.5+i8.1
+			//
+			//	z -= 20;
+			//	Console.WriteLine(z); // -2.5+i8.1
+			//
+			//	z.Real += 13;
+			//	z.Imaginary -= 8.1;
+			//	Console.WriteLine(z); // 10.5
+			//
+			//	if (z == x && z != y)
+			//	{
+			//		Console.WriteLine("{0:A}", z - y); // 3.5-i8.1
+			//		Console.WriteLine("{0:P}", z - y); // (3.5, -8.1)
+			//	}
 			//}
 		}
 
-        [Test]
-        [Category("Constructor")]
-        public void CanCreateComplexNumberWithoutImaginaryPart()
-        {
-            const double real = 5.1;
+		[Test]
+		[Category("Constructor")]
+		[TestCaseSource(typeof(ComplexNumberFixtureData), "ConstructorDataRealOnly")]
+		public void CanCreateComplexNumberWithoutImaginaryPart(double real)
+		{
+			var x = new ComplexNumber(real);
+			Assert.AreEqual(real, x.Real);
+			Assert.AreEqual(0, x.Imaginary);
+		}
 
-            var x = new ComplexNumber(real);
-            Assert.AreEqual(real, x.Real);
-            Assert.AreEqual(0, x.Imaginary);
-        }
+		[Test]
+		[Category("Constructor")]
+		[TestCaseSource(typeof(ComplexNumberFixtureData), "ConstructorDataRealAndImaginary")]
+		public void CanCreateComplexNumberWithImaginaryPart(double real, double imaginary)
+		{
+			var x = new ComplexNumber(real, imaginary);
+			Assert.AreEqual(real, x.Real);
+			Assert.AreEqual(imaginary, x.Imaginary);
+		}
 
-        [Test]
-        [Category("Constructor")]
-        public void CanCreateComplexNumberWithImaginaryPart()
-        {
-            const double real = 5.2;
-            const double imaginary = -10.3;
+		[Test]
+		[Category("Operator overloading")]
+		public void CanCompareComplexNumbers()
+		{
+			const double real = 5.2;
+			const double imaginary = -10.3;
+			var x = new ComplexNumber(real, imaginary);
+			var y = new ComplexNumber(real, imaginary);
 
-            var x = new ComplexNumber(real, imaginary);
-            Assert.AreEqual(real, x.Real);
-            Assert.AreEqual(imaginary, x.Imaginary);
-        }
-
-        [Test]
-        [Category("Operator overloading")]
-        public void CanCompareComplexNumbers()
-        {
-            const double real = 5.2;
-            const double imaginary = -10.3;
-            var x = new ComplexNumber(real, imaginary);
-            var y = new ComplexNumber(real, imaginary);
-
-            Assert.IsTrue(x == y);
-            Assert.IsFalse(x != y);
-        }
+			Assert.IsTrue(x == y);
+			Assert.IsFalse(x != y);
+		}
 
 		[Test]
 		[Category("Operator overloading")]
@@ -137,19 +134,19 @@ namespace ComplexNumber.Tests
 			Assert.IsTrue(y != x, pairYX + " must be not equal");
 		}
 
-        [Test]
-        [Category("Operator overloading")]
-        public void CanCompareComplexNumberWithNull()
-        {
-            var x = new ComplexNumber(0);
-            Assert.IsTrue(x != null);
-            Assert.IsFalse(x == null);
+		[Test]
+		[Category("Operator overloading")]
+		public void CanCompareComplexNumberWithNull()
+		{
+			var x = new ComplexNumber(0);
+			Assert.IsTrue(x != null);
+			Assert.IsFalse(x == null);
 
-            x = null;
-            ComplexNumber y = null;
-            Assert.IsTrue(x == y);
-            Assert.IsFalse(x != y);
-        }
+			x = null;
+			ComplexNumber y = null;
+			Assert.IsTrue(x == y);
+			Assert.IsFalse(x != y);
+		}
 
 		[Test]
 		[Category("Operator overloading")]
@@ -173,81 +170,81 @@ namespace ComplexNumber.Tests
 			// ReSharper restore ConditionIsAlwaysTrueOrFalse
 		}
 
-        [Test]
-        [Category("Operator overloading")]
-        [TestCaseSource(typeof(ComplexNumberFixtureData), "AddData")]
-        public ComplexNumber CanAddComplexNumbers(ComplexNumber x, ComplexNumber y)
-        {
-            return x + y;
-        }
+		[Test]
+		[Category("Operator overloading")]
+		[TestCaseSource(typeof(ComplexNumberFixtureData), "AddData")]
+		public ComplexNumber CanAddComplexNumbers(ComplexNumber x, ComplexNumber y)
+		{
+			return x + y;
+		}
 
-        [Test]
-        [Category("Operator overloading")]
-        [TestCaseSource(typeof(ComplexNumberFixtureData), "SubtractData")]
-        public ComplexNumber CanSubtractComplexNumbers(ComplexNumber x, ComplexNumber y)
-        {
-            return x - y;
-        }
+		[Test]
+		[Category("Operator overloading")]
+		[TestCaseSource(typeof(ComplexNumberFixtureData), "SubtractData")]
+		public ComplexNumber CanSubtractComplexNumbers(ComplexNumber x, ComplexNumber y)
+		{
+			return x - y;
+		}
 
-        [Test]
-        [Category("Interface implementation")]
-        public void ImplementsIComparable()
-        {
-            var x = new ComplexNumber(10);
-            Assert.IsNotNull(x as IComparable, "Type does not implement IComparable.");
-        }
+		[Test]
+		[Category("Interface implementation")]
+		public void ImplementsIComparable()
+		{
+			var x = new ComplexNumber(10);
+			Assert.IsNotNull(x as IComparable, "Type does not implement IComparable.");
+		}
 
-        [Test]
-        [Category("Interface implementation")]
-        public void ImplementsGenericIComparable()
-        {
-            var x = new ComplexNumber(10);
-            Assert.IsNotNull(x as IComparable<ComplexNumber>, "Type does not implement IComparable<ComplexNumber>.");
-        }
+		[Test]
+		[Category("Interface implementation")]
+		public void ImplementsGenericIComparable()
+		{
+			var x = new ComplexNumber(10);
+			Assert.IsNotNull(x as IComparable<ComplexNumber>, "Type does not implement IComparable<ComplexNumber>.");
+		}
 
-        [Test]
-        [Category("Interface implementation")]
-        public void ImplementsIFormattable()
-        {
-            var x = new ComplexNumber(10);
-            Assert.IsNotNull(x as IFormattable, "Type does not implement IFormattable.");
-        }
+		[Test]
+		[Category("Interface implementation")]
+		public void ImplementsIFormattable()
+		{
+			var x = new ComplexNumber(10);
+			Assert.IsNotNull(x as IFormattable, "Type does not implement IFormattable.");
+		}
 
-        [Test]
-        [Category("System.Object overrides")]
-        public void OverridesEquals()
-        {
-            AssertMethodOverride("Equals", typeof(object));
-        }
+		[Test]
+		[Category("System.Object overrides")]
+		public void OverridesEquals()
+		{
+			AssertMethodOverride("Equals", typeof(object));
+		}
 
-        [Test]
-        [Category("System.Object overrides")]
-        public void HasGetHashCodeMethod()
-        {
-            MethodInfo mi = typeof(ComplexNumber).GetMethod("GetHashCode", BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-            if (mi != null)
-            {
-                Assert.Inconclusive("Found GetHashCode() method");
-            }
-        }
+		[Test]
+		[Category("System.Object overrides")]
+		public void HasGetHashCodeMethod()
+		{
+			MethodInfo mi = typeof(ComplexNumber).GetMethod("GetHashCode", BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+			if (mi != null)
+			{
+				Assert.Inconclusive("Found GetHashCode() method");
+			}
+		}
 
-        [Test]
-        [Category("System.Object overrides")]
-        [Category("ToString() implementation")]
-        public void OverridesToString()
-        {
-            AssertMethodOverride("ToString");
-        }
+		[Test]
+		[Category("System.Object overrides")]
+		[Category("ToString() implementation")]
+		public void OverridesToString()
+		{
+			AssertMethodOverride("ToString");
+		}
 
-        [Test]
-        [Category("ToString() implementation")]
-        [TestCaseSource(typeof(ComplexNumberFixtureData), "ToStringData")]
-        public string AssertFormatting(ComplexNumber number, string formatSpecifier)
-        {
-            return String.IsNullOrEmpty(formatSpecifier)
-                       ? number.ToString()
-                       : number.ToString(formatSpecifier, CultureInfo.InvariantCulture);
-        }
+		[Test]
+		[Category("ToString() implementation")]
+		[TestCaseSource(typeof(ComplexNumberFixtureData), "ToStringData")]
+		public string AssertFormatting(ComplexNumber number, string formatSpecifier)
+		{
+			return String.IsNullOrEmpty(formatSpecifier)
+						? number.ToString()
+						: number.ToString(formatSpecifier, CultureInfo.InvariantCulture);
+		}
 
 		[Test]
 		[Category("ToString() implementation")]
@@ -281,41 +278,68 @@ namespace ComplexNumber.Tests
 			if (cx == null) return "null";
 			return String.Format(CultureInfo.GetCultureInfo("en-US"), "[{0}, {1}]", cx.Real, cx.Imaginary);
 		}
-    }
+	}
 
-    public static class ComplexNumberFixtureData
-    {
-        public static IEnumerable<TestCaseData> AddData
-        {
-            get
-            {
-                yield return new TestCaseData(new ComplexNumber(0, 0), new ComplexNumber(0, 0)).Returns(new ComplexNumber(0, 0));
+	public static class ComplexNumberFixtureData
+	{
+		public static IEnumerable<TestCaseData> ConstructorDataRealOnly
+		{
+			get
+			{
+				double[] nums = new[] { 0, 1, -1, 10.51, -10.52, double.MaxValue, double.MinValue};
+				foreach (var num in nums)
+				{
+					yield return new TestCaseData(num);
+				}
+			}
+		}
 
-                yield return new TestCaseData(new ComplexNumber(1, 2), new ComplexNumber(3, 4)).Returns(new ComplexNumber(4, 6));
-                yield return new TestCaseData(new ComplexNumber(3, 4), new ComplexNumber(1, 2)).Returns(new ComplexNumber(4, 6));
-            }
-        }
+		public static IEnumerable<TestCaseData> ConstructorDataRealAndImaginary
+		{
+			get
+			{
+				double[] nums = new[] {0, 1, -1, 10.51, -10.52, double.MaxValue, double.MinValue};
+				for (int i = 0; i < nums.Length; i++)
+				{
+					for (int j = 0; j < nums.Length; j++)
+					{
+						yield return new TestCaseData(nums[i], nums[j]);
+					}
+				}
+			}
+		}
 
-        public static IEnumerable<TestCaseData> SubtractData
-        {
-            get
-            {
-                yield return new TestCaseData(new ComplexNumber(0, 0), new ComplexNumber(0, 0)).Returns(new ComplexNumber(0, 0));
+		public static IEnumerable<TestCaseData> AddData
+		{
+			get
+			{
+				yield return new TestCaseData(new ComplexNumber(0, 0), new ComplexNumber(0, 0)).Returns(new ComplexNumber(0, 0));
 
-                yield return new TestCaseData(new ComplexNumber(1, 2), new ComplexNumber(3, 4)).Returns(new ComplexNumber(-2, -2));
-                yield return new TestCaseData(new ComplexNumber(3, 4), new ComplexNumber(1, 2)).Returns(new ComplexNumber(2, 2));
-            }
-        }
+				yield return new TestCaseData(new ComplexNumber(1, 2), new ComplexNumber(3, 4)).Returns(new ComplexNumber(4, 6));
+				yield return new TestCaseData(new ComplexNumber(3, 4), new ComplexNumber(1, 2)).Returns(new ComplexNumber(4, 6));
+			}
+		}
 
-        public static IEnumerable<TestCaseData> ToStringData
-        {
-            get
-            {
-                yield return new TestCaseData(new ComplexNumber(0, 0), null).Returns("0+i0");
-                yield return new TestCaseData(new ComplexNumber(1, 2), null).Returns("1+i2");
-                yield return new TestCaseData(new ComplexNumber(-1, 2), null).Returns("-1+i2");
-                yield return new TestCaseData(new ComplexNumber(1, -2), null).Returns("1-i2");
-                yield return new TestCaseData(new ComplexNumber(-1, -2), null).Returns("-1-i2");
+		public static IEnumerable<TestCaseData> SubtractData
+		{
+			get
+			{
+				yield return new TestCaseData(new ComplexNumber(0, 0), new ComplexNumber(0, 0)).Returns(new ComplexNumber(0, 0));
+
+				yield return new TestCaseData(new ComplexNumber(1, 2), new ComplexNumber(3, 4)).Returns(new ComplexNumber(-2, -2));
+				yield return new TestCaseData(new ComplexNumber(3, 4), new ComplexNumber(1, 2)).Returns(new ComplexNumber(2, 2));
+			}
+		}
+
+		public static IEnumerable<TestCaseData> ToStringData
+		{
+			get
+			{
+				yield return new TestCaseData(new ComplexNumber(0, 0), null).Returns("0+i0");
+				yield return new TestCaseData(new ComplexNumber(1, 2), null).Returns("1+i2");
+				yield return new TestCaseData(new ComplexNumber(-1, 2), null).Returns("-1+i2");
+				yield return new TestCaseData(new ComplexNumber(1, -2), null).Returns("1-i2");
+				yield return new TestCaseData(new ComplexNumber(-1, -2), null).Returns("-1-i2");
 
 				yield return new TestCaseData(new ComplexNumber(0, 0), "A").Returns("0+i0");
 				yield return new TestCaseData(new ComplexNumber(1, 2), "A").Returns("1+i2");
@@ -329,14 +353,14 @@ namespace ComplexNumber.Tests
 				yield return new TestCaseData(new ComplexNumber(1, -2), "P").Returns("(1, -2)");
 				yield return new TestCaseData(new ComplexNumber(-1, -2), "P").Returns("(-1, -2)");
 			}
-        }
+		}
 
-	    public static object[] EqualityData
-	    {
-		    get
-		    {
-			    return new object[]
-				    {
+		public static object[] EqualityData
+		{
+			get
+			{
+				return new object[]
+					{
 						new[] {
 								new ComplexNumber(0, 0),
 								new ComplexNumber(5.2, 10.3)
@@ -353,8 +377,8 @@ namespace ComplexNumber.Tests
 								new ComplexNumber(5.2, 10.3),
 								new ComplexNumber(-5.2, -10.3)
 							}
-				    };
-		    }
-	    }
-    }
+					};
+			}
+		}
+	}
 }
