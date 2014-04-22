@@ -270,8 +270,8 @@ namespace BelhardTraining.RecentListDemo
 
 		protected RecentList(SerializationInfo info, StreamingContext context)
 		{
-			//int length = info.GetInt32("length");
-			//items = new T[length];
+			if (info == null) throw new ArgumentNullException("info");
+
 			items = (T[])info.GetValue("items", typeof(T[]));
 			used = info.GetInt32("used");
 			version = -1;
@@ -279,7 +279,8 @@ namespace BelhardTraining.RecentListDemo
 
 		public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
-			//info.AddValue("length", items.Length);
+			if (info == null) throw new ArgumentNullException("info");
+
 			info.AddValue("used", used);
 			info.AddValue("items", items);
 		}
