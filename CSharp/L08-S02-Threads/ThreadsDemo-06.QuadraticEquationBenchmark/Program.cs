@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define RANDOM_COEFFS // Генерировать случайные коэффециенты для всех уравнений или использовать одинаковые
+
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
@@ -17,7 +19,10 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 			Equation[] equations = CreateRandomCoeffs(equationCount);
 			Console.WriteLine("Готово.");
 
+			Console.WriteLine();
 			BenchmarkWithoutThreads(equations);
+			Console.WriteLine();
+
 			BenchmarkWithThreads(equations, 2);
 			BenchmarkWithThreads(equations, 3);
 			BenchmarkWithThreads(equations, 4);
@@ -71,7 +76,7 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 				solveThread.Join();
 			}
 			watch.Stop();
-			Console.WriteLine("Время на решение с  потоками: {0:F4} сек. Кол-во потоков: {1}", watch.Elapsed.TotalSeconds, threadCount);
+			Console.WriteLine("Время на решение  с потоками: {0:F4} сек. Кол-во потоков: {1}", watch.Elapsed.TotalSeconds, threadCount);
 		}
 
 		/// <summary>
@@ -108,6 +113,9 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 		private static Equation[] CreateRandomCoeffs(int count)
 		{
 			Equation[] coeffs = new Equation[count];
+
+			#if RANDOM_COEFFS
+
 			Random rnd = new Random(Environment.TickCount);
 
 			byte[] randomBytes = new byte[1000];
@@ -116,20 +124,29 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 			int rndPos = 0;
 			for (int i = 0; i < coeffs.Length; i++)
 			{
-				//if (rndPos >= randomBytes.Length)
-				//{
-				//    rnd.NextBytes(randomBytes);
-				//    rndPos = 0;
-				//}
-				//coeffs[i].A = randomBytes[rndPos] * randomBytes[rndPos+1];
-				//coeffs[i].B = randomBytes[rndPos + 2] * randomBytes[rndPos + 3];
-				coeffs[i] = new Equation { A = 1, B = 1};
+				if (rndPos >= randomBytes.Length)
+				{
+				    rnd.NextBytes(randomBytes);
+				    rndPos = 0;
+				}
+				coeffs[i].A = randomBytes[rndPos] * randomBytes[rndPos+1];
+				coeffs[i].B = randomBytes[rndPos + 2] * randomBytes[rndPos + 3];
 			}
+
+			#else
+
+			for (int i = 0; i < coeffs.Length; i++)
+			{
+				coeffs[i] = new Equation { A = 1, B = 1 };
+			}
+
+			#endif
+
 			return coeffs;
 		}
 	}
 
-	class Equation
+	struct Equation
 	{
 		public double A, B;
 		public double Solution1, Solution2;
