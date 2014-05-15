@@ -41,6 +41,18 @@
 	- Сборщик мусора
 		- класс GC
 		- настройки GC
+			 configuration\runtime
+				<gcAllowVeryLargeObjects enabled="true|false (default)" />
+					Specifies whether arrays that are greater than 2 GB in total size are enabled on 64-bit platforms. 
+					.NET 4.5
+				<gcConcurrent enabled="true (default)|false"/>
+					Specifies whether the runtime runs garbage collection concurrently.
+				<GCCpuGroup enabled="true|false (default)"/>
+					Specifies whether garbage collection supports multiple CPU groups.
+					.NET 4.5
+				<gcServer enabled="true|false (default)"/>
+					Specifies whether the runtime runs server garbage collection.
+					.NET 2.0+
 
 - #5 (events)
 	- События и исключения
@@ -218,8 +230,12 @@
 - WinForms
 	- Extender Provider
 	http://msdn.microsoft.com/en-us/library/ms171836.aspx
+	- Best practise
+		Tab order
+		Клавиатурные комбинации для меню и кнопок (alt+)
+		Реакция на изменение размеров формы
 
 - Директивы
 	#if
 	#define
-	#warning	
+	#warning
