@@ -239,3 +239,6 @@
 	#if
 	#define
 	#warning
+	#pragma warning disable, restore
+	#pragma checksum "yourfile.cs" "{3673e4ca-6098-4ec1-890f-8fceb2a794a2}" "{012345678AB}" 
+		via http://dailydotnettips.com/2011/06/05/compiler-directive-pragma-reference/
