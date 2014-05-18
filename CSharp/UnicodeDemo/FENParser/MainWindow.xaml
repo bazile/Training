@@ -1,0 +1,45 @@
+﻿<Window x:Class="FENParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fenParser="clr-namespace:FENParser"
+        Title="Парсер нотации Форсайта — Эдвардса (FEN)" Height="500" Width="650" Padding="0" Icon="/FENParser;component/FENParser.ico">
+    <StackPanel Orientation="Vertical" Margin="8">
+        <Grid Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <fenParser:LinkLabel Grid.Row="0" Grid.Column="0" Margin="0,0,10,0" VerticalAlignment="Center"></fenParser:LinkLabel>
+            <ComboBox Grid.Row="0" Grid.Column="1" Height="23" HorizontalAlignment="Stretch" Name="comboBoxNotation" VerticalAlignment="Center" Width="Auto" />
+        </Grid>
+        
+        <Grid Name="chessBoardGrid" ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </StackPanel>
+</Window>
