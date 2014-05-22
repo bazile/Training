@@ -19,8 +19,8 @@ namespace BelhardTraining.FiguresDemo
 			{
 				PrintFigure(figure.WhoAmI(), figure.GetType().Name, figure.ComputeArea());
 
-				#region Неправильная попытка исправить с помощью проверки типа
-				
+				#region Неправильная попытка исправить код с помощью проверки типа
+
 				//// Это анти-пример
 				//// НИКОГДА НЕ ПИШИТЕ ТАКОЙ КОД!
 

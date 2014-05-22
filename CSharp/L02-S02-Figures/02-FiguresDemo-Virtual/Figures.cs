@@ -118,7 +118,7 @@ namespace BelhardTraining.FiguresDemo
 
 		public override string WhoAmI()
 		{
-			return "Triangle";
+			return "EquilateralTriangle";
 		}
 	}
 }

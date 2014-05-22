@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BelhardTraining.FiguresDemo.Rectangle" Collapsed="true">
+    <Position X="4.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEAgAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BelhardTraining.FiguresDemo.Square" Collapsed="true">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="BelhardTraining.FiguresDemo.Rectangle" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="2.812" />
+        <Point X="5.25" Y="3.125" />
+        <Point X="6.25" Y="3.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BelhardTraining.FiguresDemo.Ellipse" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAgAgAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Figures.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BelhardTraining.FiguresDemo.Circle" Collapsed="true">
+    <Position X="2.5" Y="3" Width="1.5" />
+    <InheritanceLine Type="BelhardTraining.FiguresDemo.Ellipse" ManuallyRouted="true">
+      <Path>
+        <Point X="1.25" Y="2.812" />
+        <Point X="1.25" Y="3.252" />
+        <Point X="2.5" Y="3.252" />
+        <Point X="2.5" Y="3.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BelhardTraining.FiguresDemo.EquilateralTriangle" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="BelhardTraining.FiguresDemo.IFigure">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

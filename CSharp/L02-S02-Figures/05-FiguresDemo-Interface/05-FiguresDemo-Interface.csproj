@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9946CE75-10F5-4E61-9E79-FEA9039B1548}</ProjectGuid>
+    <ProjectGuid>{7DCD9DE9-BDC2-4C34-9F39-684842F88EFC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BelhardTraining.FiguresDemo</RootNamespace>
-    <AssemblyName>FiguresDemo03</AssemblyName>
+    <AssemblyName>FiguresDemo05</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

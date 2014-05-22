@@ -17,12 +17,16 @@ namespace BelhardTraining.FiguresDemo
 				};
 			foreach (Figure figure in figures)
 			{
-				PrintFigure(figure.WhoAmI(), figure.GetType().Name, figure.ComputeArea());
+				PrintFigure(figure);
 			}
 		}
 
-		private static void PrintFigure(string whoAmI, string typeName, double area)
+		private static void PrintFigure(Figure figure)
 		{
+			string whoAmI = figure.WhoAmI();
+			string typeName = figure.GetType().Name;
+			double area = figure.ComputeArea();
+
 			ConsoleColor oldColor = Console.ForegroundColor;
 			if (whoAmI != typeName) Console.ForegroundColor = ConsoleColor.Red;
 

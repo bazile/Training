@@ -159,9 +159,9 @@ namespace BelhardTraining.FiguresDemo
             return "Правильный треугольник";
 		}
 
-        //public override string ToString()
-        //{
-        //    return string.Format("Правильный треугольник. Длина стороны={0:F2}.", SideLength);
-        //}
+		//public override string ToString()
+		//{
+		//    return string.Format("Правильный треугольник. Длина стороны={0:F2}.", SideLength);
+		//}
     }
 }

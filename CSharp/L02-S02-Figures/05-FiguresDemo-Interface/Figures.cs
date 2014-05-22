@@ -1,5 +1,5 @@
 ﻿/*
- * Демонстрация наследования, абстрактных классов, виртуальных и абстрактных методов.
+ * Демонстрация наследования, объявления и реализации интерфейса
  * Также демонстрируется использование класса System.Diagnostics.Debug
 */
 
@@ -8,14 +8,15 @@ using System.Diagnostics;
 
 namespace BelhardTraining.FiguresDemo
 {
-	// В C# запрещено создавать экземпляры абстрактных классов
-	public abstract class Figure
+	// Мы можеv использовать интерфейс вместо абстрактного базового класса
+	// Однако при этом нам нужно не забывать объявлять методы как virtual в классах реализующих наш интерфейс
+	public interface IFigure
 	{
-		public abstract double ComputeArea();
-		public abstract string WhoAmI();
+		double ComputeArea();
+		string WhoAmI();
 	}
 
-	public class Rectangle : Figure
+	public class Rectangle : IFigure
 	{
 		public double Width { get; private set; }
 		public double Height { get; private set; }
@@ -26,13 +27,13 @@ namespace BelhardTraining.FiguresDemo
 			Height = height;
 		}
 
-		public override double ComputeArea()
+		public virtual double ComputeArea()
 		{
 			Debug.WriteLine("Square.ComputeArea()");
 			return Width * Height;
 		}
 
-		public override string WhoAmI()
+		public virtual string WhoAmI()
 		{
 			return "Rectangle";
 		}
@@ -51,7 +52,7 @@ namespace BelhardTraining.FiguresDemo
 		}
 	}
 
-	public class Ellipse : Figure
+	public class Ellipse : IFigure
 	{
 		public double MajorRadius { get; private set; }
 		public double MinorRadius { get; private set; }
@@ -62,13 +63,13 @@ namespace BelhardTraining.FiguresDemo
 			MinorRadius = minorRadius;
 		}
 
-		public override double ComputeArea()
+		public virtual double ComputeArea()
 		{
 			Debug.WriteLine("Ellipse.ComputeArea()");
 			return Math.PI * MajorRadius * MinorRadius;
 		}
 
-		public override string WhoAmI()
+		public virtual string WhoAmI()
 		{
 			return "Ellipse";
 		}
@@ -95,7 +96,7 @@ namespace BelhardTraining.FiguresDemo
 	/// <summary>
 	/// Правильный треугольник. Все стороны равны.
 	/// </summary>
-	public class EquilateralTriangle : Figure
+	public class EquilateralTriangle : IFigure
 	{
 		public double SideLength { get; private set; }
 
@@ -104,13 +105,13 @@ namespace BelhardTraining.FiguresDemo
 			SideLength = sideLength;
 		}
 
-		public override double ComputeArea()
+		public virtual double ComputeArea()
 		{
 			Debug.WriteLine("EquilateralTriangle.ComputeArea()");
 			return SideLength * SideLength * Math.Sqrt(3) / 4f;
 		}
 
-		public override string WhoAmI()
+		public virtual string WhoAmI()
 		{
 			return "EquilateralTriangle";
 		}

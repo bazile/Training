@@ -117,7 +117,7 @@ namespace BelhardTraining.FiguresDemo
 
 		public new string WhoAmI()
 		{
-			return "Triangle";
+			return "EquilateralTriangle";
 		}
 	}
 }
