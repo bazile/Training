@@ -9,12 +9,6 @@ namespace BankCardNumber.Tests
 	public class BankCardNumberFixture
 	{
 		[TestMethod]
-		public void NullValueIsInvalid()
-		{
-			Assert.IsFalse(CardNumberValidator.IsValid(null), "Null value must not be valid");
-		}
-
-		[TestMethod]
 		public void VisaIsValid()
 		{
 			var visaNumbers = new[]
@@ -52,18 +46,51 @@ namespace BankCardNumber.Tests
 		}
 
 		[TestMethod]
-		public void ImaginaryNumberIsValid()
+		public void ImaginaryNumbersAreValid()
 		{
 			AssertIsValid("79927398713");
+			AssertIsValid("748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489");
 		}
 
 		[TestMethod]
-		public void ImaginaryNumberIsIndalid()
+		[ExpectedException(typeof(System.ArgumentNullException))]
+		public void NullValueThrowsArgumentNullException()
+		{
+			CardNumberValidator.IsValid(null);
+		}
+
+		[TestMethod]
+		public void EmptyValueIsInvalid()
+		{
+			Assert.IsFalse(CardNumberValidator.IsValid(""), "Null value must not be valid");
+		}
+
+		[TestMethod]
+		public void ImaginaryNumberIsInvalid()
 		{
 			var badNumbers = new[] { "79927398710", "79927398711", "79927398712", "79927398714", "79927398715", "79927398716", "79927398717", "79927398718", "79927398719" };
 			foreach (var badCardNumber in badNumbers)
 			{
-				AssertIsIndalid(badCardNumber);
+				AssertIsInvalid(badCardNumber);
+			}
+		}
+
+		[TestMethod]
+		public void BadValuesAreInvalid()
+		{
+			var masterCardNumbers = new[]
+				{
+					"5500,0055 5555 5559",
+					"4055 0111.1111 1111",
+					"12e5",
+					"-5",
+					"ndngf",
+					"673662436627643764723636",
+					"748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957489748578748574873487487387548738754873874878375487538957489738845789573875485738957488"
+				};
+			foreach (var cardNumber in masterCardNumbers)
+			{
+				AssertIsInvalid(cardNumber);
 			}
 		}
 
@@ -73,7 +100,7 @@ namespace BankCardNumber.Tests
 			Assert.IsTrue(CardNumberValidator.IsValid(cardNumber.Replace(" ", "")), errorMessage);
 		}
 
-		private static void AssertIsIndalid(string cardNumber)
+		private static void AssertIsInvalid(string cardNumber)
 		{
 			string errorMessage = string.Format("Card number '{0}' must be invalid!", cardNumber);
 			Assert.IsFalse(CardNumberValidator.IsValid(cardNumber.Replace(" ", "")), errorMessage);

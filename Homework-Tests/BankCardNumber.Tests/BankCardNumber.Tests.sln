@@ -15,10 +15,13 @@ Global
 		CategoryFile = BankCardNumber.Tests.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - My|Any CPU = Debug - My|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DBCC739-64F9-4DCE-9EFE-DF8B7A3681AF}.Debug - My|Any CPU.ActiveCfg = Debug - My|Any CPU
+		{2DBCC739-64F9-4DCE-9EFE-DF8B7A3681AF}.Debug - My|Any CPU.Build.0 = Debug - My|Any CPU
 		{2DBCC739-64F9-4DCE-9EFE-DF8B7A3681AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2DBCC739-64F9-4DCE-9EFE-DF8B7A3681AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DBCC739-64F9-4DCE-9EFE-DF8B7A3681AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
