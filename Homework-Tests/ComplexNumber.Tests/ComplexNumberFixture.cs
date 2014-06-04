@@ -91,23 +91,35 @@ namespace ComplexNumber.Tests
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "EqualityData")]
 		public void CanCompareEquality(ComplexNumber x, ComplexNumber y)
 		{
+// ReSharper disable InconsistentNaming
 			string pairXX = AsString(x) + " and " + AsString(x);
 			string pairXY = AsString(x) + " and " + AsString(y);
 			string pairYX = AsString(y) + " and " + AsString(x);
 			string pairYY = AsString(y) + " and " + AsString(y);
+// ReSharper restore InconsistentNaming
 
 			Debug.WriteLine("Checking " + pairXY);
 
-			// ReSharper disable EqualExpressionComparison
-			Assert.IsTrue(x == x, pairXX + " must be equal");
-			Assert.IsTrue(y == y, pairYY + " must be equal");
-			// ReSharper restore EqualExpressionComparison
+			AssertTrueEquality(x, x, pairXX + " must be equal");
+			AssertTrueEquality(y, y, pairYY + " must be equal");
 
-			Assert.IsTrue(x == new ComplexNumber(x.Real, x.Imaginary), pairXX + " must be equal");
-			Assert.IsTrue(new ComplexNumber(x.Real, x.Imaginary) == x, pairXX + " must be equal");
+			AssertTrueEquality(x, new ComplexNumber(x.Real, x.Imaginary), pairXX + " must be equal");
+			AssertTrueEquality(new ComplexNumber(x.Real, x.Imaginary), x, pairXX + " must be equal");
 
-			Assert.IsFalse(x == y, pairXY + " must be not equal");
-			Assert.IsFalse(y == x, pairYX + " must be not equal");
+			AssertFalseEquality(x, y, pairXY + " must be not equal");
+			AssertFalseEquality(y, x, pairYX + " must be not equal");
+		}
+
+		private static void AssertTrueEquality(ComplexNumber a, ComplexNumber b, string message)
+		{
+			Assert.IsTrue(a == b, message);
+			Assert.IsTrue(((IEquatable<ComplexNumber>)a).Equals(b), message);
+		}
+
+		private static void AssertFalseEquality(ComplexNumber a, ComplexNumber b, string message)
+		{
+			Assert.IsFalse(a == b, message);
+			Assert.IsFalse(((IEquatable<ComplexNumber>)a).Equals(b), message);
 		}
 
 		[Test]
@@ -115,10 +127,12 @@ namespace ComplexNumber.Tests
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "EqualityData")]
 		public void CanCompareNonEquality(ComplexNumber x, ComplexNumber y)
 		{
+			// ReSharper disable InconsistentNaming
 			string pairXX = AsString(x) + " and " + AsString(x);
 			string pairXY = AsString(x) + " and " + AsString(y);
 			string pairYX = AsString(y) + " and " + AsString(x);
 			string pairYY = AsString(y) + " and " + AsString(y);
+			// ReSharper restore InconsistentNaming
 
 			Debug.WriteLine("Checking " + pairXY);
 
@@ -134,6 +148,19 @@ namespace ComplexNumber.Tests
 			Assert.IsTrue(y != x, pairYX + " must be not equal");
 		}
 
+		private static void AssertTrueNonEquality(ComplexNumber a, ComplexNumber b, string message)
+		{
+			Assert.IsTrue(a != b, message);
+			Assert.IsFalse(((IEquatable<ComplexNumber>)a).Equals(b), message);
+		}
+
+		private static void AssertFalseNonEquality(ComplexNumber a, ComplexNumber b, string message)
+		{
+			Assert.IsFalse(a != b, message);
+			Assert.IsTrue(((IEquatable<ComplexNumber>)a).Equals(b), message);
+		}
+
+
 		[Test]
 		[Category("Operator overloading")]
 		public void CanCompareComplexNumberWithNull()
@@ -148,34 +175,37 @@ namespace ComplexNumber.Tests
 			Assert.IsFalse(x != y);
 		}
 
-		[Test]
-		[Category("Operator overloading")]
-		public void NullIsLessThanComplexNumber()
-		{
-			// ReSharper disable ConditionIsAlwaysTrueOrFalse
-			// ReSharper disable HeuristicUnreachableCode
+		//[Test]
+		//[Category("Operator overloading")]
+		//public void NullIsLessThanComplexNumber()
+		//{
+		//    // ReSharper disable ConditionIsAlwaysTrueOrFalse
+		//    // ReSharper disable HeuristicUnreachableCode
 
-			var x = new ComplexNumber(0);
-			var comparable = x as IComparable<ComplexNumber>;
-			if (comparable == null)
-			{
-				Assert.Inconclusive("Type doesn't implement IComparable<ComplexNumber>");
-			}
-			else
-			{
-				Assert.GreaterOrEqual(comparable.CompareTo(null), 0);
-			}
+		//    var x = new ComplexNumber(0);
+		//    var comparable = x as IComparable<ComplexNumber>;
+		//    if (comparable == null)
+		//    {
+		//        Assert.Inconclusive("Type doesn't implement IComparable<ComplexNumber>");
+		//    }
+		//    else
+		//    {
+		//        Assert.GreaterOrEqual(comparable.CompareTo(null), 0);
+		//    }
 
-			// ReSharper restore HeuristicUnreachableCode
-			// ReSharper restore ConditionIsAlwaysTrueOrFalse
-		}
+		//    // ReSharper restore HeuristicUnreachableCode
+		//    // ReSharper restore ConditionIsAlwaysTrueOrFalse
+		//}
 
 		[Test]
 		[Category("Operator overloading")]
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "AddData")]
 		public ComplexNumber CanAddComplexNumbers(ComplexNumber x, ComplexNumber y)
 		{
-			return x + y;
+			ComplexNumber result = x + y;
+			Assert.AreEqual(x.Real + y.Real, result.Real);
+			Assert.AreEqual(x.Imaginary + y.Imaginary, result.Imaginary);
+			return result;
 		}
 
 		[Test]
@@ -183,23 +213,34 @@ namespace ComplexNumber.Tests
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "SubtractData")]
 		public ComplexNumber CanSubtractComplexNumbers(ComplexNumber x, ComplexNumber y)
 		{
-			return x - y;
+			ComplexNumber result = x - y;
+			Assert.AreEqual(x.Real - y.Real, result.Real);
+			Assert.AreEqual(x.Imaginary - y.Imaginary, result.Imaginary);
+			return result;
 		}
+
+		//[Test]
+		//[Category("Interface implementation")]
+		//public void ImplementsIComparable()
+		//{
+		//    var x = new ComplexNumber(10);
+		//    Assert.IsNotNull(x as IComparable, "Type does not implement IComparable.");
+		//}
+
+		//[Test]
+		//[Category("Interface implementation")]
+		//public void ImplementsGenericIComparable()
+		//{
+		//    var x = new ComplexNumber(10);
+		//    Assert.IsNotNull(x as IComparable<ComplexNumber>, "Type does not implement IComparable<ComplexNumber>.");
+		//}
 
 		[Test]
 		[Category("Interface implementation")]
-		public void ImplementsIComparable()
+		public void ImplementsGenericIEquatable()
 		{
 			var x = new ComplexNumber(10);
-			Assert.IsNotNull(x as IComparable, "Type does not implement IComparable.");
-		}
-
-		[Test]
-		[Category("Interface implementation")]
-		public void ImplementsGenericIComparable()
-		{
-			var x = new ComplexNumber(10);
-			Assert.IsNotNull(x as IComparable<ComplexNumber>, "Type does not implement IComparable<ComplexNumber>.");
+			Assert.IsNotNull(x as IEquatable<ComplexNumber>, "Type does not implement IEquatable<ComplexNumber>.");
 		}
 
 		[Test]
@@ -207,7 +248,8 @@ namespace ComplexNumber.Tests
 		public void ImplementsIFormattable()
 		{
 			var x = new ComplexNumber(10);
-			Assert.IsNotNull(x as IFormattable, "Type does not implement IFormattable.");
+			Assert.That(x, Is.AssignableTo<IFormattable>(), "Type does not implement IFormattable.");
+			//Assert.IsNotNull(x as IFormattable, "Type does not implement IFormattable.");
 		}
 
 		[Test]
@@ -326,8 +368,8 @@ namespace ComplexNumber.Tests
 			{
 				yield return new TestCaseData(new ComplexNumber(0, 0), new ComplexNumber(0, 0)).Returns(new ComplexNumber(0, 0));
 
-				yield return new TestCaseData(new ComplexNumber(1, 2), new ComplexNumber(3, 4)).Returns(new ComplexNumber(-2, -2));
-				yield return new TestCaseData(new ComplexNumber(3, 4), new ComplexNumber(1, 2)).Returns(new ComplexNumber(2, 2));
+				yield return new TestCaseData(new ComplexNumber(1, 2), new ComplexNumber(9, 8)).Returns(new ComplexNumber(-8, -6));
+				yield return new TestCaseData(new ComplexNumber(3, 4), new ComplexNumber(-1, -2)).Returns(new ComplexNumber(4, 6));
 			}
 		}
 
