@@ -5,13 +5,13 @@ namespace BelhardTraining.RecentListDemo
 {
 	public partial class MainForm : Form
 	{
-		private readonly RecentList<string> recentFiles;
+		private readonly RecentCollection<string> recentFiles;
 
 		public MainForm()
 		{
 			InitializeComponent();
 
-			recentFiles = new RecentList<string>(10);
+			recentFiles = new RecentCollection<string>(10);
 		}
 
 		private void OnExitToolStripMenuItemClick(object sender, EventArgs e)

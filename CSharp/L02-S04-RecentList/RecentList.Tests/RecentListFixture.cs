@@ -9,7 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BelhardTraining.RecentListDemo.Tests
 {
 	/// <summary>
-	/// Unit-тесты для класса RecentList&gt;T&lt;
+	/// Unit-тесты для класса RecentCollection&gt;T&lt;
 	/// </summary>
 	/// <remarks>
 	/// Тесты написаны на основе MS Test Framework
@@ -23,7 +23,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void ConstructorThrowsArgumentOutOfRangeException_WhenZeroIsPassed()
 		{
-			var list = new RecentList<string>(0);
+			var list = new RecentCollection<string>(0);
 			Assert.IsNotNull(list);
 		}
 
@@ -32,7 +32,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void ConstructorThrowsArgumentOutOfRangeException_WhenNegativeNumberIsPassed()
 		{
-			var list = new RecentList<string>(-10);
+			var list = new RecentCollection<string>(-10);
 			Assert.IsNotNull(list);
 		}
 
@@ -40,7 +40,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Count property")]
 		public void CountIsZero_ForNewList()
 		{
-			var list = new RecentList<string>(10);
+			var list = new RecentCollection<string>(10);
 			Assert.AreEqual(0, list.Count);
 		}
 
@@ -48,7 +48,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Capacity property")]
 		public void CapacityIsNonZero_ForNewList()
 		{
-			var list = new RecentList<string>(10);
+			var list = new RecentCollection<string>(10);
 			Assert.AreEqual(10, list.Capacity);
 		}
 
@@ -56,7 +56,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Count property")]
 		public void CountIsZero_AfterClear()
 		{
-			var list = new RecentList<int>(10) { 1, 2, 3, 4 };
+			var list = new RecentCollection<int>(10) { 1, 2, 3, 4 };
 			list.Clear();
 			Assert.AreEqual(0, list.Count);
 		}
@@ -66,7 +66,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void ThrowsArgumentOutOfRangeException_WhenListIsEmpty()
 		{
-			var list = new RecentList<int>(10);
+			var list = new RecentCollection<int>(10);
 			int first = list[0];
 			Console.WriteLine(first);
 		}
@@ -75,7 +75,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Add method")]
 		public void AddMovesElementToBeginning()
 		{
-			var list = new RecentList<int>(5);
+			var list = new RecentCollection<int>(5);
 			list.Add(1);
 			list.Add(2);
 			// Добавляем уже существующий элемент.
@@ -91,7 +91,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Add method")]
 		public void AddDeletesLastElement()
 		{
-			var list = new RecentList<int>(3);
+			var list = new RecentCollection<int>(3);
 			list.Add(1);
 			list.Add(2);
 			list.Add(3);
@@ -109,7 +109,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Add method")]
 		public void AddDoesNotMoveFirstElement()
 		{
-			var list = new RecentList<int>(3);
+			var list = new RecentCollection<int>(3);
 			list.Add(1);
 			list.Add(2);
 			list.Add(3);
@@ -124,10 +124,19 @@ namespace BelhardTraining.RecentListDemo.Tests
 		}
 
 		[TestMethod]
+		[Description("Add method")]
+		[ExpectedException(typeof(NotSupportedException))]
+		public void AddThrowsOnNullValue()
+		{
+			var list = new RecentCollection<string>(3);
+			list.Add(null);
+		}
+
+		[TestMethod]
 		[Description("Remove method")]
 		public void CanRemoveFromEmptyList()
 		{
-			var list = new RecentList<int>(10);
+			var list = new RecentCollection<int>(10);
 			bool removed = list.Remove(int.MaxValue);
 
 			Assert.IsFalse(removed);
@@ -138,7 +147,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveNonExistingInt32Element()
 		{
-			var list = new RecentList<int>(10) { 1, 2, 3, 4, 5 };
+			var list = new RecentCollection<int>(10) { 1, 2, 3, 4, 5 };
 			int oldCount = list.Count;
 
 			bool removed = list.Remove(1024);
@@ -151,7 +160,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveNonExistingStringElement()
 		{
-			var list = new RecentList<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
+			var list = new RecentCollection<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
 			int oldCount = list.Count;
 
 			bool removed = list.Remove("There is no spoon");
@@ -164,7 +173,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveFirstInt32Element()
 		{
-			var list = new RecentList<int>(5) {1, 2, 3, 4, 5};
+			var list = new RecentCollection<int>(5) {1, 2, 3, 4, 5};
 			int oldCount = list.Count;
 
 			bool removed = list.Remove(5);
@@ -184,7 +193,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveLastInt32Element()
 		{
-			var list = new RecentList<int>(5) { 1, 2, 3, 4, 5 };
+			var list = new RecentCollection<int>(5) { 1, 2, 3, 4, 5 };
 			int oldCount = list.Count;
 
 			bool removed = list.Remove(1);
@@ -204,7 +213,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveMiddleInt32Element()
 		{
-			var list = new RecentList<int>(5) { 1, 2, 3, 4, 5 };
+			var list = new RecentCollection<int>(5) { 1, 2, 3, 4, 5 };
 			int oldCount = list.Count;
 
 			bool removed = list.Remove(3);
@@ -224,7 +233,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveFirstStringElement()
 		{
-			var list = new RecentList<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
+			var list = new RecentCollection<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
 			int oldCount = list.Count;
 
 			bool removed = list.Remove("Oracle");
@@ -244,7 +253,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveLastStringElement()
 		{
-			var list = new RecentList<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
+			var list = new RecentCollection<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
 			int oldCount = list.Count;
 
 			bool removed = list.Remove("Neo");
@@ -264,7 +273,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Remove method")]
 		public void CanRemoveMiddleStringElement()
 		{
-			var list = new RecentList<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
+			var list = new RecentCollection<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
 			int oldCount = list.Count;
 
 			bool removed = list.Remove("Trinity");
@@ -286,7 +295,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		public void ContainsReturnsTrueForInt32Elements()
 		{
 			int[] values = new[] { int.MinValue, -100, 0, 100, int.MaxValue };
-			var list = new RecentList<int>(10);
+			var list = new RecentCollection<int>(10);
 			foreach (int s in values)
 			{
 				list.Add(s);
@@ -303,7 +312,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		public void ContainsReturnsTrueForStringElements()
 		{
 			string[] values = new[] {"Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle"};
-			var list = new RecentList<string>(10);
+			var list = new RecentCollection<string>(10);
 			foreach (string s in values)
 			{
 				list.Add(s);
@@ -320,7 +329,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[ExpectedException(typeof(InvalidOperationException))]
 		public void MoveNextThrowsInvalidOperationException_AfterListIsChanged()
 		{
-			var list = new RecentList<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
+			var list = new RecentCollection<string>(10) { "Neo", "Morpheus", "Trinity", "Agent Smith", "Oracle" };
 			var enumerator = list.GetEnumerator();
 
 			list.Add("Merovingian");
@@ -331,7 +340,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("SyncRoot property")]
 		public void SyncRootIsNotNull()
 		{
-			var list = new RecentList<int>(10);
+			var list = new RecentCollection<int>(10);
 			Assert.IsNotNull(((ICollection)list).SyncRoot);
 		}
 
@@ -339,8 +348,8 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("SyncRoot property")]
 		public void SyncRootsAreDifferent()
 		{
-			var list1 = new RecentList<int>(10);
-			var list2 = new RecentList<int>(10);
+			var list1 = new RecentCollection<int>(10);
+			var list2 = new RecentCollection<int>(10);
 			Assert.IsFalse(ReferenceEquals(
 				((ICollection)list1).SyncRoot, 
 				((ICollection)list2).SyncRoot
@@ -351,7 +360,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("IsReadOnly property")]
 		public void IsReadOnly_IsFalse()
 		{
-			var list = new RecentList<int>(10);
+			var list = new RecentCollection<int>(10);
 			Assert.IsFalse(list.IsReadOnly);
 		}
 
@@ -359,7 +368,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 		[Description("Serialization")]
 		public void CanSerializeAndDeserialize()
 		{
-			var list = new RecentList<int>(10);
+			var list = new RecentCollection<int>(10);
 			list.Add(3);
 			list.Add(2);
 			list.Add(1);
@@ -368,7 +377,7 @@ namespace BelhardTraining.RecentListDemo.Tests
 			var binaryFormatter = new BinaryFormatter();
 			binaryFormatter.Serialize(memStream, list);
 			memStream.Position = 0;
-			var listCopy = (RecentList<int>)binaryFormatter.Deserialize(memStream);
+			var listCopy = (RecentCollection<int>)binaryFormatter.Deserialize(memStream);
 			memStream.Dispose();
 
 			Assert.IsNotNull(listCopy);

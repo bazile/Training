@@ -13,7 +13,7 @@ namespace BelhardTraining.RecentListDemo
 			List<int> x = new List<int>();
 			Console.WriteLine(x[0]);
 
-			RecentList<int> list = new RecentList<int>(5);
+			RecentCollection<int> list = new RecentCollection<int>(5);
 			bool shownFullMessage = false;
 			for (;;)
 			{
@@ -51,7 +51,7 @@ namespace BelhardTraining.RecentListDemo
 
 		private static void ShowHelp()
 		{
-			Console.WriteLine("Демонстрация работы коллекции RecentList<T>.");
+			Console.WriteLine("Демонстрация работы коллекции RecentCollection<T>.");
 			Console.WriteLine("Наблюдайте как меняется порядок элементов в коллекции.");
 			Console.WriteLine("Попробуйте вводить разные и одинаковые числа.");
 			Console.WriteLine("Максимальный размер списка равен 5.");
