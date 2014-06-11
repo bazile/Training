@@ -1,5 +1,13 @@
 - Убрать префикс _ !
+- CodeStyle check
+	BelhardTraining namespace
 
+- reflection demo
+	AppDomain.CurrentDomain.GetAssemblies()
+		.SelectMany(asm => asm.GetTypes())
+		.Where(t => t.FullName.StartsWith("System") && t.Name.EndsWith("Exception"))
+		.Select(t => t.FullName)
+		.OrderBy(s => s)
 - XML creation
 - string samples (sorting, comparing)
 - Math sample to show threading perfomance gain
