@@ -54,6 +54,15 @@
 					Specifies whether the runtime runs server garbage collection.
 					.NET 2.0+
 
+- #4
+	- HandleProcessCorruptedStateExceptions attribute
+		http://dailydotnettips.com/2013/09/23/corruptedstateexceptions-in-net-a-way-to-handle/
+		<configuration>
+    		<runtime>
+        		<legacyCorruptedStateExceptionsPolicy enabled="true"/>
+    		</runtime>
+		</configuration>		
+						
 - #5 (events)
 	- События и исключения
 
@@ -110,6 +119,7 @@
 - #7 (сборки и  рефлексия)
 	- Разница между const и static readonly полями
 	- CodeCOM, code expressions
+	- Roslyn/Nitra/.NET Native
 
 - #8 (mult-threading)
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
@@ -142,10 +152,15 @@
 		6NF Sixth normal form
 	- Утилиты для работы с БД		
 		- RedGate SQL Search
+			http://www.red-gate.com/products/sql-development/sql-search/
+		- DbVisualizer, Java based
+			http://www.dbvis.com/
 		- RedGate SQL Toolbelt, $
 		- Profiler
 		- Command lines: sqlcmd, bcp, wizard, etc
 	- Database проекты в Visual Studio
+	- Другое
+		http://sqlserverbuilds.blogspot.ru/
 
 - #10 - ADO.NET
 	- Разделить презентацию по ADO.NET на три части: disconnected, connected и EF
@@ -214,6 +229,11 @@
 	DebuggerDisplayAttribute
 	DebuggerTypeProxyAttribute
 	DebuggerNonUserCodeAttribute
+	- Use Object_id (id#)
+		Какие версии VS? vs2005+?
+		http://dailydotnettips.com/2011/01/09/how-to-use-out-of-scope-object-with-in-conditional-breakpoint/
+	DebuggerBrowsableAttribute
+		http://dailydotnettips.com/2011/02/02/few-tips-on-customizing-debugging-window-view-in-visual-studio/  
 	
 - Visual Studio
 	- Введение в Visual Studio 2010 с картинками
