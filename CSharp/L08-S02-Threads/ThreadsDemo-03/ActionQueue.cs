@@ -6,54 +6,54 @@ namespace ThreadsDemo.Queue
 {
 	public class ActionQueue<T> : IDisposable where T : class
 	{
-		private readonly Queue<T> _queue = new Queue<T>();  // Очередь объектов
-		private readonly Thread _thread;                    // Поток - потребитель
-		private readonly EventWaitHandle _waitHandle = new AutoResetEvent(false);   // Объект для синхронизации
-		private readonly Action<T> _action;                 // Делегат на метод-обработчик
+		private readonly Queue<T> queue = new Queue<T>();  // Очередь объектов
+		private readonly Thread consumerThread;                    // Поток - потребитель
+		private readonly AutoResetEvent newDataHandle = new AutoResetEvent(false);   // Объект для синхронизации
+		private readonly Action<T> consumerAction;                 // Делегат на метод-обработчик
 
-		public ActionQueue(Action<T> action)
+		public ActionQueue(Action<T> consumerAction)
 		{
-			if (action == null)
+			if (consumerAction == null)
 			{
-				throw new ArgumentNullException("action");
+				throw new ArgumentNullException("consumerAction");
 			}
-			_action = action;                   // Запоминаем делегат на метод-обработчик
+			this.consumerAction = consumerAction;                   // Запоминаем делегат на метод-обработчик
 
-			_thread = new Thread(MainLoop);     //Запускаем поток
-			_thread.Start();
+			consumerThread = new Thread(DoConsume);     //Запускаем поток
+			consumerThread.Start();
 		}
 
 		public void EnqueueElement(T element)   //Метод добавления объекта в очередь
 		{
-			lock (_queue)                       //Блокируем очередь
+			lock (queue)                       //Блокируем очередь
 			{
-				_queue.Enqueue(element);        //Помещаем объект в очередь
+				queue.Enqueue(element);        //Помещаем объект в очередь
 			}
-			_waitHandle.Set();                  //Будим возможно спящий поток-потребитель, Отправляем сигнал.
+			newDataHandle.Set();                  //Будим возможно спящий поток-потребитель, Отправляем сигнал.
 		}
 
 		public void Stop()                      //Метод остановки обработчика
 		{
 			EnqueueElement(null);               //Добавляем null указатель, чтобы завершить поток-потребитель
-			_thread.Join();                     //Ждем завершения потока
-			_waitHandle.Reset();                //Сбрасываем объект синхронизации.
+			consumerThread.Join();                     //Ждем завершения потока
+			newDataHandle.Reset();                //Сбрасываем объект синхронизации.
 		}
 
 		public void Dispose()
 		{
-			_waitHandle.Close();                //Закрываем объект синхронизации
+			newDataHandle.Close();                //Закрываем объект синхронизации
 		}
 
-		private void MainLoop()                 //Метод, выполняющий поток-потребитель
+		private void DoConsume()                 //Метод, выполняющий поток-потребитель
 		{
 			while (true)
 			{
 				T element = null;
-				lock (_queue)
+				lock (queue)
 				{
-					if (_queue.Count > 0)
+					if (queue.Count > 0)
 					{
-						element = _queue.Dequeue(); //Извлекаем следующий элемент из очереди
+						element = queue.Dequeue(); //Извлекаем следующий элемент из очереди
 						if (element == null)        //Если вместо него - указатель на null...
 						{
 							return;                 //...завершаем поток-потребитель
@@ -62,11 +62,11 @@ namespace ThreadsDemo.Queue
 				}
 				if (element != null)                //Если элемент не null
 				{
-					_action(element);               //Вызываем метод обработчик через делегата
+					consumerAction(element);               //Вызываем метод обработчик через делегата
 				}
 				else
 				{
-					_waitHandle.WaitOne();          //Иначе - ждем пополнения в очереди.
+					newDataHandle.WaitOne();          //Иначе - ждем пополнения в очереди.
 				}
 			}
 		}
