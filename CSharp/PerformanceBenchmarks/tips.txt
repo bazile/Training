@@ -1,0 +1,5 @@
+String.Split() array allocation, use static constant
+string.TrimStart(params char[]) передаем null
+
+
+
