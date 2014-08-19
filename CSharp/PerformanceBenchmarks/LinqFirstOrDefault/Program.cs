@@ -1,20 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using BelhardTraining.Benchmark.Core;
 using BenchmarkDotNet;
 
 namespace LinqFirstOrDefault
 {
-	class Program
+	class Program : ProgramBase
 	{
-		private static int iterations = 8000;
+		private const int Iterations = 8000;
+		const string nameToFind = "kcw";
 
 		static void Main(string[] args)
 		{
-			const string nameToFind = "kcw";
-			var competition = new BenchmarkCompetition();
-			competition.AddTask("LINQ", () => FindSymbolLinqBenchmark(nameToFind));
-			competition.AddTask("ForEach", () => FindSymbolForEachBenchmark(nameToFind));
+			string benchmarkId = args.Length == 1 ? args[0] : null;
+			var competition = (new Program()).GetBenchmarkCompetition(benchmarkId);
 			competition.Run();
+		}
+
+		protected override Tuple<string, string, Action>[] GetBenhmarkList()
+		{
+			return new[] {
+				Tuple.Create<string, string, Action>("LINQ"   , "Через LINQ"   , () => FindSymbolLinqBenchmark(nameToFind)),
+				Tuple.Create<string, string, Action>("ForEach", "Через foreach", () => FindSymbolForEachBenchmark(nameToFind))
+			};
 		}
 
 		class Symbol
@@ -49,7 +58,7 @@ namespace LinqFirstOrDefault
 
 		static void FindSymbolLinqBenchmark(string name)
 		{
-			for (int i = 0; i < iterations; i++)
+			for (int i = 0; i < Iterations; i++)
 			{
 				// Delegate allocation
 				// boxing of List<T> enumerator
@@ -59,7 +68,7 @@ namespace LinqFirstOrDefault
 
 		static void FindSymbolForEachBenchmark(string name)
 		{
-			for (int i = 0; i < iterations; i++)
+			for (int i = 0; i < Iterations; i++)
 			{
 				Symbol foundSymbol = default(Symbol);
 				foreach (var symbol in _symbols)

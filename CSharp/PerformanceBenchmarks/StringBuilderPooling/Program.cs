@@ -1,19 +1,27 @@
 ﻿using System;
 using System.Text;
+using BelhardTraining.Benchmark.Core;
 using BenchmarkDotNet;
 
 namespace StringBuilderPooling
 {
-	class Program
+	class Program : ProgramBase
 	{
 		private static int iterations = 1000000;
 
 		static void Main(string[] args)
 		{
-			var competition = new BenchmarkCompetition();
-			competition.AddTask("Без пула", NoPoolingBenchmark);
-			competition.AddTask("C пулом" , UsePoolingBenchmark);
+			string benchmarkId = args.Length == 1 ? args[0] : null;
+			var competition = (new Program()).GetBenchmarkCompetition(benchmarkId);
 			competition.Run();
+		}
+
+		protected override Tuple<string, string, Action>[] GetBenhmarkList()
+		{
+			return new[] {
+				Tuple.Create<string, string, Action>("NoPooling" , "Без пула", NoPoolingBenchmark),
+				Tuple.Create<string, string, Action>("UsePooling", "С пулом" , UsePoolingBenchmark)
+			};
 		}
 
 		#region Без пула
@@ -58,7 +66,7 @@ namespace StringBuilderPooling
 			}
 		}
 
-		private class PoolingImpl
+		private static class PoolingImpl
 		{
 			[ThreadStatic]
 			private static StringBuilder _cachedStringBuilder;

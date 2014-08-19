@@ -47,6 +47,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Benchmark.Core\Benchmark.Core.csproj">
+      <Project>{C6382B31-C134-4CCF-8A17-05DB82CE64B0}</Project>
+      <Name>Benchmark.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

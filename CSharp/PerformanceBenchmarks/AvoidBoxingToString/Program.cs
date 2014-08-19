@@ -1,25 +1,32 @@
-﻿using BenchmarkDotNet;
+﻿using System;
+using BelhardTraining.Benchmark.Core;
 
 namespace AvoidBoxingToString
 {
-	class Program
+	class Program : ProgramBase
 	{
-		private static int iterations = 3000000;
+		private const int Iterations = 3000000;
 
 		static void Main(string[] args)
 		{
-			var competition = new BenchmarkCompetition();
-			competition.AddTask("ConcatObjects", ConcatMessageWithBoxingBenchmark);
-			competition.AddTask("ConcatStrings", ConcatMessageAvoidingBoxingBenchmark);
-			competition.AddTask("Format1", FormatMessageWithBoxingBenchmark);
-			competition.AddTask("Format2", FormatMessageAvoidingBoxingBenchmark);
+			string benchmarkId = args.Length == 1 ? args[0] : null;
+			var competition = (new Program()).GetBenchmarkCompetition(benchmarkId);
 			competition.Run();
 		}
-		
+
+		protected override Tuple<string, string, Action>[] GetBenhmarkList()
+		{
+			return new[] {
+				Tuple.Create<string, string, Action>("ConcatObjects"      , "ConcatObjects"      , ConcatMessageWithBoxingBenchmark),
+				Tuple.Create<string, string, Action>("ConcatStrings"      , "ConcatStrings"      , ConcatMessageAvoidingBoxingBenchmark),
+				Tuple.Create<string, string, Action>("FormatWithBoxing"   , "FormatWithBoxing"   , FormatMessageWithBoxingBenchmark),
+				Tuple.Create<string, string, Action>("FormatWithoutBoxing", "FormatWithoutBoxing", FormatMessageAvoidingBoxingBenchmark)
+			};
+		}
 
 		private static void ConcatMessageWithBoxingBenchmark()
 		{
-			for (int i = 0; i < iterations; i++)
+			for (int i = 0; i < Iterations; i++)
 			{
 				ConcatMessageWithBoxing(1, 42);
 			}
@@ -34,7 +41,7 @@ namespace AvoidBoxingToString
 
 		private static void ConcatMessageAvoidingBoxingBenchmark()
 		{
-			for (int i = 0; i < iterations; i++)
+			for (int i = 0; i < Iterations; i++)
 			{
 				ConcatMessageAvoidingBoxing(1, 42);
 			}
@@ -47,7 +54,7 @@ namespace AvoidBoxingToString
 
 		private static void FormatMessageWithBoxingBenchmark()
 		{
-			for (int i = 0; i < iterations; i++)
+			for (int i = 0; i < Iterations; i++)
 			{
 				FormatMessageWithBoxing(1, 42);
 			}
@@ -60,7 +67,7 @@ namespace AvoidBoxingToString
 
 		private static void FormatMessageAvoidingBoxingBenchmark()
 		{
-			for (int i = 0; i < iterations; i++)
+			for (int i = 0; i < Iterations; i++)
 			{
 				FormatMessageAvoidingBoxing(1, 42);
 			}
