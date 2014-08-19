@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("03-Point2D-And-Rectangle")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-//[assembly: AssemblyCompany("")]
-//[assembly: AssemblyProduct("03-Point2D-And-Rectangle")]
-//[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCompany("Центр обучающих технологий \u00ABБелхард\u00BB")]
+[assembly: AssemblyProduct("Основы программирования на С#")]
+[assembly: AssemblyCopyright("Copyright © 2012-2014 Vasily Petruhin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

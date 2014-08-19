@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RecentCollection.Generic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-//[assembly: AssemblyCompany("")]
-//[assembly: AssemblyProduct("RecentCollection.Generic")]
-//[assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: AssemblyCompany("Центр обучающих технологий \u00ABБелхард\u00BB")]
+[assembly: AssemblyProduct("Основы программирования на С#")]
+[assembly: AssemblyCopyright("Copyright © 2012-2014 Vasily Petruhin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

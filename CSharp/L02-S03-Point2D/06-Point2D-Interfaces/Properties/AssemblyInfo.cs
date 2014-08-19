@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("06-Point2D-Interfaces")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-//[assembly: AssemblyCompany("")]
-//[assembly: AssemblyProduct("06-Point2D-Interfaces")]
-//[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCompany("Центр обучающих технологий \u00ABБелхард\u00BB")]
+[assembly: AssemblyProduct("Основы программирования на С#")]
+[assembly: AssemblyCopyright("Copyright © 2012-2014 Vasily Petruhin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

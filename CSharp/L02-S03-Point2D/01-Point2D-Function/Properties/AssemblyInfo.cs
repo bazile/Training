@@ -3,6 +3,11 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("point2Dfunction")]
 [assembly: AssemblyDescription("Part of Point2D sample")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Центр обучающих технологий \u00ABБелхард\u00BB")]
+[assembly: AssemblyProduct("Основы программирования на С#")]
+[assembly: AssemblyCopyright("Copyright © 2012-2014 Vasily Petruhin")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
