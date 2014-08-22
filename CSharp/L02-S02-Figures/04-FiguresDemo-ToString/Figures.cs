@@ -1,6 +1,5 @@
 ﻿/*
  * Демонстрация наследования, абстрактных классов, виртуальных и абстрактных методов.
- * Также демонстрируется использование класса System.Diagnostics.Debug
 */
 
 using System;
@@ -8,8 +7,9 @@ using System.Diagnostics;
 
 namespace BelhardTraining.FiguresDemo
 {
-	// В C# запрещено создавать экземпляры абстрактных классов
-	public abstract class Figure
+    /// <summary>Неопределенная геометрическая фигура</summary>
+    /// <remarks>В C# запрещено создавать экземпляры абстрактных классов</remarks>
+    public abstract class Figure
 	{
 		public abstract double ComputeArea();
 		public abstract string WhoAmI();

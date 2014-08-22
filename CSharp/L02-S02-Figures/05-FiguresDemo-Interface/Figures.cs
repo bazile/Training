@@ -1,6 +1,5 @@
 ﻿/*
  * Демонстрация наследования, объявления и реализации интерфейса
- * Также демонстрируется использование класса System.Diagnostics.Debug
 */
 
 using System;
@@ -8,7 +7,7 @@ using System.Diagnostics;
 
 namespace BelhardTraining.FiguresDemo
 {
-	// Мы можеv использовать интерфейс вместо абстрактного базового класса
+	// Мы можем использовать интерфейс вместо абстрактного базового класса
 	// Однако при этом нам нужно не забывать объявлять методы как virtual в классах реализующих наш интерфейс
 	public interface IFigure
 	{
@@ -29,7 +28,6 @@ namespace BelhardTraining.FiguresDemo
 
 		public virtual double ComputeArea()
 		{
-			Debug.WriteLine("Square.ComputeArea()");
 			return Width * Height;
 		}
 
@@ -65,7 +63,6 @@ namespace BelhardTraining.FiguresDemo
 
 		public virtual double ComputeArea()
 		{
-			Debug.WriteLine("Ellipse.ComputeArea()");
 			return Math.PI * MajorRadius * MinorRadius;
 		}
 
@@ -107,7 +104,6 @@ namespace BelhardTraining.FiguresDemo
 
 		public virtual double ComputeArea()
 		{
-			Debug.WriteLine("EquilateralTriangle.ComputeArea()");
 			return SideLength * SideLength * Math.Sqrt(3) / 4f;
 		}
 

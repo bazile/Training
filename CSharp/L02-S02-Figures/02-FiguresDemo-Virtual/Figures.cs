@@ -8,17 +8,29 @@ using System.Diagnostics;
 
 namespace BelhardTraining.FiguresDemo
 {
-	public class Figure
+    /// <summary>Неопределенная геометрическая фигура</summary>
+    public class Figure
 	{
 		public virtual double ComputeArea()
 		{
-			return 0;
-		}
+			Debug.WriteLine("Figure.ComputeArea()");
+
+            // Возвращаем значение Not-A-Number чтобы показать вызывающему
+            //      коду что эта фигура не имеет площади
+            return double.NaN;
+        }
 
 		public virtual string WhoAmI()
 		{
+			Debug.WriteLine("Figure.WhoAmI()");
 			return "Figure";
-		}
+
+            // Вместо возврата значения можно было бы сгенерировать
+            //      исключение NotImplementedException чтобы вызывающий
+            //      код знал что этот метод вызывать не следует
+            // К сожалению узнаем мы об этом только на этапе исполнения 
+            //throw new NotImplementedException();
+        }
 	}
 
 	public class Rectangle : Figure
@@ -34,7 +46,6 @@ namespace BelhardTraining.FiguresDemo
 
 		public override double ComputeArea()
 		{
-			Debug.WriteLine("Square.ComputeArea()");
 			return Width * Height;
 		}
 
@@ -70,7 +81,6 @@ namespace BelhardTraining.FiguresDemo
 
 		public override double ComputeArea()
 		{
-			Debug.WriteLine("Ellipse.ComputeArea()");
 			return Math.PI * MajorRadius * MinorRadius;
 		}
 
@@ -112,7 +122,6 @@ namespace BelhardTraining.FiguresDemo
 
 		public override double ComputeArea()
 		{
-			Debug.WriteLine("EquilateralTriangle.ComputeArea()");
 			return SideLength * SideLength * Math.Sqrt(3) / 4f;
 		}
 

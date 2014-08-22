@@ -8,17 +8,29 @@ using System.Diagnostics;
 
 namespace BelhardTraining.FiguresDemo
 {
+    /// <summary>Неопределенная геометрическая фигура</summary>
     public class Figure
     {
 	    public double ComputeArea()
 	    {
-		    return 0;
+			Debug.WriteLine("Figure.ComputeArea()");
+
+            // Возвращаем значение Not-A-Number чтобы показать вызывающему
+            //      коду что эта фигура не имеет площади
+		    return double.NaN;
 	    }
 
 		public string WhoAmI()
 		{
+			Debug.WriteLine("Figure.WhoAmI()");
 			return "Figure";
-		}
+
+            // Вместо возврата значения можно было бы сгенерировать
+            //      исключение NotImplementedException чтобы вызывающий
+            //      код знал что этот метод вызывать не следует
+            // К сожалению узнаем мы об этом только на этапе исполнения 
+            //throw new NotImplementedException();
+        }
     }
 
 	public class Rectangle : Figure
@@ -32,13 +44,24 @@ namespace BelhardTraining.FiguresDemo
 			Height = height;
 		}
 
-		public new double ComputeArea()
+        /// <remarks>
+        /// Т.к. в базовом классе есть метод с такой же сигнатурой, то язык
+        ///     требует пометить новый метод ключевым словом new
+        /// В хорошем коде не должно быть таких ситуаций!
+        /// Следует использовать виртуальные методы.
+        /// </remarks>
+        public new double ComputeArea()
 		{
-			Debug.WriteLine("Square.ComputeArea()");
 			return Width * Height;
 		}
 
-		public new string WhoAmI()
+        /// <remarks>
+        /// Т.к. в базовом классе есть метод с такой же сигнатурой, то язык
+        ///     требует пометить новый метод ключевым словом new
+        /// В хорошем коде не должно быть таких ситуаций!
+        /// Следует использовать виртуальные методы.
+        /// </remarks>
+        public new string WhoAmI()
 		{
 			return "Rectangle";
 		}
@@ -67,13 +90,14 @@ namespace BelhardTraining.FiguresDemo
 			MinorRadius = minorRadius;
 		}
 
+        /// <remarks>См. комментарий к методу ComputeArea в классе Rectangle</remarks>
 		public new double ComputeArea()
 		{
-			Debug.WriteLine("Ellipse.ComputeArea()");
 			return Math.PI*MajorRadius*MinorRadius;
 		}
 
-		public new string WhoAmI()
+        /// <remarks>См. комментарий к методу WhoAmI в классе Rectangle</remarks>
+        public new string WhoAmI()
 		{
 			return "Ellipse";
 		}
@@ -91,7 +115,8 @@ namespace BelhardTraining.FiguresDemo
 		{
 		}
 
-		public new string WhoAmI()
+        /// <remarks>См. комментарий к методу WhoAmI в классе Rectangle</remarks>
+        public new string WhoAmI()
 		{
 			return "Circle";
 		}
@@ -109,13 +134,14 @@ namespace BelhardTraining.FiguresDemo
 			SideLength = sideLength;
 		}
 
-		public new double ComputeArea()
+        /// <remarks>См. комментарий к методу ComputeArea в классе Rectangle</remarks>
+        public new double ComputeArea()
 		{
-			Debug.WriteLine("EquilateralTriangle.ComputeArea()");
 			return SideLength*SideLength*Math.Sqrt(3)/4f;
 		}
 
-		public new string WhoAmI()
+        /// <remarks>См. комментарий к методу WhoAmI в классе Rectangle</remarks>
+        public new string WhoAmI()
 		{
 			return "EquilateralTriangle";
 		}
