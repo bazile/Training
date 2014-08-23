@@ -51,6 +51,13 @@
 		- делегаты
 		- типы
 	- IEquatable<T>
+	- inheritance - is a, interface - can
+	- Анти-паттерны
+		Magic strings
+		Слишком длинная цепочка наследования
+			MinaturePoodle -> Poodle -> WorkingDog -> Dog -> Animal
+				add Breed property to Dog
+
 
 - #3
 	- Сборщик мусора
@@ -187,7 +194,11 @@
 		ObjectQuery.ToTraceString
 		http://msdn.microsoft.com/en-us/library/system.data.objects.objectquery.totracestring.aspx
 	- EF		
-		http://www.entityframeworktutorial.net/update-entity-in-entity-framework.aspx		
+		http://www.entityframeworktutorial.net/update-entity-in-entity-framework.aspx
+		Lazy loading (suggest to turn off on web projects)
+			DB First - Model properties
+			Code first - Configuration.LazyLoadingEnabled
+	   make smaller models
 	
 - #12 (WPF)
 	- Перевод
@@ -214,6 +225,7 @@
 - Tools	WinSDK
 	- mt (generate manifests for managed assemblies and unmanaged side-by-side assemblies)
 		http://msdn.microsoft.com/en-us/library/aa375649%28v=vs.110%29.aspx
+	- ECMangen - ETW? manifest genereator
 			
 - Tools-Windows
 	- Утилиты командной строки
@@ -235,6 +247,7 @@
 		- netsh
 		- eventcreate
 			http://technet.microsoft.com/en-us/library/cc755240.aspx
+		- wevutil (windows events, ETW)
 	- power shell		
 
 - Misc
