@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PathLimits", "PathLimits\Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{FF99A6C4-41FB-4ECE-AB4E-21DC6439071A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compression", "Compression\Compression.csproj", "{EB115803-4927-43F4-9F63-57159C210DA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{FF99A6C4-41FB-4ECE-AB4E-21DC6439071A}.Debug|x86.Build.0 = Debug|x86
 		{FF99A6C4-41FB-4ECE-AB4E-21DC6439071A}.Release|x86.ActiveCfg = Release|x86
 		{FF99A6C4-41FB-4ECE-AB4E-21DC6439071A}.Release|x86.Build.0 = Release|x86
+		{EB115803-4927-43F4-9F63-57159C210DA4}.Debug|x86.ActiveCfg = Debug|x86
+		{EB115803-4927-43F4-9F63-57159C210DA4}.Debug|x86.Build.0 = Debug|x86
+		{EB115803-4927-43F4-9F63-57159C210DA4}.Release|x86.ActiveCfg = Release|x86
+		{EB115803-4927-43F4-9F63-57159C210DA4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
