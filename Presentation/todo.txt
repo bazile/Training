@@ -17,6 +17,8 @@
 		http://csharpindepth.com/Articles/General/Decimal.aspx
 	- Turkey test
 		http://www.moserware.com/2008/02/does-your-code-pass-turkey-test.html
+	- Short-Circuiting Ands and Ors
+
 #1.1
 	Стандартные типы
 		DateTime
@@ -144,6 +146,7 @@
 	- Разница между const и static readonly полями
 	- CodeCOM, code expressions
 	- Roslyn/Nitra/.NET Native
+	- http://referencesource.microsoft.com/
 
 - #8 (mult-threading)
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)

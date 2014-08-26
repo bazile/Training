@@ -2,12 +2,61 @@
 - CodeStyle check
 	BelhardTraining namespace
 
+- Unicode demo
+	string hello = "Прив\u0301ет";
+	"a b".Dump();
+	"a\u2002b".Dump(); // En space
+	"a\u2003b".Dump(); // Em space
+	"a\u2004b".Dump(); // Three-Per-Em space
+	"a\u2005b".Dump(); // Four-Per-Em space
+	"a\u2009b".Dump(); // Thin Space
+	"a\u200Ab".Dump(); // Hair Space
+	non-breaking space ???
+
 - reflection demo
 	AppDomain.CurrentDomain.GetAssemblies()
 		.SelectMany(asm => asm.GetTypes())
 		.Where(t => t.FullName.StartsWith("System") && t.Name.EndsWith("Exception"))
 		.Select(t => t.FullName)
 		.OrderBy(s => s)
+
+- collections demo
+void Main()
+{
+	List<string> emails = new List<string>();
+	emails.AddRange(File.ReadLines(@"d:\temp\bhl\email.txt"));
+	emails.Sort(CompareEmailByHost);
+	//emails.Dump();
+	//var emailByDomain = emails.GroupBy(e => e.Substring(e.IndexOf("@")+1));
+	var emailByDomain = from e in emails
+							group e by e.Substring(e.IndexOf("@")+1) into grouping
+							//orderby grouping.Key.Substring(0, e.IndexOf("@"))
+							select grouping;
+	foreach (var g in emailByDomain)
+	{
+		foreach(var email in g)
+		{
+			Console.Write(email+"; ");
+		}
+		Console.WriteLine();
+	}
+}
+
+// Define other methods and classes here
+int CompareEmailByHost(string email1, string email2)
+{
+	string host1 = email1.Substring(email1.IndexOf("@")+1);
+	string host2 = email2.Substring(email2.IndexOf("@")+1);
+	
+	int result = host1.CompareTo(host2);
+	if (result != 0) return result;
+
+	string name1 = email1.Substring(0, email1.IndexOf("@"));
+	string name2 = email2.Substring(0, email2.IndexOf("@"));
+	
+	return name1.CompareTo(name2);
+}
+		
 - XML creation
 - string samples (sorting, comparing)
 - Math sample to show threading perfomance gain
