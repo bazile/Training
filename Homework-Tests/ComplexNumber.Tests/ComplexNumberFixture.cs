@@ -377,13 +377,17 @@ namespace ComplexNumber.Tests
 		{
 			get
 			{
-				yield return new TestCaseData(new ComplexNumber(0, 0), null).Returns("0+i0");
+				yield return new TestCaseData(new ComplexNumber(0, 0), null).Returns("0");
+				yield return new TestCaseData(new ComplexNumber(1, 0), null).Returns("1");
+				yield return new TestCaseData(new ComplexNumber(-1, 0), null).Returns("-1");
 				yield return new TestCaseData(new ComplexNumber(1, 2), null).Returns("1+i2");
 				yield return new TestCaseData(new ComplexNumber(-1, 2), null).Returns("-1+i2");
 				yield return new TestCaseData(new ComplexNumber(1, -2), null).Returns("1-i2");
 				yield return new TestCaseData(new ComplexNumber(-1, -2), null).Returns("-1-i2");
 
-				yield return new TestCaseData(new ComplexNumber(0, 0), "A").Returns("0+i0");
+				yield return new TestCaseData(new ComplexNumber(0, 0), "A").Returns("0");
+				yield return new TestCaseData(new ComplexNumber(1, 0), "A").Returns("1");
+				yield return new TestCaseData(new ComplexNumber(-1, 0), "A").Returns("-1");
 				yield return new TestCaseData(new ComplexNumber(1, 2), "A").Returns("1+i2");
 				yield return new TestCaseData(new ComplexNumber(-1, 2), "A").Returns("-1+i2");
 				yield return new TestCaseData(new ComplexNumber(1, -2), "A").Returns("1-i2");
