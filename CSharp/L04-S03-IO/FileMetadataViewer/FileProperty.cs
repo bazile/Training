@@ -1,4 +1,4 @@
-﻿namespace FileMetadataViewer
+﻿namespace BelhardTraining.LessonIO
 {
 	class FileProperty
 	{

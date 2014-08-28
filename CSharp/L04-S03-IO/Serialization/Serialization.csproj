@@ -8,7 +8,7 @@
     <ProjectGuid>{FF99A6C4-41FB-4ECE-AB4E-21DC6439071A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Serialization</RootNamespace>
+    <RootNamespace>BelhardTraining.LessonIO</RootNamespace>
     <AssemblyName>Serialization</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

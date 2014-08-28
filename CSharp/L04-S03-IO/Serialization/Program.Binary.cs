@@ -9,11 +9,12 @@
  *	атрибутом [Serializable]
  *	
  */
+
 using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Serialization
+namespace BelhardTraining.LessonIO
 {
 	partial class Program
 	{

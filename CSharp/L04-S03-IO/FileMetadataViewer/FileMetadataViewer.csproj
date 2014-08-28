@@ -8,7 +8,7 @@
     <ProjectGuid>{2EDC1429-2D06-453F-AAB1-7E95C10A75A1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FileMetadataViewer</RootNamespace>
+    <RootNamespace>BelhardTraining.LessonIO</RootNamespace>
     <AssemblyName>FileMetadataViewer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

@@ -4,12 +4,13 @@
  * JSON - компактный текстовый формат из мира веб разработки.
  *	
  */
+
 using System;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 
-namespace Serialization
+namespace BelhardTraining.LessonIO
 {
 	partial class Program
 	{

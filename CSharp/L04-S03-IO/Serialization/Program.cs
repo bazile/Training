@@ -15,9 +15,10 @@
  * https://developers.google.com/protocol-buffers/
  * 
  */
+
 using System;
 
-namespace Serialization
+namespace BelhardTraining.LessonIO
 {
 	partial class Program
 	{

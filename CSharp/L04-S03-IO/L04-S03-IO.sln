@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compression", "Compression\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMetadataViewer", "FileMetadataViewer\FileMetadataViewer.csproj", "{2EDC1429-2D06-453F-AAB1-7E95C10A75A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrivesFoldersFiles", "DrivesFoldersFiles\DrivesFoldersFiles.csproj", "{9FA5762E-940C-42B2-862F-5A7443EC63C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -31,6 +33,10 @@ Global
 		{2EDC1429-2D06-453F-AAB1-7E95C10A75A1}.Debug|x86.Build.0 = Debug|x86
 		{2EDC1429-2D06-453F-AAB1-7E95C10A75A1}.Release|x86.ActiveCfg = Release|x86
 		{2EDC1429-2D06-453F-AAB1-7E95C10A75A1}.Release|x86.Build.0 = Release|x86
+		{9FA5762E-940C-42B2-862F-5A7443EC63C3}.Debug|x86.ActiveCfg = Debug|x86
+		{9FA5762E-940C-42B2-862F-5A7443EC63C3}.Debug|x86.Build.0 = Debug|x86
+		{9FA5762E-940C-42B2-862F-5A7443EC63C3}.Release|x86.ActiveCfg = Release|x86
+		{9FA5762E-940C-42B2-862F-5A7443EC63C3}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

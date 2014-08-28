@@ -2,6 +2,7 @@
  * Демонстрация сжатия данных в .NET 4 с помощью классов DeflateStream и GZipStream
  * 
  */
+
 using System;
 using System.Globalization;
 using System.IO;
@@ -9,7 +10,7 @@ using System.IO.Compression;
 using System.Reflection;
 using System.Threading;
 
-namespace Compression
+namespace BelhardTraining.LessonIO
 {
 	class Program
 	{
@@ -24,8 +25,6 @@ namespace Compression
 					, "DirectX.log"
 				);
 			TryCompess(textFilePath, textFilePath);
-			//gatherNetworkInfo.vbs
-
 		}
 
 		private static void TryCompess(string filePath, string message)
@@ -78,29 +77,12 @@ namespace Compression
 			Console.WriteLine(
 				message
 				, algoSize
-				, RussianNum(algoSize, "байт", "байта", "байтов")
+				, algoSize.Pretty("байт", "байта", "байтов")
 				, originalSize - algoSize
-				, RussianNum(originalSize - algoSize, "байт", "байта", "байтов")
+				, (originalSize - algoSize).Pretty("байт", "байта", "байтов")
 				, 1 - (double)algoSize / originalSize
 			);
 			Console.ForegroundColor = oldColor;
-		}
-
-		private static string RussianNum(long num, string one, string little, string many)
-		{
-			if (num%100 > 10 && num%100 < 15)
-			{
-				return many;
-			}
-			if (num%10 == 1)
-			{
-				return one;
-			}
-			if (num%10 > 1 && num%10 < 5)
-			{
-				return little;
-			}
-			return many;
 		}
 
 		private static string GetExePath()
@@ -115,7 +97,5 @@ namespace Compression
 			//    с помощью свойства LocalPath
 			return new Uri(asm.EscapedCodeBase).LocalPath;
 		}
-
-		//private static string 
 	}
 }

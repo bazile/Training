@@ -18,7 +18,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace PathLimits
+namespace BelhardTraining.LessonIO
 {
 	class Program
 	{

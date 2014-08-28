@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace FileMetadataViewer
+namespace BelhardTraining.LessonIO
 {
 	static class Program
 	{

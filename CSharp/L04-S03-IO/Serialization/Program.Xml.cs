@@ -10,11 +10,12 @@
  *	из пространства имен System.Xml.Serialization
  *	
  */
+
 using System;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace Serialization
+namespace BelhardTraining.LessonIO
 {
 	partial class Program
 	{
