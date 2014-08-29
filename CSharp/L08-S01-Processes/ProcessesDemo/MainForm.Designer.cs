@@ -1,4 +1,4 @@
-﻿namespace ProcessesDemo
+﻿namespace BelhardTraining.LessonMultithreading
 {
 	partial class MainForm
 	{
@@ -32,6 +32,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
 			this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.runElevatedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.autoRefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,9 +45,10 @@
 			this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeaderName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeaderThreadCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeaderWorkingSet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeaderSessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.autoRefreshToolStripButton = new System.Windows.Forms.ToolStripButton();
-			this.columnHeaderSessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.mainMenuStrip.SuspendLayout();
 			this.mainStatusStrip.SuspendLayout();
 			this.panelForProcessList.SuspendLayout();
@@ -58,6 +60,7 @@
 			// 
 			this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.runToolStripMenuItem,
+			this.runElevatedToolStripMenuItem,
 			this.viewToolStripMenuItem,
 			this.exitToolStripMenuItem});
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
@@ -73,6 +76,13 @@
 			this.runToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
 			this.runToolStripMenuItem.Text = "&Run ...";
 			this.runToolStripMenuItem.Click += new System.EventHandler(this.OnRunToolStripMenuItemClick);
+			// 
+			// runElevatedToolStripMenuItem
+			// 
+			this.runElevatedToolStripMenuItem.Name = "runElevatedToolStripMenuItem";
+			this.runElevatedToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+			this.runElevatedToolStripMenuItem.Text = "Run &elevated ...";
+			this.runElevatedToolStripMenuItem.Click += new System.EventHandler(this.OnRunElevatedToolStripMenuItemClick);
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -117,8 +127,8 @@
 			// infoToolStripStatusLabel
 			// 
 			this.infoToolStripStatusLabel.Name = "infoToolStripStatusLabel";
-			this.infoToolStripStatusLabel.Size = new System.Drawing.Size(138, 17);
-			this.infoToolStripStatusLabel.Text = "Processes - ?. Threads - ?";
+			this.infoToolStripStatusLabel.Size = new System.Drawing.Size(188, 17);
+			this.infoToolStripStatusLabel.Text = "CPUs - ?, Processes - ?. Threads - ?";
 			// 
 			// panelForProcessList
 			// 
@@ -150,6 +160,7 @@
 			this.columnHeaderId,
 			this.columnHeaderName,
 			this.columnHeaderThreadCount,
+			this.columnHeaderWorkingSet,
 			this.columnHeaderSessionId});
 			this.processListView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.processListView.FullRowSelect = true;
@@ -171,14 +182,27 @@
 			// 
 			// columnHeaderName
 			// 
-			this.columnHeaderName.Text = "Name";
+			this.columnHeaderName.Text = "Процесс";
 			this.columnHeaderName.Width = 250;
 			// 
 			// columnHeaderThreadCount
 			// 
 			this.columnHeaderThreadCount.Tag = "number";
-			this.columnHeaderThreadCount.Text = "# of Threads";
+			this.columnHeaderThreadCount.Text = "Кол-во потоков";
 			this.columnHeaderThreadCount.Width = 120;
+			// 
+			// columnHeaderWorkingSet
+			// 
+			this.columnHeaderWorkingSet.Tag = "number";
+			this.columnHeaderWorkingSet.Text = "Working Set";
+			this.columnHeaderWorkingSet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.columnHeaderWorkingSet.Width = 80;
+			// 
+			// columnHeaderSessionId
+			// 
+			this.columnHeaderSessionId.Tag = "number";
+			this.columnHeaderSessionId.Text = "Сессия";
+			this.columnHeaderSessionId.Width = 100;
 			// 
 			// toolStrip1
 			// 
@@ -202,11 +226,6 @@
 			this.autoRefreshToolStripButton.Size = new System.Drawing.Size(23, 22);
 			this.autoRefreshToolStripButton.Text = "Auto refresh";
 			this.autoRefreshToolStripButton.CheckStateChanged += new System.EventHandler(this.OnAutoRefreshToolStripButtonCheckStateChanged);
-			// 
-			// columnHeaderSessionId
-			// 
-			this.columnHeaderSessionId.Text = "Session Id";
-			this.columnHeaderSessionId.Width = 100;
 			// 
 			// MainForm
 			// 
@@ -255,5 +274,7 @@
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripButton autoRefreshToolStripButton;
 		private System.Windows.Forms.ColumnHeader columnHeaderSessionId;
+		private System.Windows.Forms.ColumnHeader columnHeaderWorkingSet;
+		private System.Windows.Forms.ToolStripMenuItem runElevatedToolStripMenuItem;
 	}
 }

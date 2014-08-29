@@ -1,7 +1,9 @@
 - Убрать префикс _ !
 - CodeStyle check
 	BelhardTraining namespace
-
+- SystemInformation
+	System.Environment
+	System.Windows.Forms.SystemInformation
 - Unicode demo
 	string hello = "Прив\u0301ет";
 	"a b".Dump();

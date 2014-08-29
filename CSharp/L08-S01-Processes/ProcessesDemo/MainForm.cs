@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Principal;
 using System.Windows.Forms;
 
-namespace ProcessesDemo
+namespace BelhardTraining.LessonMultithreading
 {
 	public partial class MainForm : Form
 	{
@@ -15,6 +16,8 @@ namespace ProcessesDemo
 
 			_columnSorter = new ListViewColumnSorter();
 			processListView.ListViewItemSorter = _columnSorter;
+
+			runElevatedToolStripMenuItem.Visible = !IsAdministrator();
 		}
 
 		#region Event handlers
@@ -27,13 +30,13 @@ namespace ProcessesDemo
 		private void OnRunToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			var runForm = new RunForm();
-			if (runForm.ShowDialog() == DialogResult.OK)
-			{
-				var startInfo = new ProcessStartInfo();
-				startInfo.FileName = runForm.FilePath;
-				startInfo.Arguments = runForm.Arguments;
-				Process.Start(startInfo);
-			}
+			runForm.ShowDialog();
+		}
+
+		private void OnRunElevatedToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			var runForm = new RunForm(true);
+			runForm.ShowDialog();
 		}
 
 		private void OnMainFormClosing(object sender, FormClosingEventArgs e)
@@ -110,6 +113,7 @@ namespace ProcessesDemo
 					var item = new ListViewItem(p.Id.ToString());
 					item.SubItems.Add(p.ProcessName);
 					item.SubItems.Add(p.Threads.Count.ToString());
+					item.SubItems.Add(p.WorkingSet64.ToString("N0"));
 					item.SubItems.Add(p.SessionId.ToString());
 					processListView.Items.Add(item);
 
@@ -119,7 +123,7 @@ namespace ProcessesDemo
 				// Скрываем или показываем колонку с номером сессии в зависимости от наличия 
 				//	процессов запущенных в разных сессиях
 				bool hasDifferentSessions = processes[0].SessionId != processes[processes.Length - 1].SessionId;
-				bool sessionIdColumnVisible = processListView.Columns.Count == 4;
+				bool sessionIdColumnVisible = processListView.Columns.Count == 5;
 				if (hasDifferentSessions)
 				{
 					if (!sessionIdColumnVisible)
@@ -136,17 +140,23 @@ namespace ProcessesDemo
 				}
 
 				// Обновляем статистику в строке статуса
-				infoToolStripStatusLabel.Text = String.Format("Processes - {0}. Threads - {1}", processes.Length, threadCount);
+				infoToolStripStatusLabel.Text = String.Format(
+							"CPUs - {0}, Processes - {1}. Threads - {2}",
+							Environment.ProcessorCount, processes.Length, threadCount);
 			}
 			finally
 			{
 				processListView.EndUpdate();
 			}
-
-			//_columnSorter.SortColumn = 1;
-			//_columnSorter.Order = SortOrder.Ascending;
-			//processListView.Sort();
 		}
 
+		private static bool IsAdministrator()
+		{
+			WindowsIdentity identity = WindowsIdentity.GetCurrent();
+			if (identity == null) return false;
+
+			WindowsPrincipal principal = new WindowsPrincipal(identity);
+			return principal.IsInRole(WindowsBuiltInRole.Administrator);
+		}
 	}
 }

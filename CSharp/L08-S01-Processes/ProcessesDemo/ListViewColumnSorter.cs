@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections;
+using System.Globalization;
 using System.Windows.Forms;
 
-namespace ProcessesDemo
+namespace BelhardTraining.LessonMultithreading
 {
 	/// <summary>
 	/// This class is an implementation of the 'IComparer' interface.
@@ -39,7 +40,7 @@ namespace ProcessesDemo
 			var itemX = (ListViewItem)x;
 			var itemY = (ListViewItem)y;
 
-			if (itemX.ListView.Columns[_columnToSort].Tag == "number")
+			if ((string)itemX.ListView.Columns[_columnToSort].Tag == "number")
 			{
 				return CompareNumbers(itemX, itemY);
 			}
@@ -49,8 +50,8 @@ namespace ProcessesDemo
 
 		private int CompareNumbers(ListViewItem itemX, ListViewItem itemY)
 		{
-			int x = Int32.Parse(itemX.SubItems[_columnToSort].Text);
-			int y = Int32.Parse(itemY.SubItems[_columnToSort].Text);
+			int x = Int32.Parse(itemX.SubItems[_columnToSort].Text, NumberStyles.AllowThousands);
+			int y = Int32.Parse(itemY.SubItems[_columnToSort].Text, NumberStyles.AllowThousands);
 			int compareResult = x.CompareTo(y);
 			if (_orderOfSort == SortOrder.Ascending)
 			{

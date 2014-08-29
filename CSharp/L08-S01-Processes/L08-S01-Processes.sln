@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessesDemo", "ProcessesDemo\ProcessesDemo.csproj", "{B3F5D6C8-C52E-4423-904F-6BAE8A01D606}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateLowIntegrityProcess", "CreateLowIntegrityProcess\CreateLowIntegrityProcess.csproj", "{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{B3F5D6C8-C52E-4423-904F-6BAE8A01D606}.Debug|x86.Build.0 = Debug|x86
 		{B3F5D6C8-C52E-4423-904F-6BAE8A01D606}.Release|x86.ActiveCfg = Release|x86
 		{B3F5D6C8-C52E-4423-904F-6BAE8A01D606}.Release|x86.Build.0 = Release|x86
+		{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}.Debug|x86.ActiveCfg = Debug|x86
+		{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}.Debug|x86.Build.0 = Debug|x86
+		{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}.Release|x86.ActiveCfg = Release|x86
+		{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

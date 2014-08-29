@@ -1,4 +1,4 @@
-﻿namespace ProcessesDemo
+﻿namespace BelhardTraining.LessonMultithreading
 {
 	partial class RunForm
 	{
@@ -40,11 +40,12 @@
 			// 
 			// okButton
 			// 
+			this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.okButton.Location = new System.Drawing.Point(15, 109);
 			this.okButton.Name = "okButton";
 			this.okButton.Size = new System.Drawing.Size(75, 23);
 			this.okButton.TabIndex = 5;
-			this.okButton.Text = "OK";
+			this.okButton.Text = "Run";
 			this.okButton.UseVisualStyleBackColor = true;
 			this.okButton.Click += new System.EventHandler(this.OnOkButtonClick);
 			// 
@@ -123,7 +124,8 @@
 			this.Name = "RunForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Run";
-			this.Load += new System.EventHandler(this.OnRunFormLoad);
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormClosed);
+			this.Load += new System.EventHandler(this.OnFormLoad);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
