@@ -26,5 +26,10 @@
 			}
 			return many;
 		}
+
+        public static string PrettyBytes(this long num)
+        {
+            return num.Pretty("байт", "байта", "байтов");
+        }
 	}
 }

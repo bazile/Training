@@ -98,8 +98,8 @@ namespace BelhardTraining.LessonIO
 				Console.WriteLine("Файловая система: {0}", driveInfo.DriveFormat);
 				Console.WriteLine("Готов?          : {0}", driveInfo.IsReady);
 				Console.WriteLine("Корень          : {0}", driveInfo.RootDirectory);
-				Console.WriteLine("Свободное место : {0:N0} {1}", driveInfo.TotalFreeSpace, driveInfo.TotalFreeSpace.Pretty("байт", "байта", "байтов"));
-				Console.WriteLine("Размер          : {0:N0} {1}", driveInfo.TotalSize, driveInfo.TotalSize.Pretty("байт", "байта", "байтов"));
+				Console.WriteLine("Свободное место : {0:N0} {1}", driveInfo.TotalFreeSpace, driveInfo.TotalFreeSpace.PrettyBytes());
+				Console.WriteLine("Размер          : {0:N0} {1}", driveInfo.TotalSize, driveInfo.TotalSize.PrettyBytes());
 				Console.WriteLine("Метка диска     : {0}", driveInfo.VolumeLabel);
 			}
 		}

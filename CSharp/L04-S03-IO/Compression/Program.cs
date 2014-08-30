@@ -77,9 +77,9 @@ namespace BelhardTraining.LessonIO
 			Console.WriteLine(
 				message
 				, algoSize
-				, algoSize.Pretty("байт", "байта", "байтов")
+				, algoSize.PrettyBytes()
 				, originalSize - algoSize
-				, (originalSize - algoSize).Pretty("байт", "байта", "байтов")
+				, (originalSize - algoSize).PrettyBytes()
 				, 1 - (double)algoSize / originalSize
 			);
 			Console.ForegroundColor = oldColor;

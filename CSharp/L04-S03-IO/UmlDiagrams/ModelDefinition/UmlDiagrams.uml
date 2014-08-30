@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5b2ff894-cb73-4f03-bef4-e210381a2db9"
+  name="UmlDiagrams" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="e0eecaea-1dc9-437e-89b9-e707747e663d"
+        name="System.IDisposable"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="70406ee2-b438-45b5-89c3-5ac2557271f4"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d39720de-a73c-4998-a664-e62b2fbd9ac5"
+        name="System.IO.Stream"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="9693e37c-ec6f-40d6-b79b-61f9188d3c32">
+            <interfaceMoniker
+              Id="e0eecaea-1dc9-437e-89b9-e707747e663d"
+              LastKnownName="System.IDisposable"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="eb9987e3-d204-4d73-b4c3-139dd10a5f64"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b6325ca5-c1fe-44d6-a015-08f4d284ce7c"
+            name="Close"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Закрыть поток</description>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7440a18b-1ce6-4f09-b58c-ced40692d4e7"
+        name="System.IO.FileStream"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <description>Поток для работы с файлами.</description>
+        <generalsInternal>
+          <generalization
+            Id="362f5cd4-cd71-42f2-aef4-8f8afe1b8000"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d39720de-a73c-4998-a664-e62b2fbd9ac5"
+              LastKnownName="System.IO.Stream"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6f2c8c64-e811-4393-aff1-1d3f2de99265"
+        name="System.IO.MemoryStream"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <description>Поток хранящий данные в памяти. Его удобно использовать для хранения временных данных.</description>
+        <generalsInternal>
+          <generalization
+            Id="8b026631-2f69-4250-b2f3-169582cfb84a"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d39720de-a73c-4998-a664-e62b2fbd9ac5"
+              LastKnownName="System.IO.Stream"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="313b8b01-136e-4145-a8c2-decf1d8aec8a"
+        name="System.IO.BufferedStream"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="381c378c-8e7e-4134-8337-48504ca374b8"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d39720de-a73c-4998-a664-e62b2fbd9ac5"
+              LastKnownName="System.IO.Stream"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="74a4c248-8c1e-4917-9507-758397a5d2bc"
+        name="System.IO.Compression.GZipStream"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="1a6e7ed2-f00e-46eb-8182-91ff026b26be"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d39720de-a73c-4998-a664-e62b2fbd9ac5"
+              LastKnownName="System.IO.Stream"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

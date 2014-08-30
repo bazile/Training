@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="2ce0b1fb-d759-468b-9f96-00b3d32546c7" name="Streams" linkedPackageId="869af655-2a72-430e-813e-dda8250ec7a4" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="0778e296-ccf5-4fc1-a148-57ab15c7a1b5">
+      <profileInstance Id="971872f6-0539-4ecf-93ba-e6ff713f5329" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="448240f3-5991-47c1-ac99-d4b117c31bc3">
+      <profileInstance Id="da516224-d387-42e0-8a2a-32938debc9f4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="3c8e4335-53dc-451f-a231-c5d963b9dcb0" name="System.IDisposable" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e0eecaea-1dc9-437e-89b9-e707747e663d" />
+        <ownedOperations>
+          <operation Id="0cd636eb-0766-4332-aa9e-41e8f128e0e1" name="Dispose" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="70406ee2-b438-45b5-89c3-5ac2557271f4" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a01c0e92-38e7-4a8f-a105-79d2c2edacf9" name="System.IO.Stream" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d39720de-a73c-4998-a664-e62b2fbd9ac5" />
+        <suppliersInternal>
+          <interfaceRealization Id="4400cf95-dffc-4d21-8d28-49f977497c88">
+            <interfaceMoniker Id="3c8e4335-53dc-451f-a231-c5d963b9dcb0" LastKnownName="System.IDisposable" />
+            <elementDefinition Id="9693e37c-ec6f-40d6-b79b-61f9188d3c32" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="9ba6cc20-6e3c-44ec-9123-0171302565e5" name="Dispose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eb9987e3-d204-4d73-b4c3-139dd10a5f64" />
+          </operation>
+          <operation Id="4dc805d4-1584-4839-8f45-25d6621ecb38" name="Close" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <description>Закрыть поток</description>
+            <elementDefinition Id="b6325ca5-c1fe-44d6-a015-08f4d284ce7c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a9a3b82c-c630-4ff4-92fc-22865a27e231" name="System.IO.FileStream" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>Поток для работы с файлами.</description>
+        <elementDefinition Id="7440a18b-1ce6-4f09-b58c-ced40692d4e7" />
+        <generalsInternal>
+          <generalization Id="a074f9ed-bc1c-4310-85cd-6347cd077fa3" isSubstitutable="false">
+            <classMoniker Id="a01c0e92-38e7-4a8f-a105-79d2c2edacf9" LastKnownName="System.IO.Stream" />
+            <elementDefinition Id="362f5cd4-cd71-42f2-aef4-8f8afe1b8000" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="940ef7c6-59e0-41a8-83d5-a9967ab67e4b" name="System.IO.MemoryStream" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <description>Поток хранящий данные в памяти. Его удобно использовать для хранения временных данных.</description>
+        <elementDefinition Id="6f2c8c64-e811-4393-aff1-1d3f2de99265" />
+        <generalsInternal>
+          <generalization Id="02dce5cc-eb58-42cc-853c-bf6602439855" isSubstitutable="false">
+            <classMoniker Id="a01c0e92-38e7-4a8f-a105-79d2c2edacf9" LastKnownName="System.IO.Stream" />
+            <elementDefinition Id="8b026631-2f69-4250-b2f3-169582cfb84a" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fe049690-af0a-45f4-90b3-8e1cd5877bc7" name="System.IO.BufferedStream" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="313b8b01-136e-4145-a8c2-decf1d8aec8a" />
+        <generalsInternal>
+          <generalization Id="2e0d362f-9955-485f-9ed0-634decf8a872" isSubstitutable="false">
+            <classMoniker Id="a01c0e92-38e7-4a8f-a105-79d2c2edacf9" LastKnownName="System.IO.Stream" />
+            <elementDefinition Id="381c378c-8e7e-4134-8337-48504ca374b8" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="16c17cfc-39b3-4606-b682-86c7458a6bef" name="System.IO.Compression.GZipStream" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="74a4c248-8c1e-4917-9507-758397a5d2bc" />
+        <generalsInternal>
+          <generalization Id="f1d6d625-0acd-4259-a3ff-19cbe326b0b1" isSubstitutable="false">
+            <classMoniker Id="a01c0e92-38e7-4a8f-a105-79d2c2edacf9" LastKnownName="System.IO.Stream" />
+            <elementDefinition Id="1a6e7ed2-f00e-46eb-8182-91ff026b26be" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="869af655-2a72-430e-813e-dda8250ec7a4" name="UmlDiagrams">
+    <elementDefinition Id="5b2ff894-cb73-4f03-bef4-e210381a2db9" />
+  </package>
+</logicalClassDesignerModel>
