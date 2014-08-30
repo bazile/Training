@@ -79,9 +79,9 @@ namespace BelhardTraining.LessonMultithreading
 					case NativeMethods.SECURITY_MANDATORY_LOW_RID:
 						il = IntegrityLevel.Low; break;
 					case NativeMethods.SECURITY_MANDATORY_MEDIUM_RID:
-						il = IntegrityLevel.Medium;; break;
+						il = IntegrityLevel.Medium; break;
 					case NativeMethods.SECURITY_MANDATORY_HIGH_RID:
-						il = IntegrityLevel.High;; break;
+						il = IntegrityLevel.High; break;
 					case NativeMethods.SECURITY_MANDATORY_SYSTEM_RID:
 						il = IntegrityLevel.System; break;
 					default:

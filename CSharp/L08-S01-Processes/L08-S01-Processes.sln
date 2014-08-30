@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessesDemo", "ProcessesD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateLowIntegrityProcess", "CreateLowIntegrityProcess\CreateLowIntegrityProcess.csproj", "{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvironmentInformation", "EnvironmentInformation\EnvironmentInformation.csproj", "{868A2B5D-1A9B-49D0-BB4A-668DED8B1EBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}.Debug|x86.Build.0 = Debug|x86
 		{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}.Release|x86.ActiveCfg = Release|x86
 		{4FEE9A13-9DCB-4F56-91E1-ED3C0D3C7708}.Release|x86.Build.0 = Release|x86
+		{868A2B5D-1A9B-49D0-BB4A-668DED8B1EBD}.Debug|x86.ActiveCfg = Debug|x86
+		{868A2B5D-1A9B-49D0-BB4A-668DED8B1EBD}.Debug|x86.Build.0 = Debug|x86
+		{868A2B5D-1A9B-49D0-BB4A-668DED8B1EBD}.Release|x86.ActiveCfg = Release|x86
+		{868A2B5D-1A9B-49D0-BB4A-668DED8B1EBD}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

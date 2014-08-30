@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Runtime.InteropServices;
 
 namespace BelhardTraining.LessonMultithreading
@@ -84,13 +83,12 @@ namespace BelhardTraining.LessonMultithreading
 	[StructLayout(LayoutKind.Sequential)]
 	internal struct SID_IDENTIFIER_AUTHORITY
 	{
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 6,
-			ArraySubType = UnmanagedType.I1)]
+		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 6, ArraySubType = UnmanagedType.I1)]
 		public byte[] Value;
 
 		public SID_IDENTIFIER_AUTHORITY(byte[] value)
 		{
-			this.Value = value;
+			Value = value;
 		}
 	}
 
@@ -548,7 +546,7 @@ namespace BelhardTraining.LessonMultithreading
 		public static string SHGetKnownFolderPath(Guid rfid)
 		{
 			IntPtr pPath = IntPtr.Zero;
-			string path = null;
+			string path;
 			try
 			{
 				int hr = SHGetKnownFolderPath(rfid, 0, IntPtr.Zero, out pPath);
@@ -563,7 +561,6 @@ namespace BelhardTraining.LessonMultithreading
 				if (pPath != IntPtr.Zero)
 				{
 					Marshal.FreeCoTaskMem(pPath);
-					pPath = IntPtr.Zero;
 				}
 			}
 			return path;

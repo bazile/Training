@@ -9,6 +9,7 @@ namespace BelhardTraining.LessonMultithreading
 	/// </summary>
 	public class SafeTokenHandle : SafeHandleZeroOrMinusOneIsInvalid
 	{
+		// ReSharper disable UnusedMember.Local
 		/// <remarks>
 		/// Не удаляйте этот конструктор т.к. программа не будет работать без него
 		/// </remarks>>
@@ -16,6 +17,7 @@ namespace BelhardTraining.LessonMultithreading
 			: base(true)
 		{
 		}
+		// ReSharper restore UnusedMember.Local
 
 		public SafeTokenHandle(IntPtr handle)
 			: base(true)
