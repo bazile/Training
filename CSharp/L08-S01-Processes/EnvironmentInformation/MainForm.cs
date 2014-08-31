@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,8 +10,9 @@ namespace EnvironmentInformation
 	public partial class MainForm : Form
 	{
 		private const string EnvGroup     = "System.Environment";
-		private const string SysInfoGroup = "System.Windows.Forms.SystemInformation";
 		private const string BitConvGroup = "System.BitConverter";
+		private const string PathGroup    = "System.IO.Path";
+		private const string SysInfoGroup = "System.Windows.Forms.SystemInformation";
 
 		public MainForm()
 		{
@@ -48,6 +50,22 @@ namespace EnvironmentInformation
 			AddEnvironmentItem(EnvGroup, "WorkingSet", Environment.WorkingSet);
 
 			#endregion
+
+			#region System.BitConverter
+			AddEnvironmentItem(BitConvGroup, "IsLittleEndian", BitConverter.IsLittleEndian);
+			#endregion
+
+			#region System.IO.Path
+			AddEnvironmentItem(PathGroup, "GetTempPath", Path.GetTempPath());
+			#endregion
+
+			//#region System.Diagnostics.Process
+			//Process p = Process.GetCurrentProcess();
+			//#endregion
+
+			//#region System.Globalization.CultureInfo
+			//Process p = Process.GetCurrentProcess();
+			//#endregion
 
 			#region System.Windows.Forms.SystemInformation
 
@@ -166,10 +184,6 @@ namespace EnvironmentInformation
 
 			#endregion
 
-			#region System.BitConverter
-			AddEnvironmentItem(BitConvGroup, "IsLittleEndian", BitConverter.IsLittleEndian);
-			#endregion
-
 			listViewSysInfo.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
 			listViewSysInfo.EndUpdate();
 		}
@@ -227,6 +241,14 @@ namespace EnvironmentInformation
 					"http://msdn.microsoft.com//query/dev10.query?appId=Dev10IDEF1&l={0}&k=k({1});k(TargetFrameworkMoniker-\".NETFRAMEWORK,VERSION=V4.0\");k(DevLang-CSHARP)&rd=true",
 					lang, selectedItem.Tag);
 			Process.Start(msdnUrl);
+		}
+
+		private void OnOpenEnvVarDialogItem_Click(object sender, EventArgs e)
+		{
+			Process.Start(
+				Path.Combine(Environment.SystemDirectory, "rundll32.exe"),
+				"sysdm.cpl,EditEnvironmentVariables"
+			);
 		}
 
 		///// <remarks>via http://www.codeproject.com/Articles/31276/Add-Group-Collapse-Behavior-on-a-Listview-Control</remarks>

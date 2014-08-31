@@ -36,8 +36,10 @@
 			System.Windows.Forms.ContextMenuStrip contextMenuForSysInfo;
 			System.Windows.Forms.ToolStripMenuItem menuItemMsdnEng;
 			System.Windows.Forms.ToolStripMenuItem menuItemMsdnRus;
-			System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Класс System.Environment", System.Windows.Forms.HorizontalAlignment.Left);
-			System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Класс System.Windows.Forms.SystemInformation", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Класс System.Environment", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Класс System.Windows.Forms.SystemInformation", System.Windows.Forms.HorizontalAlignment.Left);
+			System.Windows.Forms.ContextMenuStrip contextMenuForEnvVars;
+			System.Windows.Forms.ToolStripMenuItem menuItemOpenEnvVarDialog;
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPageSysInfo = new System.Windows.Forms.TabPage();
 			this.listViewSysInfo = new System.Windows.Forms.ListView();
@@ -50,10 +52,13 @@
 			contextMenuForSysInfo = new System.Windows.Forms.ContextMenuStrip(this.components);
 			menuItemMsdnEng = new System.Windows.Forms.ToolStripMenuItem();
 			menuItemMsdnRus = new System.Windows.Forms.ToolStripMenuItem();
+			contextMenuForEnvVars = new System.Windows.Forms.ContextMenuStrip(this.components);
+			menuItemOpenEnvVarDialog = new System.Windows.Forms.ToolStripMenuItem();
 			contextMenuForSysInfo.SuspendLayout();
 			this.tabControl.SuspendLayout();
 			this.tabPageSysInfo.SuspendLayout();
 			this.tabPagePath.SuspendLayout();
+			contextMenuForEnvVars.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// columnHeaderVarName
@@ -81,7 +86,7 @@
             menuItemMsdnRus});
 			contextMenuForSysInfo.Name = "contextMenuForSysInfo";
 			contextMenuForSysInfo.ShowImageMargin = false;
-			contextMenuForSysInfo.Size = new System.Drawing.Size(274, 70);
+			contextMenuForSysInfo.Size = new System.Drawing.Size(274, 48);
 			// 
 			// menuItemMsdnEng
 			// 
@@ -130,13 +135,13 @@
 			this.listViewSysInfo.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listViewSysInfo.FullRowSelect = true;
 			this.listViewSysInfo.GridLines = true;
-			listViewGroup1.Header = "Класс System.Environment";
-			listViewGroup1.Name = "Environment";
-			listViewGroup2.Header = "Класс System.Windows.Forms.SystemInformation";
-			listViewGroup2.Name = "SysInfo";
+			listViewGroup3.Header = "Класс System.Environment";
+			listViewGroup3.Name = "Environment";
+			listViewGroup4.Header = "Класс System.Windows.Forms.SystemInformation";
+			listViewGroup4.Name = "SysInfo";
 			this.listViewSysInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
+            listViewGroup3,
+            listViewGroup4});
 			this.listViewSysInfo.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.listViewSysInfo.Location = new System.Drawing.Point(3, 3);
 			this.listViewSysInfo.Name = "listViewSysInfo";
@@ -161,6 +166,7 @@
 			this.listViewVars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             columnHeaderVarName,
             columnHeaderVarValue});
+			this.listViewVars.ContextMenuStrip = contextMenuForEnvVars;
 			this.listViewVars.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listViewVars.FullRowSelect = true;
 			this.listViewVars.GridLines = true;
@@ -170,6 +176,21 @@
 			this.listViewVars.TabIndex = 0;
 			this.listViewVars.UseCompatibleStateImageBehavior = false;
 			this.listViewVars.View = System.Windows.Forms.View.Details;
+			// 
+			// contextMenuForEnvVars
+			// 
+			contextMenuForEnvVars.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            menuItemOpenEnvVarDialog});
+			contextMenuForEnvVars.Name = "contextMenuForEnvVars";
+			contextMenuForEnvVars.ShowImageMargin = false;
+			contextMenuForEnvVars.Size = new System.Drawing.Size(302, 26);
+			// 
+			// menuItemOpenEnvVarDialog
+			// 
+			menuItemOpenEnvVarDialog.Name = "menuItemOpenEnvVarDialog";
+			menuItemOpenEnvVarDialog.Size = new System.Drawing.Size(301, 22);
+			menuItemOpenEnvVarDialog.Text = "Открыть диалог редактирования переменных";
+			menuItemOpenEnvVarDialog.Click += new System.EventHandler(this.OnOpenEnvVarDialogItem_Click);
 			// 
 			// MainForm
 			// 
@@ -185,6 +206,7 @@
 			this.tabControl.ResumeLayout(false);
 			this.tabPageSysInfo.ResumeLayout(false);
 			this.tabPagePath.ResumeLayout(false);
+			contextMenuForEnvVars.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
