@@ -112,7 +112,8 @@
     		<runtime>
         		<legacyCorruptedStateExceptionsPolicy enabled="true"/>
     		</runtime>
-		</configuration>		
+		</configuration>
+	- Exception.GetBaseException()
 						
 - #5 (events)
 	- События и исключения
