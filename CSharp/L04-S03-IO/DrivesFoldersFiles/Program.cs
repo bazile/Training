@@ -1,12 +1,15 @@
 ﻿/*
  * Демонстрация получения информации о логических дисках,
  *		каталогах и файлах
+ * Также демонстрируется получение информации о физических дисках
+ *		с помошью WMI (Windows Management Instrumentation)
  *
  */
 
 using System;
 using System.IO;
 using System.Linq;
+using System.Management;
 
 namespace BelhardTraining.LessonIO
 {
@@ -19,6 +22,12 @@ namespace BelhardTraining.LessonIO
 			PrintAllDrivesInfo();
 			//PrintSystemDriveInfo();
 			//TryPrintNonExistingDrive();
+
+			#endregion
+
+			#region Получение информации о физических дисках через WMI
+
+			//PrintAllPhysicalDrives();
 
 			#endregion
 		}
@@ -105,5 +114,107 @@ namespace BelhardTraining.LessonIO
 		}
 
 		#endregion
+
+		#region Получение информации о физических дисках через WMI
+
+		/// <summary>
+		/// Печатаем часть информации о физических дисках с помощью WMI классов:
+		///		* Win32_FloppyDrive - флоппи-диски
+		///		* Win32_DiskDrive - внутренние и внешние диски. Также флэшки.
+		///		* Win32_CDROMDrive - оптические диски
+		/// </summary>
+		/// <remarks>
+		/// Полный список WMI классов есть в MSDN
+		/// http://msdn.microsoft.com/en-us/library/aa394554%28v=vs.85%29.aspx
+		/// </remarks>
+		static void PrintAllPhysicalDrives()
+		{
+			Console.WriteLine("Список локальных дисков");
+			Console.WriteLine("=======================");
+			using (ManagementClass mc = new ManagementClass("Win32_DiskDrive"))
+			{
+				ManagementObjectCollection x = mc.GetInstances();
+				if (x.Count == 0)
+				{
+					Console.WriteLine(" * Ни одного не найдено");
+				}
+				else
+				{
+					foreach (ManagementObject mo in x)
+					{
+						Console.WriteLine(" * {0}", GetWmiValue(mo, "Caption"));
+						Console.WriteLine("\tРазмер         : {0}", GetWmiValue(mo, "Size"));
+						Console.WriteLine("\tКол-во разделов: {0}", GetWmiValue(mo, "Partitions"));
+						Console.WriteLine("\tСерийный номер : {0}", GetWmiValue(mo, "SerialNumber"));
+					}
+				}
+			}
+			Console.WriteLine();
+
+			Console.WriteLine("Список оптических дисков");
+			Console.WriteLine("========================");
+			using (ManagementClass mc = new ManagementClass("Win32_CDROMDrive"))
+			{
+				ManagementObjectCollection x = mc.GetInstances();
+				if (x.Count == 0)
+				{
+					Console.WriteLine(" * Ни одного не найдено");
+					Console.WriteLine();
+				}
+				else
+				{
+					foreach (ManagementObject mo in x)
+					{
+						Console.WriteLine(" * {0} ==> {1}", GetWmiValue(mo, "Drive"), GetWmiValue(mo, "Name"));
+					}
+				}
+			}
+			Console.WriteLine();
+
+			Console.WriteLine("Список floppy дисков");
+			Console.WriteLine("====================");
+			using (ManagementClass mc = new ManagementClass("Win32_FloppyDrive"))
+			{
+				ManagementObjectCollection x = mc.GetInstances();
+				if (x.Count == 0)
+				{
+					Console.WriteLine(" * Ни одного не найдено");
+					Console.WriteLine();
+				}
+				else
+				{
+					foreach (ManagementObject mo in x)
+					{
+						Console.WriteLine(" * {0}", GetWmiValue(mo, "Caption"));
+						Console.WriteLine("\tМаксимальный размер: {0}", GetWmiValue(mo, "MaxMediaSize"));
+					}
+				}
+			}
+
+		}
+
+		static string GetWmiValue(ManagementObject manObj, string propertyName)
+		{
+			object result = manObj[propertyName];
+			return result == null ? "" : result.ToString();
+		}
+		
+		#endregion
 	}
 }
+
+/*
+			//string programFiles = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+			//DirectoryInfo programFilesInfo = new DirectoryInfo(programFiles);
+			//DirectorySecurity programFilesAcl = programFilesInfo.GetAccessControl();
+			//foreach (FileSystemAccessRule rule in programFilesAcl.GetAccessRules(true, true, typeof(NTAccount)))
+			//{
+			//    Console.WriteLine(rule.AccessControlType);
+			//    Console.WriteLine(rule.FileSystemRights);
+			//    Console.WriteLine(rule.IdentityReference.Value);
+			//    Console.WriteLine(rule.InheritanceFlags);
+			//    Console.WriteLine(rule.IsInherited);
+			//    Console.WriteLine(rule.PropagationFlags);
+			//    Console.WriteLine();
+			//}
+*/
