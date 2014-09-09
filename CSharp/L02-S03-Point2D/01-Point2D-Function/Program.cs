@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Реализация точки на двухмерной плоскости в процедурном стиле
+ * Подобный подход хоть и возможен в C#, но из-за того что
+ *		все данные программы находятся в общем пространстве имен
+ *		повышается вероятность невынужденных ошибок
+ */
+using System;
 
 namespace BelhardTraining.PointDemo
 {
@@ -21,7 +27,8 @@ namespace BelhardTraining.PointDemo
             //ConsoleColor color3 = ConsoleColor.Cyan;
 
             //Console.WriteLine("--------------------");
-            //// В одной из строк есть ошибка!
+            //// В одной из следующих трех строк есть логическая ошибка
+            //// Попробуйте её обнаружить!
             //PrintDistance(x1, y1, color1, x2, y2, color2);
             //PrintDistance(x2, y2, color2, x3, y3, color2);
             //PrintDistance(x3, y3, color3, x1, y1, color1);
