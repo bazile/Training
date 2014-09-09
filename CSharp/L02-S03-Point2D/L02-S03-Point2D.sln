@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-Point2D-Inheritance", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-Point2D-Interfaces", "06-Point2D-Interfaces\06-Point2D-Interfaces.csproj", "{8D9F8682-B656-42D9-9063-74E3E826F62A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-Point2D-Struct", "07-Point2D-Struct\07-Point2D-Struct.csproj", "{22E06863-4B17-480F-9FD3-5A632467E0F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,16 @@ Global
 		{8D9F8682-B656-42D9-9063-74E3E826F62A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{8D9F8682-B656-42D9-9063-74E3E826F62A}.Release|x86.ActiveCfg = Release|x86
 		{8D9F8682-B656-42D9-9063-74E3E826F62A}.Release|x86.Build.0 = Release|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Debug|x86.ActiveCfg = Debug|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Debug|x86.Build.0 = Debug|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Release|Any CPU.ActiveCfg = Release|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Release|x86.ActiveCfg = Release|x86
+		{22E06863-4B17-480F-9FD3-5A632467E0F5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

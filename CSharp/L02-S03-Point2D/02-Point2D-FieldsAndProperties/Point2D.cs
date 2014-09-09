@@ -2,7 +2,7 @@
 
 namespace BelhardTraining.PointDemo
 {
-    #region Пример с использованием полей
+	#region Пример с использованием полей
 
 	#region Только координаты
 
@@ -70,7 +70,7 @@ namespace BelhardTraining.PointDemo
 	//{
 	//    /// <summary>Координата вершин квадрата внутри которого должна находиться точка</summary>
 	//    private const int maxCoord = 10;
-        
+		
 	//    /// <summary>Поля для хранения координатами точки</summary>
 	//    /// <remarks>
 	//    /// 1. Используем private поля чтобы предотвратить неконтролируемый доступ извне класса
@@ -117,30 +117,30 @@ namespace BelhardTraining.PointDemo
 	//    }
 	//}
 
-    #endregion
+	#endregion
 
-    #region Пример с использованием авто-свойств (auto properties)
+	#region Пример с использованием авто-свойств (auto properties)
 
-    //public class Point2D
-    //{
-    //    public int X { get; set; }
-    //    public int Y { get; set; }
-    //    public ConsoleColor Color { get; set; }
+	//public class Point2D
+	//{
+	//    public int X { get; set; }
+	//    public int Y { get; set; }
+	//    public ConsoleColor Color { get; set; }
 
-    //    public double CalculateDistance(Point2D other)
-    //    {
-    //        return Math.Sqrt((other.X - X) * (other.X - X) + (other.Y - Y) * (other.Y - Y));
-    //    }
+	//    public double CalculateDistance(Point2D other)
+	//    {
+	//        return Math.Sqrt((other.X - X) * (other.X - X) + (other.Y - Y) * (other.Y - Y));
+	//    }
 
-    //    public void PrintDistance(Point2D other)
-    //    {
-    //        Console.WriteLine("Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}", X, Y, other.X, other.Y, CalculateDistance(other));
-    //    }
-    //}
+	//    public void PrintDistance(Point2D other)
+	//    {
+	//        Console.WriteLine("Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}", X, Y, other.X, other.Y, CalculateDistance(other));
+	//    }
+	//}
 
-    #endregion
+	#endregion
 
-    #region Пример с использованием свойств. Проверка значений.
+	#region Пример с использованием свойств. Проверка значений.
 
 	///// <summary>
 	///// В данной реализации свойствам X и Y можно присвоить только положительные или нулевые координаты
@@ -191,5 +191,5 @@ namespace BelhardTraining.PointDemo
 	//    }
 	//}
 
-    #endregion
+	#endregion
 }
