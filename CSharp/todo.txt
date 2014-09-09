@@ -60,8 +60,9 @@ int CompareEmailByHost(string email1, string email2)
 }
 		
 - XML creation
+- Logging
+	NLog - https://github.com/nlog/nlog/wiki/Tutorial
 - string samples (sorting, comparing)
-- Math sample to show threading perfomance gain
 - Design pattern samples
 
 - manifest/UAC sample with elevation point(s)
