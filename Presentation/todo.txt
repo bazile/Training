@@ -8,7 +8,6 @@
 		http://sergeyteplyakov.blogspot.com/2011/04/cnet.html
 		http://oz.by/books/more1037334.html
 		http://www.ozon.ru/context/detail/id/1871774/
-		http://www.ozon.ru/context/detail/id/20217137/
 		http://www.ozon.ru/context/detail/id/4884925/
 	- String.Compare vs	String.Equals
 		http://blogs.msdn.com/b/bclteam/archive/2007/05/31/string-compare-string-equals-josh-free.aspx
@@ -17,7 +16,6 @@
 		http://csharpindepth.com/Articles/General/Decimal.aspx
 	- Turkey test
 		http://www.moserware.com/2008/02/does-your-code-pass-turkey-test.html
-	- Short-Circuiting Ands and Ors
 
 #1.1
 	Стандартные типы
@@ -91,6 +89,8 @@
 						
 - #5 (events)
 	- События и исключения
+	- Weak Event Patterns
+	  http://msdn.microsoft.com/en-us/library/aa970850%28v=vs.110%29.aspx
 
 - #6 (XML)
 	- Неймспесы
@@ -125,7 +125,9 @@
 				]> 
 				<doc> 
 					&win; 
-				</doc> 			
+				</doc>
+		XSLT and XSS attacks
+		http://www.tkachenko.com/blog/archives/000726.html
 	System.Xml.XmlDocument 
 		Load and LoadXml UNSAFE unless you pass a safe XmlReader (DTD disabled) into it during initialization. 
 		InnerXml is NEVER SAFE. 
@@ -146,7 +148,6 @@
 	- Разница между const и static readonly полями
 	- CodeCOM, code expressions
 	- Roslyn/Nitra/.NET Native
-	- http://referencesource.microsoft.com/
 
 - #8 (mult-threading)
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
@@ -202,6 +203,9 @@
 			DB First - Model properties
 			Code first - Configuration.LazyLoadingEnabled
 	   make smaller models
+	- SET STATISTICS TIME ON|OFF
+	- Application Name parameter and tracing
+	- async методы в EF6
 	
 - #12 (WPF)
 	- Перевод
