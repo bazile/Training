@@ -20,6 +20,7 @@ namespace ThreadsDemo.Queue
 			this.consumerAction = consumerAction;                   // Запоминаем делегат на метод-обработчик
 
 			consumerThread = new Thread(DoConsume);     //Запускаем поток
+			consumerThread.Name = "Поток класса ActionQueue";
 			consumerThread.Start();
 		}
 
