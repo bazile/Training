@@ -210,6 +210,10 @@
 - #12 (WPF)
 	- Перевод
 	- Примеры команд
+	- High DPI
+		Writing DPI-aware Win32 applications.
+		http://msdn.microsoft.com/en-us/library/windows/desktop/dd464646(v=vs.85).aspx
+		DpiScaling.exe - open DPI settings
 	- Tools
 		- Blend
 		XAML Spy
@@ -268,6 +272,7 @@
 
 - Debugging
 	DebuggerDisplayAttribute
+		http://msdn.microsoft.com/en-us/library/x810d419.aspx
 	DebuggerTypeProxyAttribute
 	DebuggerNonUserCodeAttribute
 	- Use Object_id (id#)
