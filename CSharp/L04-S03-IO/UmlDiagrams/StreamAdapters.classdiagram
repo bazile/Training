@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="7485bc58-5aa3-4ada-83bb-a4f3ed281176" name="StreamAdapters" linkedPackageId="c906b331-3293-4610-bda3-445a4ea867ce" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="5ac69bcb-f141-4a57-b839-cf2e344abb80">
+      <profileInstance Id="558debf7-e663-45b9-bf6a-d6e4eb449f8d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="df04ea76-bca3-4032-bcf0-3d7f48b50f35">
+      <profileInstance Id="d879b261-5e0e-45cb-bac2-e1bdcab8605c" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2b0fb4c0-7be1-4e10-9e26-af6bcf807ea1" name="System.IO.BinaryReader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3dd508ce-d5e2-4e47-ac62-88bb79551104" />
+        <suppliersInternal>
+          <interfaceRealization Id="cc487b8f-e225-4f81-997b-d6be0d456295">
+            <interfaceMoniker Id="0ae20ef8-2344-4265-9aad-08602daa6fe9" LastKnownName="System.IDisposable" />
+            <elementDefinition Id="3983ad39-4f13-4785-9310-58d2b55d1b42" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="8d38c528-f3e0-444a-9222-d0de52a970b3" name="Dispose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="82efb1c3-13cf-49d8-a46e-6c7859de6e85" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="0ae20ef8-2344-4265-9aad-08602daa6fe9" name="System.IDisposable" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e0eecaea-1dc9-437e-89b9-e707747e663d" />
+        <ownedOperations>
+          <operation Id="3915dc6d-0205-485c-a14b-2c62fd68c5ca" name="Dispose" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="70406ee2-b438-45b5-89c3-5ac2557271f4" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8b9f8dd9-e0df-471a-89cb-3adb0878719e" name="System.IO.BinaryWriter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="563082bd-9656-4e4b-8df8-f906a07e07e0" />
+        <suppliersInternal>
+          <interfaceRealization Id="84fd370c-751b-425b-96e8-52bf8911eb1f">
+            <interfaceMoniker Id="0ae20ef8-2344-4265-9aad-08602daa6fe9" LastKnownName="System.IDisposable" />
+            <elementDefinition Id="c63a674d-5849-4c3d-8202-962038062edc" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="8f11c56a-6354-4093-87c7-a5f4c4847f94" name="Dispose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1bd58b0b-9e8b-4c5f-a0d1-df9c48cbd752" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="edd3a390-44ae-413c-ac37-71b52b805a2e" name="System.IO.TextReader" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ac2f8967-56d4-495c-9f05-0831a985c1d0" />
+        <suppliersInternal>
+          <interfaceRealization Id="5ffe8edd-d6bf-45c0-9c60-a5ced3e4c338">
+            <interfaceMoniker Id="0ae20ef8-2344-4265-9aad-08602daa6fe9" LastKnownName="System.IDisposable" />
+            <elementDefinition Id="ce21f900-dd45-4f0b-93c6-2acd6e95185c" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="6d3e63d3-4a83-4623-a832-9d2fb72b23ca" name="Dispose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="221c135b-1e96-4da7-915f-6e31cbb297ab" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ca1b8e79-926a-46a6-9ddb-f2fd84dfa0f0" name="System.IO.TextWriter" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2fc7bcc0-e236-4411-9b66-1a7c733a9c51" />
+        <suppliersInternal>
+          <interfaceRealization Id="a43980ce-e0b4-419f-8587-cdc799e84be3">
+            <interfaceMoniker Id="0ae20ef8-2344-4265-9aad-08602daa6fe9" LastKnownName="System.IDisposable" />
+            <elementDefinition Id="fc3543ee-9af6-4ca0-92d6-a2cf232f2d4c" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="b296e38d-2bcd-42d2-9e0d-4130689680db" name="Dispose" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c504281a-c668-44cb-baff-ca8852504604" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="71d53479-3aa8-4004-a19c-a3117fa5f3ee" name="System.IO.StreamReader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="809a89fa-81fa-4606-92eb-930cbbbbc371" />
+        <generalsInternal>
+          <generalization Id="d16458d2-5777-478a-8b14-604a76aed78f" isSubstitutable="false">
+            <classMoniker Id="edd3a390-44ae-413c-ac37-71b52b805a2e" LastKnownName="System.IO.TextReader" />
+            <elementDefinition Id="2c948220-fec1-4979-ba35-0ee32d331e13" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ae145c3a-89ec-4852-8ab8-b670cde09b1f" name="System.IO.StreamWriter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d73cb690-6a05-4d51-b619-47ee060ccb1f" />
+        <generalsInternal>
+          <generalization Id="b50821e7-b86a-4f59-8c8b-a9a5c06d0ab5" isSubstitutable="false">
+            <classMoniker Id="ca1b8e79-926a-46a6-9ddb-f2fd84dfa0f0" LastKnownName="System.IO.TextWriter" />
+            <elementDefinition Id="88d7be77-bab7-4bf6-8b95-413bf5bc5362" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="91d4548e-f174-425a-9ebf-154bf347980f" name="System.IO.StringReader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ae8758dc-cd78-47a7-bb4b-5d3b62344098" />
+        <generalsInternal>
+          <generalization Id="32742f08-c462-44de-b81b-8e0351dc6adb" isSubstitutable="false">
+            <classMoniker Id="edd3a390-44ae-413c-ac37-71b52b805a2e" LastKnownName="System.IO.TextReader" />
+            <elementDefinition Id="dc59485d-8f1c-4304-9c52-286b8d2d0dcb" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="c906b331-3293-4610-bda3-445a4ea867ce" name="UmlDiagrams">
+    <elementDefinition Id="5b2ff894-cb73-4f03-bef4-e210381a2db9" />
+  </package>
+</logicalClassDesignerModel>

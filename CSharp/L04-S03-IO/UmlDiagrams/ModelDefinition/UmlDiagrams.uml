@@ -152,6 +152,175 @@
         </generalsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="3dd508ce-d5e2-4e47-ac62-88bb79551104"
+        name="System.IO.BinaryReader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="3983ad39-4f13-4785-9310-58d2b55d1b42">
+            <interfaceMoniker
+              Id="e0eecaea-1dc9-437e-89b9-e707747e663d"
+              LastKnownName="System.IDisposable"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="82efb1c3-13cf-49d8-a46e-6c7859de6e85"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="563082bd-9656-4e4b-8df8-f906a07e07e0"
+        name="System.IO.BinaryWriter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c63a674d-5849-4c3d-8202-962038062edc">
+            <interfaceMoniker
+              Id="e0eecaea-1dc9-437e-89b9-e707747e663d"
+              LastKnownName="System.IDisposable"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1bd58b0b-9e8b-4c5f-a0d1-df9c48cbd752"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ac2f8967-56d4-495c-9f05-0831a985c1d0"
+        name="System.IO.TextReader"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ce21f900-dd45-4f0b-93c6-2acd6e95185c">
+            <interfaceMoniker
+              Id="e0eecaea-1dc9-437e-89b9-e707747e663d"
+              LastKnownName="System.IDisposable"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="221c135b-1e96-4da7-915f-6e31cbb297ab"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2fc7bcc0-e236-4411-9b66-1a7c733a9c51"
+        name="System.IO.TextWriter"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="fc3543ee-9af6-4ca0-92d6-a2cf232f2d4c">
+            <interfaceMoniker
+              Id="e0eecaea-1dc9-437e-89b9-e707747e663d"
+              LastKnownName="System.IDisposable"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c504281a-c668-44cb-baff-ca8852504604"
+            name="Dispose"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="809a89fa-81fa-4606-92eb-930cbbbbc371"
+        name="System.IO.StreamReader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="2c948220-fec1-4979-ba35-0ee32d331e13"
+            isSubstitutable="false">
+            <classMoniker
+              Id="ac2f8967-56d4-495c-9f05-0831a985c1d0"
+              LastKnownName="System.IO.TextReader"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d73cb690-6a05-4d51-b619-47ee060ccb1f"
+        name="System.IO.StreamWriter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="88d7be77-bab7-4bf6-8b95-413bf5bc5362"
+            isSubstitutable="false">
+            <classMoniker
+              Id="2fc7bcc0-e236-4411-9b66-1a7c733a9c51"
+              LastKnownName="System.IO.TextWriter"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ae8758dc-cd78-47a7-bb4b-5d3b62344098"
+        name="System.IO.StringReader"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="dc59485d-8f1c-4304-9c52-286b8d2d0dcb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="ac2f8967-56d4-495c-9f05-0831a985c1d0"
+              LastKnownName="System.IO.TextReader"
+              LastKnownLocation="UmlDiagrams.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

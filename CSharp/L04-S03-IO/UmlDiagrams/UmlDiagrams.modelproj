@@ -17,6 +17,13 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="StreamAdapters.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StreamAdapters.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StreamAdapters.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Streams.classdiagram">
       <SubType>Content</SubType>
     </Content>
