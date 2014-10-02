@@ -1,4 +1,5 @@
-Tools/
+# NuGet packages
+packages/
 
 # User-specific files
 *.suo
