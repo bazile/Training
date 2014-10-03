@@ -64,7 +64,7 @@ namespace BelhardTraining.LessonIO
 			//// Подкаталоги по маске «s*» указанного каталога
 			//string[] dirsByMask = Directory.GetDirectories(folder, "s*");
 			//// Подкаталоги по маске указанного каталога включая вложенные
-			//string[] allDirs = Directory.GetDirectories(folder, "s*", SearchOption.TopDirectoryOnly);
+			//string[] allDirs = Directory.GetDirectories(folder, "s*", SearchOption.AllDirectories);
 
 			//// Примеры для GetFiles() – поиск файлов
 			//// Все файлы в указанном каталоге
