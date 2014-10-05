@@ -1,8 +1,9 @@
 ﻿/*
 
-    СТОЛИЦЫ СТРАН МИРА. Четвертая версия.
+    СТОЛИЦЫ СТРАН МИРА. Вторая версия.
+	Для SQL Server 2005 и выше.
 
-    Первичные ключи для таблиц
+    Части света вынесены в отдельную таблицу.
 
 */
 
@@ -16,31 +17,24 @@ GO
 
 CREATE TABLE PartOfWorld
 (
-    Id   int          IDENTITY(1,1) PRIMARY KEY,
-    Name varchar(20)  NOT NULL UNIQUE
+    Id   int          PRIMARY KEY,
+    Name varchar(20)  NOT NULL
 )
 GO
 
 CREATE TABLE CountryCapital
 (
-    Id            int         IDENTITY(1,1) PRIMARY KEY,
     PartOfWorldId int         NOT NULL,
-    Country       varchar(30) NOT NULL UNIQUE,
+    Country       varchar(30) NOT NULL,
     CapitalCity   varchar(40) NOT NULL
 )
 GO
 
-ALTER TABLE dbo.CountryCapital
-    ADD CONSTRAINT FK_CountryCapital_PartOfWorld
-    FOREIGN KEY (PartOfWorldId) REFERENCES PartOfWorld(Id)
-    ON UPDATE NO ACTION
-    ON DELETE NO ACTION
-
-INSERT INTO PartOfWorld (Name) VALUES ('Европа')
-INSERT INTO PartOfWorld (Name) VALUES ('Азия')
-INSERT INTO PartOfWorld (Name) VALUES ('Африка')
-INSERT INTO PartOfWorld (Name) VALUES ('Америка')
-INSERT INTO PartOfWorld (Name) VALUES ('Австралия и Океания')
+INSERT INTO PartOfWorld (Id, Name) VALUES (1, 'Европа')
+INSERT INTO PartOfWorld (Id, Name) VALUES (2, 'Азия')
+INSERT INTO PartOfWorld (Id, Name) VALUES (3, 'Африка')
+INSERT INTO PartOfWorld (Id, Name) VALUES (4, 'Америка')
+INSERT INTO PartOfWorld (Id, Name) VALUES (5, 'Австралия и Океания')
 
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Австрия', 'Вена')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Албания', 'Тирана')

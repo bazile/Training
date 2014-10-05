@@ -1,6 +1,7 @@
 ﻿/*
 
     СТОЛИЦЫ СТРАН МИРА. Третья версия.
+	Для SQL Server 2005 и выше.
 
     Добавляем ограничения (constraints).
         Колонка PartOfWorld.Name -> UNIQUE
@@ -19,8 +20,8 @@ GO
 
 CREATE TABLE PartOfWorld
 (
-    Id   int          PRIMARY KEY,
-    Name varchar(20)  NOT NULL UNIQUE
+    Id   int         PRIMARY KEY,
+    Name varchar(20) NOT NULL UNIQUE
 )
 GO
 
