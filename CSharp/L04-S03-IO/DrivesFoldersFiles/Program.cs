@@ -16,6 +16,7 @@ using Microsoft.VisualBasic.FileIO;
 // В пространствах имен System.IO и Microsoft.VisualBasic.FileIO объявлен enum с именем SearchOption
 // Чтобы иметь возможность использовать оба типа, одному из них необходим псевдоним
 // В данном случае псевдоним VBSearchOption дается типу Microsoft.VisualBasic.FileIO.SearchOption
+using SearchOption = System.IO.SearchOption;
 using VBSearchOption = Microsoft.VisualBasic.FileIO.SearchOption;
 
 namespace BelhardTraining.LessonIO
@@ -290,11 +291,13 @@ namespace BelhardTraining.LessonIO
 			{
 				// Файловая система (строка): NTFS, FAT32, exFAT, ...
 				Console.WriteLine("Файловая система: {0}", driveInfo.DriveFormat);
-				Console.WriteLine("Готов?          : {0}", driveInfo.IsReady);
 				Console.WriteLine("Корень          : {0}", driveInfo.RootDirectory);
 				Console.WriteLine("Свободное место : {0:N0} {1}", driveInfo.TotalFreeSpace, driveInfo.TotalFreeSpace.PrettyBytes());
 				Console.WriteLine("Размер          : {0:N0} {1}", driveInfo.TotalSize, driveInfo.TotalSize.PrettyBytes());
-				Console.WriteLine("Метка диска     : {0}", driveInfo.VolumeLabel);
+				if (driveInfo.VolumeLabel.Length > 0)
+				{
+					Console.WriteLine("Метка диска     : {0}", driveInfo.VolumeLabel);
+				}
 			}
 		}
 
