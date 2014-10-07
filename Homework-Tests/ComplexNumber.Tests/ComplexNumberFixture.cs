@@ -136,10 +136,14 @@ namespace ComplexNumber.Tests
 
 			Debug.WriteLine("Checking " + pairXY);
 
+			#pragma warning disable 1718 // Comparison made to same variable
 			// ReSharper disable EqualExpressionComparison
-			Assert.IsFalse(x != x, pairXX + " must be equal");
-			Assert.IsFalse(y != y, pairYY + " must be equal");
+
+				Assert.IsFalse(x != x, pairXX + " must be equal");
+				Assert.IsFalse(y != y, pairYY + " must be equal");
+
 			// ReSharper restore EqualExpressionComparison
+			#pragma warning restore 1718 // Comparison made to same variable
 
 			Assert.IsFalse(x != new ComplexNumber(x.Real, x.Imaginary), pairXX + " must be equal");
 			Assert.IsFalse(new ComplexNumber(x.Real, x.Imaginary) != x, pairXX + " must be equal");
@@ -175,28 +179,6 @@ namespace ComplexNumber.Tests
 			Assert.IsFalse(x != y);
 		}
 
-		//[Test]
-		//[Category("Operator overloading")]
-		//public void NullIsLessThanComplexNumber()
-		//{
-		//    // ReSharper disable ConditionIsAlwaysTrueOrFalse
-		//    // ReSharper disable HeuristicUnreachableCode
-
-		//    var x = new ComplexNumber(0);
-		//    var comparable = x as IComparable<ComplexNumber>;
-		//    if (comparable == null)
-		//    {
-		//        Assert.Inconclusive("Type doesn't implement IComparable<ComplexNumber>");
-		//    }
-		//    else
-		//    {
-		//        Assert.GreaterOrEqual(comparable.CompareTo(null), 0);
-		//    }
-
-		//    // ReSharper restore HeuristicUnreachableCode
-		//    // ReSharper restore ConditionIsAlwaysTrueOrFalse
-		//}
-
 		[Test]
 		[Category("Operator overloading")]
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "AddData")]
@@ -218,22 +200,6 @@ namespace ComplexNumber.Tests
 			Assert.AreEqual(x.Imaginary - y.Imaginary, result.Imaginary);
 			return result;
 		}
-
-		//[Test]
-		//[Category("Interface implementation")]
-		//public void ImplementsIComparable()
-		//{
-		//    var x = new ComplexNumber(10);
-		//    Assert.IsNotNull(x as IComparable, "Type does not implement IComparable.");
-		//}
-
-		//[Test]
-		//[Category("Interface implementation")]
-		//public void ImplementsGenericIComparable()
-		//{
-		//    var x = new ComplexNumber(10);
-		//    Assert.IsNotNull(x as IComparable<ComplexNumber>, "Type does not implement IComparable<ComplexNumber>.");
-		//}
 
 		[Test]
 		[Category("Interface implementation")]
@@ -290,6 +256,14 @@ namespace ComplexNumber.Tests
 
 		[Test]
 		[Category("ToString() implementation")]
+		[TestCaseSource(typeof(ComplexNumberFixtureData), "ToStringWithCultureData")]
+		public string AssertFormattingWithCulture(ComplexNumber number, string formatSpecifier, string cultureName)
+		{
+			return number.ToString(formatSpecifier, new CultureInfo(cultureName));
+		}
+
+		[Test]
+		[Category("ToString() implementation")]
 		public void ToStringThrowsFormatExceptionForUnknownFormat()
 		{
 			ImplementsIFormattable();
@@ -317,7 +291,7 @@ namespace ComplexNumber.Tests
 
 		private static string AsString(ComplexNumber cx)
 		{
-			if (cx == null) return "null";
+			if (ReferenceEquals(cx, null)) return "null";
 			return String.Format(CultureInfo.GetCultureInfo("en-US"), "[{0}, {1}]", cx.Real, cx.Imaginary);
 		}
 	}
@@ -377,27 +351,43 @@ namespace ComplexNumber.Tests
 		{
 			get
 			{
-				yield return new TestCaseData(new ComplexNumber(0, 0), null).Returns("0");
-				yield return new TestCaseData(new ComplexNumber(1, 0), null).Returns("1");
-				yield return new TestCaseData(new ComplexNumber(-1, 0), null).Returns("-1");
-				yield return new TestCaseData(new ComplexNumber(1, 2), null).Returns("1+i2");
-				yield return new TestCaseData(new ComplexNumber(-1, 2), null).Returns("-1+i2");
-				yield return new TestCaseData(new ComplexNumber(1, -2), null).Returns("1-i2");
+				yield return new TestCaseData(new ComplexNumber(0, 0)  , null).Returns("0");
+				yield return new TestCaseData(new ComplexNumber(1, 0)  , null).Returns("1");
+				yield return new TestCaseData(new ComplexNumber(-1, 0) , null).Returns("-1");
+				yield return new TestCaseData(new ComplexNumber(1, 2)  , null).Returns("1+i2");
+				yield return new TestCaseData(new ComplexNumber(-1, 2) , null).Returns("-1+i2");
+				yield return new TestCaseData(new ComplexNumber(1, -2) , null).Returns("1-i2");
 				yield return new TestCaseData(new ComplexNumber(-1, -2), null).Returns("-1-i2");
 
-				yield return new TestCaseData(new ComplexNumber(0, 0), "A").Returns("0");
-				yield return new TestCaseData(new ComplexNumber(1, 0), "A").Returns("1");
-				yield return new TestCaseData(new ComplexNumber(-1, 0), "A").Returns("-1");
-				yield return new TestCaseData(new ComplexNumber(1, 2), "A").Returns("1+i2");
-				yield return new TestCaseData(new ComplexNumber(-1, 2), "A").Returns("-1+i2");
-				yield return new TestCaseData(new ComplexNumber(1, -2), "A").Returns("1-i2");
+				yield return new TestCaseData(new ComplexNumber(0, 0)  , "A").Returns("0");
+				yield return new TestCaseData(new ComplexNumber(1, 0)  , "A").Returns("1");
+				yield return new TestCaseData(new ComplexNumber(-1, 0) , "A").Returns("-1");
+				yield return new TestCaseData(new ComplexNumber(1, 2)  , "A").Returns("1+i2");
+				yield return new TestCaseData(new ComplexNumber(-1, 2) , "A").Returns("-1+i2");
+				yield return new TestCaseData(new ComplexNumber(1, -2) , "A").Returns("1-i2");
 				yield return new TestCaseData(new ComplexNumber(-1, -2), "A").Returns("-1-i2");
 
-				yield return new TestCaseData(new ComplexNumber(0, 0), "P").Returns("(0, 0)");
-				yield return new TestCaseData(new ComplexNumber(1, 2), "P").Returns("(1, 2)");
-				yield return new TestCaseData(new ComplexNumber(-1, 2), "P").Returns("(-1, 2)");
-				yield return new TestCaseData(new ComplexNumber(1, -2), "P").Returns("(1, -2)");
+				yield return new TestCaseData(new ComplexNumber(0, 0)  , "P").Returns("(0, 0)");
+				yield return new TestCaseData(new ComplexNumber(1, 2)  , "P").Returns("(1, 2)");
+				yield return new TestCaseData(new ComplexNumber(-1, 2) , "P").Returns("(-1, 2)");
+				yield return new TestCaseData(new ComplexNumber(1, -2) , "P").Returns("(1, -2)");
 				yield return new TestCaseData(new ComplexNumber(-1, -2), "P").Returns("(-1, -2)");
+			}
+		}
+
+		public static IEnumerable<TestCaseData> ToStringWithCultureData
+		{
+			get
+			{
+				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "A", "ru-RU").Returns("1,123+i2,234");
+				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "A", "ru-RU").Returns("-1,123-i2,234");
+				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "A", "en-US").Returns("1.123+i2.234");
+				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "A", "en-US").Returns("-1.123-i2.234");
+
+				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "P", "ru-RU").Returns("(1,123, 2,234)");
+				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "P", "ru-RU").Returns("(-1,123, -2,234)");
+				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "P", "en-US").Returns("(1.123, 2.234)");
+				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "P", "en-US").Returns("(-1.123, -2.234)");
 			}
 		}
 
