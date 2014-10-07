@@ -34,7 +34,7 @@ namespace BelhardTraining.LessonIO
 				XmlSerializer xmlSerializer = new XmlSerializer(typeof(TrainXml));
 				xmlSerializer.Serialize(memoryStream, train);
 
-				// Печатаем реузльтат на экран
+				// Печатаем результат на экран
 				memoryStream.Position = 0;
 				StreamReader reader = new StreamReader(memoryStream);
 				string xml = reader.ReadToEnd();

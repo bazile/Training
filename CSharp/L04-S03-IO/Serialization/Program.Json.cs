@@ -29,7 +29,7 @@ namespace BelhardTraining.LessonIO
 				DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(TrainJson));
 				serializer.WriteObject(memoryStream, train);
 
-				// Печатаем реузльтат на экран
+				// Печатаем результат на экран
 				memoryStream.Position = 0;
 				StreamReader reader = new StreamReader(memoryStream);
 				string json = reader.ReadToEnd();

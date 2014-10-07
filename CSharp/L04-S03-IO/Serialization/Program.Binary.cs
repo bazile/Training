@@ -26,19 +26,11 @@ namespace BelhardTraining.LessonIO
 
 			Comment("Объект до сериализации");
 			train.Print();
-            Console.WriteLine();
+			Console.WriteLine();
 
 			// Будем работать с файлом в папке для временных файлов
 			string tempFileName = Path.Combine(Path.GetTempPath(), "train.dat");
 			BinaryFormatter bf = new BinaryFormatter();
-
-            // Печатаем реузльтат на экран
-            Comment("Результат бинарной сериализации");
-            using (FileStream fileStream = File.OpenRead(tempFileName))
-            {
-                PrintToConsole(fileStream);
-                Console.WriteLine();
-            }
 
 			// Выполняем сериализацию
 			using (FileStream fs = File.Open(tempFileName, FileMode.Create))
@@ -47,46 +39,56 @@ namespace BelhardTraining.LessonIO
 			}
 			Console.WriteLine();
 
+			// Печатаем результат на экран
+			Comment("Результат бинарной сериализации");
+			using (FileStream fileStream = File.OpenRead(tempFileName))
+			{
+				PrintToConsole(fileStream);
+				Console.WriteLine();
+			}
+
 			// Выполняем десериализацию
 			using (FileStream fs = File.Open(tempFileName, FileMode.Open))
 			{
 				TrainBinary someTrain = (TrainBinary)bf.Deserialize(fs);
 				Comment("Копия объекта после сериализации.");
 				someTrain.Print();
+				Console.WriteLine(ReferenceEquals(train, someTrain));
 			}
-			// Удаляем ненужный временный файл. В настоящем приложении файл может еще понадобиться.
-			//File.Delete(tempFileName);
 
 			Pause();
+			
+			// Удаляем ненужный временный файл. В настоящем приложении файл может еще понадобиться.
+			File.Delete(tempFileName);
 		}
 
-        private static void PrintToConsole(FileStream fileStream)
-        {
-            byte[] buf = new byte[1024];
-            int bytesPerLine = Console.WindowWidth / 3, curPos = 0;
-            for (; ; )
-            {
-                int bytesRead = fileStream.Read(buf, 0, buf.Length);
-                if (bytesRead == 0) break;
+		private static void PrintToConsole(FileStream fileStream)
+		{
+			byte[] buf = new byte[1024];
+			int bytesPerLine = Console.WindowWidth / 3, curPos = 0;
+			for (; ; )
+			{
+				int bytesRead = fileStream.Read(buf, 0, buf.Length);
+				if (bytesRead == 0) break;
 
-                for (int j = 0; j < bytesRead; curPos++, j++)
-                {
-                    if (curPos >= bytesPerLine)
-                    {
-                        Console.WriteLine();
-                        curPos = 0;
-                    }
-                    Console.Write("{0:X2} ", buf[j]);
-                }
-            }
-        }
+				for (int j = 0; j < bytesRead; curPos++, j++)
+				{
+					if (curPos >= bytesPerLine)
+					{
+						Console.WriteLine();
+						curPos = 0;
+					}
+					Console.Write("{0:X2} ", buf[j]);
+				}
+			}
+		}
 	}
 
 	// private члены и private типы
 	[Serializable]
 	class TrainBinary
 	{
-		[NonSerialized]
+		//[NonSerialized]
 		private double speed;
 		private int length;
 		private string[] travellers;
