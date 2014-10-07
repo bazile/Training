@@ -28,7 +28,9 @@
 				Not effective for small data
 				See MS.Utility.FrugalMap source
 			Stack<T>
-			Queue<T>	
+			Queue<T>
+			System.CodeDom.Compiler.TempFileCollection
+			https://www.nuget.org/packages/Microsoft.Experimental.Collections/
 
 - #2
 	GetHashCode()
@@ -76,6 +78,7 @@
     		</runtime>
 		</configuration>
 	- Exception.GetBaseException()
+	- System.CodeDom.Compiler.TempFileCollection
 						
 - #5 (events)
 	- События и исключения
@@ -133,6 +136,9 @@
 		Pass an instance of XmlSecureResolver or null 
 	System.Web.UI.WebControls.XmlDataSource 
 		NEVER SAFE – supports both entities and XSL script. 
+	LINQ to XML
+		extension method XPathSelectElements
+		from System.Xml.XPath.Extensions class
 				
 - #7 (сборки и  рефлексия)
 	- Разница между const и static readonly полями
@@ -192,10 +198,104 @@
 		Lazy loading (suggest to turn off on web projects)
 			DB First - Model properties
 			Code first - Configuration.LazyLoadingEnabled
-	   make smaller models
-	- SET STATISTICS TIME ON|OFF
-	- Application Name parameter and tracing
-	- async методы в EF6
+		make smaller models
+		Init strategy:
+			CreateDatabseIfNotExists (default)
+			DropCreateDatabaseAlways
+			DropCreateDatabaseIfModelChanges
+		Seed method
+
+		Validation and Annotations
+			StringLength(n)
+			Range - range of values
+			Required
+			MinLength/MaxLength
+			Key - PK
+			Column - column name
+			Table - table name for a class
+			NotMapped
+			ConcurrencyCheck
+			TimeStamp + byte[] property
+			DatabaseGenerated
+			Index - EF 6.1+
+			MetadataType
+
+			System.ComponentModel.DataAnnotations
+			System.ComponentModel.DataAnnotations.Schema 
+
+		Configuring/Mapping Properties and Types with the Fluent API
+		http://msdn.microsoft.com/en-us/data/jj591617
+
+		Mapping strategies:
+			Table per Hierarchy (TPH)
+			Table per Type (TPT)
+			Table per Concrete Type (TPC)
+
+		via http://www.slideshare.net/EyalV/entity-framework-entity-data-model-edm
+
+		Versions:
+			http://msdn.microsoft.com/en-US/data/jj574253
+
+			3.5 - Initial release for .NET 3.5 SP1 and VS 2008 SP1
+			4.0 - Included with .NET 4
+				Lazy loading
+				Model first support
+			4.1
+				CodeFirst model
+				DbContext
+				FluentAPI
+			4.2
+				Semantic versioning
+			4.3
+				CodeFirst migrations
+				Data annotations on non-public properties
+				Additional config file settings
+				Removal of EdmMetadata table
+			4.3.1
+				Added IgnoreChanges to enable CodeFirst
+			5.0
+				Enums support (.NET 4.5+)
+				Spatial data types
+				Table-valued functions
+			6.0
+				All modes:
+					Async Query and Save
+					Connection Resiliency
+					Code-Based Configuration
+					DI support
+					Interception/SQL logging
+					DbContext can now be created with a DbConnection that is already opened
+					Improved Transaction Support
+					Enums, Spatial and Better Performance on .NET 4.0
+					Improved performance of Enumerable.Contains in LINQ queries.
+					Improved warm up time (view generation), especially for large models. 
+					Pluggable Pluralization & Singularization Service.
+					Custom implementations of Equals or GetHashCode on entity classes are now supported.
+					DbSet.AddRange/RemoveRange provides an optimized way to add or remove multiple entities from a set.
+					DbChangeTracker.HasChanges provides an easy and efficient way to see if there are any pending changes to be saved to the database.
+					SqlCeFunctions provides a SQL Compact equivalent to the SqlFunctions.
+				Code first only:
+					Custom CodeFirst conventions
+					Mapping for Insert/Update/Delete SPs
+					Migrations history table
+					Multiple Contexts per Database removes the previous limitation of one Code First model per database when using Migrations or when Code First automatically created the database for you.
+					DbModelBuilder.HasDefaultSchema
+					Custom Migrations Operations
+					Default transaction isolation level is changed to READ_COMMITTED_SNAPSHOT
+					Entity and complex types can now be nestedinside classes.
+			6.1
+				Handling of transaction commit failures provides the CommitFailureHandler
+				Ability to configure interceptors via the App/Web.config file
+
+		Links:
+			Julie Lerman blog
+				http://thedatafarm.com/blog/
+			ADO.NET team blog
+				http://blogs.msdn.com/b/adonet/
+			   
+			- SET STATISTICS TIME ON|OFF
+			- Application Name parameter and tracing
+			- async методы в EF6
 	
 - #12 (WPF)
 	- Перевод
