@@ -1,9 +1,6 @@
 - Убрать префикс _ !
 - CodeStyle check
 	BelhardTraining namespace
-- SystemInformation
-	System.Environment
-	System.Windows.Forms.SystemInformation
 - Unicode demo
 	string hello = "Прив\u0301ет";
 	"a b".Dump();
@@ -14,6 +11,13 @@
 	"a\u2009b".Dump(); // Thin Space
 	"a\u200Ab".Dump(); // Hair Space
 	non-breaking space ???
+- search via Windows Search
+	Overview - http://msdn.microsoft.com/en-us/library/aa965362%28VS.85%29.aspx	
+	Querying the Index Programmatically - http://msdn.microsoft.com/en-us/library/bb266517%28v=vs.85%29.aspx
+	OleDb "Provider=Search.CollatorDSO;Extended Properties='Application=Windows';"
+	SELECT Top 1 System.ItemPathDisplay FROM SYSTEMINDEX
+		ItemName
+		ItemUrl 
 
 - reflection demo
 	AppDomain.CurrentDomain.GetAssemblies()
