@@ -1,6 +1,7 @@
 ﻿// ReSharper disable RedundantUsingDirective
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 // ReSharper restore RedundantUsingDirective
@@ -18,20 +19,33 @@ namespace BugsDemo
 		{
 			#region Работа со списком из разных потоков
 
-			//var items = new List<int>();
-			//Parallel.For(0, 1000000, items.Add); // Вызываем потоко-небезопасный метод Add() из разных потоков без синхронизации
-			////Parallel.For(0, 1000000, i =>
-			////    {
-			////        lock (items)
-			////        {
-			////            items.Add(i);
-			////        }
-			////    });
-			//items.Add(0); // Ожидаем здесь исключение т.к. список находится в испорченном состоянии
+			var items = new List<int>();
+
+			#region Неправильный подход
+
+			// Вызываем потоко-небезопасный метод Add() из разных потоков без синхронизации
+			Parallel.For(0, 1000000, i => items.Add(i));
+			// Ожидаем здесь исключение т.к. список находится в испорченном состоянии
+			items.Add(0);
 
 			#endregion
 
-			#region Неатомарная запись и чтение
+			#region Правильный подход
+
+			//Parallel.For(0, 1000000, i =>
+			//	{
+			//		lock(items)
+			//		{
+			//			items.Add(i);
+			//		}
+			//	});
+			//items.Add(0);
+
+			#endregion
+
+			#endregion
+
+			#region Неатомарная запись и чтение GUID
 
 			//var obj = new ClassWithNonAtomicGuidAccess();
 			////var obj = new ClassWithAtomicGuidAccess();
