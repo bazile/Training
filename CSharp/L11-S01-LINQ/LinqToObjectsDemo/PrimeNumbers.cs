@@ -4,9 +4,13 @@ using System.Linq;
 
 namespace LinqToObjectsDemo
 {
-	static class PrimeNumbers
+	public static class PrimeNumbers
 	{
-		internal static void PrintPrimeNumbers(int maxValue)
+		/// <summary>
+		/// Распечатка последовательности случайных чисел
+		/// </summary>
+		/// <param name="maxValue"></param>
+		public static void PrintPrimeNumbers(int maxValue)
 		{
 			Func<int, IEnumerable<int>> primeNumbers = max =>
 				 from i in Enumerable.Range(2, max - 1)
@@ -17,10 +21,15 @@ namespace LinqToObjectsDemo
 			foreach (int num in numbers)
 			{
 				Console.WriteLine(num);
-			}			
+			}
 		}
 
-		internal static void PrintPrimeNumbersParallel(int maxValue)
+		/// <summary>
+		/// Распечатка последовательности случайных чисел используя
+		///     Parallel LINQ
+		/// </summary>
+		/// <param name="maxValue"></param>
+		public static void PrintPrimeNumbersParallel(int maxValue)
 		{
 			Func<int, IEnumerable<int>> primeNumbers = max =>
 				 from i in Enumerable.Range(2, max - 1).AsParallel()
