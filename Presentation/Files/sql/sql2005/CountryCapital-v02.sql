@@ -39,7 +39,7 @@ INSERT INTO PartOfWorld (Id, Name) VALUES (5, 'Австралия и Океан�
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Австрия', 'Вена')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Албания', 'Тирана')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Андорра', 'Андорра-ла-Велья')
-INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Белоруссия', 'Минск')
+INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Беларусь', 'Минск')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Бельгия', 'Брюссель')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Болгария', 'София')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (1, 'Босния и Герцеговина', 'Сараево')

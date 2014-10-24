@@ -26,7 +26,7 @@ GO
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Австрия', 'Вена')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Албания', 'Тирана')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Андорра', 'Андорра-ла-Велья')
-INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Белоруссия', 'Минск')
+INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Беларусь', 'Минск')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Бельгия', 'Брюссель')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Болгария', 'София')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Европа', 'Босния и Герцеговина', 'Сараево')
