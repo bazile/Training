@@ -21,7 +21,7 @@ namespace BelhardTraining.DelegatesDemo
 			#endregion
 
 			#region Анонимный делегат
-			
+
 			//// Если функция нужна только в одном месте, то использование
 			////	анонимного делегата может улучшить читабельность кода
 			//Array.Sort(
@@ -30,7 +30,8 @@ namespace BelhardTraining.DelegatesDemo
 			//    {
 			//        string domain1 = email1.Substring(email1.IndexOf('@') + 1);
 			//        string domain2 = email2.Substring(email2.IndexOf('@') + 1);
-			//        return string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
+			//        int result = string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
+			//        return result == 0 ? string.Compare(email1, email2, StringComparison.OrdinalIgnoreCase) : result;
 			//    }
 			//);
 
@@ -45,22 +46,24 @@ namespace BelhardTraining.DelegatesDemo
 			//    {
 			//        string domain1 = email1.Substring(email1.IndexOf('@') + 1);
 			//        string domain2 = email2.Substring(email2.IndexOf('@') + 1);
-			//        return string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
+			//        int result = string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
+			//        return result == 0 ? string.Compare(email1, email2, StringComparison.OrdinalIgnoreCase) : result;
 			//    }
 			//);
 			
 			#region Типы аргументов можно опустить
 
-			//Array.Sort(
-			//    emails,
-			//    (email1, email2) // Мы убрали типы а аргументов т.к. компилятор может их "угадать"
-			//    => // Это лямбда-оператор. Он отделяет список аргументов функции от её тела
-			//    {
-			//        string domain1 = email1.Substring(email1.IndexOf('@') + 1);
-			//        string domain2 = email2.Substring(email2.IndexOf('@') + 1);
-			//        return string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
-			//    }
-			//);
+			Array.Sort(
+				emails,
+				(email1, email2) // Мы убрали типы а аргументов т.к. компилятор может их "угадать"
+				=> // Это лямбда-оператор. Он отделяет список аргументов функции от её тела
+				{
+					string domain1 = email1.Substring(email1.IndexOf('@') + 1);
+					string domain2 = email2.Substring(email2.IndexOf('@') + 1);
+					int result = string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
+					return result == 0 ? string.Compare(email1, email2, StringComparison.OrdinalIgnoreCase) : result;
+				}
+			);
 
 			#endregion
 
@@ -75,10 +78,10 @@ namespace BelhardTraining.DelegatesDemo
 			//    }
 			//);
 
-			////Array.Sort(
-			////    emails,
-			////    (email1, email2) => string.Compare(GetDomain(email1), GetDomain(email2), StringComparison.OrdinalIgnoreCase)
-			////);
+			//Array.Sort(
+			//    emails,
+			//    (email1, email2) => string.Compare(GetDomain(email1), GetDomain(email2), StringComparison.OrdinalIgnoreCase)
+			//);
 
 			#endregion
 
@@ -94,7 +97,10 @@ namespace BelhardTraining.DelegatesDemo
 		{
 			string domain1 = email1.Substring(email1.IndexOf('@') + 1);
 			string domain2 = email2.Substring(email2.IndexOf('@') + 1);
-			return string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
+			// Сравниваем домены
+			int result = string.Compare(domain1, domain2, StringComparison.OrdinalIgnoreCase);
+			// Если домены совпадают, то сортируем по полному адресу
+			return result == 0 ? string.Compare(email1, email2, StringComparison.OrdinalIgnoreCase) : result;
 		}
 
 		private static string GetDomain(string email)
