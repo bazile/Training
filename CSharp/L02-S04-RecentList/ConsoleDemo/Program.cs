@@ -10,9 +10,6 @@ namespace BelhardTraining.RecentListDemo
 		{
 			ShowHelp();
 
-			List<int> x = new List<int>();
-			Console.WriteLine(x[0]);
-
 			RecentCollection<int> list = new RecentCollection<int>(5);
 			bool shownFullMessage = false;
 			for (;;)
@@ -46,7 +43,7 @@ namespace BelhardTraining.RecentListDemo
 			Console.WriteLine(" *** Список заполнен до максимума. Новые элементы будут вытеснять старые *** ");
 			Console.WriteLine(" ***  При повторном добавлении существующего элемента меняется порядок   *** ");
 			Console.WriteLine();
-			Console.ForegroundColor = oldColor;
+		Console.ForegroundColor = oldColor;
 		}
 
 		private static void ShowHelp()
