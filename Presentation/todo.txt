@@ -200,7 +200,7 @@
 			Code first - Configuration.LazyLoadingEnabled
 		make smaller models
 		Init strategy:
-			CreateDatabseIfNotExists (default)
+			CreateDatabaseIfNotExists (default)
 			DropCreateDatabaseAlways
 			DropCreateDatabaseIfModelChanges
 		Seed method
