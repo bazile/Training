@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{46A14974-2922-4329-A622-D8B6C3845B45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{61E73B5F-3D5C-45E0-8F20-819DE77D12F3}"
+	ProjectSection(SolutionItems) = preProject
+		ApplicatonDirectory.cs = ApplicatonDirectory.cs
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp", "WindowsFormsApp\WindowsFormsApp.csproj", "{A57F3D26-6A25-4D8E-8C36-86CA402FAF70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46A14974-2922-4329-A622-D8B6C3845B45}.Debug|x86.ActiveCfg = Debug|x86
+		{46A14974-2922-4329-A622-D8B6C3845B45}.Debug|x86.Build.0 = Debug|x86
+		{46A14974-2922-4329-A622-D8B6C3845B45}.Release|x86.ActiveCfg = Release|x86
+		{46A14974-2922-4329-A622-D8B6C3845B45}.Release|x86.Build.0 = Release|x86
+		{A57F3D26-6A25-4D8E-8C36-86CA402FAF70}.Debug|x86.ActiveCfg = Debug|x86
+		{A57F3D26-6A25-4D8E-8C36-86CA402FAF70}.Debug|x86.Build.0 = Debug|x86
+		{A57F3D26-6A25-4D8E-8C36-86CA402FAF70}.Release|x86.ActiveCfg = Release|x86
+		{A57F3D26-6A25-4D8E-8C36-86CA402FAF70}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
