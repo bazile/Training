@@ -25,25 +25,35 @@ namespace BelhardTraining.LessonIO
 	{
 		static void Main()
 		{
-			#region Получение информации о доступных логических дисках
+			#region 1. Получение информации о доступных логических дисках
+
+			#region 1.1 С помощью класса DriveInfo
 
 			PrintAllDrivesInfo();
 			//PrintSystemDriveInfo();
-			//TryPrintNonExistingDrive();
+			//TryPrintNonExistingDriveInfo();
 
 			#endregion
 
-			#region Получение информации о физических дисках через WMI
+			#region 1.2 С помощью метода Directory.GetLogicalDrives()
+
+			//PrintDriveLetters();
+
+			#endregion
+
+			#endregion
+
+			#region 2. Получение информации о физических дисках через WMI
 
 			//PrintAllPhysicalDrives();
 
 			#endregion
 
-			#region Поиск каталогов и файлов
+			#region 3. Поиск каталогов и файлов
 
 			string folder = Environment.GetFolderPath(Environment.SpecialFolder.Programs);
 
-			#region Поиск каталогов и файлов с помощью методов класса Directory
+			#region 3.1 Поиск каталогов и файлов с помощью методов класса Directory
 
 			//// Класс Directory содержит методы:
 			////     GetDirectories       - для поиска каталогов
@@ -86,7 +96,7 @@ namespace BelhardTraining.LessonIO
 
 			#endregion
 
-			#region Поиск каталогов и файлов с помощью методов класса DirectoryInfo
+			#region 3.2 Поиск каталогов и файлов с помощью методов класса DirectoryInfo
 
 			//// Класс DirectoryInfo содержит методы:
 			////     GetDirectories     - для поиска каталогов
@@ -121,7 +131,7 @@ namespace BelhardTraining.LessonIO
 
 			#endregion
 
-			#region Поиск каталогов и файлов "по одному" с помощью EnumerateXYZ методов класса Directory
+			#region 3.3 Поиск каталогов и файлов "по одному" с помощью EnumerateXYZ методов класса Directory
 
 			//// Класс Directory содержит методы:
 			////     EnumerateDirectories       - для поиска каталогов
@@ -166,7 +176,7 @@ namespace BelhardTraining.LessonIO
 
 			#endregion
 
-			#region Поиск каталогов и файлов "по одному" с помощью EnumerateXYZ методов класса DirectoryInfo
+			#region 3.4 Поиск каталогов и файлов "по одному" с помощью EnumerateXYZ методов класса DirectoryInfo
 
 			//// Класс DirectoryInfo содержит методы:
 			////     EnumerateDirectories     - для поиска каталогов
@@ -203,7 +213,7 @@ namespace BelhardTraining.LessonIO
 
 			#endregion
 
-			#region Поиск с помощью нескольких шаблонов. Класс Microsoft.VisualBasic.FileIO.FileSystem
+			#region 3.5 Поиск с помощью нескольких шаблонов. Класс Microsoft.VisualBasic.FileIO.FileSystem
 
 			//ReadOnlyCollection<string> dirs = FileSystem.GetDirectories(folder, VBSearchOption.SearchTopLevelOnly, "*.*");
 			//ReadOnlyCollection<string> dirsByMask = FileSystem.GetDirectories(folder, VBSearchOption.SearchTopLevelOnly, "A*", "S*");
@@ -253,7 +263,7 @@ namespace BelhardTraining.LessonIO
 		/// В этом случае можно читать только свойства Name и DriveType
 		/// При этом DriveType = NoRootDirectory
 		/// </summary>
-		static void TryPrintNonExistingDrive()
+		static void TryPrintNonExistingDriveInfo()
 		{
 			// Формируем массив букв используемых дисков
 			char[] usedLetters = DriveInfo.GetDrives().Select(d => d.Name[0]).OrderBy(ch => ch).ToArray();
@@ -298,6 +308,17 @@ namespace BelhardTraining.LessonIO
 				{
 					Console.WriteLine("Метка диска     : {0}", driveInfo.VolumeLabel);
 				}
+			}
+		}
+
+		static void PrintDriveLetters()
+		{
+			// Функция Directory.GetLogicalDrives() возращает массив
+			//		с элементами вида "C:\", "D:\", "E:\" и т.д.
+			string[] driveLetters = Directory.GetLogicalDrives();
+			foreach (string driveLetter in driveLetters)
+			{
+				Console.WriteLine(driveLetter);
 			}
 		}
 
