@@ -44,9 +44,10 @@ namespace BelhardTraining.LessonIO
 				memoryStream.Position = 0;
 
 				// Выполняем десериализацию
-				TrainXml someTrain = (TrainXml)xmlSerializer.Deserialize(memoryStream);
+				TrainXml trainCopy = (TrainXml)xmlSerializer.Deserialize(memoryStream);
 				Comment("Копия объекта после сериализации.");
-				someTrain.Print();
+				trainCopy.Print();
+				Console.WriteLine("\r\nReferenceEquals(train, trainCopy)={0}", ReferenceEquals(train, trainCopy));
 
 				reader.Close();
 			}
@@ -58,7 +59,9 @@ namespace BelhardTraining.LessonIO
 	// Для XML сериализации важно чтобы тип был public
 	public class TrainXml
 	{
-		[XmlIgnore]
+		// Xml-сериализацией можно управлять с помощью атрибутов
+		// Например, XmlIgnore запрещает сериализацию свойства к которому применяется
+		//[XmlIgnore]
 		public double Speed { get; set; }
 
 		public int Length { get; set; }

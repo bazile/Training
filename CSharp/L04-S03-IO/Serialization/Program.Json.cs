@@ -2,6 +2,7 @@
  * Демонстрация JSON сериализации
  * 
  * JSON - компактный текстовый формат из мира веб разработки.
+ * Расшифровывается как Java Script Object Notation
  *	
  */
 
@@ -39,9 +40,10 @@ namespace BelhardTraining.LessonIO
 				memoryStream.Position = 0;
 
 				// Выполняем десериализацию
-				TrainJson someTrain = (TrainJson)serializer.ReadObject(memoryStream);
+				TrainJson trainCopy = (TrainJson)serializer.ReadObject(memoryStream);
 				Comment("Копия объекта после сериализации.");
-				someTrain.Print();
+				trainCopy.Print();
+				Console.WriteLine("\r\nReferenceEquals(train, trainCopy)={0}", ReferenceEquals(train, trainCopy));
 
 				reader.Close();
 			}
@@ -54,6 +56,9 @@ namespace BelhardTraining.LessonIO
 	[DataContract]
 	class TrainJson
 	{
+		// JSON-сериализацией можно управлять с помощью атрибутов
+		// Например, отсутствие DataMember приведет к игнорированию данного члена класса
+		[DataMember]
 		internal double Speed;
 
 		[DataMember]

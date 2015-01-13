@@ -50,10 +50,10 @@ namespace BelhardTraining.LessonIO
 			// Выполняем десериализацию
 			using (FileStream fs = File.Open(tempFileName, FileMode.Open))
 			{
-				TrainBinary someTrain = (TrainBinary)bf.Deserialize(fs);
+				TrainBinary trainCopy = (TrainBinary)bf.Deserialize(fs);
 				Comment("Копия объекта после сериализации.");
-				someTrain.Print();
-				Console.WriteLine(ReferenceEquals(train, someTrain));
+				trainCopy.Print();
+				Console.WriteLine("\r\nReferenceEquals(train, trainCopy)={0}", ReferenceEquals(train, trainCopy));
 			}
 
 			Pause();
@@ -88,6 +88,8 @@ namespace BelhardTraining.LessonIO
 	[Serializable]
 	class TrainBinary
 	{
+		// Бинарной сериализацией можно ограниченно управлять с помощью атрибутов
+		// Например, NonSerialized запрещает сериализацию поля к которому применяется
 		//[NonSerialized]
 		private double speed;
 		private int length;
