@@ -172,6 +172,7 @@ namespace ComplexNumber.Tests
 			var x = new ComplexNumber(0);
 			Assert.IsTrue(x != null);
 			Assert.IsFalse(x == null);
+			Assert.IsFalse(x.Equals(null));
 
 			x = null;
 			ComplexNumber y = null;
@@ -199,6 +200,16 @@ namespace ComplexNumber.Tests
 			Assert.AreEqual(x.Real - y.Real, result.Real);
 			Assert.AreEqual(x.Imaginary - y.Imaginary, result.Imaginary);
 			return result;
+		}
+
+		[Test]
+		[Category("Operator overloading")]
+		[TestCaseSource(typeof(ComplexNumberFixtureData), "ConstructorDataRealOnly")]
+		public void CanConvertDoubleToComplexNumber(double real)
+		{
+			ComplexNumber result = real;
+			Assert.AreEqual(result.Real, real);
+			Assert.AreEqual(result.Imaginary, 0.0);
 		}
 
 		[Test]
