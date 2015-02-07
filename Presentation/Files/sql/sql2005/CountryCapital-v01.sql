@@ -79,7 +79,7 @@ INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Вьетнам', 'Ханой')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Грузия', 'Тбилиси')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Израиль', 'Иерусалим')
-INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Индия', 'Дели (Нью-Дели)')
+INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Индия', 'Нью-Дели')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Индонезия', 'Джакарта')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Иордания', 'Амман')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Азия', 'Ирак', 'Багдад')
@@ -210,7 +210,7 @@ INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Амер
 
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Австралия и Океания', 'Австралия', 'Канберра')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Австралия и Океания', 'Вануату', 'Порт-Вила')
-INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Австралия и Океания', 'Кирибати', 'Южная Тарава (Баирики)')
+INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Австралия и Океания', 'Кирибати', 'Южная Тарава')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Австралия и Океания', 'Маршалловы Острова', 'Маджуро')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Австралия и Океания', 'Микронезия', 'Паликир')
 INSERT INTO CountryCapital (PartOfWorld, Country, CapitalCity) VALUES ('Австралия и Океания', 'Новая Зеландия', 'Веллингтон')

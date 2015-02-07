@@ -101,7 +101,7 @@ INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'В�
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Вьетнам', 'Ханой')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Грузия', 'Тбилиси')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Израиль', 'Иерусалим')
-INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Индия', 'Дели (Нью-Дели)')
+INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Индия', 'Нью-Дели')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Индонезия', 'Джакарта')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Иордания', 'Амман')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (2, 'Ирак', 'Багдад')
@@ -232,7 +232,7 @@ INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (4, 'Я�
 
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (5, 'Австралия', 'Канберра')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (5, 'Вануату', 'Порт-Вила')
-INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (5, 'Кирибати', 'Южная Тарава (Баирики)')
+INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (5, 'Кирибати', 'Южная Тарава')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (5, 'Маршалловы Острова', 'Маджуро')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (5, 'Микронезия', 'Паликир')
 INSERT INTO CountryCapital (PartOfWorldId, Country, CapitalCity) VALUES (5, 'Новая Зеландия', 'Веллингтон')
