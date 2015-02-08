@@ -30,8 +30,15 @@
 			Stack<T>
 			Queue<T>
 			System.CodeDom.Compiler.TempFileCollection
-			https://www.nuget.org/packages/Microsoft.Experimental.Collections/
-
+			Microsoft.Experimental.Collections			
+				https://www.nuget.org/packages/Microsoft.Experimental.Collections/
+					MultiValueDictionary
+			MiscUtils by Jonh Skeet
+				http://www.yoda.arachsys.com/csharp/miscutil/
+				EditableLookup
+			C5
+				http://www.nuget.org/packages/C5/
+				
 - #2
 	GetHashCode()
 		http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx
@@ -188,6 +195,7 @@
 
 - #10 - ADO.NET
 	- Разделить презентацию по ADO.NET на три части: disconnected, connected и EF
+	- SqlCommandBuilder.DeriveParameters
 	- Default и Named экземпляры SQL Server
 	- Tracing
 	- EF Tracing
@@ -296,6 +304,11 @@
 			- SET STATISTICS TIME ON|OFF
 			- Application Name parameter and tracing
 			- async методы в EF6
+
+		Tools
+			ORM Profiler http://ormprofiler.com/, 99 EUR
+			Entity Framework Profiler http://hibernatingrhinos.com/Products/EFProf 359 USD
+						
 	
 - #12 (WPF)
 	- Перевод
@@ -308,6 +321,10 @@
 		- Blend
 		XAML Spy
 			http://xamlspy.com/learn/xaml-spy-express
+	- Enumerate children
+		VisualTreeHelper
+		http://stackoverflow.com/questions/974598/find-all-controls-in-wpf-window-by-type
+		http://www.scottlogic.com/blog/2010/03/04/linq-to-visual-tree.html			
 
 - #13 (WCF)
 	http://habrahabr.ru/post/116764/
@@ -328,7 +345,13 @@
 - Tools	WinSDK
 	- mt (generate manifests for managed assemblies and unmanaged side-by-side assemblies)
 		http://msdn.microsoft.com/en-us/library/aa375649%28v=vs.110%29.aspx
-	- ECMangen - ETW? manifest genereator
+	- ECMangen - ETW? manifest generator
+	- Mgmtclassgen.exe (Management Strongly Typed Class Generator)
+		The Management Strongly Typed Class Generator tool enables you to quickly generate an early-bound managed class for a 
+		specified Windows Management Instrumentation (WMI) class. The generated class simplifies the code you must write to access an 
+		instance of the WMI class.
+		http://msdn.microsoft.com/en-us/library/2wkebaxa%28v=vs.100%29.aspx
+
 			
 - Tools-Windows
 	- Утилиты командной строки
@@ -398,6 +421,9 @@
 		http://www.telerik.com/
 		https://www.devexpress.com/
 		http://www.infragistics.com/
+		- WebBrowser control
+			HKEY_CURRENT_USER (or HKLM)\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION
+				app.exe = (DWORD) 11000
 	- Utils
 		Spy++
 		Process Explorer (Perfomamce tab, GDI & User handles)		
@@ -409,3 +435,9 @@
 	#pragma warning disable, restore
 	#pragma checksum "yourfile.cs" "{3673e4ca-6098-4ec1-890f-8fceb2a794a2}" "{012345678AB}" 
 		via http://dailydotnettips.com/2011/06/05/compiler-directive-pragma-reference/
+
+- Другое
+	System.ComponentModel.EditorBrowsableAttribute (прятать свойства и методы от IntelliSense)
+		In Visual C#, you can control when advanced properties appear in IntelliSense and the Properties Window with the 
+		Hide Advanced Members setting under Tools | Options | Text Editor | C#.
+		The corresponding EditorBrowsableState is Advanced.
