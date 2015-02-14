@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace EnvironmentInformation
 		private const string BitConvGroup = "System.BitConverter";
 		private const string PathGroup    = "System.IO.Path";
 		private const string SysInfoGroup = "System.Windows.Forms.SystemInformation";
+		private const string ScreenGroup = "System.Windows.Forms.Screen";
 
 		public MainForm()
 		{
@@ -56,7 +58,7 @@ namespace EnvironmentInformation
 			#endregion
 
 			#region System.IO.Path
-			AddEnvironmentItem(PathGroup, "GetTempPath", Path.GetTempPath());
+			AddEnvironmentItem(PathGroup, "GetTempPath()", Path.GetTempPath());
 			#endregion
 
 			//#region System.Diagnostics.Process
@@ -64,8 +66,23 @@ namespace EnvironmentInformation
 			//#endregion
 
 			//#region System.Globalization.CultureInfo
-			//Process p = Process.GetCurrentProcess();
+			//CultureInfo.CurrentCulture
+			//CultureInfo.CurrentUICulture
 			//#endregion
+
+			#region System.Windows.Forms.Screen
+			var allScreens = Screen.AllScreens.OrderBy(s => !s.Primary).ToArray();
+			for (int i=0; i<allScreens.Length; i++)
+			{
+				var scr = allScreens[i];
+				AddEnvironmentItem(
+					ScreenGroup,
+					string.Format("Монитор {0}", i+1),
+					string.Format("{0}x{1}, {2} bits per pixel.", scr.Bounds.Width, scr.Bounds.Height, scr.BitsPerPixel)
+				);
+			}
+			#endregion
+
 
 			#region System.Windows.Forms.SystemInformation
 
