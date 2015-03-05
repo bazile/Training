@@ -14,7 +14,8 @@ namespace EnvironmentInformation
 		private const string BitConvGroup = "System.BitConverter";
 		private const string PathGroup    = "System.IO.Path";
 		private const string SysInfoGroup = "System.Windows.Forms.SystemInformation";
-		private const string ScreenGroup = "System.Windows.Forms.Screen";
+		private const string ScreenGroup  = "System.Windows.Forms.Screen";
+		private const string ComputerInfoGroup = "Microsoft.VisualBasic.Devices.ComputerInfo";
 
 		public MainForm()
 		{
@@ -83,6 +84,16 @@ namespace EnvironmentInformation
 			}
 			#endregion
 
+			#region Microsoft.VisualBasic.Devices.ComputerInfo
+			var computerInfo = new Microsoft.VisualBasic.Devices.ComputerInfo();
+			AddEnvironmentItem(ComputerInfoGroup, "AvailablePhysicalMemory", computerInfo.AvailablePhysicalMemory.ToString("N0"));
+			AddEnvironmentItem(ComputerInfoGroup, "AvailablePhysicalMemory", computerInfo.AvailablePhysicalMemory.ToString("N0"));
+			AddEnvironmentItem(ComputerInfoGroup, "OSFullName", computerInfo.OSFullName);
+			AddEnvironmentItem(ComputerInfoGroup, "OSPlatform", computerInfo.OSPlatform);
+			AddEnvironmentItem(ComputerInfoGroup, "OSVersion", computerInfo.OSVersion);
+			AddEnvironmentItem(ComputerInfoGroup, "TotalPhysicalMemory", computerInfo.TotalPhysicalMemory.ToString("N0"));
+			AddEnvironmentItem(ComputerInfoGroup, "TotalVirtualMemory", computerInfo.TotalVirtualMemory.ToString("N0"));
+			#endregion
 
 			#region System.Windows.Forms.SystemInformation
 
