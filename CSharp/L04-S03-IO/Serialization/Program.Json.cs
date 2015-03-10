@@ -11,6 +11,9 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 
+// TODO: Json.NET demo
+// TDOD: https://jsonclassgenerator.codeplex.com/
+
 namespace BelhardTraining.LessonIO
 {
 	partial class Program
