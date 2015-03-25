@@ -151,6 +151,8 @@
 	- Разница между const и static readonly полями
 	- CodeCOM, code expressions
 	- Roslyn/Nitra/.NET Native
+	- Обфускаторы
+		http://habrahabr.ru/post/97062/
 
 - #8 (mult-threading)
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
@@ -197,6 +199,10 @@
 	- Разделить презентацию по ADO.NET на три части: disconnected, connected и EF
 	- SqlCommandBuilder.DeriveParameters
 	- Default и Named экземпляры SQL Server
+	- Other ORM
+		- Dapper
+			http://venkatbaggu.com/use-dapper-net-orm-in-asp-net-mvc/
+		- NHibernate	
 	- Tracing
 	- EF Tracing
 		ObjectQuery.ToTraceString
@@ -412,6 +418,9 @@
 			
 - WinForms
 	- Extender Provider
+	- Системные объекты
+		- System.Drawing.SystemFonts.CaptionFont
+		- курсоры
 	http://msdn.microsoft.com/en-us/library/ms171836.aspx
 	- Best practise
 		Tab order
