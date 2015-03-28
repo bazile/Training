@@ -327,10 +327,20 @@
 		- Blend
 		XAML Spy
 			http://xamlspy.com/learn/xaml-spy-express
+		- Inspect (UI automation)
+			https://msdn.microsoft.com/en-us/library/dd318521%28v=vs.85%29.aspx	
+			"C:\Program Files (x86)\Windows Kits\8.0\bin\x64\"
 	- Enumerate children
 		VisualTreeHelper
 		http://stackoverflow.com/questions/974598/find-all-controls-in-wpf-window-by-type
-		http://www.scottlogic.com/blog/2010/03/04/linq-to-visual-tree.html			
+		http://www.scottlogic.com/blog/2010/03/04/linq-to-visual-tree.html
+	- WebBrowser
+		KeepAlive
+			frame.Navigated += frame_Navigated;
+			void frame_Navigated(object sender, NavigationEventArgs e)
+			{
+			    frame.NavigationService.RemoveBackEntry();
+			}
 
 - #13 (WCF)
 	http://habrahabr.ru/post/116764/
