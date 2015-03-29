@@ -85,6 +85,7 @@
     		</runtime>
 		</configuration>
 	- Exception.GetBaseException()
+	- Application.SetUnhandledExceptionMode (WinForms)
 	- System.CodeDom.Compiler.TempFileCollection
 						
 - #5 (events)
