@@ -47,27 +47,27 @@
 			this.columnHeaderThreadCount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeaderWorkingSet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeaderSessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+			this.imageListIcons = new System.Windows.Forms.ImageList(this.components);
+			this.mainToolStrip = new System.Windows.Forms.ToolStrip();
 			this.autoRefreshToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.mainMenuStrip.SuspendLayout();
 			this.mainStatusStrip.SuspendLayout();
 			this.panelForProcessList.SuspendLayout();
 			this.tableLayoutPanel.SuspendLayout();
-			this.toolStrip1.SuspendLayout();
+			this.mainToolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenuStrip
 			// 
 			this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.runToolStripMenuItem,
-			this.runElevatedToolStripMenuItem,
-			this.viewToolStripMenuItem,
-			this.exitToolStripMenuItem});
+            this.runToolStripMenuItem,
+            this.runElevatedToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.exitToolStripMenuItem});
 			this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
 			this.mainMenuStrip.Name = "mainMenuStrip";
 			this.mainMenuStrip.Size = new System.Drawing.Size(755, 24);
 			this.mainMenuStrip.TabIndex = 1;
-			this.mainMenuStrip.Text = "menuStrip1";
 			// 
 			// runToolStripMenuItem
 			// 
@@ -87,7 +87,7 @@
 			// viewToolStripMenuItem
 			// 
 			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.autoRefreshToolStripMenuItem});
+            this.autoRefreshToolStripMenuItem});
 			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
 			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.viewToolStripMenuItem.Text = "&View";
@@ -117,7 +117,7 @@
 			// mainStatusStrip
 			// 
 			this.mainStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.infoToolStripStatusLabel});
+            this.infoToolStripStatusLabel});
 			this.mainStatusStrip.Location = new System.Drawing.Point(0, 362);
 			this.mainStatusStrip.Name = "mainStatusStrip";
 			this.mainStatusStrip.Size = new System.Drawing.Size(755, 22);
@@ -144,7 +144,7 @@
 			this.tableLayoutPanel.ColumnCount = 1;
 			this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel.Controls.Add(this.processListView, 0, 1);
-			this.tableLayoutPanel.Controls.Add(this.toolStrip1, 0, 0);
+			this.tableLayoutPanel.Controls.Add(this.mainToolStrip, 0, 0);
 			this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
 			this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -157,11 +157,11 @@
 			// processListView
 			// 
 			this.processListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-			this.columnHeaderId,
-			this.columnHeaderName,
-			this.columnHeaderThreadCount,
-			this.columnHeaderWorkingSet,
-			this.columnHeaderSessionId});
+            this.columnHeaderId,
+            this.columnHeaderName,
+            this.columnHeaderThreadCount,
+            this.columnHeaderWorkingSet,
+            this.columnHeaderSessionId});
 			this.processListView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.processListView.FullRowSelect = true;
 			this.processListView.GridLines = true;
@@ -169,6 +169,7 @@
 			this.processListView.MultiSelect = false;
 			this.processListView.Name = "processListView";
 			this.processListView.Size = new System.Drawing.Size(749, 307);
+			this.processListView.SmallImageList = this.imageListIcons;
 			this.processListView.TabIndex = 4;
 			this.processListView.UseCompatibleStateImageBehavior = false;
 			this.processListView.View = System.Windows.Forms.View.Details;
@@ -204,15 +205,20 @@
 			this.columnHeaderSessionId.Text = "Сессия";
 			this.columnHeaderSessionId.Width = 100;
 			// 
-			// toolStrip1
+			// imageListIcons
 			// 
-			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.autoRefreshToolStripButton});
-			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(755, 25);
-			this.toolStrip1.TabIndex = 5;
-			this.toolStrip1.Text = "toolStrip1";
+			this.imageListIcons.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+			this.imageListIcons.ImageSize = new System.Drawing.Size(16, 16);
+			this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
+			// 
+			// mainToolStrip
+			// 
+			this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.autoRefreshToolStripButton});
+			this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
+			this.mainToolStrip.Name = "mainToolStrip";
+			this.mainToolStrip.Size = new System.Drawing.Size(755, 25);
+			this.mainToolStrip.TabIndex = 5;
 			// 
 			// autoRefreshToolStripButton
 			// 
@@ -248,8 +254,8 @@
 			this.panelForProcessList.ResumeLayout(false);
 			this.tableLayoutPanel.ResumeLayout(false);
 			this.tableLayoutPanel.PerformLayout();
-			this.toolStrip1.ResumeLayout(false);
-			this.toolStrip1.PerformLayout();
+			this.mainToolStrip.ResumeLayout(false);
+			this.mainToolStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -271,10 +277,11 @@
 		private System.Windows.Forms.ColumnHeader columnHeaderId;
 		private System.Windows.Forms.ColumnHeader columnHeaderName;
 		private System.Windows.Forms.ColumnHeader columnHeaderThreadCount;
-		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStrip mainToolStrip;
 		private System.Windows.Forms.ToolStripButton autoRefreshToolStripButton;
 		private System.Windows.Forms.ColumnHeader columnHeaderSessionId;
 		private System.Windows.Forms.ColumnHeader columnHeaderWorkingSet;
 		private System.Windows.Forms.ToolStripMenuItem runElevatedToolStripMenuItem;
+		private System.Windows.Forms.ImageList imageListIcons;
 	}
 }

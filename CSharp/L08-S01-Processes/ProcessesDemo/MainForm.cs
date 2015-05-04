@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Security.Principal;
 using System.Windows.Forms;
@@ -9,6 +11,7 @@ namespace BelhardTraining.LessonMultithreading
 	public partial class MainForm : Form
 	{
 		private readonly ListViewColumnSorter _columnSorter;
+		static string[] SystemProcesses = { "System", "Idle", "audiodg" };
 
 		public MainForm()
 		{
@@ -115,6 +118,28 @@ namespace BelhardTraining.LessonMultithreading
 					item.SubItems.Add(p.Threads.Count.ToString());
 					item.SubItems.Add(p.WorkingSet64.ToString("N0"));
 					item.SubItems.Add(p.SessionId.ToString());
+
+					if (!SystemProcesses.Contains(p.ProcessName))
+					{
+						try
+						{
+							string moduleFileName = p.MainModule.FileName;
+							if (!imageListIcons.Images.ContainsKey(moduleFileName))
+							{
+								Icon icon = IconTools.GetIconForFile(moduleFileName, ShellIconSize.SmallIcon);
+								if (icon != null)
+								{
+									imageListIcons.Images.Add(moduleFileName, icon);
+								}
+							}
+							item.ImageKey = moduleFileName;
+						}
+						catch (Win32Exception)
+						{
+							Debug.WriteLine("Exception for: " + p.ProcessName);
+						}
+					}
+
 					processListView.Items.Add(item);
 
 					threadCount += p.Threads.Count;
