@@ -9,6 +9,9 @@
 bin/
 obj/
 
+# NuGet packages
+**/packages/*/
+
 # mstest test results
 TestResults/
 
