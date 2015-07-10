@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sln="clr-namespace:BelhardTraining.ConnectionPoolingDemo"
+        mc:Ignorable="d"
+        x:Class="BelhardTraining.ConnectionPoolingDemo.MainWindow"
+        Title="MainWindow" Height="518.421" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="sln:Commands.Start" Executed="ExecuteStart" CanExecute="CanExecuteStart" />
+    </Window.CommandBindings>
+    <StackPanel Margin="5,5" sln:MarginSetter.Margin="0,5,0,0">
+        <Label Content="SQL Server name or address"/>
+        <TextBox Height="23" TextWrapping="Wrap" Text="localhost\" Name="tbServer"/>
+        <CheckBox Content="Use SQL authentication" x:Name="cbUseSqlAuth"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="User name" Grid.Row="0" Grid.Column="0" />
+            <TextBox Name="tbUserName" Height="23" TextWrapping="Wrap" Text="user" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="0" Grid.Column="1"/>
+            <Label Content="Password" Grid.Row="1" Grid.Column="0" />
+            <PasswordBox Name="tbPassword" Height="23" Password="password" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="1" Grid.Column="1" />
+        </Grid>
+        <Button Content="Start!" Command="sln:Commands.Start" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Name="tbLog" Height="300" MaxHeight="300" TextWrapping="Wrap" AcceptsReturn="True" Grid.Column="0" Margin="0,0,5,0"/>
+            <TextBox Height="300" MaxHeight="300" TextWrapping="Wrap" AcceptsReturn="True" Grid.Column="1" Margin="5,0,0,0"/>
+        </Grid>
+    </StackPanel>
+</Window>
