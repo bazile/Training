@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace EnvironmentInformation
@@ -16,6 +17,7 @@ namespace EnvironmentInformation
 		private const string SysInfoGroup = "System.Windows.Forms.SystemInformation";
 		private const string ScreenGroup  = "System.Windows.Forms.Screen";
 		private const string ComputerInfoGroup = "Microsoft.VisualBasic.Devices.ComputerInfo";
+		const string RuntimeEnvGroup = "System.Runtime.InteropServices.RuntimeEnvironment";
 
 		public MainForm()
 		{
@@ -52,6 +54,12 @@ namespace EnvironmentInformation
 			AddEnvironmentItem(EnvGroup, "Version", Environment.Version);
 			AddEnvironmentItem(EnvGroup, "WorkingSet", Environment.WorkingSet);
 
+			#endregion
+
+			#region System.Runtime.InteropServices.RuntimeEnvironment
+			AddEnvironmentItem(RuntimeEnvGroup, "SystemConfigurationFile", RuntimeEnvironment.SystemConfigurationFile);
+			AddEnvironmentItem(RuntimeEnvGroup, "RuntimeDirectory", RuntimeEnvironment.GetRuntimeDirectory());
+			AddEnvironmentItem(RuntimeEnvGroup, "SystemVersion", RuntimeEnvironment.GetSystemVersion());
 			#endregion
 
 			#region System.BitConverter
@@ -142,7 +150,7 @@ namespace EnvironmentInformation
 			AddEnvironmentItem(SysInfoGroup, "IsMenuAnimationEnabled", SystemInformation.IsMenuAnimationEnabled);
 			AddEnvironmentItem(SysInfoGroup, "IsMenuFadeEnabled", SystemInformation.IsMenuFadeEnabled);
 			AddEnvironmentItem(SysInfoGroup, "IsMinimizeRestoreAnimationEnabled",
-			                   SystemInformation.IsMinimizeRestoreAnimationEnabled);
+							   SystemInformation.IsMinimizeRestoreAnimationEnabled);
 			AddEnvironmentItem(SysInfoGroup, "IsSelectionFadeEnabled", SystemInformation.IsSelectionFadeEnabled);
 			AddEnvironmentItem(SysInfoGroup, "IsSnapToDefaultEnabled", SystemInformation.IsSnapToDefaultEnabled);
 			AddEnvironmentItem(SysInfoGroup, "IsTitleBarGradientEnabled", SystemInformation.IsTitleBarGradientEnabled);
@@ -186,7 +194,7 @@ namespace EnvironmentInformation
 			AddEnvironmentItem(SysInfoGroup, "PowerStatus.PowerLineStatus", SystemInformation.PowerStatus.PowerLineStatus);
 
 			AddEnvironmentItem(SysInfoGroup, "PrimaryMonitorMaximizedWindowSize",
-			                   SystemInformation.PrimaryMonitorMaximizedWindowSize);
+							   SystemInformation.PrimaryMonitorMaximizedWindowSize);
 			AddEnvironmentItem(SysInfoGroup, "PrimaryMonitorSize", SystemInformation.PrimaryMonitorSize);
 			AddEnvironmentItem(SysInfoGroup, "RightAlignedMenus", SystemInformation.RightAlignedMenus);
 			AddEnvironmentItem(SysInfoGroup, "ScreenOrientation", SystemInformation.ScreenOrientation);
@@ -221,9 +229,9 @@ namespace EnvironmentInformation
 			listViewVars.BeginUpdate();
 
 			var envVars = Environment.GetEnvironmentVariables()
-			                         .Cast<DictionaryEntry>()
-			                         .Select(e => new {Name = e.Key.ToString(), Value = e.Value.ToString()})
-			                         .OrderBy(e => e.Name);
+									 .Cast<DictionaryEntry>()
+									 .Select(e => new {Name = e.Key.ToString(), Value = e.Value.ToString()})
+									 .OrderBy(e => e.Name);
 			foreach (var envVar in envVars)
 			{
 				ListViewItem listItem = new ListViewItem(envVar.Name);
