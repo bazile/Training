@@ -184,6 +184,7 @@
 		5NF Fifth normal form
 		DKNF Domain/key normal form
 		6NF Sixth normal form
+		http://habrahabr.ru/post/254773/
 	- Утилиты для работы с БД		
 		- RedGate SQL Search
 			http://www.red-gate.com/products/sql-development/sql-search/
@@ -221,6 +222,7 @@
 		Seed method
 
 		Validation and Annotations
+			https://msdn.microsoft.com/ru-ru/data/jj591583
 			StringLength(n)
 			Range - range of values
 			Required
@@ -315,7 +317,14 @@
 		Tools
 			ORM Profiler http://ormprofiler.com/, 99 EUR
 			Entity Framework Profiler http://hibernatingrhinos.com/Products/EFProf 359 USD
-						
+
+- #11 (LINQ)
+	LINQ debugging tips
+	https://www.simple-talk.com/dotnet/.net-framework/linq-secrets-revealed-chaining-and-debugging/#sixth	
+
+	System.Linq.Dynamic NuGet package
+		http://weblogs.asp.net/scottgu/dynamic-linq-part-1-using-the-linq-dynamic-query-library
+		Fork - http://dynamiclinq.codeplex.com/
 	
 - #12 (WPF)
 	- Перевод
@@ -446,7 +455,9 @@
 				app.exe = (DWORD) 11000
 	- Utils
 		Spy++
-		Process Explorer (Perfomamce tab, GDI & User handles)		
+		Process Explorer (Perfomamce tab, GDI & User handles)
+		ManagedSpy
+			https://github.com/ForNeVeR/ManagedSpy
 		
 - Директивы
 	#if
@@ -455,6 +466,10 @@
 	#pragma warning disable, restore
 	#pragma checksum "yourfile.cs" "{3673e4ca-6098-4ec1-890f-8fceb2a794a2}" "{012345678AB}" 
 		via http://dailydotnettips.com/2011/06/05/compiler-directive-pragma-reference/
+
+- Crypro
+	- ECB (Electronic CodeBook) и CBC (Cipher Block Chaining) для симметричных алгоритмов
+		HELLOYOU + 64-bit block
 
 - Другое
 	System.ComponentModel.EditorBrowsableAttribute (прятать свойства и методы от IntelliSense)
