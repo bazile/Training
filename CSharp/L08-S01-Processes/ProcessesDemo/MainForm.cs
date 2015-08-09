@@ -108,6 +108,7 @@ namespace BelhardTraining.LessonMultithreading
 				// Заполняем ListView списоком процессов
 				int threadCount = 0;
 				// Получаем список процеесов отсортированных по номеру сессии и имени процесса
+				// TODO: Включить привилегию DEBUG для доступа к системным процессам
 				Process[] processes = Process.GetProcesses()
 					.OrderBy(p => String.Format("{0}#{1}", p.SessionId, p.ProcessName))
 					.ToArray();
