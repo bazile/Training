@@ -1,15 +1,9 @@
-﻿// Закоментируйте следующую строку чтобы посмотреть как ведет себя UI без использования BackgroundWorker
-#define USE_BACKGROUND_WORKER
-
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace BelhardTraining.PiCalc
 {
-    // TODO: Ability to save and resume
-    // TODO: Display progress in task bar
-
     public partial class MainForm : Form
     {
         public MainForm()
@@ -23,28 +17,28 @@ namespace BelhardTraining.PiCalc
             lblProgress.Visible = true;
             btnStart.Enabled = false;
             btnCancel.Visible = true;
+            cbUseBackgroundWorker.Enabled = false;
 
-			const int numIterations = 10000000;
+            const int numIterations = 10000000;
 
-			#if USE_BACKGROUND_WORKER
-
-            backgroundWorker.RunWorkerAsync(numIterations);
-
-			#else
-
-            PiCalculator piCalc = new PiCalculator();
-            for (int i = 0; i < 100; i++)
+            if (cbUseBackgroundWorker.Checked)
             {
-                piCalc.Run(numIterations / 100);
-
-				ReportProgress(piCalc.PI, i);
+                backgroundWorker.RunWorkerAsync(numIterations);
             }
+            else
+            {
+                PiCalculator piCalc = new PiCalculator();
+                for (int i = 0; i < 100; i++)
+                {
+                    piCalc.Run(numIterations/100);
 
-			ReportProgress(piCalc.PI, 100);
-			WorkCompleted();
+                    ReportProgress(piCalc.PI, i);
+                }
 
-#endif
-		}
+                ReportProgress(piCalc.PI, 100);
+                WorkCompleted();
+            }
+        }
 
         private void OnCancelClick(object sender, EventArgs e)
         {
@@ -83,14 +77,15 @@ namespace BelhardTraining.PiCalc
 
         private void OnWorkCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-			WorkCompleted();
+            WorkCompleted();
         }
 
-		private void WorkCompleted()
-		{
-			lblProgress.Visible = false;
-			btnStart.Enabled = true;
-			btnCancel.Visible = false;
-		}
+        private void WorkCompleted()
+        {
+            lblProgress.Visible = false;
+            btnStart.Enabled = true;
+            btnCancel.Visible = false;
+            cbUseBackgroundWorker.Enabled = true;
+        }
     }
 }
