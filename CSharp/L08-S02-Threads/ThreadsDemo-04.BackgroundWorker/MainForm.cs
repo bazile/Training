@@ -19,18 +19,16 @@ namespace BelhardTraining.PiCalc
             btnCancel.Visible = true;
             cbUseBackgroundWorker.Enabled = false;
 
-            const int numIterations = 10000000;
-
             if (cbUseBackgroundWorker.Checked)
             {
-                backgroundWorker.RunWorkerAsync(numIterations);
+                backgroundWorker.RunWorkerAsync((int)udIterations.Value);
             }
             else
             {
                 PiCalculator piCalc = new PiCalculator();
                 for (int i = 0; i < 100; i++)
                 {
-                    piCalc.Run(numIterations/100);
+                    piCalc.Run((int)udIterations.Value/ 100);
 
                     ReportProgress(piCalc.PI, i);
                 }
