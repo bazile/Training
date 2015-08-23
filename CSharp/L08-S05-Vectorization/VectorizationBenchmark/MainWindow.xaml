@@ -1,0 +1,13 @@
+﻿<Window x:Class="BelhardTraining.LessonThreading.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Демонстрация векторных вычислений" Height="350" Width="400" MinWidth="400">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10" />
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <Button Click="Button_Click">Сложение двух массивов float</Button>
+    </StackPanel>
+</Window>
