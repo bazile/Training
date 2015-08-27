@@ -64,6 +64,8 @@ namespace BelhardTraining.ConnectionPoolingDemo
 					}
 				}
 			}
+
+			Title = GetInstanceName();
 		}
 
 		private void CanExecuteStart(object sender, CanExecuteRoutedEventArgs e)
@@ -97,7 +99,16 @@ namespace BelhardTraining.ConnectionPoolingDemo
 					sqlConn.Open();
 				}
 			}
+			WritePerformanceCounters();
 
+			connectionString = BuildConnectionString("master");
+			for (int i = 0; i < 10; i++)
+			{
+				using (SqlConnection sqlConn = new SqlConnection(connectionString))
+				{
+					sqlConn.Open();
+				}
+			}
 			WritePerformanceCounters();
 		}
 
@@ -128,7 +139,7 @@ namespace BelhardTraining.ConnectionPoolingDemo
 		}
 
 
-		string BuildConnectionString()
+		string BuildConnectionString(string databaseName = null)
 		{
 			var csb = new SqlConnectionStringBuilder();
 			csb.DataSource = tbServer.Text.Trim();
@@ -139,6 +150,7 @@ namespace BelhardTraining.ConnectionPoolingDemo
 				csb.Password = tbPassword.Password;
 			}
 			csb.ApplicationName = Assembly.GetExecutingAssembly().GetName().Name;
+			if (databaseName != null) csb.InitialCatalog = databaseName;
 			return csb.ConnectionString;
 		}
 

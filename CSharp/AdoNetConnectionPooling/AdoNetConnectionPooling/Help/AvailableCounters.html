@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Счетчики производительности ADO.NET</title>
+</head>
+<body>
+
+<h1>Available Performance Counters</h1>
+<p>
+    Currently there are 14 different performance counters available for
+    <b>System.Data.SqlClient</b> and <b>System.Data.OracleClient</b> as described in
+    the following table. Note that the names for the individual counters are not
+    localized across regional versions of the Microsoft .NET Framework.
+</p>
+<table width="100%">
+<thead>
+<tr>
+    <th> Performance counter </th>
+    <th> Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td><p><b>HardConnectsPerSecond</b></p></td>
+    <td><p>The number of connections per second that are being made to a database server.</p></td>
+</tr>
+<tr>
+    <td><p><b>HardDisconnectsPerSecond</b></p></td>
+    <td><p>The number of disconnects per second that are being made to a database server.</p></td>
+</tr>
+<tr>
+    <td><p><b>NumberOfActiveConnectionPoolGroups</b></p></td>
+    <td>
+        <p>
+            The number of unique connection pool groups that are active. This
+            counter is controlled by the number of unique connection strings that are
+            found in the AppDomain.
+        </p>
+    </td>
+</tr>
+    <tr>
+        <td><p><b>NumberOfActiveConnectionPools</b></p></td>
+        <td><p>The total number of connection pools.</p></td>
+    </tr>
+    <tr>
+        <td><p><b>NumberOfActiveConnections</b></p></td>
+        <td>
+            <p>The number of active connections that are currently in use. </p>
+            <div class="alert">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <th align="left">
+                                <img class="note cl_IC103139" alt="Note" src="https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif?v=635718260408640592">Note
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    This performance counter is not enabled by default. To enable
+                                    this performance counter, see <span class="linkTerms">
+                                        <a href="#ActivatingOffByDefault">
+                                            Activating
+                                            Off-By-Default
+                                            Counters
+                                        </a>
+                                    </span>.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+<tr>
+    <td><p><b>NumberOfFreeConnections</b></p></td>
+    <td>
+        <p>The number of connections available for use in the connection pools.</p>
+        <div class="alert">
+            <table width="100%">
+                <tbody>
+                <tr>
+                    <th align="left">
+                        <img class="note cl_IC103139" alt="Note" src="https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif?v=635718260408640592">Note
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            This performance counter is not enabled by default. To enable
+                            this performance counter, see <span class="linkTerms">
+                                                        <a href="#ActivatingOffByDefault">
+                                                            Activating
+                                                            Off-By-Default
+                                                            Counters
+                                                        </a>
+                                                    </span>.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td><p><b>NumberOfInactiveConnectionPoolGroups</b></p></td>
+    <td>
+        <p>
+            The number of unique connection pool groups that are marked for
+            pruning. This counter is controlled by the number of unique connection
+            strings that are found in the AppDomain.
+        </p>
+    </td>
+</tr>
+<tr>
+    <td><p><b>NumberOfInactiveConnectionPools</b></p></td>
+    <td>
+        <p>
+            The number of inactive connection pools that have not had any recent
+            activity and are waiting to be disposed.
+        </p>
+    </td>
+</tr>
+<tr>
+    <td><p><b>NumberOfNonPooledConnections</b></p></td>
+    <td>
+        <p>The number of active connections that are not pooled.</p></td>
+</tr>
+<tr>
+    <td><p><b>NumberOfPooledConnections</b></p></td>
+    <td><p>The number of active connections that are being managed by the connection pooling infrastructure.</p></td>
+</tr>
+<tr>
+    <td><p><b>NumberOfReclaimedConnections</b></p></td>
+    <td>
+        <p>
+            The number of connections that have been reclaimed through garbage
+            collection where <b>Close</b> or <b>Dispose</b> was not called by the
+            application. Not explicitly closing or disposing connections hurts
+            performance.
+        </p>
+    </td>
+</tr>
+<tr>
+    <td><p><b>NumberOfStasisConnections</b></p></td>
+    <td>
+        <p>
+            Колчество соединений ожидающих завершения операции и которые поэтому недоступны для вашего приложения.
+            <!--The number of connections currently awaiting completion of an action
+            and which are therefore unavailable for use by your application.-->
+        </p>
+    </td>
+</tr>
+<tr>
+    <td><p><b>SoftConnectsPerSecond</b></p></td>
+    <td>
+        <p>
+            The number of active connections being pulled from the connection pool.
+        </p>
+        <div class="alert">
+            <table width="100%">
+                <tbody>
+                <tr>
+                    <th align="left">
+                        <img class="note cl_IC103139" alt="Note" src="https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif?v=635718260408640592">Note
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            This performance counter is not enabled by default. To enable
+                            this performance counter, see <span class="linkTerms">
+                                                        <a href="#ActivatingOffByDefault">
+                                                            Activating
+                                                            Off-By-Default
+                                                            Counters
+                                                        </a>
+                                                    </span>.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td><p><b>SoftDisconnectsPerSecond</b></p></td>
+    <td>
+        <p>
+            The number of active connections that are being returned to the
+            connection pool.
+        </p>
+        <div class="alert">
+            <table width="100%">
+                <tbody>
+                <tr>
+                    <th align="left">
+                        <img class="note cl_IC103139" alt="Note" src="https://i-msdn.sec.s-msft.com/areas/global/content/clear.gif?v=635718260408640592">Note
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            This performance counter is not enabled by default. To enable
+                            this performance counter, see <span class="linkTerms">
+                                                        <a href="#ActivatingOffByDefault">
+                                                            Activating
+                                                            Off-By-Default
+                                                            Counters
+                                                        </a>
+                                                    </span>.
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -10,33 +10,41 @@
     <Window.CommandBindings>
         <CommandBinding Command="sln:Commands.Start" Executed="ExecuteStart" CanExecute="CanExecuteStart" />
     </Window.CommandBindings>
-    <StackPanel Margin="5,5" sln:MarginSetter.Margin="0,5,0,0">
-        <Label Content="SQL Server name or address"/>
-        <TextBox Height="23" TextWrapping="Wrap" Text="localhost\" Name="tbServer"/>
-        <CheckBox Content="Use SQL authentication" x:Name="cbUseSqlAuth"/>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label Content="User name" Grid.Row="0" Grid.Column="0" />
-            <TextBox Name="tbUserName" Height="23" TextWrapping="Wrap" Text="user" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="0" Grid.Column="1"/>
-            <Label Content="Password" Grid.Row="1" Grid.Column="0" />
-            <PasswordBox Name="tbPassword" Height="23" Password="password" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="1" Grid.Column="1" />
-        </Grid>
-        <Button Content="Start!" Command="sln:Commands.Start" />
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+    <Window.Resources>
+        <Style x:Key="MyMargin" TargetType="FrameworkElement">
+            <Setter Property="Margin" Value="4" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <TextBox Name="tbLog" Height="300" MaxHeight="300" TextWrapping="Wrap" AcceptsReturn="True" Grid.Column="0" Margin="0,0,5,0"/>
-            <TextBox Height="300" MaxHeight="300" TextWrapping="Wrap" AcceptsReturn="True" Grid.Column="1" Margin="5,0,0,0"/>
-        </Grid>
-    </StackPanel>
+        <Label Content="SQL Server name or address" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
+
+        <TextBox Height="23" TextWrapping="Wrap" Text="localhost\" Name="tbServer" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
+
+        <CheckBox Content="Use SQL authentication" x:Name="cbUseSqlAuth" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
+
+        <Label Content="User name" Grid.Row="3" Grid.Column="0" Style="{StaticResource MyMargin}" />
+        <TextBox Name="tbUserName" Height="23" TextWrapping="Wrap" Text="user" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="3" Grid.Column="1" Style="{StaticResource MyMargin}" />
+
+        <Label Content="Password" Grid.Row="4" Grid.Column="0" Style="{StaticResource MyMargin}" />
+        <PasswordBox Name="tbPassword" Height="23" Password="password" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="4" Grid.Column="1" Style="{StaticResource MyMargin}" />
+
+        <Button Content="Start!" Command="sln:Commands.Start" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
+
+        <TextBox Name="tbLog" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="6" Grid.Column="0" VerticalScrollBarVisibility="Auto" Style="{StaticResource MyMargin}" />
+        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="6" Grid.Column="1" VerticalScrollBarVisibility="Auto" Style="{StaticResource MyMargin}" />
+    </Grid>
 </Window>
