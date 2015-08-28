@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace LinqToObjectsDemo
+namespace BelhardTraining.LinqToObjectsDemo
 {
 	class Program
 	{
@@ -13,7 +13,7 @@ namespace LinqToObjectsDemo
 
 			string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 			ExtensioInfo[] extensions1 = GetExtensions(mydocuments);
-			ExtensioInfo[] extensions2 = GetExtensionsUsingLINQ(mydocuments);
+			ExtensioInfo[] extensions2 = GetExtensionsUsingLinq(mydocuments);
 			foreach (ExtensioInfo extensioInfo in extensions1)
 			{
 				Console.WriteLine("{0} - {1}", extensioInfo.Count.ToString().PadRight(4), extensioInfo.Extension);
@@ -62,7 +62,7 @@ namespace LinqToObjectsDemo
 		{
 			public bool Equals(ExtensioInfo a, ExtensioInfo b)
 			{
-				return a.Count == a.Count && a.Extension == b.Extension;
+				return a.Count == b.Count && a.Extension == b.Extension;
 			}
 
 			public int GetHashCode(ExtensioInfo info)
@@ -103,7 +103,7 @@ namespace LinqToObjectsDemo
 			return extensions;
 		}
 
-		static ExtensioInfo[] GetExtensionsUsingLINQ(string path)
+		static ExtensioInfo[] GetExtensionsUsingLinq(string path)
 		{
 			return (
 					from fileName in SafeEnumerateFiles(path, "*.*", SearchOption.AllDirectories)
@@ -154,7 +154,7 @@ namespace LinqToObjectsDemo
 					}
 				}
 
-				string[] files = null;
+				string[] files;
 				try
 				{
 					files = Directory.GetFiles(currentDirPath, searchPattern);
