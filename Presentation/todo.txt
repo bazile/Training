@@ -73,6 +73,8 @@
 				<gcServer enabled="true|false (default)"/>
 					Specifies whether the runtime runs server garbage collection.
 					.NET 2.0+
+	- Классы
+		System.ServiceModel.Channels.BufferManager					
 	- Caching
 		- cache without discard policy is a memory leak
 
@@ -92,6 +94,8 @@
 	- События и исключения
 	- Weak Event Patterns
 	  http://msdn.microsoft.com/en-us/library/aa970850%28v=vs.110%29.aspx
+	- SystemEvents class
+		https://msdn.microsoft.com/en-us/library/microsoft.win32.systemevents(v=vs.110).aspx
 
 - #6 (XML)
 	- Неймспесы
@@ -164,6 +168,8 @@
 	- Порядок (via http://sergeyteplyakov.blogspot.com/2013/09/blog-post_24.html)
 		APM http://msdn.microsoft.com/en-us/library/ms228963.aspx
 		EAP http://msdn.microsoft.com/en-us/library/wewwczdw.aspx
+			How to: Wrap EAP Patterns in a Task
+			https://msdn.microsoft.com/en-us/library/ee622454%28v=vs.110%29.aspx
 		TAP http://msdn.microsoft.com/en-us/library/hh873175.aspx
 		async/await
 
@@ -325,6 +331,11 @@
 	System.Linq.Dynamic NuGet package
 		http://weblogs.asp.net/scottgu/dynamic-linq-part-1-using-the-linq-dynamic-query-library
 		Fork - http://dynamiclinq.codeplex.com/
+
+	10 мифов о LINQ
+	http://rsdn.ru/article/net/linq.xml
+
+	http://mathlinq.net/
 	
 - #12 (WPF)
 	- Перевод
@@ -335,7 +346,10 @@
 		DpiScaling.exe - open DPI settings
 	- Tools
 		- Blend
-		XAML Spy
+		- XAML Styler
+			"XAML Styler" is a visual studio extension, which makes XAML markup source code beautify much easier by sorting the attributes based on their importance. 
+			https://visualstudiogallery.msdn.microsoft.com/3de2a3c6-def5-42c4-924d-cc13a29ff5b7
+		- XAML Spy
 			http://xamlspy.com/learn/xaml-spy-express
 		- Inspect (UI automation)
 			https://msdn.microsoft.com/en-us/library/dd318521%28v=vs.85%29.aspx	
@@ -351,6 +365,8 @@
 			{
 			    frame.NavigationService.RemoveBackEntry();
 			}
+	- Libs
+		https://github.com/JohanLarsson/Gu.Wpf.Validation
 
 - #13 (WCF)
 	http://habrahabr.ru/post/116764/
@@ -453,6 +469,11 @@
 		- WebBrowser control
 			HKEY_CURRENT_USER (or HKLM)\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION
 				app.exe = (DWORD) 11000
+		http://www.codeproject.com/Articles/12167/Extended-NET-Controls
+	- High DPI support
+		<appSettings>
+  			<add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />
+		</appSettings>		
 	- Utils
 		Spy++
 		Process Explorer (Perfomamce tab, GDI & User handles)
@@ -476,3 +497,18 @@
 		In Visual C#, you can control when advanced properties appear in IntelliSense and the Properties Window with the 
 		Hide Advanced Members setting under Tools | Options | Text Editor | C#.
 		The corresponding EditorBrowsableState is Advanced.
+
+- Gotchas
+abstract class Base
+{
+    public virtual void foo(string s = "base") { Console.WriteLine("base " + s); }
+}
+
+class Derived : Base
+{
+    public override void foo(string s = "derived") { Console.WriteLine("derived " + s); }
+}
+Base b = new Derived();
+b.foo();
+Output:
+derived base

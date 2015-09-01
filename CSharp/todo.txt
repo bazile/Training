@@ -48,7 +48,6 @@ void Main()
 	}
 }
 
-// Define other methods and classes here
 int CompareEmailByHost(string email1, string email2)
 {
 	string host1 = email1.Substring(email1.IndexOf("@")+1);
