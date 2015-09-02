@@ -6,16 +6,19 @@
         xmlns:sln="clr-namespace:BelhardTraining.ConnectionPoolingDemo"
         mc:Ignorable="d"
         x:Class="BelhardTraining.ConnectionPoolingDemo.MainWindow"
-        Title="MainWindow" Height="518.421" Width="525">
+        Title="MainWindow" Height="520" Width="600">
+
     <Window.CommandBindings>
         <CommandBinding Command="sln:Commands.Start" Executed="ExecuteStart" CanExecute="CanExecuteStart" />
     </Window.CommandBindings>
+
     <Window.Resources>
         <Style x:Key="MyMargin" TargetType="FrameworkElement">
             <Setter Property="Margin" Value="4" />
         </Style>
     </Window.Resources>
-    <Grid>
+
+    <Grid Name="myGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -30,21 +33,35 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="SQL Server name or address" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
+        <Label Content="Имя или адрес SQL Server" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
 
         <TextBox Height="23" TextWrapping="Wrap" Text="localhost\" Name="tbServer" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
 
-        <CheckBox Content="Use SQL authentication" x:Name="cbUseSqlAuth" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
+        <CheckBox Content="Использовать SQL аутентификацию" x:Name="cbUseSqlAuth" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
 
-        <Label Content="User name" Grid.Row="3" Grid.Column="0" Style="{StaticResource MyMargin}" />
+        <Label Content="Имя пользователя" Grid.Row="3" Grid.Column="0" Style="{StaticResource MyMargin}" />
         <TextBox Name="tbUserName" Height="23" TextWrapping="Wrap" Text="user" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="3" Grid.Column="1" Style="{StaticResource MyMargin}" />
 
-        <Label Content="Password" Grid.Row="4" Grid.Column="0" Style="{StaticResource MyMargin}" />
+        <Label Content="Пароль" Grid.Row="4" Grid.Column="0" Style="{StaticResource MyMargin}" />
         <PasswordBox Name="tbPassword" Height="23" Password="password" IsEnabled="{Binding IsChecked, ElementName=cbUseSqlAuth}" Grid.Row="4" Grid.Column="1" Style="{StaticResource MyMargin}" />
 
-        <Button Content="Start!" Command="sln:Commands.Start" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
+        <Button Content="Поехали!" Command="sln:Commands.Start" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource MyMargin}" />
 
-        <TextBox Name="tbLog" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="6" Grid.Column="0" VerticalScrollBarVisibility="Auto" Style="{StaticResource MyMargin}" />
-        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="6" Grid.Column="1" VerticalScrollBarVisibility="Auto" Style="{StaticResource MyMargin}" />
+        <TextBox Name="tbCounters" TextWrapping="Wrap" IsReadOnly="True" Grid.Row="6" Grid.Column="0" VerticalScrollBarVisibility="Auto" Style="{StaticResource MyMargin}">
+            <TextBox.Text>
+                <MultiBinding Converter="{x:Static sln:Converters.ObservableLinesCollectionToTextConverter}">
+                    <Binding Path="CountersLines" Mode="OneWay" />
+                    <Binding Path="CountersLines.Count" Mode="OneWay" />
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Name="tbLog" TextWrapping="Wrap" IsReadOnly="True" Grid.Row="6" Grid.Column="1" VerticalScrollBarVisibility="Auto" Style="{StaticResource MyMargin}">
+            <TextBox.Text>
+                <MultiBinding Converter="{x:Static sln:Converters.ObservableLinesCollectionToTextConverter}">
+                    <Binding Path="LogLines" Mode="OneWay" />
+                    <Binding Path="LogLines.Count" Mode="OneWay" />
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
     </Grid>
 </Window>

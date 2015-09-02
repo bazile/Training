@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 // Идея: http://www.pythian.com/blog/sql-server-understanding-and-controlling-connection/
 
@@ -13,39 +11,11 @@ namespace BelhardTraining.ConnectionPoolingDemo
 {
 	public partial class MainWindow : Window
 	{
-		#region Названия счетчиков производительности
-
-		static readonly string[] AdoNetPerfomanceCounters =
-		{
-			"NumberOfActiveConnectionPools",
-			"NumberOfReclaimedConnections",
-			"HardConnectsPerSecond",
-			"HardDisconnectsPerSecond",
-			"NumberOfActiveConnectionPoolGroups",
-			"NumberOfInactiveConnectionPoolGroups",
-			"NumberOfInactiveConnectionPools",
-			"NumberOfNonPooledConnections",
-			"NumberOfPooledConnections",
-			"NumberOfStasisConnections",
-			// The following performance counters are more expensive to track.
-			// Enable ConnectionPoolPerformanceCounterDetail in your config file.
-			//		<system.diagnostics>
-			//		  <switches>
-			//			<add name="ConnectionPoolPerformanceCounterDetail" value="4"/>
-			//		  </switches>
-			//		</system.diagnostics>
-			//"SoftConnectsPerSecond",
-			//"SoftDisconnectsPerSecond",
-			//"NumberOfActiveConnections",
-			//"NumberOfFreeConnections",
-		};
-
-		#endregion
-
-		PerformanceCounter[] _perfCounters;
-
 		public MainWindow()
 		{
+			_viewModel = new MainWindowViewModel();
+			_presenter = new MainWindowPresenter(_viewModel);
+
 			InitializeComponent();
 
 			using (var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64))
@@ -65,119 +35,52 @@ namespace BelhardTraining.ConnectionPoolingDemo
 				}
 			}
 
-			Title = GetInstanceName();
+			Title = App.GetInstanceName();
+
+			myGrid.DataContext = _viewModel;
 		}
+
+		MainWindowPresenter _presenter;
+		MainWindowViewModel _viewModel;
 
 		private void CanExecuteStart(object sender, CanExecuteRoutedEventArgs e)
 		{
-			e.CanExecute = !string.IsNullOrWhiteSpace(tbServer.Text);
+			e.CanExecute = !string.IsNullOrWhiteSpace(tbServer.Text) && !_viewModel.PoolTestRunning;
 		}
 
 		private void ExecuteStart(object sender, RoutedEventArgs e)
 		{
-			string connectionString = BuildConnectionString();
-			try
+			if (!_viewModel.DoNotShowWarning)
 			{
-				using (SqlConnection sqlConn = new SqlConnection(connectionString))
+				using (TaskDialog dlg = new TaskDialog())
 				{
-					sqlConn.Open();
+					dlg.Caption = "Подтвердите операцию";
+					dlg.Text = "Во время своей работы приложение создаст временные базы данных на указанном вами сервере. Они будут удалены сразу после окончания тестирования.\r\n\r\nНе используйте данное приложение с рабочим SQL Server!";
+					dlg.Cancelable = true;
+					var okLink = new TaskDialogCommandLink("ok", "Согласен. Продолжаем!");
+					okLink.Click += (sender2, e2) => ((TaskDialog)((TaskDialogCommandLink)sender2).HostingDialog).Close(TaskDialogResult.Ok);
+					var cancelLink = new TaskDialogCommandLink("cancel", "Я передумал") {Default = true};
+					cancelLink.Click += (sender2, e2) => ((TaskDialog)((TaskDialogCommandLink)sender2).HostingDialog).Close(TaskDialogResult.Cancel);
+					dlg.Controls.Add(okLink);
+					dlg.Controls.Add(cancelLink);
+					dlg.FooterCheckBoxText = "Больше не спрашивать";
+
+					var result = dlg.Show();
+					_viewModel.DoNotShowWarning = dlg.FooterCheckBoxChecked.Value;
+					if (result != TaskDialogResult.Ok) return;
 				}
 			}
-			catch (SqlException)
-			{
-				MessageBox.Show("Failed to open connection");
-				return;
-			}
 
-			_perfCounters = InitPerformanceCounters();
-			WritePerformanceCounters();
+			_viewModel.PoolTestRunning = true;
+			_viewModel.Server = tbServer.Text.Trim();
+			_viewModel.UseSqlAuthentication = cbUseSqlAuth.IsChecked.Value;
+			_viewModel.UserName = tbUserName.Text.Trim();
+			_viewModel.Password = tbPassword.Password;
+			_viewModel.LogLines.Clear();
 
-			for (int i = 0; i < 10; i++)
-			{
-				using (SqlConnection sqlConn = new SqlConnection(connectionString))
-				{
-					sqlConn.Open();
-				}
-			}
-			WritePerformanceCounters();
-
-			connectionString = BuildConnectionString("master");
-			for (int i = 0; i < 10; i++)
-			{
-				using (SqlConnection sqlConn = new SqlConnection(connectionString))
-				{
-					sqlConn.Open();
-				}
-			}
-			WritePerformanceCounters();
+			Thread t = new Thread(_presenter.RunPoolTest);
+			t.Start();
 		}
 
-		private static PerformanceCounter[] InitPerformanceCounters()
-		{
-			var perfCounters = new PerformanceCounter[AdoNetPerfomanceCounters.Length];
-			string instanceName = GetInstanceName();
-			for (int i=0; i<AdoNetPerfomanceCounters.Length; i++)
-			{
-				perfCounters[i] = new PerformanceCounter {
-					CategoryName = ".NET Data Provider for SqlServer",
-					CounterName = AdoNetPerfomanceCounters[i],
-					InstanceName = instanceName
-				};
-			}
-
-			return perfCounters;
-		}
-
-		private void WritePerformanceCounters()
-		{
-			tbLog.AppendLine("---------------------------");
-			foreach (PerformanceCounter pc in _perfCounters)
-			{
-				tbLog.AppendLine(string.Format("{0} = {1}", pc.CounterName, pc.NextValue()));
-			}
-			tbLog.AppendLine("---------------------------");
-		}
-
-
-		string BuildConnectionString(string databaseName = null)
-		{
-			var csb = new SqlConnectionStringBuilder();
-			csb.DataSource = tbServer.Text.Trim();
-			csb.IntegratedSecurity = !cbUseSqlAuth.IsChecked.Value;
-			if (!csb.IntegratedSecurity)
-			{
-				csb.UserID = tbUserName.Text;
-				csb.Password = tbPassword.Password;
-			}
-			csb.ApplicationName = Assembly.GetExecutingAssembly().GetName().Name;
-			if (databaseName != null) csb.InitialCatalog = databaseName;
-			return csb.ConnectionString;
-		}
-
-		[DllImport("kernel32.dll", SetLastError = true)]
-		static extern IntPtr GetCurrentProcessId();
-
-		static string GetInstanceName()
-		{
-			//This works for Winforms apps.
-			string instanceName = Assembly.GetEntryAssembly().GetName().Name;
-
-			//// Must replace special characters like (, ), #, /, \\
-			//string instanceName2 =
-			//	AppDomain.CurrentDomain.FriendlyName.ToString().Replace('(', '[')
-			//	.Replace(')', ']').Replace('#', '_').Replace('/', '_').Replace('\\', '_');
-
-			// For ASP.NET applications your instanceName will be your CurrentDomain's
-			// FriendlyName. Replace the line above that sets the instanceName with this:
-			// instanceName = AppDomain.CurrentDomain.FriendlyName.ToString().Replace('(','[')
-			// .Replace(')',']').Replace('#','_').Replace('/','_').Replace('\\','_');
-
-			string pid = GetCurrentProcessId().ToString();
-			//instanceName = instanceName + "[" + pid + "]";
-			////Console.WriteLine("Instance Name: {0}", instanceName);
-			////Console.WriteLine("---------------------------");
-			//return instanceName;
-			return string.Format("{0}[{1}]", instanceName, pid);
-		}
 	}
 }
