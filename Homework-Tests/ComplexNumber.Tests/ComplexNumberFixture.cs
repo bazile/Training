@@ -77,7 +77,7 @@ namespace ComplexNumber.Tests
 
 		[Test]
 		[Category("Operator overloading")]
-		public void CanCompareComplexNumbers()
+		public void CanCompare()
 		{
 			const double real = 5.2;
 			const double imaginary = -10.3;
@@ -115,13 +115,19 @@ namespace ComplexNumber.Tests
 		private static void AssertTrueEquality(ComplexNumber a, ComplexNumber b, string message)
 		{
 			Assert.IsTrue(a == b, message);
-			Assert.IsTrue(((IEquatable<ComplexNumber>)a).Equals(b), message);
+			if (a is IEquatable<ComplexNumber>)
+				Assert.IsTrue(((IEquatable<ComplexNumber>)a).Equals(b), message);
+			else
+				Assert.IsTrue(a.Equals(b), message);
 		}
 
 		private static void AssertFalseEquality(ComplexNumber a, ComplexNumber b, string message)
 		{
 			Assert.IsFalse(a == b, message);
-			Assert.IsFalse(((IEquatable<ComplexNumber>)a).Equals(b), message);
+			if (a is IEquatable<ComplexNumber>)
+				Assert.IsFalse(((IEquatable<ComplexNumber>)a).Equals(b), message);
+			else
+				Assert.IsFalse(a.Equals(b), message);
 		}
 
 		[Test]
@@ -168,11 +174,13 @@ namespace ComplexNumber.Tests
 
 		[Test]
 		[Category("Operator overloading")]
-		public void CanCompareComplexNumberWithNull()
+		public void CanCompareWithNull()
 		{
 			var x = new ComplexNumber(0);
 			Assert.IsTrue(x != null);
+			Assert.IsTrue(null != x);
 			Assert.IsFalse(x == null);
+			Assert.IsFalse(null == x);
 			Assert.IsFalse(x.Equals(null));
 
 			x = null;
@@ -184,7 +192,7 @@ namespace ComplexNumber.Tests
 		[Test]
 		[Category("Operator overloading")]
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "AddData")]
-		public ComplexNumber CanAddComplexNumbers(ComplexNumber x, ComplexNumber y)
+		public ComplexNumber CanAdd(ComplexNumber x, ComplexNumber y)
 		{
 			ComplexNumber result = x + y;
 			Assert.AreEqual(x.Real + y.Real, result.Real);
@@ -195,7 +203,7 @@ namespace ComplexNumber.Tests
 		[Test]
 		[Category("Operator overloading")]
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "SubtractData")]
-		public ComplexNumber CanSubtractComplexNumbers(ComplexNumber x, ComplexNumber y)
+		public ComplexNumber CanSubtract(ComplexNumber x, ComplexNumber y)
 		{
 			ComplexNumber result = x - y;
 			Assert.AreEqual(x.Real - y.Real, result.Real);
@@ -208,7 +216,7 @@ namespace ComplexNumber.Tests
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "ConstructorDataRealOnly")]
 		public void CanConvertDoubleToComplexNumber(double real)
 		{
-			ComplexNumber result = real;
+			ComplexNumber result = (ComplexNumber)real;
 			Assert.AreEqual(result.Real, real);
 			Assert.AreEqual(result.Imaginary, 0.0);
 		}
@@ -218,7 +226,10 @@ namespace ComplexNumber.Tests
 		public void ImplementsGenericIEquatable()
 		{
 			var x = new ComplexNumber(10);
-			Assert.IsNotNull(x as IEquatable<ComplexNumber>, "Type does not implement IEquatable<ComplexNumber>.");
+			Assert.That(x,
+				Is.AssignableTo<IEquatable<ComplexNumber>>(),
+				"Type does not implement IEquatable<ComplexNumber>."
+			);
 		}
 
 		[Test]
@@ -226,8 +237,10 @@ namespace ComplexNumber.Tests
 		public void ImplementsIFormattable()
 		{
 			var x = new ComplexNumber(10);
-			Assert.That(x, Is.AssignableTo<IFormattable>(), "Type does not implement IFormattable.");
-			//Assert.IsNotNull(x as IFormattable, "Type does not implement IFormattable.");
+			Assert.That(x,
+				Is.AssignableTo<IFormattable>(),
+				"Type does not implement IFormattable."
+			);
 		}
 
 		[Test]
@@ -261,9 +274,9 @@ namespace ComplexNumber.Tests
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "ToStringData")]
 		public string AssertFormatting(ComplexNumber number, string formatSpecifier)
 		{
-			return String.IsNullOrEmpty(formatSpecifier)
-						? number.ToString()
-						: number.ToString(formatSpecifier, CultureInfo.InvariantCulture);
+			return string.IsNullOrEmpty(formatSpecifier)
+						? number.ToString().Replace(" ", "")
+						: number.ToString(formatSpecifier, CultureInfo.InvariantCulture).Replace(" ", "");
 		}
 
 		[Test]
@@ -271,7 +284,7 @@ namespace ComplexNumber.Tests
 		[TestCaseSource(typeof(ComplexNumberFixtureData), "ToStringWithCultureData")]
 		public string AssertFormattingWithCulture(ComplexNumber number, string formatSpecifier, string cultureName)
 		{
-			return number.ToString(formatSpecifier, new CultureInfo(cultureName));
+			return number.ToString(formatSpecifier, new CultureInfo(cultureName)).Replace(" ", "");
 		}
 
 		[Test]
@@ -279,17 +292,15 @@ namespace ComplexNumber.Tests
 		public void ToStringThrowsFormatExceptionForUnknownFormat()
 		{
 			ImplementsIFormattable();
-
+			
 			Assert.That(
 				() => {
 					var num = new ComplexNumber(1, 1);
 					var iformattable = num as IFormattable;
-					if (iformattable != null)
-					{
-						string result = iformattable.ToString("X", null);
-					}
+					string result = iformattable.ToString("X", null);
+					Console.WriteLine(result);
 				},
-				Throws.TypeOf<FormatException>()
+				Throws.TypeOf<FormatException>().With.Message.Length.GreaterThan(0)
 			);
 		}
 
@@ -297,14 +308,14 @@ namespace ComplexNumber.Tests
 		{
 			Type t = typeof(ComplexNumber);
 			MethodInfo mi = t.GetMethod(methodName, BindingFlags.DeclaredOnly | BindingFlags.ExactBinding | BindingFlags.Instance | BindingFlags.Public, null, arguments, null);
-			Assert.IsNotNull(mi, String.Format("Method '{0}' is not overriden.", methodName));
-			Assert.IsTrue(mi.IsVirtual, String.Format("Method '{0}' is found but it is not virtual.", methodName));
+			Assert.IsNotNull(mi, string.Format("Method '{0}' is not overriden.", methodName));
+			Assert.IsTrue(mi.IsVirtual, string.Format("Method '{0}' is found but it is not virtual.", methodName));
 		}
 
 		private static string AsString(ComplexNumber cx)
 		{
 			if (ReferenceEquals(cx, null)) return "null";
-			return String.Format(CultureInfo.GetCultureInfo("en-US"), "[{0}, {1}]", cx.Real, cx.Imaginary);
+			return string.Format(CultureInfo.GetCultureInfo("en-US"), "[{0}, {1}]", cx.Real, cx.Imaginary);
 		}
 	}
 
@@ -379,11 +390,11 @@ namespace ComplexNumber.Tests
 				yield return new TestCaseData(new ComplexNumber(1, -2) , "A").Returns("1-i2");
 				yield return new TestCaseData(new ComplexNumber(-1, -2), "A").Returns("-1-i2");
 
-				yield return new TestCaseData(new ComplexNumber(0, 0)  , "P").Returns("(0, 0)");
-				yield return new TestCaseData(new ComplexNumber(1, 2)  , "P").Returns("(1, 2)");
-				yield return new TestCaseData(new ComplexNumber(-1, 2) , "P").Returns("(-1, 2)");
-				yield return new TestCaseData(new ComplexNumber(1, -2) , "P").Returns("(1, -2)");
-				yield return new TestCaseData(new ComplexNumber(-1, -2), "P").Returns("(-1, -2)");
+				yield return new TestCaseData(new ComplexNumber(0, 0)  , "P").Returns("(0,0)");
+				yield return new TestCaseData(new ComplexNumber(1, 2)  , "P").Returns("(1,2)");
+				yield return new TestCaseData(new ComplexNumber(-1, 2) , "P").Returns("(-1,2)");
+				yield return new TestCaseData(new ComplexNumber(1, -2) , "P").Returns("(1,-2)");
+				yield return new TestCaseData(new ComplexNumber(-1, -2), "P").Returns("(-1,-2)");
 			}
 		}
 
@@ -396,10 +407,10 @@ namespace ComplexNumber.Tests
 				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "A", "en-US").Returns("1.123+i2.234");
 				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "A", "en-US").Returns("-1.123-i2.234");
 
-				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "P", "ru-RU").Returns("(1,123, 2,234)");
-				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "P", "ru-RU").Returns("(-1,123, -2,234)");
-				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "P", "en-US").Returns("(1.123, 2.234)");
-				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "P", "en-US").Returns("(-1.123, -2.234)");
+				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "P", "ru-RU").Returns("(1,123,2,234)");
+				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "P", "ru-RU").Returns("(-1,123,-2,234)");
+				yield return new TestCaseData(new ComplexNumber(1.123, 2.234)  , "P", "en-US").Returns("(1.123,2.234)");
+				yield return new TestCaseData(new ComplexNumber(-1.123, -2.234), "P", "en-US").Returns("(-1.123,-2.234)");
 			}
 		}
 
