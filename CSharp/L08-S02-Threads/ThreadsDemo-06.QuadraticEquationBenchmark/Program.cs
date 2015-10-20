@@ -26,6 +26,12 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 			BenchmarkWithThreads(equations, 2);
 			BenchmarkWithThreads(equations, 3);
 			BenchmarkWithThreads(equations, 4);
+
+			Console.WriteLine();
+
+			BenchmarkWithThreads(equations, 2, ThreadPriority.Highest);
+			BenchmarkWithThreads(equations, 3, ThreadPriority.Highest);
+			BenchmarkWithThreads(equations, 4, ThreadPriority.Highest);
 		}
 
 		/// <summary>
@@ -48,7 +54,7 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 		/// </summary>
 		/// <param name="equations">Уравнения которые необходимо решить</param>
 		/// <param name="threadCount">Кол-во потоков которые следует использовать для параллельного решения уравнений</param>
-		private static void BenchmarkWithThreads(Equation[] equations, int threadCount)
+		private static void BenchmarkWithThreads(Equation[] equations, int threadCount, ThreadPriority priority = ThreadPriority.Normal)
 		{
 			int equationCount = equations.Length;
 			int itemsPerThread = equations.Length / threadCount; // Кол-во уравнений для каждого потока
@@ -59,6 +65,7 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 			{
 				solveThreads[i] = new Thread(SolveThread);
 				solveThreads[i].Name = String.Format("Решатель уравнений #{0}", i + 1);
+				solveThreads[i].Priority = priority;
 
 				ArraySegment<Equation> segment;
 				if (i == solveThreads.Length - 1 && equationCount % threadCount != 0)
@@ -76,7 +83,26 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 				solveThread.Join();
 			}
 			watch.Stop();
-			Console.WriteLine("Время на решение  с потоками: {0:F4} сек. Кол-во потоков: {1}", watch.Elapsed.TotalSeconds, threadCount);
+			Console.WriteLine("Время на решение  с потоками: {0:F4} сек. Кол-во потоков: {1}. Приоритет: {2}", watch.Elapsed.TotalSeconds, threadCount, PriorityToString(priority));
+		}
+
+		static string PriorityToString(ThreadPriority priority)
+		{
+			switch (priority)
+			{
+				case ThreadPriority.Lowest:
+					return "Самый низкий";
+				case ThreadPriority.BelowNormal:
+					return "Ниже нормального";
+				case ThreadPriority.Normal:
+					return "Нормальный";
+				case ThreadPriority.AboveNormal:
+					return "Выше нормального";
+				case ThreadPriority.Highest:
+					return "Самый высокий";
+				default:
+					return priority.ToString();
+			}
 		}
 
 		/// <summary>
@@ -87,19 +113,19 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 		{
 			if (equation.B > 0 || equation.B < 0)
 			{
-				double d = equation.B * equation.B; // Дискриминант
+				double d = equation.B*equation.B; // Дискриминант
 				double sqrt_d = Math.Sqrt(d);
-				double a2 = 2 * equation.A;
-				equation.Solution1 = (sqrt_d - equation.B) / a2;
-				equation.Solution2 = (-equation.B - sqrt_d) / a2;
+				double a2 = 2*equation.A;
+				equation.Solution1 = (sqrt_d - equation.B)/a2;
+				equation.Solution2 = (-equation.B - sqrt_d)/a2;
 			}
 			else
 			{
-				equation.Solution1 = equation.Solution2 = -equation.B / (2 * equation.A);
+				equation.Solution1 = equation.Solution2 = -equation.B/(2*equation.A);
 			}
 		}
 
-		private static void SolveThread(object data)
+		static void SolveThread(object data)
 		{
 			ArraySegment<Equation> segment = (ArraySegment<Equation>)data;
 			Equation[] equations = segment.Array;
@@ -110,11 +136,11 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 			}
 		}
 
-		private static Equation[] CreateRandomCoeffs(int count)
+		static Equation[] CreateRandomCoeffs(int count)
 		{
 			Equation[] coeffs = new Equation[count];
 
-			#if RANDOM_COEFFS
+#if RANDOM_COEFFS
 
 			Random rnd = new Random(Environment.TickCount);
 
@@ -126,14 +152,14 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 			{
 				if (rndPos >= randomBytes.Length)
 				{
-				    rnd.NextBytes(randomBytes);
-				    rndPos = 0;
+					rnd.NextBytes(randomBytes);
+					rndPos = 0;
 				}
-				coeffs[i].A = randomBytes[rndPos] * randomBytes[rndPos+1];
-				coeffs[i].B = randomBytes[rndPos + 2] * randomBytes[rndPos + 3];
+				coeffs[i].A = randomBytes[rndPos]*randomBytes[rndPos + 1];
+				coeffs[i].B = randomBytes[rndPos + 2]*randomBytes[rndPos + 3];
 			}
 
-			#else
+#else
 
 			for (int i = 0; i < coeffs.Length; i++)
 			{
