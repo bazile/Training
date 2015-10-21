@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 // http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 // Golly, a Game of Life simulator http://sourceforge.net/projects/golly/files/
 // Быстрое преобразование Фурье и игра Жизнь - http://habrahabr.ru/post/180135/
+// С LINQом по «Жизни» - http://habrahabr.ru/post/263569/
 
 namespace LifeGame
 {
@@ -74,11 +75,11 @@ namespace LifeGame
 		
 	}
 
-	internal class ClassicLifeGameAlgorithm : ILifeGameAlgorithm
+	internal class ClassicAlgorithm : ILifeGameAlgorithm
 	{
 		private ILifeBoard _board;
 
-		public ClassicLifeGameAlgorithm(ILifeBoard board)
+		public ClassicAlgorithm(ILifeBoard board)
 		{
 			_board = board;
 		}
