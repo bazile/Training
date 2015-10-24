@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace BelhardTraining.QuadraticEquationBenchmark
 {
@@ -27,11 +28,28 @@ namespace BelhardTraining.QuadraticEquationBenchmark
 			BenchmarkWithThreads(equations, 3);
 			BenchmarkWithThreads(equations, 4);
 
-			Console.WriteLine();
+			#region ThreadPriority.Highest
 
-			BenchmarkWithThreads(equations, 2, ThreadPriority.Highest);
-			BenchmarkWithThreads(equations, 3, ThreadPriority.Highest);
-			BenchmarkWithThreads(equations, 4, ThreadPriority.Highest);
+			//Console.WriteLine();
+			//BenchmarkWithThreads(equations, 2, ThreadPriority.Highest);
+			//BenchmarkWithThreads(equations, 3, ThreadPriority.Highest);
+			//BenchmarkWithThreads(equations, 4, ThreadPriority.Highest);
+
+			#endregion
+
+			#region Parallel.For
+
+			//Stopwatch watch = Stopwatch.StartNew();
+			//Parallel.For(
+			//    0, 
+			//    equations.Length,
+			//    //new ParallelOptions{ MaxDegreeOfParallelism = Environment.ProcessorCount},
+			//    i => Solve(ref equations[i])
+			//);
+			//watch.Stop();
+			//Console.WriteLine("Время на решение с помощью Parallel.For: {0:F4} сек.", watch.Elapsed.TotalSeconds);
+
+			#endregion
 		}
 
 		/// <summary>
