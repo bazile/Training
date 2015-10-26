@@ -10,7 +10,7 @@
 USE master
 GO
 CREATE DATABASE BelhardTraining
-    COLLATE Cyrillic_General_CS_AI
+    COLLATE Cyrillic_General_CI_AI
 GO
 USE BelhardTraining
 GO
