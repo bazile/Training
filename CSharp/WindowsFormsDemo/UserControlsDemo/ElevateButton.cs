@@ -41,7 +41,8 @@ namespace BelhardTraining.Windows.Forms.Controls
 
 			base.Dispose(disposing);
 		}
-
+		
+		// TODO: use IntPtr because int will crash app in x64?
 		[DllImport("user32.dll")]
 		private static extern int SendMessage(IntPtr hWnd, uint msg, int wParam, int lParam);
 

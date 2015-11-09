@@ -42,11 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DemoFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager.cs" />
     <Compile Include="FormWithElevateButton.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormWithElevateButton.Designer.cs">
       <DependentUpon>FormWithElevateButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkLabelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkLabelForm.Designer.cs">
+      <DependentUpon>LinkLabelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -58,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormWithElevateButton.resx">
       <DependentUpon>FormWithElevateButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkLabelForm.resx">
+      <DependentUpon>LinkLabelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

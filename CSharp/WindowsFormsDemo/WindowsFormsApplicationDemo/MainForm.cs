@@ -14,5 +14,10 @@ namespace BelhardTraining.Windows.Forms
 			FormWithElevateButton form = new FormWithElevateButton();
 			form.ShowDialog();
 		}
+
+        private void btnLinkLabel_Click(object sender, System.EventArgs e)
+        {
+            FormManager.Show<LinkLabelForm>();
+        }
 	}
 }

@@ -1,0 +1,5 @@
+﻿- Expander
+	https://jfblier.wordpress.com/2011/02/16/window-form-expander/
+- IPAddress
+	https://msdn.microsoft.com/en-us/library/windows/desktop/bb761374%28v=vs.85%29.aspx
+	http://www.codeproject.com/Articles/4693/IP-Address-TextBox

@@ -40,6 +40,9 @@
     <Compile Include="ElevateButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="IPAddressTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
