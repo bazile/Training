@@ -33,9 +33,13 @@
 			this.btnLinkLabel = new System.Windows.Forms.Button();
 			this.tpageCustom = new System.Windows.Forms.TabPage();
 			this.button1 = new System.Windows.Forms.Button();
+			this.gboxPlaceholderTextBox = new System.Windows.Forms.GroupBox();
+			this.placeholderTextBox2 = new BelhardTraining.Windows.Forms.Controls.PlaceholderTextBox();
+			this.placeholderTextBox1 = new BelhardTraining.Windows.Forms.Controls.PlaceholderTextBox();
 			this.tabControl1.SuspendLayout();
 			this.tpageCommon.SuspendLayout();
 			this.tpageCustom.SuspendLayout();
+			this.gboxPlaceholderTextBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -72,6 +76,7 @@
 			// 
 			// tpageCustom
 			// 
+			this.tpageCustom.Controls.Add(this.gboxPlaceholderTextBox);
 			this.tpageCustom.Controls.Add(this.button1);
 			this.tpageCustom.Location = new System.Drawing.Point(4, 22);
 			this.tpageCustom.Name = "tpageCustom";
@@ -83,12 +88,40 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(104, 163);
+			this.button1.Location = new System.Drawing.Point(8, 20);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(190, 23);
 			this.button1.TabIndex = 2;
 			this.button1.Text = "Elevate button demo";
 			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// gboxPlaceholderTextBox
+			// 
+			this.gboxPlaceholderTextBox.Controls.Add(this.placeholderTextBox2);
+			this.gboxPlaceholderTextBox.Controls.Add(this.placeholderTextBox1);
+			this.gboxPlaceholderTextBox.Location = new System.Drawing.Point(8, 78);
+			this.gboxPlaceholderTextBox.Name = "gboxPlaceholderTextBox";
+			this.gboxPlaceholderTextBox.Size = new System.Drawing.Size(200, 100);
+			this.gboxPlaceholderTextBox.TabIndex = 5;
+			this.gboxPlaceholderTextBox.TabStop = false;
+			this.gboxPlaceholderTextBox.Text = "PlaceholderTextBox";
+			// 
+			// placeholderTextBox2
+			// 
+			this.placeholderTextBox2.Location = new System.Drawing.Point(25, 59);
+			this.placeholderTextBox2.Name = "placeholderTextBox2";
+			this.placeholderTextBox2.PlaceholderText = "Password";
+			this.placeholderTextBox2.Size = new System.Drawing.Size(151, 20);
+			this.placeholderTextBox2.TabIndex = 6;
+			this.placeholderTextBox2.UseSystemPasswordChar = true;
+			// 
+			// placeholderTextBox1
+			// 
+			this.placeholderTextBox1.Location = new System.Drawing.Point(25, 22);
+			this.placeholderTextBox1.Name = "placeholderTextBox1";
+			this.placeholderTextBox1.PlaceholderText = "Username";
+			this.placeholderTextBox1.Size = new System.Drawing.Size(151, 20);
+			this.placeholderTextBox1.TabIndex = 5;
 			// 
 			// MainForm
 			// 
@@ -101,6 +134,8 @@
 			this.tabControl1.ResumeLayout(false);
 			this.tpageCommon.ResumeLayout(false);
 			this.tpageCustom.ResumeLayout(false);
+			this.gboxPlaceholderTextBox.ResumeLayout(false);
+			this.gboxPlaceholderTextBox.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -111,7 +146,10 @@
         private System.Windows.Forms.TabPage tpageCommon;
         private System.Windows.Forms.Button btnLinkLabel;
         private System.Windows.Forms.TabPage tpageCustom;
-        private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.GroupBox gboxPlaceholderTextBox;
+		private Controls.PlaceholderTextBox placeholderTextBox2;
+		private Controls.PlaceholderTextBox placeholderTextBox1;
 
     }
 }
