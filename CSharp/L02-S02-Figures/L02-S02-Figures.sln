@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-FiguresDemo-ToString", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-FiguresDemo-Interface", "05-FiguresDemo-Interface\05-FiguresDemo-Interface.csproj", "{7DCD9DE9-BDC2-4C34-9F39-684842F88EFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-IComparable", "06-IComparable\06-IComparable.csproj", "{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,16 @@ Global
 		{7DCD9DE9-BDC2-4C34-9F39-684842F88EFC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{7DCD9DE9-BDC2-4C34-9F39-684842F88EFC}.Release|x86.ActiveCfg = Release|x86
 		{7DCD9DE9-BDC2-4C34-9F39-684842F88EFC}.Release|x86.Build.0 = Release|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Debug|x86.ActiveCfg = Debug|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Debug|x86.Build.0 = Debug|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|Any CPU.ActiveCfg = Release|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|x86.ActiveCfg = Release|x86
+		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
