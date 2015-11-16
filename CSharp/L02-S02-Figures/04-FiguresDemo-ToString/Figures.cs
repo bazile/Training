@@ -3,56 +3,55 @@
 */
 
 using System;
-using System.Diagnostics;
 
 namespace BelhardTraining.FiguresDemo
 {
     /// <summary>Неопределенная геометрическая фигура</summary>
     /// <remarks>В C# запрещено создавать экземпляры абстрактных классов</remarks>
     public abstract class Figure
-	{
-		public abstract double ComputeArea();
-		public abstract string WhoAmI();
+    {
+        public abstract double ComputeArea();
+        public abstract string WhoAmI();
 
         //public override string ToString()
         //{
         //    return "Непонятная загогулина";
         //}
-	}
+    }
 
-	public class Rectangle : Figure
-	{
-		public double Width { get; private set; }
-		public double Height { get; private set; }
+    public class Rectangle : Figure
+    {
+        public double Width { get; private set; }
+        public double Height { get; private set; }
 
-		public Rectangle(double width, double height)
-		{
-			Width = width;
-			Height = height;
-		}
+        public Rectangle(double width, double height)
+        {
+            Width = width;
+            Height = height;
+        }
 
-		public override double ComputeArea()
-		{
-			return Width * Height;
-		}
+        public override double ComputeArea()
+        {
+            return Width * Height;
+        }
 
-		public override string WhoAmI()
-		{
+        public override string WhoAmI()
+        {
             return "Прямоугольник";
-		}
+        }
 
         public override string ToString()
         {
             return string.Format("Прямоугольник. Ширина={0}. Высота={1}", Width, Height);
         }
-	}
+    }
 
-	public class Square : Rectangle
-	{
-		public Square(double size)
-			: base(size, size)
-		{
-		}
+    public class Square : Rectangle
+    {
+        public Square(double size)
+            : base(size, size)
+        {
+        }
 
         public double Size
         {
@@ -63,10 +62,10 @@ namespace BelhardTraining.FiguresDemo
             }
         }
 
-		public override string WhoAmI()
-		{
-			return "Квадрат";
-		}
+        public override string WhoAmI()
+        {
+            return "Квадрат";
+        }
 
         public override string ToString()
         {
@@ -74,13 +73,13 @@ namespace BelhardTraining.FiguresDemo
         }
     }
 
-	public class Ellipse : Figure
-	{
-		public double MajorRadius { get; private set; }
-		public double MinorRadius { get; private set; }
+    public class Ellipse : Figure
+    {
+        public double MajorRadius { get; private set; }
+        public double MinorRadius { get; private set; }
 
-		public Ellipse(double majorRadius, double minorRadius)
-		{
+        public Ellipse(double majorRadius, double minorRadius)
+        {
             // Радиус большой оси должен быть больше радиуса малой оси
             if (minorRadius > majorRadius)
             {
@@ -92,17 +91,17 @@ namespace BelhardTraining.FiguresDemo
                 MajorRadius = majorRadius;
                 MinorRadius = minorRadius;
             }
-		}
+        }
 
-		public override double ComputeArea()
-		{
-			return Math.PI * MajorRadius * MinorRadius;
-		}
+        public override double ComputeArea()
+        {
+            return Math.PI * MajorRadius * MinorRadius;
+        }
 
-		public override string WhoAmI()
-		{
-			return "Эллипс";
-		}
+        public override string WhoAmI()
+        {
+            return "Эллипс";
+        }
 
         public override string ToString()
         {
@@ -110,26 +109,26 @@ namespace BelhardTraining.FiguresDemo
         }
     }
 
-	public class Circle : Ellipse
-	{
-		public double Radius
-		{
-			get
+    public class Circle : Ellipse
+    {
+        public double Radius
+        {
+            get
             {
                 // Т.к. оба радиуса окружности совпадают, то неважно какое из свойств  - MajorRadius или MinorRadius - использовать
                 return MajorRadius;
             }
-		}
+        }
 
-		public Circle(double radius)
-			: base(radius, radius)
-		{
-		}
+        public Circle(double radius)
+            : base(radius, radius)
+        {
+        }
 
-		public override string WhoAmI()
-		{
-			return "Окружность";
-		}
+        public override string WhoAmI()
+        {
+            return "Окружность";
+        }
 
         public override string ToString()
         {
@@ -137,31 +136,31 @@ namespace BelhardTraining.FiguresDemo
         }
     }
 
-	/// <summary>
-	/// Правильный треугольник. Все стороны равны.
-	/// </summary>
-	public class EquilateralTriangle : Figure
-	{
-		public double SideLength { get; private set; }
+    /// <summary>
+    /// Правильный треугольник. Все стороны равны.
+    /// </summary>
+    public class EquilateralTriangle : Figure
+    {
+        public double SideLength { get; private set; }
 
-		public EquilateralTriangle(double sideLength)
-		{
-			SideLength = sideLength;
-		}
+        public EquilateralTriangle(double sideLength)
+        {
+            SideLength = sideLength;
+        }
 
-		public override double ComputeArea()
-		{
-			return SideLength * SideLength * Math.Sqrt(3) / 4f;
-		}
+        public override double ComputeArea()
+        {
+            return SideLength * SideLength * Math.Sqrt(3) / 4f;
+        }
 
-		public override string WhoAmI()
-		{
+        public override string WhoAmI()
+        {
             return "Правильный треугольник";
-		}
+        }
 
-		//public override string ToString()
-		//{
-		//    return string.Format("Правильный треугольник. Длина стороны={0:F2}.", SideLength);
-		//}
+        //public override string ToString()
+        //{
+        //    return string.Format("Правильный треугольник. Длина стороны={0:F2}.", SideLength);
+        //}
     }
 }

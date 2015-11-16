@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("04-FiguresDemo-ToString")]
@@ -7,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Центр обучающих технологий \u00ABБелхард\u00BB")]
 [assembly: AssemblyProduct("Основы программирования на С#")]
-[assembly: AssemblyCopyright("Copyright © 2012-2014 Vasily Petruhin")]
+[assembly: AssemblyCopyright("Copyright © 2012-2015 Vasily Petruhin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

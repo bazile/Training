@@ -4,7 +4,7 @@ namespace BelhardTraining.FiguresDemo
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Figure[] figures = new Figure[]
                 {
