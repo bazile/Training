@@ -26,17 +26,16 @@ namespace BelhardTraining.FiguresDemo
             string typeName = figure.GetType().Name;
             double area = figure.ComputeArea();
 
-            ConsoleColor oldColor = Console.ForegroundColor;
             if (whoAmI != typeName) Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine(
-                "Who Am I = {0}. Type name is {1}. Area={2:F2}",
+                "WhoAmI = {0}. Имя класса {1}. Площадь={2:F2}",
                 whoAmI,
                 typeName,
                 area
             );
 
-            Console.ForegroundColor = oldColor;
+            Console.ResetColor();
         }
     }
 }
