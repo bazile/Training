@@ -38,8 +38,10 @@
             System.Windows.Forms.ToolStripMenuItem menuItemMsdnRus;
             System.Windows.Forms.ContextMenuStrip contextMenuForEnvVars;
             System.Windows.Forms.ToolStripMenuItem menuItemOpenEnvVarDialog;
-            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Класс System.Environment", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Класс System.Windows.Forms.SystemInformation", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Класс System.Environment", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Класс System.Windows.Forms.SystemInformation", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ColumnHeader columnHeaderSpecialName;
+            System.Windows.Forms.ColumnHeader columnHeaderSpecialPath;
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSysInfo = new System.Windows.Forms.TabPage();
             this.listViewSysInfo = new System.Windows.Forms.ListView();
@@ -47,8 +49,6 @@
             this.listViewVars = new System.Windows.Forms.ListView();
             this.tabPagePaths = new System.Windows.Forms.TabPage();
             this.listViewPaths = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             columnHeaderVarName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             columnHeaderVarValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             columnHeaderProperty = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,6 +58,8 @@
             menuItemMsdnRus = new System.Windows.Forms.ToolStripMenuItem();
             contextMenuForEnvVars = new System.Windows.Forms.ContextMenuStrip(this.components);
             menuItemOpenEnvVarDialog = new System.Windows.Forms.ToolStripMenuItem();
+            columnHeaderSpecialName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            columnHeaderSpecialPath = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             contextMenuForSysInfo.SuspendLayout();
             contextMenuForEnvVars.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -157,13 +159,13 @@
             this.listViewSysInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewSysInfo.FullRowSelect = true;
             this.listViewSysInfo.GridLines = true;
-            listViewGroup3.Header = "Класс System.Environment";
-            listViewGroup3.Name = "Environment";
-            listViewGroup4.Header = "Класс System.Windows.Forms.SystemInformation";
-            listViewGroup4.Name = "SysInfo";
+            listViewGroup1.Header = "Класс System.Environment";
+            listViewGroup1.Name = "Environment";
+            listViewGroup2.Header = "Класс System.Windows.Forms.SystemInformation";
+            listViewGroup2.Name = "SysInfo";
             this.listViewSysInfo.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup3,
-            listViewGroup4});
+            listViewGroup1,
+            listViewGroup2});
             this.listViewSysInfo.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewSysInfo.Location = new System.Drawing.Point(3, 3);
             this.listViewSysInfo.Name = "listViewSysInfo";
@@ -213,9 +215,11 @@
             // listViewPaths
             // 
             this.listViewPaths.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
+            columnHeaderSpecialName,
+            columnHeaderSpecialPath});
             this.listViewPaths.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewPaths.FullRowSelect = true;
+            this.listViewPaths.GridLines = true;
             this.listViewPaths.Location = new System.Drawing.Point(3, 3);
             this.listViewPaths.Name = "listViewPaths";
             this.listViewPaths.Size = new System.Drawing.Size(609, 287);
@@ -223,13 +227,13 @@
             this.listViewPaths.UseCompatibleStateImageBehavior = false;
             this.listViewPaths.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader1
+            // columnHeaderSpecialName
             // 
-            this.columnHeader1.Text = "SpecialFolder";
+            columnHeaderSpecialName.Text = "SpecialFolder";
             // 
-            // columnHeader2
+            // columnHeaderSpecialPath
             // 
-            this.columnHeader2.Text = "Путь";
+            columnHeaderSpecialPath.Text = "Путь";
             // 
             // MainForm
             // 
@@ -260,8 +264,6 @@
 		private System.Windows.Forms.ListView listViewSysInfo;
         private System.Windows.Forms.TabPage tabPagePaths;
         private System.Windows.Forms.ListView listViewPaths;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
 	}
 }
 
