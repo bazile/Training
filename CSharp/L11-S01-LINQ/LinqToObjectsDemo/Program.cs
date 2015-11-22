@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -11,33 +12,47 @@ namespace BelhardTraining.LinqToObjectsDemo
 		{
 			#region Поиск файлов без LINQ и с ним
 
-			string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-			ExtensioInfo[] extensions1 = GetExtensions(mydocuments);
-			ExtensioInfo[] extensions2 = GetExtensionsUsingLinq(mydocuments);
-			foreach (ExtensioInfo extensioInfo in extensions1)
-			{
-				Console.WriteLine("{0} - {1}", extensioInfo.Count.ToString().PadRight(4), extensioInfo.Extension);
-			}
-			Console.WriteLine();
+			//string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+			//ExtensioInfo[] extensions1 = GetExtensions(mydocuments);
+			//ExtensioInfo[] extensions2 = GetExtensionsUsingLinq(mydocuments);
+			//foreach (ExtensioInfo extensioInfo in extensions1)
+			//{
+			//    Console.WriteLine("{0} - {1}", extensioInfo.Count.ToString().PadRight(4), extensioInfo.Extension);
+			//}
+			//Console.WriteLine();
 
-			// Убеждаемся что последовательности совпадают
-			bool resultsAreEqual = extensions1.SequenceEqual(extensions2, new ExtensioInfoEqualityComparer());
-			if (resultsAreEqual)
-			{
-				WriteColorLine(ConsoleColor.Green, "Ура! Результат работы функций c LINQ и без него совпадают!");
-			}
-			else
-			{
-				// Такого быть не должно!
-				WriteColorLine(ConsoleColor.Red, "Результат работы функций c LINQ и без него не совпадают! :(");
-			}
+			//// Убеждаемся что последовательности совпадают
+			//bool resultsAreEqual = extensions1.SequenceEqual(extensions2, new ExtensioInfoEqualityComparer());
+			//if (resultsAreEqual)
+			//{
+			//    WriteColorLine(ConsoleColor.Green, "Ура! Результат работы функций c LINQ и без него совпадают!");
+			//}
+			//else
+			//{
+			//    // Такого быть не должно!
+			//    WriteColorLine(ConsoleColor.Red, "Результат работы функций c LINQ и без него не совпадают! :(");
+			//}
 
 			#endregion
 
 			#region Простые числа
 
-			//PrimeNumbers.PrintPrimeNumbers(1000);
-			//PrimeNumbers.PrintPrimeNumbersParallel(1000);
+			//const int maxValue = int.MaxValue/10000;
+			//var seq1 = PrimeNumbers.PrintPrimeNumbers(maxValue);
+			//var seq2 = PrimeNumbers.PrintPrimeNumbersParallel(maxValue);
+			//Stopwatch watch = Stopwatch.StartNew();
+			//int count1 = seq1.Count();
+			//watch.Stop();
+			//Console.WriteLine("Время без PLINQ: {0}", watch.Elapsed);
+			//watch = Stopwatch.StartNew();
+			//int count2 = seq2.Count();
+			//watch.Stop();
+			//Console.WriteLine("Время  с  PLINQ: {0}", watch.Elapsed);
+
+			//if (count1 != count2)
+			//{
+			//    throw new InvalidOperationException("Кол-во чисел не совпадает. Проверьте алгоритм.");
+			//}
 
 			#endregion
 		}

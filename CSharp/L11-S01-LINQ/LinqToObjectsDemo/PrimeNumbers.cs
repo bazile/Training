@@ -7,40 +7,32 @@ namespace BelhardTraining.LinqToObjectsDemo
 	public static class PrimeNumbers
 	{
 		/// <summary>
-		/// Распечатка последовательности случайных чисел
+		/// Получение последовательности случайных чисел до указанного значения
 		/// </summary>
 		/// <param name="maxValue"></param>
-		public static void PrintPrimeNumbers(int maxValue)
+		public static IEnumerable<int> PrintPrimeNumbers(int maxValue)
 		{
 			Func<int, IEnumerable<int>> primeNumbers = max =>
 				 from i in Enumerable.Range(2, max - 1)
 				 where Enumerable.Range(2, i - 2).All(j => i % j != 0)
 				 select i;
 
-			IEnumerable<int> numbers = primeNumbers(maxValue);
-			foreach (int num in numbers)
-			{
-				Console.WriteLine(num);
-			}
+			return primeNumbers(maxValue);
 		}
 
 		/// <summary>
-		/// Распечатка последовательности случайных чисел используя
-		///     Parallel LINQ
+		/// Получение последовательности случайных чисел до указанного значения
+		///     с помощью Parallel LINQ
 		/// </summary>
 		/// <param name="maxValue"></param>
-		public static void PrintPrimeNumbersParallel(int maxValue)
+		public static IEnumerable<int> PrintPrimeNumbersParallel(int maxValue)
 		{
 			Func<int, IEnumerable<int>> primeNumbers = max =>
 				 from i in Enumerable.Range(2, max - 1).AsParallel()
 				 where Enumerable.Range(2, i - 2).All(j => i % j != 0)
 				 select i;
 
-			IEnumerable<int> numbers = primeNumbers(maxValue);
-			foreach (int num in numbers)
-			{
-				Console.WriteLine(num);
-			}
+			return primeNumbers(maxValue);
 		}
 	}
 }
