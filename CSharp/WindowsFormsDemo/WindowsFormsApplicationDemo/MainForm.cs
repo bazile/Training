@@ -2,22 +2,22 @@
 
 namespace BelhardTraining.Windows.Forms
 {
-	public partial class MainForm : Form
-	{
-		public MainForm()
-		{
-			InitializeComponent();
-		}
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
 
-		private void button1_Click(object sender, System.EventArgs e)
-		{
-			FormWithElevateButton form = new FormWithElevateButton();
-			form.ShowDialog();
-		}
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            FormWithElevateButton form = new FormWithElevateButton();
+            form.ShowDialog();
+        }
 
         private void btnLinkLabel_Click(object sender, System.EventArgs e)
         {
             FormManager.Show<LinkLabelForm>();
         }
-	}
+    }
 }
