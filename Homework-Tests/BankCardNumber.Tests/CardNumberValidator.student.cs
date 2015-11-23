@@ -6,13 +6,13 @@ using System.Linq;
 
 namespace BankCardNumber.Tests
 {
-	public static class CardNumberValidator
-	{
-		public static bool IsValid(string cardNumber)
-		{
-			throw new NotImplementedException();
-		}
-	}
+    public static class CardNumberValidator
+    {
+        public static bool IsValid(string number)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 
 #endif

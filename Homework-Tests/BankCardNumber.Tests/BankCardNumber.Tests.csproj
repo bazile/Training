@@ -35,7 +35,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - My|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug - My\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;USE_MY_IMPLEMENTATION</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisLogFile>bin\Debug\BankCardNumber.Tests.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
