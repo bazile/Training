@@ -1,6 +1,6 @@
 ﻿namespace BelhardTraining.Windows.Forms
 {
-	partial class FormWithElevateButton
+	partial class ElevateButtonForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -46,7 +46,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
 			this.Controls.Add(this.elevateButton1);
-			this.Name = "FormWithElevateButton";
+			this.Name = "ElevateButtonForm";
 			this.Text = "FormWithElevateButton";
 			this.ResumeLayout(false);
 

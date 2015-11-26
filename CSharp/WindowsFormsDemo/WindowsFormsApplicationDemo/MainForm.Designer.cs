@@ -30,18 +30,19 @@
 		{
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageCommon = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnLinkLabel = new System.Windows.Forms.Button();
+            this.tpageCustom = new System.Windows.Forms.TabPage();
+            this.btnElevateButton = new System.Windows.Forms.Button();
+            this.btlPlaceholderTextBox = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpageCommon.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tpageCustom.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpageCommon);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tpageCustom);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -60,26 +61,6 @@
             this.tpageCommon.Text = "Стандартные элементы";
             this.tpageCommon.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(482, 436);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(146, 207);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Elevate button demo";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnLinkLabel
             // 
             this.btnLinkLabel.Location = new System.Drawing.Point(105, 88);
@@ -89,6 +70,37 @@
             this.btnLinkLabel.Text = "LinkLabel";
             this.btnLinkLabel.UseVisualStyleBackColor = true;
             this.btnLinkLabel.Click += new System.EventHandler(this.btnLinkLabel_Click);
+            // 
+            // tpageCustom
+            // 
+            this.tpageCustom.Controls.Add(this.btlPlaceholderTextBox);
+            this.tpageCustom.Controls.Add(this.btnElevateButton);
+            this.tpageCustom.Location = new System.Drawing.Point(4, 22);
+            this.tpageCustom.Name = "tpageCustom";
+            this.tpageCustom.Padding = new System.Windows.Forms.Padding(3);
+            this.tpageCustom.Size = new System.Drawing.Size(482, 436);
+            this.tpageCustom.TabIndex = 1;
+            this.tpageCustom.Text = "Нестандартные";
+            this.tpageCustom.UseVisualStyleBackColor = true;
+            // 
+            // btnElevateButton
+            // 
+            this.btnElevateButton.Location = new System.Drawing.Point(108, 150);
+            this.btnElevateButton.Name = "btnElevateButton";
+            this.btnElevateButton.Size = new System.Drawing.Size(190, 23);
+            this.btnElevateButton.TabIndex = 2;
+            this.btnElevateButton.Text = "Elevate button demo";
+            this.btnElevateButton.UseVisualStyleBackColor = true;
+            // 
+            // btlPlaceholderTextBox
+            // 
+            this.btlPlaceholderTextBox.Location = new System.Drawing.Point(108, 96);
+            this.btlPlaceholderTextBox.Name = "btlPlaceholderTextBox";
+            this.btlPlaceholderTextBox.Size = new System.Drawing.Size(190, 23);
+            this.btlPlaceholderTextBox.TabIndex = 3;
+            this.btlPlaceholderTextBox.Text = "PlaceholderTextBox";
+            this.btlPlaceholderTextBox.UseVisualStyleBackColor = true;
+            this.btlPlaceholderTextBox.Click += new System.EventHandler(this.btlPlaceholderTextBox_Click);
             // 
             // MainForm
             // 
@@ -100,7 +112,7 @@
             this.Text = "Демонстрация возможностей Windows Forms";
             this.tabControl1.ResumeLayout(false);
             this.tpageCommon.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.tpageCustom.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -110,8 +122,9 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpageCommon;
         private System.Windows.Forms.Button btnLinkLabel;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tpageCustom;
+        private System.Windows.Forms.Button btnElevateButton;
+        private System.Windows.Forms.Button btlPlaceholderTextBox;
 
     }
 }
