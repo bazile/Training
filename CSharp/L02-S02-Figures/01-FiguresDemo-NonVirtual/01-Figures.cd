@@ -1,42 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="BelhardTraining.FiguresDemo.Figure" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
+    <Position X="3.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BelhardTraining.FiguresDemo.Rectangle" Collapsed="true">
-    <Position X="10.5" Y="1.75" Width="1.5" />
+    <Position X="3.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAAAAEAgAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BelhardTraining.FiguresDemo.Square" Collapsed="true">
-    <Position X="10.5" Y="3.25" Width="1.5" />
+    <Position X="3.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BelhardTraining.FiguresDemo.Ellipse" Collapsed="true">
-    <Position X="8.25" Y="1.75" Width="1.5" />
+    <Position X="1.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAQAAAAAgAgAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BelhardTraining.FiguresDemo.Circle" Collapsed="true">
-    <Position X="8.25" Y="3.25" Width="1.5" />
+    <Position X="1.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BelhardTraining.FiguresDemo.EquilateralTriangle" Collapsed="true">
-    <Position X="12.75" Y="1.75" Width="1.5" />
+    <Position X="6" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
