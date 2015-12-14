@@ -207,6 +207,8 @@
 	- Database проекты в Visual Studio
 	- Другое
 		http://sqlserverbuilds.blogspot.ru/
+	- Примеры БД		
+		http://sqlserversamples.codeplex.com/
 
 - #10 - ADO.NET
 	- Разделить презентацию по ADO.NET на три части: disconnected, connected и EF
@@ -470,7 +472,9 @@
 		http://msdn.microsoft.com/en-us/library/vstudio/bb126478.aspx
 		http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.texttemplating.texttransformation.aspx
 		http://t4toolbox.codeplex.com/
-
+	- Add reference dialog
+		HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\AssemblyFolders
+		Software/Microsoft/VisualStudio/X.Y/AssemblyFolders
 			
 - WinForms
 	- Extender Provider
