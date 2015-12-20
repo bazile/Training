@@ -477,6 +477,7 @@
 		Software/Microsoft/VisualStudio/X.Y/AssemblyFolders
 			
 - WinForms
+	http://metanit.com/sharp/windowsforms/
 	- Extender Provider
 	- Системные объекты
 		- System.Drawing.SystemFonts.CaptionFont
