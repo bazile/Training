@@ -37,8 +37,9 @@ namespace BelhardTraining.PointDemo
 
         public Rectangle2D(int width, int height)
         {
-	        Width = width;
-	        Height = height;
+            TopLeft = new Point2D();
+            Width = width;
+            Height = height;
         }
     }
 }
