@@ -1,0 +1,33 @@
+namespace BelhardTraining.Globalization
+{
+    public enum LanguageFamily
+    {
+        NotSpecified,
+        AfroAsiatic,
+        Algonquian,
+        Austroasiatic,
+        Austronesian,
+        Aymaran,
+        Constructed,
+        Creole,
+        DeneYeniseian,
+        Dravidian,
+        EskimoAleut,
+        IndoEuropean,
+        Japonic,
+        Koreanic,
+        LanguageIsolate,
+        Mongolic,
+        NigerCongo,
+        NiloSaharan,
+        NortheastCaucasian,
+        NorthwestCaucasian,
+        Quechuan,
+        SinoTibetan,
+        SouthCaucasian,
+        TaiKadai,
+        Tupian,
+        Turkic,
+        Uralic
+    }
+}

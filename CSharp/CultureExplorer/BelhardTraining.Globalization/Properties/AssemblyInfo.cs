@@ -1,13 +1,18 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("CultureExplorer")]
-[assembly: AssemblyDescription(".NET Culture Explorer using Windows Forms")]
+[assembly: AssemblyTitle("BelhardTraining.Globalization")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Центр обучающих технологий \u00ABБелхард\u00BB")]
 [assembly: AssemblyProduct("Основы программирования на С#")]
 [assembly: AssemblyCopyright("Copyright © 2012-2016 Vasily Petruhin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+[assembly: ComVisible(false)]
+[assembly: CLSCompliant(true)]
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

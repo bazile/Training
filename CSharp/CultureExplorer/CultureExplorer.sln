@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CultureExplorer.WinForms", "CultureExplorer.WinForms\CultureExplorer.WinForms.csproj", "{C46C8F54-D02E-441D-925B-D31F4C7E92FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelhardTraining.Globalization", "BelhardTraining.Globalization\BelhardTraining.Globalization.csproj", "{05EF607B-5EF9-4904-8BE3-9B9B8E38C924}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelhardTraining.Globalization.Tests", "BelhardTraining.Globalization.Tests\BelhardTraining.Globalization.Tests.csproj", "{64CF072D-FBB0-4EDF-B9AC-9D1A31A43D7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{C46C8F54-D02E-441D-925B-D31F4C7E92FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C46C8F54-D02E-441D-925B-D31F4C7E92FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C46C8F54-D02E-441D-925B-D31F4C7E92FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05EF607B-5EF9-4904-8BE3-9B9B8E38C924}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05EF607B-5EF9-4904-8BE3-9B9B8E38C924}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05EF607B-5EF9-4904-8BE3-9B9B8E38C924}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05EF607B-5EF9-4904-8BE3-9B9B8E38C924}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64CF072D-FBB0-4EDF-B9AC-9D1A31A43D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CF072D-FBB0-4EDF-B9AC-9D1A31A43D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CF072D-FBB0-4EDF-B9AC-9D1A31A43D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CF072D-FBB0-4EDF-B9AC-9D1A31A43D7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

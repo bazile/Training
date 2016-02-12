@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace CultureExplorer.WinForms
 {
-	internal class CultureInfoComparer : IComparer<CultureInfo>
+	class CultureNameComparer : IComparer<CultureInfo>
 	{
 		public int Compare(CultureInfo x, CultureInfo y)
 		{
