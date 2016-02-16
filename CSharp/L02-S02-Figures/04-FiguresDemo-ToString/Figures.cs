@@ -10,6 +10,9 @@ namespace BelhardTraining.FiguresDemo
     /// <remarks>В C# запрещено создавать экземпляры абстрактных классов</remarks>
     public abstract class Figure
     {
+        public int X { get; set; }
+        public int Y { get; set; }
+
         public abstract double ComputeArea();
         public abstract string WhoAmI();
 
@@ -43,6 +46,14 @@ namespace BelhardTraining.FiguresDemo
         public override string ToString()
         {
             return string.Format("Прямоугольник. Ширина={0}. Высота={1}", Width, Height);
+        }
+
+        public override bool Equals(object obj)
+        {
+            Rectangle other = obj as Rectangle;
+            if (other == null) return false;
+
+            return (Math.Abs(Width - other.Width) < 0.000001) && (Math.Abs(Height - other.Height) < 0.000001);
         }
     }
 
@@ -107,6 +118,14 @@ namespace BelhardTraining.FiguresDemo
         {
             return string.Format("Эллипс. Большой радиус={0:F2}. Малый радиус={1:F2}", MajorRadius, MinorRadius);
         }
+
+        public override bool Equals(object obj)
+        {
+            Ellipse other = obj as Ellipse;
+            if (other == null) return false;
+
+            return (Math.Abs(MajorRadius - other.MajorRadius) < 0.000001) && (Math.Abs(MinorRadius - other.MinorRadius) < 0.000001);
+        }
     }
 
     public class Circle : Ellipse
@@ -162,5 +181,13 @@ namespace BelhardTraining.FiguresDemo
         //{
         //    return string.Format("Правильный треугольник. Длина стороны={0:F2}.", SideLength);
         //}
+
+        public override bool Equals(object obj)
+        {
+            EquilateralTriangle other = obj as EquilateralTriangle;
+            if (other == null) return false;
+
+            return (Math.Abs(SideLength - other.SideLength) < 0.000001);
+        }
     }
 }

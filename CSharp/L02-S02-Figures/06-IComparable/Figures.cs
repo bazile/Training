@@ -14,6 +14,9 @@ namespace BelhardTraining.FiguresDemo
     /// </remarks>
     public abstract class Figure : IComparable<Figure>
     {
+        public int X { get; set; }
+        public int Y { get; set; }
+
         public abstract double ComputeArea();
         public abstract string WhoAmI();
 

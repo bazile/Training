@@ -10,6 +10,9 @@ namespace BelhardTraining.FiguresDemo
     /// <remarks>В C# запрещено создавать экземпляры абстрактных классов</remarks>
     public abstract class Figure
     {
+        public int X { get; set; }
+        public int Y { get; set; }
+
         public abstract double ComputeArea();
         public abstract string WhoAmI();
     }
