@@ -1,30 +1,58 @@
-- Убрать префикс _ !
-- CodeStyle check
-	BelhardTraining namespace
-- Unicode demo
-	string hello = "Прив\u0301ет";
-	"a b".Dump();
-	"a\u2002b".Dump(); // En space
-	"a\u2003b".Dump(); // Em space
-	"a\u2004b".Dump(); // Three-Per-Em space
-	"a\u2005b".Dump(); // Four-Per-Em space
-	"a\u2009b".Dump(); // Thin Space
-	"a\u200Ab".Dump(); // Hair Space
-	non-breaking space ???
-- search via Windows Search
-	Overview - http://msdn.microsoft.com/en-us/library/aa965362%28VS.85%29.aspx	
-	Querying the Index Programmatically - http://msdn.microsoft.com/en-us/library/bb266517%28v=vs.85%29.aspx
-	OleDb "Provider=Search.CollatorDSO;Extended Properties='Application=Windows';"
-	SELECT Top 1 System.ItemPathDisplay FROM SYSTEMINDEX
-		ItemName
-		ItemUrl 
+- Общие
+	- Убрать префикс _ !
+	- CodeStyle check
+		BelhardTraining namespace
 
-- reflection demo
-	AppDomain.CurrentDomain.GetAssemblies()
-		.SelectMany(asm => asm.GetTypes())
-		.Where(t => t.FullName.StartsWith("System") && t.Name.EndsWith("Exception"))
-		.Select(t => t.FullName)
-		.OrderBy(s => s)
+- 01
+	- string samples (sorting, comparing)
+	- Unicode demo
+		string hello = "Прив\u0301ет";
+		"a b".Dump();
+		"a\u2002b".Dump(); // En space
+		"a\u2003b".Dump(); // Em space
+		"a\u2004b".Dump(); // Three-Per-Em space
+		"a\u2005b".Dump(); // Four-Per-Em space
+		"a\u2009b".Dump(); // Thin Space
+		"a\u200Ab".Dump(); // Hair Space
+		non-breaking space ???
+
+- 04 (IO & exceptions)
+	- LogParser
+	- search via Windows Search
+		DSearch - https://msdn.microsoft.com/en-us/library/windows/desktop/dd940335%28v=vs.85%29.aspx
+		System - https://msdn.microsoft.com/en-us/library/ff521735%28v=vs.85%29.aspx
+
+		Overview - http://msdn.microsoft.com/en-us/library/aa965362%28VS.85%29.aspx
+		Querying the Index Programmatically - http://msdn.microsoft.com/en-us/library/bb266517%28v=vs.85%29.aspx
+		OleDb "Provider=Search.CollatorDSO;Extended Properties='Application=Windows';"
+		SELECT Top 1 System.ItemPathDisplay FROM SYSTEMINDEX
+			ItemName
+			ItemUrl 
+	- Logging
+		NLog - https://github.com/nlog/nlog/wiki/Tutorial
+
+- 06 (XML)
+	- XML creation
+	- Данные из инета
+		- RSS (http://rss.slashdot.org/Slashdot/slashdot ?)
+		- Курс валют
+		- Погода
+
+- 07 (Asm & reflection)
+	- reflection demo
+		AppDomain.CurrentDomain.GetAssemblies()
+			.SelectMany(asm => asm.GetTypes())
+			.Where(t => t.FullName.StartsWith("System") && t.Name.EndsWith("Exception"))
+			.Select(t => t.FullName)
+			.OrderBy(s => s)
+	- manifest/UAC sample with elevation point(s)
+		http://msdn.microsoft.com/en-us/library/windows/desktop/bb756929.aspx
+
+-------------------
+
+- Design pattern samples
+- shortcut management
+- MEF plugin sample
 
 - collections demo
 void Main()
@@ -61,15 +89,4 @@ int CompareEmailByHost(string email1, string email2)
 	
 	return name1.CompareTo(name2);
 }
-		
-- XML creation
-- Logging
-	NLog - https://github.com/nlog/nlog/wiki/Tutorial
-- string samples (sorting, comparing)
-- Design pattern samples
 
-- manifest/UAC sample with elevation point(s)
-	http://msdn.microsoft.com/en-us/library/windows/desktop/bb756929.aspx
-- shortcut management
-- MEF plugin sample
-- RSS from internet (http://rss.slashdot.org/Slashdot/slashdot ?)

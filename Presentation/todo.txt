@@ -9,6 +9,7 @@
 		http://oz.by/books/more1037334.html
 		http://www.ozon.ru/context/detail/id/1871774/
 		http://www.ozon.ru/context/detail/id/4884925/
+		http://ru.stackoverflow.com/questions/416584/%D0%9A%D0%BD%D0%B8%D0%B3%D0%B8-%D0%BF%D0%BE-c-%D0%B8-%D0%B4%D1%80%D1%83%D0%B3%D0%B0%D1%8F-%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D0%B0
 	- String.Compare vs	String.Equals
 		http://blogs.msdn.com/b/bclteam/archive/2007/05/31/string-compare-string-equals-josh-free.aspx
 	- double vs decimal
@@ -41,7 +42,8 @@
 				
 - #2
 	GetHashCode()
-		http://blogs.msdn.com/b/ericlippert/archive/2011/02/28/guidelines-and-rules-for-gethashcode.aspx
+		https://blogs.msdn.microsoft.com/ericlippert/2011/02/28/guidelines-and-rules-for-gethashcode/
+		http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
 	==, !=, Equals
 		http://msdn.microsoft.com/en-us/library/ms173147%28v=vs.80%29.aspx (Guidelines for Overloading Equals() and Operator ==)
 	- partial классы и методы		
@@ -81,7 +83,12 @@
 	- Caching
 		- cache without discard policy is a memory leak
 
-- #4
+- #4 (IO)
+	- Поиск файлов и короткие имена
+	- PathMatchSpec
+		http://pinvoke.net/default.aspx/shlwapi/PathMatchSpec.html
+			
+- #4 (exceptions)
 	- HandleProcessCorruptedStateExceptions attribute
 		http://dailydotnettips.com/2013/09/23/corruptedstateexceptions-in-net-a-way-to-handle/
 		<configuration>
@@ -176,6 +183,8 @@
 			https://msdn.microsoft.com/en-us/library/ee622454%28v=vs.110%29.aspx
 		TAP http://msdn.microsoft.com/en-us/library/hh873175.aspx
 		async/await
+	- DoEvents
+		Is DoEvents Evil? http://blog.codinghorror.com/is-doevents-evil/
 
 - #9 (SQL)
 	- Joins (диаграмма) и исправленные примеры
@@ -270,6 +279,8 @@
 
 		Configuring/Mapping Properties and Types with the Fluent API
 		http://msdn.microsoft.com/en-us/data/jj591617
+
+		DbFunctions class
 
 		Mapping strategies:
 			Table per Hierarchy (TPH)
