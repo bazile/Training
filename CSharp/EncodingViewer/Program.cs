@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.EncodingViewer
+namespace EncodingViewer
 {
     static class Program
     {
@@ -10,7 +10,7 @@ namespace BelhardTraining.EncodingViewer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm2());
+            Application.Run(new MainForm());
         }
     }
 }

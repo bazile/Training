@@ -37,7 +37,6 @@
 		- RSS (http://rss.slashdot.org/Slashdot/slashdot ?)
 		- Курс валют
 		- Погода
-			string url =$"http://api.openweathermap.org/data/2.5/forecast/daily?q={city}&type=accurate&mode=xml&units=metric&cnt=1&appid={AppID}";
 
 - 07 (Asm & reflection)
 	- reflection demo
