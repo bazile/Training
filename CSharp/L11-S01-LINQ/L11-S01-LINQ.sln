@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToObjectsDemo", "LinqToObjectsDemo\LinqToObjectsDemo.csproj", "{9FD93423-E1EA-409E-B5E3-7B758CF652CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-LinqToObjectsDemo", "LinqToObjectsDemo\LinqToObjectsDemo.csproj", "{9FD93423-E1EA-409E-B5E3-7B758CF652CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreLinqDemo", "MoreLinqDemo\MoreLinqDemo.csproj", "{160DE983-ADD2-4BF1-AB3F-B22239F88987}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-MoreLinqDemo", "MoreLinqDemo\MoreLinqDemo.csproj", "{160DE983-ADD2-4BF1-AB3F-B22239F88987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-LinqExtrasDemo", "LinqExtrasDemo\LinqExtrasDemo.csproj", "{9D223231-AF89-4E46-A3FD-1CA06024AC19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{160DE983-ADD2-4BF1-AB3F-B22239F88987}.Debug|x86.Build.0 = Debug|x86
 		{160DE983-ADD2-4BF1-AB3F-B22239F88987}.Release|x86.ActiveCfg = Release|x86
 		{160DE983-ADD2-4BF1-AB3F-B22239F88987}.Release|x86.Build.0 = Release|x86
+		{9D223231-AF89-4E46-A3FD-1CA06024AC19}.Debug|x86.ActiveCfg = Debug|x86
+		{9D223231-AF89-4E46-A3FD-1CA06024AC19}.Debug|x86.Build.0 = Debug|x86
+		{9D223231-AF89-4E46-A3FD-1CA06024AC19}.Release|x86.ActiveCfg = Release|x86
+		{9D223231-AF89-4E46-A3FD-1CA06024AC19}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

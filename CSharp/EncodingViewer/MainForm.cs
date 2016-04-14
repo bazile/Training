@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Diagnostics.Contracts;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace EncodingViewer
+namespace BelhardTraining.EncodingViewer
 {
     public partial class MainForm : Form
     {

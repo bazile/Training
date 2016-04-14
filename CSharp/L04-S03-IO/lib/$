@@ -1,0 +1,64 @@
+TlbImp : warning TI0000 : At least one of the arguments for 'ISearchCatalogManager.GetParameter' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCLIPDATA.pClipData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagBSTRBLOB.pData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagBLOB.pBlobData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagRemSNB.rgString'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireSAFEARRAY.rgsabound'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireSAFEARR_BSTR.aBstr'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_FLAGGED_WORD_BLOB.asData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireSAFEARR_UNKNOWN.apUnknown'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireSAFEARR_DISPATCH.apDispatch'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireSAFEARR_VARIANT.aVariant'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireBRECORD.pRecord'.
+TlbImp : warning TI0000 : At least one of the arguments for 'ITypeInfo.RemoteGetTypeAttr' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'ITypeInfo.RemoteGetFuncDesc' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'ITypeInfo.RemoteGetVarDesc' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagARRAYDESC.rgbounds'.
+TlbImp : warning TI0000 : At least one of the arguments for 'ITypeComp.RemoteBind' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagFUNCDESC.lprgscode'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagFUNCDESC.lprgelemdescParam'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagPARAMDESC.pparamdescex'.
+TlbImp : warning TI0000 : At least one of the arguments for 'ITypeLib.RemoteGetLibAttr' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireSAFEARR_BRECORD.aRecord'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_wireSAFEARR_HAVEIID.apUnknown'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_BYTE_SIZEDARR.pData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_SHORT_SIZEDARR.pData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_LONG_SIZEDARR.pData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_HYPER_SIZEDARR.pData'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAC.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAUB.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAI.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAUI.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAL.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAUL.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAH.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAUH.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAFLT.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCADBL.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCABOOL.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCASCODE.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCACY.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCADATE.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAFILETIME.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCACLSID.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCACLIPDATA.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCABSTR.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCABSTRBLOB.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCALPSTR.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCALPWSTR.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member 'tagCAPROPVARIANT.pElems'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_SEARCH_ITEM_CHANGE.pUserData'.
+TlbImp : warning TI0000 : At least one of the arguments for 'ISearchCatalogManager2.GetParameter' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'CSearchManager.GetParameter' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'ISearchManager.GetParameter' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'FilterRegistration.LoadIFilter' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'FilterRegistration.LoadIFilterFromStorage' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'FilterRegistration.LoadIFilterFromStream' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'ILoadFilter.LoadIFilter' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'ILoadFilter.LoadIFilterFromStorage' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : At least one of the arguments for 'ILoadFilter.LoadIFilterFromStream' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_FILTERED_DATA_SOURCES.pwcsExtension'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_FILTERED_DATA_SOURCES.pwcsMime'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_FILTERED_DATA_SOURCES.pClsid'.
+TlbImp : warning TI0000 : The type library importer could not convert the signature for the member '_FILTERED_DATA_SOURCES.pwcsOverride'.
+TlbImp : warning TI0000 : At least one of the arguments for 'IFilter.GetValue' cannot be marshaled by the runtime marshaler.  Such arguments will therefore be passed as a pointer and may require unsafe code to manipulate.

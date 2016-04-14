@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mutex", "Mutex\Mutex.csproj", "{D3A10F6B-CE11-44CD-A58C-C0A13621AE4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms", "WinForms\WinForms.csproj", "{7E64082E-3F98-4E5D-9ABA-7675E7ECEBA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf", "Wpf\Wpf.csproj", "{7759BED2-DCDB-4554-B69F-6FD58D67944E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +17,14 @@ Global
 		{D3A10F6B-CE11-44CD-A58C-C0A13621AE4D}.Debug|x86.Build.0 = Debug|x86
 		{D3A10F6B-CE11-44CD-A58C-C0A13621AE4D}.Release|x86.ActiveCfg = Release|x86
 		{D3A10F6B-CE11-44CD-A58C-C0A13621AE4D}.Release|x86.Build.0 = Release|x86
+		{7E64082E-3F98-4E5D-9ABA-7675E7ECEBA2}.Debug|x86.ActiveCfg = Debug|x86
+		{7E64082E-3F98-4E5D-9ABA-7675E7ECEBA2}.Debug|x86.Build.0 = Debug|x86
+		{7E64082E-3F98-4E5D-9ABA-7675E7ECEBA2}.Release|x86.ActiveCfg = Release|x86
+		{7E64082E-3F98-4E5D-9ABA-7675E7ECEBA2}.Release|x86.Build.0 = Release|x86
+		{7759BED2-DCDB-4554-B69F-6FD58D67944E}.Debug|x86.ActiveCfg = Debug|x86
+		{7759BED2-DCDB-4554-B69F-6FD58D67944E}.Debug|x86.Build.0 = Debug|x86
+		{7759BED2-DCDB-4554-B69F-6FD58D67944E}.Release|x86.ActiveCfg = Release|x86
+		{7759BED2-DCDB-4554-B69F-6FD58D67944E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

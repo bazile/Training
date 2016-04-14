@@ -1,4 +1,4 @@
-﻿namespace EncodingViewer
+﻿namespace BelhardTraining.EncodingViewer
 {
     partial class MainForm
     {

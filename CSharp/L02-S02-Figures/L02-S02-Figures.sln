@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-FiguresDemo-Interface", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-IComparable", "06-IComparable\06-IComparable.csproj", "{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-FiguresGui", "07-FiguresGui\07-FiguresGui.csproj", "{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,16 @@ Global
 		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|Mixed Platforms.Build.0 = Release|x86
 		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|x86.ActiveCfg = Release|x86
 		{49ED1FB5-2870-45B8-8DA5-67BC7C4A9F1B}.Release|x86.Build.0 = Release|x86
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{954558EF-E4ED-413C-AE6D-53A2DE6B1B30}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

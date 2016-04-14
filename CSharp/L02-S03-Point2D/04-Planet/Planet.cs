@@ -1,4 +1,6 @@
-﻿namespace BelhardTraining.PlanetDemo
+﻿using System.Collections.Generic;
+
+namespace BelhardTraining.PlanetDemo
 {
     class Planet
     {
@@ -7,17 +9,29 @@
         private const long AstronomicalUnit = 149597870700L;
 
         public readonly string Name;
-        public readonly long DistanceFromSun;
+        public ulong DistanceFromSun;
 
-        public Planet(string name, long distanceFromSun)
+        static bool hasAtmosphere;
+         public bool HasAtmosphere
         {
-            Name = name;
-            DistanceFromSun = distanceFromSun;
+             get { return hasAtmosphere; }
+             set { hasAtmosphere = value; }
+
         }
 
         public double DistanceFromSunAU
         {
             get { return (double)DistanceFromSun / AstronomicalUnit; }
+            set { DistanceFromSun = (long)(value*AstronomicalUnit); }
         }
+
+
+        public Planet(string name, ulong distanceFromSun)
+        {
+            Name = name;
+            DistanceFromSun = distanceFromSun;
+        }
+
+       
     }
 }
