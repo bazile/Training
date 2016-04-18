@@ -30,7 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug %28My%29|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'My|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug %28My%29\</OutputPath>
     <DefineConstants>TRACE;DEBUG;USE_MY_IMPLEMENTATION</DefineConstants>
