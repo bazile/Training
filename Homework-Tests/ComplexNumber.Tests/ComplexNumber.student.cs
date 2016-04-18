@@ -6,11 +6,13 @@ using System.Text;
 
 namespace ComplexNumber.Tests
 {
-	/*
-	 * Разместите реализацию класса ComplexNumber здесь
-	 * Класс должен быть public
-	 */
-	//public class ComplexNumber
+    /*
+     * Разместите реализацию класса ComplexNumber здесь
+     * Класс должен быть public
+     */
+    public class ComplexNumber
+    {
+    }
 }
 
 #endif

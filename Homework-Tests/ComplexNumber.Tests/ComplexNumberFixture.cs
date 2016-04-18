@@ -220,7 +220,15 @@ namespace ComplexNumber.Tests
         [TestCaseSource(typeof(ComplexNumberFixtureData), "ConstructorDataRealOnly")]
         public void CanConvertDoubleToComplexNumber(double real)
         {
-            ComplexNumber result = real;
+            var op_Implicit = typeof(ComplexNumber).GetMethods().SingleOrDefault(
+                m => m.Name == ("op_Implicit")
+                && m.GetParameters().Select(p => p.ParameterType).SequenceEqual(new[] {typeof(double)})
+            );
+            if (op_Implicit == null)
+            {
+                Assert.Fail("Отсутствует оператор неявного (implicit) преобразования double в ComplexNumber.");
+            }
+            ComplexNumber result = (ComplexNumber)op_Implicit.Invoke(null, new object[] { real });
             Assert.AreEqual(result.Real, real);
             Assert.AreEqual(result.Imaginary, 0.0);
         }
