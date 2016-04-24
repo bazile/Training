@@ -14,6 +14,7 @@ namespace BelhardTraining.FiguresDemo
                     new Ellipse(2.5, 1.9),
                     new Ellipse(3.1, 3.1),
                     new Circle(3.1),
+                    new Triangle(2),
                 };
             foreach (Figure figure in figures)
             {
@@ -54,7 +55,7 @@ namespace BelhardTraining.FiguresDemo
             if (whoAmI != typeName) Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine(
-                "WhoAmI = {0}. Имя класса {1}. Площадь={2:F2}",
+                "WhoAmI = {0,-9} ; Имя класса {1,-9} ; Площадь={2:F2}",
                 whoAmI,
                 typeName,
                 area

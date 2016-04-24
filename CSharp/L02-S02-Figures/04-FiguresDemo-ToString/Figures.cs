@@ -158,11 +158,11 @@ namespace BelhardTraining.FiguresDemo
     /// <summary>
     /// Правильный треугольник. Все стороны равны.
     /// </summary>
-    public class EquilateralTriangle : Figure
+    public class Triangle : Figure
     {
         public double SideLength { get; private set; }
 
-        public EquilateralTriangle(double sideLength)
+        public Triangle(double sideLength)
         {
             SideLength = sideLength;
         }
@@ -184,7 +184,7 @@ namespace BelhardTraining.FiguresDemo
 
         public override bool Equals(object obj)
         {
-            EquilateralTriangle other = obj as EquilateralTriangle;
+            Triangle other = obj as Triangle;
             if (other == null) return false;
 
             return (Math.Abs(SideLength - other.SideLength) < 0.000001);

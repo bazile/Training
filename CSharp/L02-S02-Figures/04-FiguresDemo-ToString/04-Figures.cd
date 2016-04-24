@@ -10,28 +10,28 @@
   <Class Name="BelhardTraining.FiguresDemo.Ellipse" Collapsed="true">
     <Position X="0.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAQAAAAAgAgAAAAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEgQAAAAAgAgAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BelhardTraining.FiguresDemo.EquilateralTriangle" Collapsed="true">
-    <Position X="5.5" Y="2.5" Width="2.5" />
+  <Class Name="BelhardTraining.FiguresDemo.Triangle" Collapsed="true">
+    <Position X="5.5" Y="2.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAgAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BelhardTraining.FiguresDemo.Figure" Collapsed="true">
     <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAgAAAAAAAAAAAAAAYAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BelhardTraining.FiguresDemo.Rectangle" Collapsed="true">
     <Position X="3.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAEAAAAAEAgAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAEgAAAAEAgAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>

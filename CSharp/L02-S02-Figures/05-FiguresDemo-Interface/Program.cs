@@ -12,7 +12,7 @@ namespace BelhardTraining.FiguresDemo
                     new Square(3),
                     new Ellipse(2.5, 1.9),
                     new Circle(3.1),
-                    new EquilateralTriangle(3.7)
+                    new Triangle(3.7)
                 };
             foreach (IFigure figure in figures)
             {
@@ -29,7 +29,7 @@ namespace BelhardTraining.FiguresDemo
             if (whoAmI != typeName) Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine(
-                "WhoAmI = {0}. Имя класса {1}. Площадь={2:F2}",
+                "WhoAmI = {0,-9} ; Имя класса {1,-9} ; Площадь={2:F2}",
                 whoAmI,
                 typeName,
                 area

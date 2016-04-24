@@ -35,7 +35,7 @@
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BelhardTraining.FiguresDemo.EquilateralTriangle" Collapsed="true">
+  <Class Name="BelhardTraining.FiguresDemo.Triangle" Collapsed="true">
     <Position X="6" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAAAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>

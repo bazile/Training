@@ -154,11 +154,11 @@ namespace BelhardTraining.FiguresDemo
     /// <summary>
     /// Правильный треугольник. Все стороны равны.
     /// </summary>
-    public class EquilateralTriangle : Figure
+    public class Triangle : Figure
     {
         public double SideLength { get; private set; }
 
-        public EquilateralTriangle(double sideLength)
+        public Triangle(double sideLength)
         {
             SideLength = sideLength;
         }

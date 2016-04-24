@@ -12,7 +12,7 @@ namespace BelhardTraining.FiguresDemo
                     new Square(3),
                     new Ellipse(2.5, 1.9),
                     new Circle(3.1),
-                    new EquilateralTriangle(3.7)
+                    new Triangle(3.7)
                 };
             PrintFigures(figures, "До сортировки");
             Array.Sort(figures);
