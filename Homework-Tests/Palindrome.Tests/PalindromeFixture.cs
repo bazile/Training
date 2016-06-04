@@ -19,11 +19,12 @@ namespace Palindrome.Tests
             {
                 string[] palindromes = {
                     "й",
+                    "abba",
                     "wЙW",
                     "А роза упала на лапу Азора",
                     "Аргентина манит негра",
                     "На в лоб, болван",
-                    "Saippuakivikauppias",
+                    "Saippuakivikauppias", "saippuakivikauppias",
                     "Sum summus mus",
                     "Madam, I’m Adam"
                 };
