@@ -1,198 +1,158 @@
-﻿#define RANDOM_COEFFS // Генерировать случайные коэффециенты для всех уравнений или использовать одинаковые
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace BelhardTraining.QuadraticEquationBenchmark
 {
-	class Program
-	{
-		static void Main()
-		{
-			Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
+    class Program
+    {
+        static void Main()
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
 
-			const int equationCount = 45000000;
+            const int equationCount = 45*1000*1000;
 
-			Console.Write("Генерация коэффециентов для {0:N0} уравнений ... ", equationCount);
-			Equation[] equations = CreateRandomCoeffs(equationCount);
-			Console.WriteLine("Готово.");
+            Console.WriteLine("Решаем квадратные уравнения: {0:N0}", equationCount);
+            Console.WriteLine();
+            BenchmarkWithoutThreads(equationCount);
+            Console.WriteLine();
 
-			Console.WriteLine();
-			BenchmarkWithoutThreads(equations);
-			Console.WriteLine();
+            BenchmarkWithThreads(equationCount, 2);
+            BenchmarkWithThreads(equationCount, 3);
+            BenchmarkWithThreads(equationCount, 4);
+            Console.WriteLine();
 
-			BenchmarkWithThreads(equations, 2);
-			BenchmarkWithThreads(equations, 3);
-			BenchmarkWithThreads(equations, 4);
+            #region ThreadPriority.Highest
 
-			#region ThreadPriority.Highest
+            //BenchmarkWithThreads(equationCount, 2, ThreadPriority.Highest);
+            //BenchmarkWithThreads(equationCount, 3, ThreadPriority.Highest);
+            //BenchmarkWithThreads(equationCount, 4, ThreadPriority.Highest);
+            //Console.WriteLine();
 
-			//Console.WriteLine();
-			//BenchmarkWithThreads(equations, 2, ThreadPriority.Highest);
-			//BenchmarkWithThreads(equations, 3, ThreadPriority.Highest);
-			//BenchmarkWithThreads(equations, 4, ThreadPriority.Highest);
+            #endregion
 
-			#endregion
+            #region Parallel.For
 
-			#region Parallel.For
+            //Console.Write("Время на решение с помощью Parallel.ForEach: ");
+            //Stopwatch watch = Stopwatch.StartNew();
+            //var equations = (new RandomCoeffEnumerator()).Take(equationCount);
+            //Parallel.ForEach(
+            //    equations,
+            //    new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount },
+            //    eq => { Equation tempEq = eq; Solve(ref tempEq); }
+            //);
+            //watch.Stop();
+            //Console.WriteLine("{0:F4} сек.", watch.Elapsed.TotalSeconds);
 
-			//Stopwatch watch = Stopwatch.StartNew();
-			//Parallel.For(
-			//    0, 
-			//    equations.Length,
-			//    //new ParallelOptions{ MaxDegreeOfParallelism = Environment.ProcessorCount},
-			//    i => Solve(ref equations[i])
-			//);
-			//watch.Stop();
-			//Console.WriteLine("Время на решение с помощью Parallel.For: {0:F4} сек.", watch.Elapsed.TotalSeconds);
+            #endregion
+        }
 
-			#endregion
-		}
+        /// <summary>
+        /// Замеряет и выводит на экран время потраченное на решение уравнений без использования потоков
+        /// </summary>
+        /// <param name="equationCount">Количество уравнений которые необходимо решить</param>
+        //private static void BenchmarkWithoutThreads(Equation[] equations)
+        private static void BenchmarkWithoutThreads(int equationCount)
+        {
+            Console.Write("Время на решение без потоков: ");
+            var coeffEnumerator = new RandomCoeffEnumerator().GetEnumerator();
+            Stopwatch watch = Stopwatch.StartNew();
+            for (int i = 0; i < equationCount; i++)
+            {
+                coeffEnumerator.MoveNext();
+                Equation eq = coeffEnumerator.Current;
 
-		/// <summary>
-		/// Замеряет и выводит на экран время потраченное на решение уравнений без использования потоков
-		/// </summary>
-		/// <param name="equations">Уравнения которые необходимо решить</param>
-		private static void BenchmarkWithoutThreads(Equation[] equations)
-		{
-			Stopwatch watch = Stopwatch.StartNew();
-			for (int i = 0; i < equations.Length; i++)
-			{
-				Solve(ref equations[i]);
-			}
-			watch.Stop();
-			Console.WriteLine("Время на решение без потоков: {0:F4} сек.", watch.Elapsed.TotalSeconds);
-		}
-		
-		/// <summary>
-		/// Замеряет и выводит на экран время потраченное на решение уравнений с использованием потоков
-		/// </summary>
-		/// <param name="equations">Уравнения которые необходимо решить</param>
-		/// <param name="threadCount">Кол-во потоков которые следует использовать для параллельного решения уравнений</param>
-		private static void BenchmarkWithThreads(Equation[] equations, int threadCount, ThreadPriority priority = ThreadPriority.Normal)
-		{
-			int equationCount = equations.Length;
-			int itemsPerThread = equations.Length / threadCount; // Кол-во уравнений для каждого потока
+                Solve(ref eq);
+            }
+            watch.Stop();
+            Console.WriteLine("{0:F4} сек.", watch.Elapsed.TotalSeconds);
+        }
 
-			Stopwatch watch = Stopwatch.StartNew();
-			Thread[] solveThreads = new Thread[threadCount];
-			for (int i = 0, offset = 0; i < solveThreads.Length; i++, offset += itemsPerThread)
-			{
-				solveThreads[i] = new Thread(SolveThread);
-				solveThreads[i].Name = String.Format("Решатель уравнений #{0}", i + 1);
-				solveThreads[i].Priority = priority;
+        /// <summary>
+        /// Замеряет и выводит на экран время потраченное на решение уравнений с использованием потоков
+        /// </summary>
+        /// <param name="totalEquationCount">Общее количество уравнений которые необходимо решить. Делится между потоками</param>
+        /// <param name="threadCount">Кол-во потоков которые следует использовать для параллельного решения уравнений</param>
+        /// <param name="priority">Приоритет потока</param>
+        private static void BenchmarkWithThreads(int totalEquationCount, int threadCount, ThreadPriority priority = ThreadPriority.Normal)
+        {
+            if (totalEquationCount % threadCount != 0) throw new Exception();
 
-				ArraySegment<Equation> segment;
-				if (i == solveThreads.Length - 1 && equationCount % threadCount != 0)
-				{
-					segment = new ArraySegment<Equation>(equations, offset, itemsPerThread + equationCount % threadCount);
-				}
-				else
-				{
-					segment = new ArraySegment<Equation>(equations, offset, itemsPerThread);
-				}
-				solveThreads[i].Start(segment);
-			}
-			foreach (Thread solveThread in solveThreads)
-			{
-				solveThread.Join();
-			}
-			watch.Stop();
-			Console.WriteLine("Время на решение  с потоками: {0:F4} сек. Кол-во потоков: {1}. Приоритет: {2}", watch.Elapsed.TotalSeconds, threadCount, PriorityToString(priority));
-		}
+            Console.Write("Время на решение  с потоками: ");
+            int itemsPerThread = totalEquationCount / threadCount; // Кол-во уравнений для каждого потока
 
-		static string PriorityToString(ThreadPriority priority)
-		{
-			switch (priority)
-			{
-				case ThreadPriority.Lowest:
-					return "Самый низкий";
-				case ThreadPriority.BelowNormal:
-					return "Ниже нормального";
-				case ThreadPriority.Normal:
-					return "Нормальный";
-				case ThreadPriority.AboveNormal:
-					return "Выше нормального";
-				case ThreadPriority.Highest:
-					return "Самый высокий";
-				default:
-					return priority.ToString();
-			}
-		}
+            Stopwatch watch = Stopwatch.StartNew();
+            Thread[] solveThreads = new Thread[threadCount];
+            for (int i = 0, offset = 0; i < solveThreads.Length; i++, offset += itemsPerThread)
+            {
+                solveThreads[i] = new Thread(SolveThread)
+                {
+                    Name = String.Format("Решатель уравнений #{0}", i + 1),
+                    Priority = priority
+                };
+                solveThreads[i].Start(itemsPerThread);
+            }
+            foreach (Thread solveThread in solveThreads)
+            {
+                solveThread.Join();
+            }
+            watch.Stop();
+            Console.WriteLine("{0:F4} сек. Кол-во потоков: {1}. Приоритет: {2}", watch.Elapsed.TotalSeconds, threadCount, PriorityToString(priority));
+        }
 
-		/// <summary>
-		/// Решение квадратного уравнения с двумя коэффециентами
-		/// </summary>
-		/// <param name="equation"></param>
-		static void Solve(ref Equation equation)
-		{
-			if (equation.B > 0 || equation.B < 0)
-			{
-				double d = equation.B*equation.B; // Дискриминант
-				double sqrt_d = Math.Sqrt(d);
-				double a2 = 2*equation.A;
-				equation.Solution1 = (sqrt_d - equation.B)/a2;
-				equation.Solution2 = (-equation.B - sqrt_d)/a2;
-			}
-			else
-			{
-				equation.Solution1 = equation.Solution2 = -equation.B/(2*equation.A);
-			}
-		}
+        static string PriorityToString(ThreadPriority priority)
+        {
+            switch (priority)
+            {
+                case ThreadPriority.Lowest:
+                    return "Самый низкий";
+                case ThreadPriority.BelowNormal:
+                    return "Ниже нормального";
+                case ThreadPriority.Normal:
+                    return "Нормальный";
+                case ThreadPriority.AboveNormal:
+                    return "Выше нормального";
+                case ThreadPriority.Highest:
+                    return "Самый высокий";
+                default:
+                    return priority.ToString();
+            }
+        }
 
-		static void SolveThread(object data)
-		{
-			ArraySegment<Equation> segment = (ArraySegment<Equation>)data;
-			Equation[] equations = segment.Array;
-			int lastOffset = segment.Offset + segment.Count;
-			for (int i = segment.Offset; i < lastOffset; i++)
-			{
-				Solve(ref equations[i]);
-			}
-		}
+        /// <summary>
+        /// Решение квадратного уравнения с двумя коэффециентами
+        /// </summary>
+        /// <param name="equation"></param>
+        static void Solve(ref Equation equation)
+        {
+            if (equation.B > 0 || equation.B < 0)
+            {
+                double d = equation.B*equation.B; // Дискриминант
+                double sqrt_d = Math.Sqrt(d);
+                double a2 = 2*equation.A;
+                equation.Solution1 = (sqrt_d - equation.B)/a2;
+                equation.Solution2 = (-equation.B - sqrt_d)/a2;
+            }
+            else
+            {
+                equation.Solution1 = equation.Solution2 = -equation.B/(2*equation.A);
+            }
+        }
 
-		static Equation[] CreateRandomCoeffs(int count)
-		{
-			Equation[] coeffs = new Equation[count];
+        static void SolveThread(object data)
+        {
+            int equationCount = (int)data;
+            var coeffEnumerator = new RandomCoeffEnumerator().GetEnumerator();
+            for (int i = 0; i < equationCount; i++)
+            {
+                coeffEnumerator.MoveNext();
+                Equation eq = coeffEnumerator.Current;
 
-#if RANDOM_COEFFS
-
-			Random rnd = new Random(Environment.TickCount);
-
-			byte[] randomBytes = new byte[1000];
-			Debug.Assert(randomBytes.Length%4 == 0);
-
-			int rndPos = 0;
-			for (int i = 0; i < coeffs.Length; i++)
-			{
-				if (rndPos >= randomBytes.Length)
-				{
-					rnd.NextBytes(randomBytes);
-					rndPos = 0;
-				}
-				coeffs[i].A = randomBytes[rndPos]*randomBytes[rndPos + 1];
-				coeffs[i].B = randomBytes[rndPos + 2]*randomBytes[rndPos + 3];
-			}
-
-#else
-
-			for (int i = 0; i < coeffs.Length; i++)
-			{
-				coeffs[i] = new Equation { A = 1, B = 1 };
-			}
-
-			#endif
-
-			return coeffs;
-		}
-	}
-
-	struct Equation
-	{
-		public double A, B;
-		public double Solution1, Solution2;
-	}
+                Solve(ref eq);
+            }
+        }
+    }
 }
