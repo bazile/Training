@@ -48,6 +48,10 @@
 	- manifest/UAC sample with elevation point(s)
 		http://msdn.microsoft.com/en-us/library/windows/desktop/bb756929.aspx
 
+- 10 (EF)
+	Batch operations
+		db.Configuration.AutoDetectChanges = false + AddRange
+
 -------------------
 
 - Design pattern samples
