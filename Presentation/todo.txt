@@ -387,6 +387,9 @@
 			https://visualstudiogallery.msdn.microsoft.com/3de2a3c6-def5-42c4-924d-cc13a29ff5b7
 		- XAML Spy
 			http://xamlspy.com/learn/xaml-spy-express
+        - Snoop (It allows you to spy/browse the visual tree of a running WPF application (without the need for a debugger) … and change properties ... amongst other things.)
+        	https://snoopwpf.codeplex.com/
+        	https://habrahabr.ru/post/75587/
 		- Inspect (UI automation)
 			https://msdn.microsoft.com/en-us/library/dd318521%28v=vs.85%29.aspx	
 			"C:\Program Files (x86)\Windows Kits\8.0\bin\x64\"
