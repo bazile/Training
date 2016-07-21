@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsDemo", "ExceptionsDemo\ExceptionsDemo.csproj", "{639F5FAC-AB97-4EB0-9A22-7061D476BA7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-UnhandledInConsole", "01-UnhandledInConsole\01-UnhandledInConsole.csproj", "{872E6844-32F2-41B5-8C97-BB30B2B369FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Необработанное исключение", "Необработанное исключение", "{E4CA1650-B3CD-4394-90F0-46006691C3EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-UnhandledInGui", "02-UnhandledInGui\02-UnhandledInGui.csproj", "{7F476247-4072-450B-815D-2A6D5E470889}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,8 +19,20 @@ Global
 		{639F5FAC-AB97-4EB0-9A22-7061D476BA7F}.Debug|x86.Build.0 = Debug|x86
 		{639F5FAC-AB97-4EB0-9A22-7061D476BA7F}.Release|x86.ActiveCfg = Release|x86
 		{639F5FAC-AB97-4EB0-9A22-7061D476BA7F}.Release|x86.Build.0 = Release|x86
+		{872E6844-32F2-41B5-8C97-BB30B2B369FB}.Debug|x86.ActiveCfg = Debug|x86
+		{872E6844-32F2-41B5-8C97-BB30B2B369FB}.Debug|x86.Build.0 = Debug|x86
+		{872E6844-32F2-41B5-8C97-BB30B2B369FB}.Release|x86.ActiveCfg = Release|x86
+		{872E6844-32F2-41B5-8C97-BB30B2B369FB}.Release|x86.Build.0 = Release|x86
+		{7F476247-4072-450B-815D-2A6D5E470889}.Debug|x86.ActiveCfg = Debug|x86
+		{7F476247-4072-450B-815D-2A6D5E470889}.Debug|x86.Build.0 = Debug|x86
+		{7F476247-4072-450B-815D-2A6D5E470889}.Release|x86.ActiveCfg = Release|x86
+		{7F476247-4072-450B-815D-2A6D5E470889}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{872E6844-32F2-41B5-8C97-BB30B2B369FB} = {E4CA1650-B3CD-4394-90F0-46006691C3EF}
+		{7F476247-4072-450B-815D-2A6D5E470889} = {E4CA1650-B3CD-4394-90F0-46006691C3EF}
 	EndGlobalSection
 EndGlobal
