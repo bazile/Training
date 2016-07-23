@@ -30,9 +30,10 @@ CREATE TABLE Country
     Id            int             IDENTITY(1,1) PRIMARY KEY,
     PartOfWorldId int             NOT NULL,
     Name          nvarchar(30)    NOT NULL UNIQUE,
-	[Population]  int             NOT NULL,
-	IndepenceDate date            NULL,
-	Flag          varbinary(2000) NULL,
+    [Population]  int             NOT NULL,
+    UNMemberSince date            NULL,
+    IndepenceDate date            NULL,
+    Flag          varbinary(2000) NULL,
 )
 GO
 
@@ -48,10 +49,10 @@ CREATE TABLE City
     Id            int          IDENTITY(1,1) PRIMARY KEY,
     CountryId     int          NOT NULL,
     Name          varchar(30)  NOT NULL,
-	IsCapital     bit          NOT NULL DEFAULT(0),
-	[Population]  int          NULL,
+    IsCapital     bit          NOT NULL DEFAULT(0),
+    [Population]  int          NULL,
     Coordinates   geography    NULL,
-	OfficialSite  varchar(100) NULL,
+    OfficialSite  varchar(100) NULL,
 )
 GO
 
@@ -63,7 +64,7 @@ ALTER TABLE dbo.City
 GO
 
 --CREATE PROC InsertCity
---	@CountryName
+--    @CountryName
 --AS
 --GO
 
