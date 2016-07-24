@@ -29,6 +29,7 @@ CREATE TABLE Country
 (
     Id            int             IDENTITY(1,1) PRIMARY KEY,
     PartOfWorldId int             NOT NULL,
+    CapitalId     int             NULL,
     Name          nvarchar(50)    NOT NULL UNIQUE,
     [Population]  int             NULL,
     UNMemberSince date            NULL,
@@ -62,9 +63,16 @@ ALTER TABLE dbo.City
     FOREIGN KEY (CountryId) REFERENCES Country(Id)
     ON UPDATE NO ACTION
     ON DELETE NO ACTION
+ALTER TABLE dbo.Country
+    ADD CONSTRAINT FK_Country_Capital
+    FOREIGN KEY (CapitalId) REFERENCES City(Id)
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
 GO
 
--- ============================================================================================================================
+-- ================================================================================
+--  INSERT DATA
+-- ================================================================================
 INSERT INTO PartOfWorld (Name)
     VALUES ('Австралия и Океания')
          , ('Европа')
@@ -475,8 +483,31 @@ INSERT INTO City (CountryId, Name, IsCapital, [Population])
          , (196, 'Кингстон'                , 1, 937700)
          , (197, 'Токио (Канто)'           , 1, 9272565)
 GO
--- ============================================================================================================================
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+UPDATE Country SET CapitalId = (SELECT Id FROM City WHERE CountryId = Country.Id AND IsCapital = 1)
+GO
+
+-- ================================================================================
+--  VIEWS
+-- ================================================================================
+CREATE VIEW v_SelectCapitals
+AS
+SELECT
+    PartOfWorld.Name AS PartOfWorldName,
+    Country.Name AS CountryName,
+    Country.[Population] AS CountryPopulation,
+    City.Name AS CapitalName,
+    City.[Population] AS CapitalPopulation
+FROM
+    Country
+    JOIN PartOfWorld ON PartOfWorld.Id = Country.PartOfWorldId
+    LEFT JOIN City ON City.Id = Country.CapitalId
+GO
+
+
+
+-- ================================================================================
 SELECT
     PartOfWorld.Name AS PartOfWorldName,
     Country.Name AS CountryName,
