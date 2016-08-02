@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace BelhardTraining.Windows.Forms.Controls
 {
-	class IPAddressTextBox : Control
+	public class IPAddressTextBox : Control
 	{
 		static IPAddressTextBox()
 		{
