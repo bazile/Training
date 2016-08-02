@@ -43,6 +43,9 @@
     <Compile Include="IPAddressTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PlaceholderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -23,5 +23,10 @@ namespace BelhardTraining.Windows.Forms
         {
             FormManager.Show<PlaceholderTextBoxForm>();
         }
+
+        private void btnNumericTextBox_Click(object sender, System.EventArgs e)
+        {
+            FormManager.Show<NumericTextBoxForm>();
+        }
     }
 }

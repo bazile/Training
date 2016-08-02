@@ -64,6 +64,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NumericTextBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NumericTextBoxForm.Designer.cs">
+      <DependentUpon>NumericTextBoxForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlaceholderTextBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumericTextBoxForm.resx">
+      <DependentUpon>NumericTextBoxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlaceholderTextBoxForm.resx">
       <DependentUpon>PlaceholderTextBoxForm.cs</DependentUpon>

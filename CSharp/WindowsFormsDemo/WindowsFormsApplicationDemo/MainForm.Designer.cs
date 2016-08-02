@@ -32,8 +32,9 @@
             this.tpageCommon = new System.Windows.Forms.TabPage();
             this.btnLinkLabel = new System.Windows.Forms.Button();
             this.tpageCustom = new System.Windows.Forms.TabPage();
-            this.btnElevateButton = new System.Windows.Forms.Button();
             this.btlPlaceholderTextBox = new System.Windows.Forms.Button();
+            this.btnElevateButton = new System.Windows.Forms.Button();
+            this.btnNumericTextBox = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpageCommon.SuspendLayout();
             this.tpageCustom.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // tpageCustom
             // 
+            this.tpageCustom.Controls.Add(this.btnNumericTextBox);
             this.tpageCustom.Controls.Add(this.btlPlaceholderTextBox);
             this.tpageCustom.Controls.Add(this.btnElevateButton);
             this.tpageCustom.Location = new System.Drawing.Point(4, 22);
@@ -83,15 +85,6 @@
             this.tpageCustom.Text = "Нестандартные";
             this.tpageCustom.UseVisualStyleBackColor = true;
             // 
-            // btnElevateButton
-            // 
-            this.btnElevateButton.Location = new System.Drawing.Point(108, 150);
-            this.btnElevateButton.Name = "btnElevateButton";
-            this.btnElevateButton.Size = new System.Drawing.Size(190, 23);
-            this.btnElevateButton.TabIndex = 2;
-            this.btnElevateButton.Text = "Elevate button demo";
-            this.btnElevateButton.UseVisualStyleBackColor = true;
-            // 
             // btlPlaceholderTextBox
             // 
             this.btlPlaceholderTextBox.Location = new System.Drawing.Point(108, 96);
@@ -101,6 +94,25 @@
             this.btlPlaceholderTextBox.Text = "PlaceholderTextBox";
             this.btlPlaceholderTextBox.UseVisualStyleBackColor = true;
             this.btlPlaceholderTextBox.Click += new System.EventHandler(this.btlPlaceholderTextBox_Click);
+            // 
+            // btnElevateButton
+            // 
+            this.btnElevateButton.Location = new System.Drawing.Point(108, 193);
+            this.btnElevateButton.Name = "btnElevateButton";
+            this.btnElevateButton.Size = new System.Drawing.Size(190, 23);
+            this.btnElevateButton.TabIndex = 2;
+            this.btnElevateButton.Text = "Elevate button demo";
+            this.btnElevateButton.UseVisualStyleBackColor = true;
+            // 
+            // btnNumericTextBox
+            // 
+            this.btnNumericTextBox.Location = new System.Drawing.Point(108, 125);
+            this.btnNumericTextBox.Name = "btnNumericTextBox";
+            this.btnNumericTextBox.Size = new System.Drawing.Size(190, 23);
+            this.btnNumericTextBox.TabIndex = 4;
+            this.btnNumericTextBox.Text = "NumericTextBox";
+            this.btnNumericTextBox.UseVisualStyleBackColor = true;
+            this.btnNumericTextBox.Click += new System.EventHandler(this.btnNumericTextBox_Click);
             // 
             // MainForm
             // 
@@ -125,6 +137,7 @@
         private System.Windows.Forms.TabPage tpageCustom;
         private System.Windows.Forms.Button btnElevateButton;
         private System.Windows.Forms.Button btlPlaceholderTextBox;
+        private System.Windows.Forms.Button btnNumericTextBox;
 
     }
 }
