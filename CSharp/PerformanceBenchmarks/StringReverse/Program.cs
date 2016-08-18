@@ -28,6 +28,15 @@ namespace StringReverse
 			};
 		}
 
+		// TODO: Add benchmark for recursion
+        static string RecursionReverse(string str)
+        {
+            if (str.Length == 0) return "";
+            if (str.Length == 1) return str;
+            return str[str.Length-1] + Reverse(str.Substring(0, str.Length-1));
+        }
+
+
 		/// <summary>Очень плохая реализация разворота строки</summary>
 		private static string VeryBadReverse(string s)
 		{
