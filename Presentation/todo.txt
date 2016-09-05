@@ -78,6 +78,7 @@
 				<gcServer enabled="true|false (default)"/>
 					Specifies whether the runtime runs server garbage collection.
 					.NET 2.0+
+		- Класс MemoryFailPoint (System.Runtime)
 	- Классы
 		System.ServiceModel.Channels.BufferManager					
 	- Caching
