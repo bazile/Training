@@ -21,3 +21,6 @@ TestResults/
 # Microsoft Office Temporary files
 ~?*.pptx
 ~$*.docx
+
+# MacOS specific
+.DS_Store
