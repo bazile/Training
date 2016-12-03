@@ -45,6 +45,26 @@
 			.Where(t => t.FullName.StartsWith("System") && t.Name.EndsWith("Exception"))
 			.Select(t => t.FullName)
 			.OrderBy(s => s)
+		Коллекции которые не реализуют IEnumerable<T>
+			AppDomain.CurrentDomain
+				.GetAssemblies()
+				.SelectMany(asm => asm.ExportedTypes)
+				.Where(t => t.IsPublic
+					&& t.IsClass 
+					&& t.FullName.StartsWith("System.")
+					&& !t.FullName.StartsWith("System.Web.")
+					&& t.FullName.EndsWith("Collection")
+				)
+				.Where(t => {
+					if (!t.GetInterfaces().Contains(typeof(IEnumerable))) return false;
+					return !t.GetInterfaces()
+						.Where(_ => _.IsGenericType)
+						.Select(_ => _.GetGenericTypeDefinition())
+						.Contains(typeof(IEnumerable<>));
+				})
+				.Select(t => t.FullName)
+				.OrderBy(name => name)
+				.Dump();
 	- manifest/UAC sample with elevation point(s)
 		http://msdn.microsoft.com/en-us/library/windows/desktop/bb756929.aspx
 
