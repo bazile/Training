@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsDemo-01.Msg", "ThreadsDemo-01\ThreadsDemo-01.Msg.csproj", "{2C32638B-ED84-47EA-BFA3-9B77BE59BFB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsDemo-02.Invoke", "ThreadsDemo-02\ThreadsDemo-02.Invoke.csproj", "{81DB31B0-1433-402A-BF6D-397F21EAF57D}"
@@ -12,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsDemo-05.EAP", "ThreadsDemo-05.EAP\ThreadsDemo-05.EAP.csproj", "{A494B56B-B501-45DB-B9CC-78874A9CA498}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsDemo-06.QuadraticEquationBenchmark", "ThreadsDemo-06.QuadraticEquationBenchmark\ThreadsDemo-06.QuadraticEquationBenchmark.csproj", "{FBBE9FB3-D33B-4BA7-8B33-95304658B77A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsDemo-07.ThreadAffinity", "ThreadsDemo-07.ThreadAffinity\ThreadsDemo-07.ThreadAffinity.csproj", "{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +87,18 @@ Global
 		{FBBE9FB3-D33B-4BA7-8B33-95304658B77A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{FBBE9FB3-D33B-4BA7-8B33-95304658B77A}.Release|x86.ActiveCfg = Release|x86
 		{FBBE9FB3-D33B-4BA7-8B33-95304658B77A}.Release|x86.Build.0 = Release|x86
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{2E8A0C88-6B29-45FF-8CA7-97E4642E86BB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
