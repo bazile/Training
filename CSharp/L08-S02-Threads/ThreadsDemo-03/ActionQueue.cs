@@ -6,10 +6,10 @@ namespace ThreadsDemo.Queue
 {
 	public class ActionQueue<T> : IDisposable where T : class
 	{
-		private readonly Queue<T> queue = new Queue<T>();  // Очередь объектов
-		private readonly Thread consumerThread;                    // Поток - потребитель
-		private readonly AutoResetEvent newDataHandle = new AutoResetEvent(false);   // Объект для синхронизации
-		private readonly Action<T> consumerAction;                 // Делегат на метод-обработчик
+		private readonly Queue<T> queue = new Queue<T>();                   // Очередь объектов
+		private Thread consumerThread;                                      // Поток - потребитель
+		private AutoResetEvent newDataHandle = new AutoResetEvent(false);   // Объект для синхронизации
+		private Action<T> consumerAction;                                   // Делегат на метод-обработчик
 
 		public ActionQueue(Action<T> consumerAction)
 		{
@@ -17,35 +17,47 @@ namespace ThreadsDemo.Queue
 			{
 				throw new ArgumentNullException("consumerAction");
 			}
-			this.consumerAction = consumerAction;                   // Запоминаем делегат на метод-обработчик
+			this.consumerAction = consumerAction;       // Запоминаем делегат на метод-обработчик
 
-			consumerThread = new Thread(DoConsume);     //Запускаем поток
+			consumerThread = new Thread(DoConsume);     // Запускаем поток
 			consumerThread.Name = "Поток класса ActionQueue";
 			consumerThread.Start();
 		}
 
-		public void EnqueueElement(T element)   //Метод добавления объекта в очередь
+		/// <summary>Добавление объекта в очередь</summary>
+		public void EnqueueElement(T element)
 		{
-			lock (queue)                       //Блокируем очередь
+			lock (queue)                // Блокируем очередь
 			{
-				queue.Enqueue(element);        //Помещаем объект в очередь
+				queue.Enqueue(element); // Помещаем объект в очередь
 			}
-			newDataHandle.Set();                  //Будим возможно спящий поток-потребитель, Отправляем сигнал.
+			newDataHandle.Set();        // Будим возможно спящий поток-потребитель, Отправляем сигнал.
 		}
 
-		public void Stop()                      //Метод остановки обработчика
+		/// <summary>Остановка обработчика</summary>
+		public void Stop()
 		{
-			EnqueueElement(null);               //Добавляем null указатель, чтобы завершить поток-потребитель
-			consumerThread.Join();                     //Ждем завершения потока
-			newDataHandle.Reset();                //Сбрасываем объект синхронизации.
+			Dispose();
 		}
 
 		public void Dispose()
 		{
-			newDataHandle.Close();                //Закрываем объект синхронизации
+			if (consumerThread != null)
+			{
+				EnqueueElement(null);               // Добавляем null указатель, чтобы завершить поток-потребитель
+				consumerThread.Join();              // Ждем завершения потока
+				consumerThread = null;
+			}
+			if (newDataHandle != null)
+			{
+				newDataHandle.Close();              // Закрываем объект синхронизации
+				newDataHandle = null;
+			}
+			consumerAction = null;
 		}
 
-		private void DoConsume()                 //Метод, выполняющий поток-потребитель
+		/// <summary>Поток-потребитель</summary>
+		private void DoConsume()
 		{
 			while (true)
 			{
@@ -54,20 +66,20 @@ namespace ThreadsDemo.Queue
 				{
 					if (queue.Count > 0)
 					{
-						element = queue.Dequeue(); //Извлекаем следующий элемент из очереди
-						if (element == null)        //Если вместо него - указатель на null...
+						element = queue.Dequeue();  // Извлекаем следующий элемент из очереди
+						if (element == null)        // Если вместо него - указатель на null...
 						{
-							return;                 //...завершаем поток-потребитель
+							return;                 // ...завершаем поток-потребитель
 						}
 					}
 				}
-				if (element != null)                //Если элемент не null
+				if (element != null)                // Если элемент не null
 				{
-					consumerAction(element);               //Вызываем метод обработчик через делегата
+					consumerAction(element);        // Вызываем метод обработчик через делегата
 				}
 				else
 				{
-					newDataHandle.WaitOne();          //Иначе - ждем пополнения в очереди.
+					newDataHandle.WaitOne();         // Иначе - ждем пополнения в очереди.
 				}
 			}
 		}
