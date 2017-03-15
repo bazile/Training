@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using BelhardTraining.Benchmark.Core;
+using TrainingCenter.Benchmark.Core;
 using BenchmarkDotNet;
 
 namespace StringBuilderPooling

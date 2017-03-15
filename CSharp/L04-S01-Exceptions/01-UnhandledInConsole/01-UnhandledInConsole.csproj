@@ -8,7 +8,7 @@
     <ProjectGuid>{872E6844-32F2-41B5-8C97-BB30B2B369FB}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.ExceptionsDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.ExceptionsDemo</RootNamespace>
     <AssemblyName>UnhandledInConsole</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

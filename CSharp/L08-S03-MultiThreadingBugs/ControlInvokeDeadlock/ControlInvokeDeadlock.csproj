@@ -8,7 +8,7 @@
     <ProjectGuid>{2A7380E0-86B1-45FD-A5DA-0B9C7CAC6135}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.ControlInvokeDeadlock</RootNamespace>
+    <RootNamespace>TrainingCenter.ControlInvokeDeadlock</RootNamespace>
     <AssemblyName>ControlInvokeDeadlock</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

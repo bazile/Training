@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Windows.Forms;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
 	public partial class MainForm : Form
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace BelhardTraining.Extensions
+namespace TrainingCenter.Extensions
 {
 	public static class ArrayExtensions
 	{

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	class Program
 	{

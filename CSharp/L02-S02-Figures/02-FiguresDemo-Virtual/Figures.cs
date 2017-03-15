@@ -6,7 +6,7 @@
 using System;
 using System.Diagnostics;
 
-namespace BelhardTraining.FiguresDemo
+namespace TrainingCenter.FiguresDemo
 {
     /// <summary>Неопределенная геометрическая фигура</summary>
     public class Figure

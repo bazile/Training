@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.Windows.Forms
+﻿namespace TrainingCenter.Windows.Forms
 {
 	partial class ElevateButtonForm
 	{
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.elevateButton1 = new BelhardTraining.Windows.Forms.Controls.ElevateButton();
+			this.elevateButton1 = new TrainingCenter.Windows.Forms.Controls.ElevateButton();
 			this.SuspendLayout();
 			// 
 			// elevateButton1

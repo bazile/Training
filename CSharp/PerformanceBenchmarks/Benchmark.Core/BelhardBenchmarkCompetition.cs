@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using BenchmarkDotNet;
 
-namespace BelhardTraining.Benchmark.Core
+namespace TrainingCenter.Benchmark.Core
 {
 	public class BelhardBenchmarkCompetition : BenchmarkCompetition
 	{

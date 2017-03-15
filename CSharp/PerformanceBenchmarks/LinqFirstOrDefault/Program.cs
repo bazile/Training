@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using BelhardTraining.Benchmark.Core;
+using TrainingCenter.Benchmark.Core;
 using BenchmarkDotNet;
 
 namespace LinqFirstOrDefault

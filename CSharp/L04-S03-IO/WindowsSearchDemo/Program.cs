@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.LessonIO.WindowsSearchDemo
+namespace TrainingCenter.LessonIO.WindowsSearchDemo
 {
 	static class Program
 	{

@@ -8,7 +8,7 @@
     <ProjectGuid>{C6382B31-C134-4CCF-8A17-05DB82CE64B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.Benchmark.Core</RootNamespace>
+    <RootNamespace>TrainingCenter.Benchmark.Core</RootNamespace>
     <AssemblyName>Benchmark.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

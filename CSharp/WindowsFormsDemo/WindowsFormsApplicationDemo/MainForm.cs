@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace BelhardTraining.Windows.Forms
+namespace TrainingCenter.Windows.Forms
 {
     public partial class MainForm : Form
     {

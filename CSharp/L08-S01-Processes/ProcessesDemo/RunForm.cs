@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
 	public partial class RunForm : Form
 	{

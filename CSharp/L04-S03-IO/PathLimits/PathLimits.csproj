@@ -8,7 +8,7 @@
     <ProjectGuid>{5117506D-2101-4E1A-AA8C-BF8DD0685340}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.LessonIO</RootNamespace>
+    <RootNamespace>TrainingCenter.LessonIO</RootNamespace>
     <AssemblyName>PathLimits</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

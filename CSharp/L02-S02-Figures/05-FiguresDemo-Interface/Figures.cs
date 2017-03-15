@@ -4,7 +4,7 @@
 
 using System;
 
-namespace BelhardTraining.FiguresDemo
+namespace TrainingCenter.FiguresDemo
 {
 	// Мы можем использовать интерфейс вместо абстрактного базового класса
 	// Однако при этом нам нужно не забывать объявлять методы как virtual в классах реализующих наш интерфейс

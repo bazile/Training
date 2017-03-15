@@ -3,7 +3,7 @@ using System.Collections;
 using System.Globalization;
 using System.Windows.Forms;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
 	/// <summary>
 	/// This class is an implementation of the 'IComparer' interface.

@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace BelhardTraining.ConnectionPoolingDemo
+namespace TrainingCenter.ConnectionPoolingDemo
 {
 	public class ObservableLinesCollectionToTextConverter : IMultiValueConverter
 	{

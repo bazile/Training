@@ -8,7 +8,7 @@
     <ProjectGuid>{160DE983-ADD2-4BF1-AB3F-B22239F88987}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.MoreLinqDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.MoreLinqDemo</RootNamespace>
     <AssemblyName>MoreLinqDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace BelhardTraining.ConnectionPoolingDemo
+namespace TrainingCenter.ConnectionPoolingDemo
 {
 	public static class Commands
 	{

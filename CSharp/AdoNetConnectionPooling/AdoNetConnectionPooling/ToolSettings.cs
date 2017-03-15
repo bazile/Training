@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.ConnectionPoolingDemo
+﻿namespace TrainingCenter.ConnectionPoolingDemo
 {
 	static class ToolSettings
 	{

@@ -8,7 +8,7 @@
     <ProjectGuid>{A494B56B-B501-45DB-B9CC-78874A9CA498}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.Downloader</RootNamespace>
+    <RootNamespace>TrainingCenter.Downloader</RootNamespace>
     <AssemblyName>Downloader</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

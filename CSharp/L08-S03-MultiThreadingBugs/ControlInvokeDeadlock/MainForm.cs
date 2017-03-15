@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 #endregion
 
-namespace BelhardTraining.ControlInvokeDeadlock
+namespace TrainingCenter.ControlInvokeDeadlock
 {
 	public partial class MainForm : Form
 	{

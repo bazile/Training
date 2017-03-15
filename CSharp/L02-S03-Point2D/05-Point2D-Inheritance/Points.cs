@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace BelhardTraining.PointDemo
+namespace TrainingCenter.PointDemo
 {
 	public class Point2D
 	{

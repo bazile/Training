@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.PointDemo
+﻿namespace TrainingCenter.PointDemo
 {
     class Point2D
     {

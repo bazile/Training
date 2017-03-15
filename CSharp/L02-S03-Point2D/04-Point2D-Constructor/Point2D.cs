@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BelhardTraining.PointDemo
+namespace TrainingCenter.PointDemo
 {
     public class Point2D
     {

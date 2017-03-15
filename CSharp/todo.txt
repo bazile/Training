@@ -1,12 +1,12 @@
-- Общие
-	- Убрать префикс _ !
+п»ї- РћР±С‰РёРµ
+	- РЈР±СЂР°С‚СЊ РїСЂРµС„РёРєСЃ _ !
 	- CodeStyle check
-		BelhardTraining namespace
+		TrainingCenter namespace
 
 - 01
 	- string samples (sorting, comparing)
 	- Unicode demo
-		string hello = "Прив\u0301ет";
+		string hello = "РџСЂРёРІ\u0301РµС‚";
 		"a b".Dump();
 		"a\u2002b".Dump(); // En space
 		"a\u2003b".Dump(); // Em space
@@ -33,10 +33,10 @@
 
 - 06 (XML)
 	- XML creation
-	- Данные из инета
+	- Р”Р°РЅРЅС‹Рµ РёР· РёРЅРµС‚Р°
 		- RSS (http://rss.slashdot.org/Slashdot/slashdot ?)
-		- Курс валют
-		- Погода
+		- РљСѓСЂСЃ РІР°Р»СЋС‚
+		- РџРѕРіРѕРґР°
 
 - 07 (Asm & reflection)
 	- reflection demo
@@ -45,7 +45,7 @@
 			.Where(t => t.FullName.StartsWith("System") && t.Name.EndsWith("Exception"))
 			.Select(t => t.FullName)
 			.OrderBy(s => s)
-		Коллекции которые не реализуют IEnumerable<T>
+		РљРѕР»Р»РµРєС†РёРё РєРѕС‚РѕСЂС‹Рµ РЅРµ СЂРµР°Р»РёР·СѓСЋС‚ IEnumerable<T>
 			AppDomain.CurrentDomain
 				.GetAssemblies()
 				.SelectMany(asm => asm.ExportedTypes)

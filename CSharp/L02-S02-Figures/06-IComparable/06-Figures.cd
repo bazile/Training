@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="BelhardTraining.FiguresDemo.Figure" Collapsed="true">
+  <Class Name="TrainingCenter.FiguresDemo.Figure" Collapsed="true">
     <Position X="4.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQEAAAAAAAgAgAAAAAAAAAAAAAAYAA=</HashCode>
@@ -8,35 +8,35 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="BelhardTraining.FiguresDemo.Rectangle" Collapsed="true">
+  <Class Name="TrainingCenter.FiguresDemo.Rectangle" Collapsed="true">
     <Position X="4.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAEAAAAAEAgAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BelhardTraining.FiguresDemo.Square" Collapsed="true">
+  <Class Name="TrainingCenter.FiguresDemo.Square" Collapsed="true">
     <Position X="4.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BelhardTraining.FiguresDemo.Ellipse" Collapsed="true">
+  <Class Name="TrainingCenter.FiguresDemo.Ellipse" Collapsed="true">
     <Position X="2" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAQAAAAAgAgAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BelhardTraining.FiguresDemo.Circle" Collapsed="true">
+  <Class Name="TrainingCenter.FiguresDemo.Circle" Collapsed="true">
     <Position X="2" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAEAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Figures.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BelhardTraining.FiguresDemo.Triangle" Collapsed="true">
+  <Class Name="TrainingCenter.FiguresDemo.Triangle" Collapsed="true">
     <Position X="6.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAEAAAAAAAgAgAAAAAAAAAAAAAAAAA=</HashCode>

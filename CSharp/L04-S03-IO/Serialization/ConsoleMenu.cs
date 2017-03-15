@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	internal class ConsoleMenu
 	{

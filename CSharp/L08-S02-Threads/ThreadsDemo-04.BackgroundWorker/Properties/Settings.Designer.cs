@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BelhardTraining.PiCalc.Properties {
+namespace TrainingCenter.PiCalc.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

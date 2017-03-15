@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace BelhardTraining.LinqToObjectsDemo
+namespace TrainingCenter.LinqToObjectsDemo
 {
     class Program
     {

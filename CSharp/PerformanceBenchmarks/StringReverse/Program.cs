@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using BelhardTraining.Benchmark.Core;
+using TrainingCenter.Benchmark.Core;
 
 namespace StringReverse
 {

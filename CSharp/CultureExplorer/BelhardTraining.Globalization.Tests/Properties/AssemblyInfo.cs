@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("BelhardTraining.Globalization.Tests")]
+[assembly: AssemblyTitle("TrainingCenter.Globalization.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Центр Обучающих Технологий")]

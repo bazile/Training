@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace BelhardTraining.QuadraticEquationBenchmark
+namespace TrainingCenter.QuadraticEquationBenchmark
 {
     class RandomCoeffEnumerator : IEnumerable<Equation>
     {

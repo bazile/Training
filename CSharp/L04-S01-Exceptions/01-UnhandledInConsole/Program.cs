@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BelhardTraining.ExceptionsDemo
+namespace TrainingCenter.ExceptionsDemo
 {
     class Program
     {

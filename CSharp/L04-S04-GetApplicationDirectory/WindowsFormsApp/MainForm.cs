@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	public partial class MainForm : Form
 	{

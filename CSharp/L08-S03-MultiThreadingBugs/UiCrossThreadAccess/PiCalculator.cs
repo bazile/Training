@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Numerics;
 
-namespace BelhardTraining.UiCrossThreadAccessDemo
+namespace TrainingCenter.UiCrossThreadAccessDemo
 {
     /// <summary>
     /// Вычисление значения константы Пи с помощью ряда Лейбница

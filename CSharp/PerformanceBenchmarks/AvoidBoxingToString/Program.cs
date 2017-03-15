@@ -1,5 +1,5 @@
 ﻿using System;
-using BelhardTraining.Benchmark.Core;
+using TrainingCenter.Benchmark.Core;
 
 namespace AvoidBoxingToString
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
 	public partial class App : Application
 	{

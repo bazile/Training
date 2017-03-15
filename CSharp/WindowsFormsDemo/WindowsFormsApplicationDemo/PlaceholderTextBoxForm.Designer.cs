@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.Windows.Forms
+﻿namespace TrainingCenter.Windows.Forms
 {
     partial class PlaceholderTextBoxForm
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbUserName = new BelhardTraining.Windows.Forms.Controls.PlaceholderTextBox();
-            this.tbPassword = new BelhardTraining.Windows.Forms.Controls.PlaceholderTextBox();
+            this.tbUserName = new TrainingCenter.Windows.Forms.Controls.PlaceholderTextBox();
+            this.tbPassword = new TrainingCenter.Windows.Forms.Controls.PlaceholderTextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 

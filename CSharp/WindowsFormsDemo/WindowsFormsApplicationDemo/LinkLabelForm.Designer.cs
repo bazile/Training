@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.Windows.Forms
+﻿namespace TrainingCenter.Windows.Forms
 {
     partial class LinkLabelForm
     {

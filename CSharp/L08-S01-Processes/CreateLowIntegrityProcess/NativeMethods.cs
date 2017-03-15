@@ -3,7 +3,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
     /// <summary>
     /// The TOKEN_INFORMATION_CLASS enumeration type contains values that 

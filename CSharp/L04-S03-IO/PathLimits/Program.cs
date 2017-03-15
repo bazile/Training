@@ -18,7 +18,7 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	class Program
 	{

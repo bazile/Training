@@ -1,4 +1,4 @@
-﻿<Window x:Class="BelhardTraining.LessonMultithreading.MainWindow"
+﻿<Window x:Class="TrainingCenter.LessonMultithreading.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="231" Width="370" ResizeMode="NoResize" Loaded="Window_Loaded">

@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.QuadraticEquationBenchmark
+﻿namespace TrainingCenter.QuadraticEquationBenchmark
 {
     struct Equation
     {

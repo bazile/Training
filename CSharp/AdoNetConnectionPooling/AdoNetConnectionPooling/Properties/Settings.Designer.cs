@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BelhardTraining.ConnectionPoolingDemo.Properties {
+namespace TrainingCenter.ConnectionPoolingDemo.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

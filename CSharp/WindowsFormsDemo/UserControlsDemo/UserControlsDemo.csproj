@@ -8,7 +8,7 @@
     <ProjectGuid>{6DC980B2-BFAE-42CE-AC84-AC79B7AFE348}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.Windows.Forms.Controls</RootNamespace>
+    <RootNamespace>TrainingCenter.Windows.Forms.Controls</RootNamespace>
     <AssemblyName>UserControlsDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

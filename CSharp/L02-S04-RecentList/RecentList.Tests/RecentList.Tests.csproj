@@ -9,7 +9,7 @@
     <ProjectGuid>{C90B881E-6954-46ED-BED9-29C7BEADC57E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.RecentListDemo.Tests</RootNamespace>
+    <RootNamespace>TrainingCenter.RecentListDemo.Tests</RootNamespace>
     <AssemblyName>RecentList.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

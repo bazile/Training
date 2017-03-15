@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 // TODO: thread-safe версия
 // TODO: read-only версию?
 
-namespace BelhardTraining.RecentListDemo
+namespace TrainingCenter.RecentListDemo
 {
 	/// <summary>
 	/// Коллекция для хранения последних "использованных" элементов любого типа.

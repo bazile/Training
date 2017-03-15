@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.Windows.Forms
+﻿namespace TrainingCenter.Windows.Forms
 {
     partial class NumericTextBoxForm
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericTextBox1 = new BelhardTraining.Windows.Forms.Controls.NumericTextBox();
+            this.numericTextBox1 = new TrainingCenter.Windows.Forms.Controls.NumericTextBox();
             this.SuspendLayout();
             // 
             // numericTextBox1

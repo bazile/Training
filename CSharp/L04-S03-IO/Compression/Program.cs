@@ -10,7 +10,7 @@ using System.IO.Compression;
 using System.Reflection;
 using System.Threading;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	class Program
 	{

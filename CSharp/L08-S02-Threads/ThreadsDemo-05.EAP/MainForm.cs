@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace BelhardTraining.Downloader
+namespace TrainingCenter.Downloader
 {
     public partial class MainForm : Form
     {

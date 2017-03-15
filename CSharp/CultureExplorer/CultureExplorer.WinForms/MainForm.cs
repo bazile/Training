@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using BelhardTraining.Globalization;
+using TrainingCenter.Globalization;
 
 namespace CultureExplorer.WinForms
 {

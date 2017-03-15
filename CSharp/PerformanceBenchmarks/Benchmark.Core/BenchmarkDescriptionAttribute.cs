@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BelhardTraining.Benchmark.Core
+namespace TrainingCenter.Benchmark.Core
 {
 	[AttributeUsage(AttributeTargets.Assembly)]
 	public sealed class BenchmarkDescriptionAttribute : Attribute

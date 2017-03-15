@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.LessonIO.WindowsSearchDemo
+﻿namespace TrainingCenter.LessonIO.WindowsSearchDemo
 {
 	partial class MainForm
 	{

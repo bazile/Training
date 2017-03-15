@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BelhardTraining.UiCrossThreadAccessDemo.Properties {
+namespace TrainingCenter.UiCrossThreadAccessDemo.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BelhardTraining.UiCrossThreadAccessDemo.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BelhardTraining.UiCrossThreadAccessDemo.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TrainingCenter.UiCrossThreadAccessDemo.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

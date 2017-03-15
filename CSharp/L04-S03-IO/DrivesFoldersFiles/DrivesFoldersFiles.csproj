@@ -8,7 +8,7 @@
     <ProjectGuid>{9FA5762E-940C-42B2-862F-5A7443EC63C3}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.LessonIO</RootNamespace>
+    <RootNamespace>TrainingCenter.LessonIO</RootNamespace>
     <AssemblyName>DrivesFoldersFiles</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>

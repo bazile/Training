@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BelhardTraining.LinqToObjectsDemo
+namespace TrainingCenter.LinqToObjectsDemo
 {
     public static class PrimeNumbers
     {

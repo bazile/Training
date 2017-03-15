@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.RecentListDemo
+﻿namespace TrainingCenter.RecentListDemo
 {
 	partial class MainForm
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-namespace BelhardTraining.UiCrossThreadAccessDemo
+namespace TrainingCenter.UiCrossThreadAccessDemo
 {
     /// <summary>
     /// Arbitrary precision decimal.

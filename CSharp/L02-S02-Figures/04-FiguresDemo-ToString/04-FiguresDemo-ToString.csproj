@@ -8,7 +8,7 @@
     <ProjectGuid>{EDDBB04F-E8BB-4C79-AFB4-24D616EFAA5D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.FiguresDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.FiguresDemo</RootNamespace>
     <AssemblyName>FiguresDemo04</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

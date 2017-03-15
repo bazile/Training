@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.UiCrossThreadAccessDemo
+﻿namespace TrainingCenter.UiCrossThreadAccessDemo
 {
     partial class MainForm
     {

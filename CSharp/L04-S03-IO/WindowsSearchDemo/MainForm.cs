@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using SearchAPILib;
 
-namespace BelhardTraining.LessonIO.WindowsSearchDemo
+namespace TrainingCenter.LessonIO.WindowsSearchDemo
 {
 	public partial class MainForm : Form
 	{

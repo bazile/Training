@@ -1,4 +1,4 @@
-namespace BelhardTraining.Globalization
+namespace TrainingCenter.Globalization
 {
     public enum LanguageFamily
     {

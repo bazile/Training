@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace BelhardTraining.PiCalc
+namespace TrainingCenter.PiCalc
 {
     public partial class MainForm : Form
     {

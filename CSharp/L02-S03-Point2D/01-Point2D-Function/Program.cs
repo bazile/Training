@@ -6,7 +6,7 @@
  */
 using System;
 
-namespace BelhardTraining.PointDemo
+namespace TrainingCenter.PointDemo
 {
     class Program
     {

@@ -8,7 +8,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace BelhardTraining.WpfDemo
+namespace TrainingCenter.WpfDemo
 {
 	internal class ObservableObject : INotifyPropertyChanged
 	{

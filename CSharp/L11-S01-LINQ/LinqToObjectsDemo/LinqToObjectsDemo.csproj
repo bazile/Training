@@ -8,7 +8,7 @@
     <ProjectGuid>{9FD93423-E1EA-409E-B5E3-7B758CF652CE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.LinqToObjectsDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.LinqToObjectsDemo</RootNamespace>
     <AssemblyName>LinqToObjectsDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.ControlInvokeDeadlock
+﻿namespace TrainingCenter.ControlInvokeDeadlock
 {
 	partial class MainForm
 	{

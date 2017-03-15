@@ -8,7 +8,7 @@
     <ProjectGuid>{A318D52D-4A0F-45FF-BF9C-7B3203263F1E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.Extensions</RootNamespace>
+    <RootNamespace>TrainingCenter.Extensions</RootNamespace>
     <AssemblyName>BelhardTraining.Extensions</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

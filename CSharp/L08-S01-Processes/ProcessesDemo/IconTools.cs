@@ -7,7 +7,7 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
 	/// <summary>
 	/// Defines a set of utility methods for extracting icons for files and file types.

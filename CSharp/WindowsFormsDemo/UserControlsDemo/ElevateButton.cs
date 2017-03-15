@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace BelhardTraining.Windows.Forms.Controls
+namespace TrainingCenter.Windows.Forms.Controls
 {
 	public class ElevateButton : Button
 	{

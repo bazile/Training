@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.PlanetDemo
+﻿namespace TrainingCenter.PlanetDemo
 {
     class Planet
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.ExceptionsDemo
+namespace TrainingCenter.ExceptionsDemo
 {
     static class Program
     {

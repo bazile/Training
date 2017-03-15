@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Numerics;
 
-namespace BelhardTraining.PiCalc
+namespace TrainingCenter.PiCalc
 {
     /// <summary>
     /// Вычисление значения константы Пи с помощью ряда Лейбница

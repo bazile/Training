@@ -3,7 +3,7 @@ using System.Numerics;
 using System.Reflection;
 using System.Windows;
 
-namespace BelhardTraining.LessonThreading
+namespace TrainingCenter.LessonThreading
 {
 	public partial class App : Application
 	{

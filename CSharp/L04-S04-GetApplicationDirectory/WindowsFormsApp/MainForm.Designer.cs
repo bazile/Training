@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.LessonIO
+﻿namespace TrainingCenter.LessonIO
 {
 	partial class MainForm
 	{

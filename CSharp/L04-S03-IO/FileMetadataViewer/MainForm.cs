@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	public partial class MainForm : Form
 	{

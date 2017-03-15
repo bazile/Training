@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.PiCalc
+﻿namespace TrainingCenter.PiCalc
 {
     partial class MainForm
     {

@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace BelhardTraining.UiCrossThreadAccessDemo
+namespace TrainingCenter.UiCrossThreadAccessDemo
 {
     public partial class MainForm : Form
     {

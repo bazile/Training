@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace BelhardTraining.Globalization
+namespace TrainingCenter.Globalization
 {
     // TODO: Some languages have two unique ISO three-letter codes
     public class LanguageInfo

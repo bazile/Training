@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace BelhardTraining.LessonThreading
+namespace TrainingCenter.LessonThreading
 {
 	static class NativeHelper
 	{

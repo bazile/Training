@@ -7,7 +7,7 @@
     <ProjectGuid>{16057F8A-F583-4E52-BB3F-66579AFC61D1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.FinalizerDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.FinalizerDemo</RootNamespace>
     <AssemblyName>FinalizerDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BelhardTraining.RecentListDemo.Tests
+namespace TrainingCenter.RecentListDemo.Tests
 {
 	/// <summary>
 	/// Unit-тесты для класса RecentCollection&gt;T&lt;

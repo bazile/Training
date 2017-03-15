@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.LessonMultithreading
+﻿namespace TrainingCenter.LessonMultithreading
 {
 	partial class RunForm
 	{

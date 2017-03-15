@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BelhardTraining.RecentListDemo
+namespace TrainingCenter.RecentListDemo
 {
 	class Program
 	{

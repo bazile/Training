@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.WpfDemo
+﻿namespace TrainingCenter.WpfDemo
 {
 	internal class Employee : ObservableObject
 	{

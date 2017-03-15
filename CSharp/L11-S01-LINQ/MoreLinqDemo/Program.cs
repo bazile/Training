@@ -8,7 +8,7 @@ using MoreLinq;
 // https://www.nuget.org/packages/morelinq
 //
 
-namespace BelhardTraining.MoreLinqDemo
+namespace TrainingCenter.MoreLinqDemo
 {
 	class Program
 	{

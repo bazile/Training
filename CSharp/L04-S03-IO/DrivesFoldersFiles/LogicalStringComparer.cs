@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	/// <summary>
 	/// Сортировка строк в логическом порядке. Например строки

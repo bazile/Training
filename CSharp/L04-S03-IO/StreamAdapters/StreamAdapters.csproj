@@ -8,7 +8,7 @@
     <ProjectGuid>{7C760C2F-9C2E-4547-8AD7-2B44A2A8386B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.LessonIO</RootNamespace>
+    <RootNamespace>TrainingCenter.LessonIO</RootNamespace>
     <AssemblyName>StreamAdapters</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BelhardTraining.PlanetDemo
+namespace TrainingCenter.PlanetDemo
 {
     class Program
     {

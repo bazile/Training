@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.ExceptionsDemo
+namespace TrainingCenter.ExceptionsDemo
 {
     public partial class MainForm : Form
     {

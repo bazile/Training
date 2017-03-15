@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	public static partial class ApplicationDirectory
 	{

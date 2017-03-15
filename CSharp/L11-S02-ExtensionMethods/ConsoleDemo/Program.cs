@@ -1,7 +1,7 @@
 ﻿using System;
-using BelhardTraining.Extensions;
+using TrainingCenter.Extensions;
 
-namespace BelhardTraining.ExtensionMethodsDemo
+namespace TrainingCenter.ExtensionMethodsDemo
 {
 	class Program
 	{

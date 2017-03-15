@@ -7,7 +7,7 @@
     <ProjectGuid>{9DB46A74-6ED0-4592-9330-622247E178BB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.ConnectionPoolingDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.ConnectionPoolingDemo</RootNamespace>
     <AssemblyName>AdoNetConnectionPooling</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

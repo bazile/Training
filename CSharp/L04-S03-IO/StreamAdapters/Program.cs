@@ -13,7 +13,7 @@
 using System;
 using System.IO;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
     class Program
     {

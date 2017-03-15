@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BelhardTraining.PointDemo
+namespace TrainingCenter.PointDemo
 {
 	/// <summary>Структура Point2D</summary>
 	/// <remarks>

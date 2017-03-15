@@ -8,7 +8,7 @@
     <ProjectGuid>{8DA76B79-6D95-4485-A36A-F58B641C111A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.Windows.Forms</RootNamespace>
+    <RootNamespace>TrainingCenter.Windows.Forms</RootNamespace>
     <AssemblyName>WindowsFormsApplicationDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

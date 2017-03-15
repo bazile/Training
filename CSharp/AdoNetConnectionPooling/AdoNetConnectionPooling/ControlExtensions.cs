@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Controls.Primitives;
 
-namespace BelhardTraining.ConnectionPoolingDemo
+namespace TrainingCenter.ConnectionPoolingDemo
 {
 	static class ControlExtensions
 	{

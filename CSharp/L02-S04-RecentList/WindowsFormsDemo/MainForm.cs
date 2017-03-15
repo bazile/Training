@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.RecentListDemo
+namespace TrainingCenter.RecentListDemo
 {
 	public partial class MainForm : Form
 	{

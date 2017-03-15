@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-namespace BelhardTraining.PiCalc
+namespace TrainingCenter.PiCalc
 {
     /// <summary>
     /// Arbitrary precision decimal.

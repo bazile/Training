@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace BelhardTraining.Globalization
+namespace TrainingCenter.Globalization
 {
     public static class CultureInfoExtensions
     {

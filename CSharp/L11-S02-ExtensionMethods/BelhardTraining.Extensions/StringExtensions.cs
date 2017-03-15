@@ -2,7 +2,7 @@
 using System.Diagnostics.Contracts;
 using System.Globalization;
 
-namespace BelhardTraining.Extensions
+namespace TrainingCenter.Extensions
 {
 	public static class StringExtensions
 	{

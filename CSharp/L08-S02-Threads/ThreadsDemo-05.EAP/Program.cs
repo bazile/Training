@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.Downloader
+namespace TrainingCenter.Downloader
 {
     static class Program
     {

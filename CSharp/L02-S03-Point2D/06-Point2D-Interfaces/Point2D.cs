@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BelhardTraining.PointDemo
+namespace TrainingCenter.PointDemo
 {
 	#region Пример с IComparable<Point2D>/IComparable
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Win32.SafeHandles;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
     /// <summary>
     /// Represents a wrapper class for a token handle.

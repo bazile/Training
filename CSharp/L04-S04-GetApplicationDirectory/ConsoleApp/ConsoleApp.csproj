@@ -8,7 +8,7 @@
     <ProjectGuid>{46A14974-2922-4329-A622-D8B6C3845B45}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.LessonIO</RootNamespace>
+    <RootNamespace>TrainingCenter.LessonIO</RootNamespace>
     <AssemblyName>ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

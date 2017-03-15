@@ -8,7 +8,7 @@
     <ProjectGuid>{FBBE9FB3-D33B-4BA7-8B33-95304658B77A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.QuadraticEquationBenchmark</RootNamespace>
+    <RootNamespace>TrainingCenter.QuadraticEquationBenchmark</RootNamespace>
     <AssemblyName>QuadraticEquationBenchmark</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

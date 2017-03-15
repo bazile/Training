@@ -8,7 +8,7 @@
     <ProjectGuid>{96155765-A4AD-41CD-8BC2-0AAACDB9D6EC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining</RootNamespace>
+    <RootNamespace>TrainingCenter</RootNamespace>
     <AssemblyName>Point2D-01</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

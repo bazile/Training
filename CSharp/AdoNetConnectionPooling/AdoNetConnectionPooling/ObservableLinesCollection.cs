@@ -1,7 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace BelhardTraining.ConnectionPoolingDemo
+namespace TrainingCenter.ConnectionPoolingDemo
 {
 	class ObservableLinesCollection : ObservableCollection<string>
 	{

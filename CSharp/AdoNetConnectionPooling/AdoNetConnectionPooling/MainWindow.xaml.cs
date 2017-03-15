@@ -7,7 +7,7 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 
 // Идея: http://www.pythian.com/blog/sql-server-understanding-and-controlling-connection/
 
-namespace BelhardTraining.ConnectionPoolingDemo
+namespace TrainingCenter.ConnectionPoolingDemo
 {
 	public partial class MainWindow : Window
 	{

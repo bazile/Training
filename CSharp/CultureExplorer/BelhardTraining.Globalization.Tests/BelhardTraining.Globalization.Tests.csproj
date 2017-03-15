@@ -8,7 +8,7 @@
     <ProjectGuid>{64CF072D-FBB0-4EDF-B9AC-9D1A31A43D7A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.Globalization.Tests</RootNamespace>
+    <RootNamespace>TrainingCenter.Globalization.Tests</RootNamespace>
     <AssemblyName>BelhardTraining.Globalization.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

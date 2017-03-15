@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.ExceptionsDemo
+﻿namespace TrainingCenter.ExceptionsDemo
 {
     partial class MainForm
     {

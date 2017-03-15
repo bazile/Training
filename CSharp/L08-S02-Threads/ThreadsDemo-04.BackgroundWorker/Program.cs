@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.PiCalc
+namespace TrainingCenter.PiCalc
 {
     static class Program
     {

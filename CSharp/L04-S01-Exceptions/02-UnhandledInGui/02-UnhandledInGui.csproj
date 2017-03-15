@@ -8,7 +8,7 @@
     <ProjectGuid>{7F476247-4072-450B-815D-2A6D5E470889}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.ExceptionsDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.ExceptionsDemo</RootNamespace>
     <AssemblyName>UnhandledInGui</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

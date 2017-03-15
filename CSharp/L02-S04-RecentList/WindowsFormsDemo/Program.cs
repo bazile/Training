@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.RecentListDemo
+namespace TrainingCenter.RecentListDemo
 {
 	static class Program
 	{

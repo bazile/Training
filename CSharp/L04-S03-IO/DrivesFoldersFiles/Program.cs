@@ -19,7 +19,7 @@ using Microsoft.VisualBasic.FileIO;
 using SearchOption = System.IO.SearchOption;
 using VBSearchOption = Microsoft.VisualBasic.FileIO.SearchOption;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	class Program
 	{

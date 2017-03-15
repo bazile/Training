@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BelhardTraining.LessonIO.WindowsSearchDemo.Properties {
+namespace TrainingCenter.LessonIO.WindowsSearchDemo.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

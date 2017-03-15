@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BelhardTraining.FiguresDemo
+namespace TrainingCenter.FiguresDemo
 {
     class Program
     {

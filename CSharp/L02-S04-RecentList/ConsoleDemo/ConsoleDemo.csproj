@@ -8,7 +8,7 @@
     <ProjectGuid>{32D0A0D9-8986-4D85-872C-287E121A2806}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.RecentListDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.RecentListDemo</RootNamespace>
     <AssemblyName>ConsoleDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

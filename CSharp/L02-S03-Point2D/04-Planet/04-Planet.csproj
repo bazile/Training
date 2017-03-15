@@ -9,7 +9,7 @@
     <ProjectGuid>{4E17DAEA-72DC-43B5-B2FB-D247D39C4821}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.PlanetDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.PlanetDemo</RootNamespace>
     <AssemblyName>Planet</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Common;
 
-namespace BelhardTraining.Extensions
+namespace TrainingCenter.Extensions
 {
 	public static class DbDataReaderExtensions
 	{

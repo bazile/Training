@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.Downloader
+﻿namespace TrainingCenter.Downloader
 {
     partial class MainForm
     {

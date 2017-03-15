@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BelhardTraining.LessonThreading
+namespace TrainingCenter.LessonThreading
 {
 	public partial class MainWindow : Window
 	{

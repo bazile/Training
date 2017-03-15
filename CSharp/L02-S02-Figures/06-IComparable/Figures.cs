@@ -5,7 +5,7 @@
 
 using System;
 
-namespace BelhardTraining.FiguresDemo
+namespace TrainingCenter.FiguresDemo
 {
     /// <summary>Неопределенная геометрическая фигура</summary>
     /// <remarks>

@@ -23,7 +23,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows;
 
-namespace BelhardTraining.LessonMultithreading
+namespace TrainingCenter.LessonMultithreading
 {
 	public partial class MainWindow : Window
 	{

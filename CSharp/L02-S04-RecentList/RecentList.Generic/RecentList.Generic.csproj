@@ -8,7 +8,7 @@
     <ProjectGuid>{2C0309BC-6DC5-4C2A-AC39-1D8080BA9949}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.RecentListDemo</RootNamespace>
+    <RootNamespace>TrainingCenter.RecentListDemo</RootNamespace>
     <AssemblyName>RecentList.Generic</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

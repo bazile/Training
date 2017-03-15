@@ -8,7 +8,7 @@
     <ProjectGuid>{99226B9F-0696-4E1D-B89B-31E2C61DCACB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.PiCalc</RootNamespace>
+    <RootNamespace>TrainingCenter.PiCalc</RootNamespace>
     <AssemblyName>PiCalc</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

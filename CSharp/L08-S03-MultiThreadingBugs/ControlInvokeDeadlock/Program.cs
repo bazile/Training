@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace BelhardTraining.ControlInvokeDeadlock
+namespace TrainingCenter.ControlInvokeDeadlock
 {
 	static class Program
 	{

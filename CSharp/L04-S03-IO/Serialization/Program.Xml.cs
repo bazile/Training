@@ -15,7 +15,7 @@ using System;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace BelhardTraining.LessonIO
+namespace TrainingCenter.LessonIO
 {
 	partial class Program
 	{

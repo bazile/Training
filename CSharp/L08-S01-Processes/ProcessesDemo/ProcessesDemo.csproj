@@ -8,7 +8,7 @@
     <ProjectGuid>{B3F5D6C8-C52E-4423-904F-6BAE8A01D606}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BelhardTraining.LessonMultithreading</RootNamespace>
+    <RootNamespace>TrainingCenter.LessonMultithreading</RootNamespace>
     <AssemblyName>ProcessesDemo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BelhardTraining.LessonMultithreading.Properties {
+namespace TrainingCenter.LessonMultithreading.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

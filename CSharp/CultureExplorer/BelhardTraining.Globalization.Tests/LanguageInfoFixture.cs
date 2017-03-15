@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using NUnit.Framework;
 
-namespace BelhardTraining.Globalization.Tests
+namespace TrainingCenter.Globalization.Tests
 {
     [TestFixture]
     public class LanguageInfoFixture

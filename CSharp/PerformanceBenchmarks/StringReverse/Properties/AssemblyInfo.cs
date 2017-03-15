@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using BelhardTraining.Benchmark.Core;
+using TrainingCenter.Benchmark.Core;
 
 [assembly: AssemblyTitle("StringReverse")]
 [assembly: AssemblyDescription("")]

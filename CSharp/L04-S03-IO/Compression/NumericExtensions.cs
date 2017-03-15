@@ -1,4 +1,4 @@
-﻿namespace BelhardTraining.LessonIO
+﻿namespace TrainingCenter.LessonIO
 {
 	public static class NumericExtensions
 	{

@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace BelhardTraining.ConnectionPoolingDemo
+namespace TrainingCenter.ConnectionPoolingDemo
 {
 	class MainWindowPresenter
 	{
