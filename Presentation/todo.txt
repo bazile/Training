@@ -79,6 +79,7 @@
 					Specifies whether the runtime runs server garbage collection.
 					.NET 2.0+
 		- Класс MemoryFailPoint (System.Runtime)
+		- boxing/unboxing, IComparable vs generic IComparable
 	- Классы
 		System.ServiceModel.Channels.BufferManager					
 	- Caching
