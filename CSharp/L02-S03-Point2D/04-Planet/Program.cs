@@ -19,7 +19,7 @@ namespace TrainingCenter.PlanetDemo
             foreach (Planet planet in solarSystemPlanets)
             {
                 Console.WriteLine(
-                    "{0}: Расстояние от Солнца {1:N0} км или {2:F2} а.е.",
+                    "{0,-8}: Расстояние от Солнца {1,14:N0} км или {2,5:F2} а.е.",
                     planet.Name,
                     planet.DistanceFromSun / 1000,
                     planet.DistanceFromSunAU
