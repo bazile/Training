@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using TrainingCenter.Globalization;
 
@@ -12,10 +13,10 @@ namespace CultureExplorer.WinForms
     {
         enum GroupByMode
         {
-            Language, Country, Calendar
+            Language, Country, Calendar, AnsiCodePage, EbcdicCodePage, MacCodePage, OemCodePage
         }
 
-        // Коды стран ISO 3166-1 alpha-2
+        #region Коды стран ISO 3166-1 alpha-2
         static Dictionary<string, string> isoCodeToName = new Dictionary<string, string>()
         {
             {"AD", "Andorra"},
@@ -268,6 +269,7 @@ namespace CultureExplorer.WinForms
             {"ZM", "Zambia"},
             {"ZW", "Zimbabwe"}
         };
+        #endregion
 
         GroupByMode _groupByMode;
         CultureTypes _currentCultureType;
@@ -316,6 +318,12 @@ namespace CultureExplorer.WinForms
                         break;
                     case GroupByMode.Calendar:
                         DisplayCulturesByCalendar(cultures);
+                        break;
+                    case GroupByMode.AnsiCodePage:
+                    case GroupByMode.EbcdicCodePage:
+                    case GroupByMode.MacCodePage:
+                    case GroupByMode.OemCodePage:
+                        DisplayCulturesByEncoding(cultures, _groupByMode);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
@@ -430,9 +438,44 @@ namespace CultureExplorer.WinForms
             }
         }
 
+        void DisplayCulturesByEncoding(CultureInfo[] cultures, GroupByMode groupMode)
+        {
+            var groups = cultures.GroupBy(c => groupMode == GroupByMode.AnsiCodePage ? c.TextInfo.ANSICodePage : c.TextInfo.OEMCodePage).OrderBy(g => g.Key);
+            foreach (IGrouping<int, CultureInfo> g in groups)
+            {
+                TreeNode codePageNode;
+                if (g.Key == 0)
+                {
+                    codePageNode = new TreeNode("0");
+                }
+                else
+                {
+                    Encoding encoding = null;
+                    try { encoding = Encoding.GetEncoding(g.Key); }
+                    catch { }
+
+                    if (encoding == null)
+                    {
+                        codePageNode = new TreeNode(g.Key.ToString());
+                    }
+                    else
+                    {
+                        codePageNode = new TreeNode(string.Format("{0}: {1}", g.Key, encoding.EncodingName));
+                        codePageNode.Tag = encoding;
+                    }
+                }
+                treeViewCultures.Nodes.Add(codePageNode);
+
+                foreach (CultureInfo ci in g)
+                {
+                    codePageNode.Nodes.Add(CreateTreeNode(ci));
+                }
+            }
+        }
+
 #endregion
 
-        #region Event Handlers
+            #region Event Handlers
 
         private void OnCultureTypeMenuItem_Click(object sender, EventArgs e)
         {
@@ -484,12 +527,21 @@ namespace CultureExplorer.WinForms
             _groupByMenuItems = new[] {
                     menuItemGroupLang,
                     menuItemGroupCountry,
-                    menuItemGroupCalendar
+                    menuItemGroupCalendar,
+
+                    menuItemGroupAnsi,
+                    menuItemGroupEbcdic,
+                    menuItemGroupMac,
+                    menuItemGroupOem
             };
             menuItemGroupLang.Tag = GroupByMode.Language;
             menuItemGroupCountry.Tag = GroupByMode.Country;
             menuItemGroupCalendar.Tag = GroupByMode.Calendar;
-            
+            menuItemGroupAnsi.Tag = GroupByMode.AnsiCodePage;
+            menuItemGroupEbcdic.Tag = GroupByMode.EbcdicCodePage;
+            menuItemGroupMac.Tag = GroupByMode.MacCodePage;
+            menuItemGroupOem.Tag = GroupByMode.OemCodePage;
+
             // Типы культур
             List<ToolStripMenuItem> cultureTypeMenuItems = new List<ToolStripMenuItem>();
 
@@ -521,7 +573,7 @@ namespace CultureExplorer.WinForms
         static TreeNode CreateTreeNode(CultureInfo ci)
         {
             var node = new TreeNode { Text = ci.Name, Tag = ci };
-            if (String.IsNullOrEmpty(node.Text))
+            if (string.IsNullOrEmpty(node.Text))
             {
                 node.Text = "<empty>";
             }

@@ -70,8 +70,11 @@ namespace CultureExplorer.WinForms
 		{
 			if (destinationType != typeof(string)) return base.ConvertTo(context, culture, value, destinationType);
 
-			var с = (Calendar) value;
-			return с.AlgorithmType.ToString();
+			var c = (Calendar) value;
+			string s = c.GetType().Name;
+			s += ", " + c.AlgorithmType.ToString();
+			s = s.Replace("Calendar", "");
+			return s;
 		}
 	}
 

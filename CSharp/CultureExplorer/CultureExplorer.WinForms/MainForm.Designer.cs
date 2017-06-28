@@ -42,6 +42,11 @@
             this.menuItemGroupLang = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemGroupCountry = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemGroupCalendar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemGroupAnsi = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemGroupOem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuItemGroupMac = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemGroupEbcdic = new System.Windows.Forms.ToolStripMenuItem();
             separator1 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip.SuspendLayout();
             this.panel.SuspendLayout();
@@ -55,7 +60,7 @@
             // separator1
             // 
             separator1.Name = "separator1";
-            separator1.Size = new System.Drawing.Size(172, 6);
+            separator1.Size = new System.Drawing.Size(221, 6);
             // 
             // statusStrip
             // 
@@ -143,7 +148,7 @@
             // menuItemExit
             // 
             this.menuItemExit.Name = "menuItemExit";
-            this.menuItemExit.Size = new System.Drawing.Size(92, 22);
+            this.menuItemExit.Size = new System.Drawing.Size(152, 22);
             this.menuItemExit.Text = "E&xit";
             this.menuItemExit.Click += new System.EventHandler(this.OnExitMenuItem_Click);
             // 
@@ -153,7 +158,12 @@
             this.menuItemGroupLang,
             this.menuItemGroupCountry,
             this.menuItemGroupCalendar,
-            separator1});
+            separator1,
+            this.menuItemGroupAnsi,
+            this.menuItemGroupEbcdic,
+            this.menuItemGroupMac,
+            this.menuItemGroupOem,
+            this.toolStripSeparator1});
             this.menuItemView.Name = "menuItemView";
             this.menuItemView.Size = new System.Drawing.Size(44, 20);
             this.menuItemView.Text = "&View";
@@ -163,23 +173,58 @@
             this.menuItemGroupLang.Checked = true;
             this.menuItemGroupLang.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuItemGroupLang.Name = "menuItemGroupLang";
-            this.menuItemGroupLang.Size = new System.Drawing.Size(175, 22);
+            this.menuItemGroupLang.Size = new System.Drawing.Size(224, 22);
             this.menuItemGroupLang.Text = "Group by language";
             this.menuItemGroupLang.Click += new System.EventHandler(this.OnGroupByMenuItem_Click);
             // 
             // menuItemGroupCountry
             // 
             this.menuItemGroupCountry.Name = "menuItemGroupCountry";
-            this.menuItemGroupCountry.Size = new System.Drawing.Size(175, 22);
+            this.menuItemGroupCountry.Size = new System.Drawing.Size(224, 22);
             this.menuItemGroupCountry.Text = "Group by country";
             this.menuItemGroupCountry.Click += new System.EventHandler(this.OnGroupByMenuItem_Click);
             // 
             // menuItemGroupCalendar
             // 
             this.menuItemGroupCalendar.Name = "menuItemGroupCalendar";
-            this.menuItemGroupCalendar.Size = new System.Drawing.Size(175, 22);
+            this.menuItemGroupCalendar.Size = new System.Drawing.Size(224, 22);
             this.menuItemGroupCalendar.Text = "Group by calendar";
             this.menuItemGroupCalendar.Click += new System.EventHandler(this.OnGroupByMenuItem_Click);
+            // 
+            // menuItemGroupAnsi
+            // 
+            this.menuItemGroupAnsi.Name = "menuItemGroupAnsi";
+            this.menuItemGroupAnsi.Size = new System.Drawing.Size(224, 22);
+            this.menuItemGroupAnsi.Text = "Group by ANSI code page";
+            this.menuItemGroupAnsi.Click += new System.EventHandler(this.OnGroupByMenuItem_Click);
+            // 
+            // menuItemGroupOem
+            // 
+            this.menuItemGroupOem.Name = "menuItemGroupOem";
+            this.menuItemGroupOem.Size = new System.Drawing.Size(224, 22);
+            this.menuItemGroupOem.Text = "Group by OEM code page";
+            this.menuItemGroupOem.Click += new System.EventHandler(this.OnGroupByMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            // 
+            // menuItemGroupMac
+            // 
+            this.menuItemGroupMac.Name = "menuItemGroupMac";
+            this.menuItemGroupMac.Size = new System.Drawing.Size(224, 22);
+            this.menuItemGroupMac.Text = "Group by Mac code page";
+            this.menuItemGroupMac.Visible = false;
+            this.menuItemGroupMac.Click += new System.EventHandler(this.OnGroupByMenuItem_Click);
+            // 
+            // menuItemGroupEbcdic
+            // 
+            this.menuItemGroupEbcdic.Name = "menuItemGroupEbcdic";
+            this.menuItemGroupEbcdic.Size = new System.Drawing.Size(224, 22);
+            this.menuItemGroupEbcdic.Text = "Group by EBCDIC code page";
+            this.menuItemGroupEbcdic.Visible = false;
+            this.menuItemGroupEbcdic.Click += new System.EventHandler(this.OnGroupByMenuItem_Click);
             // 
             // MainForm
             // 
@@ -221,6 +266,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemGroupLang;
         private System.Windows.Forms.ToolStripMenuItem menuItemGroupCountry;
         private System.Windows.Forms.ToolStripMenuItem menuItemGroupCalendar;
+        private System.Windows.Forms.ToolStripMenuItem menuItemGroupAnsi;
+        private System.Windows.Forms.ToolStripMenuItem menuItemGroupOem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem menuItemGroupMac;
+        private System.Windows.Forms.ToolStripMenuItem menuItemGroupEbcdic;
     }
 }
 
