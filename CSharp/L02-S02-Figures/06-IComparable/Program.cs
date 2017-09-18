@@ -11,8 +11,9 @@ namespace TrainingCenter.FiguresDemo
                     new Rectangle(3,4),
                     new Square(3),
                     new Ellipse(2.5, 1.9),
+                    new Ellipse(3.1, 3.1),
                     new Circle(3.1),
-                    new Triangle(3.7)
+                    new Triangle(4.2)
                 };
             PrintFigures(figures, "До сортировки");
             Array.Sort(figures);

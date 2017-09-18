@@ -14,13 +14,13 @@ namespace TrainingCenter.FiguresDemo
                     new Ellipse(2.5, 1.9),
                     new Ellipse(3.1, 3.1),
                     new Circle(3.1),
-                    new Triangle(2),
+                    new Triangle(4.2),
                 };
             foreach (Figure figure in figures)
             {
                 PrintFigure(figure.WhoAmI(), figure.GetType().Name, figure.ComputeArea());
 
-                #region Неправильная попытка исправить код с помощью проверки типа
+                #region Неправильная попытка исправить ошибку с помощью оператора is
 
                 //// Это анти-пример
                 //// НИКОГДА НЕ ПИШИТЕ ТАКОЙ КОД!
@@ -45,8 +45,48 @@ namespace TrainingCenter.FiguresDemo
                 //    Rectangle rectangle = (Rectangle)figure;
                 //    PrintFigure(rectangle.WhoAmI(), rectangle.GetType().Name, rectangle.ComputeArea());
                 //}
+                //else if (figure is Triangle)
+                //{
+                //    Triangle triangle = (Triangle)figure;
+                //    PrintFigure(triangle.WhoAmI(), triangle.GetType().Name, triangle.ComputeArea());
+                //}
+                //else // Фигура
+                //{
+                //    PrintFigure(figure.WhoAmI(), figure.GetType().Name, figure.ComputeArea());
+                //}
 
                 #endregion
+
+                #region Еще одна неправильная попытка исправить код с помощью pattern matching из C# 7
+
+                //// Это анти-пример
+                //// Требуется компилятор поддерживающий C# 7 (VS 2017)!
+                //// НИКОГДА НЕ ПИШИТЕ ТАКОЙ КОД!
+
+                //switch (figure)
+                //{
+                //    case Circle circle:
+                //        PrintFigure(circle.WhoAmI(), circle.GetType().Name, circle.ComputeArea());
+                //        break;
+                //    case Ellipse ellipse:
+                //        PrintFigure(ellipse.WhoAmI(), ellipse.GetType().Name, ellipse.ComputeArea());
+                //        break;
+                //    case Square square:
+                //        PrintFigure(square.WhoAmI(), square.GetType().Name, square.ComputeArea());
+                //        break;
+                //    case Rectangle rectangle:
+                //        PrintFigure(rectangle.WhoAmI(), rectangle.GetType().Name, rectangle.ComputeArea());
+                //        break;
+                //    case Triangle triangle:
+                //        PrintFigure(triangle.WhoAmI(), triangle.GetType().Name, triangle.ComputeArea());
+                //        break;
+                //    default:
+                //        PrintFigure(figure.WhoAmI(), figure.GetType().Name, figure.ComputeArea());
+                //        break;
+                //}
+
+                #endregion
+
             }
         }
 

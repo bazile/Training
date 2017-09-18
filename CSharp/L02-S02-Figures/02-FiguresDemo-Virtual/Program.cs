@@ -14,6 +14,7 @@ namespace TrainingCenter.FiguresDemo
                     new Ellipse(2.5, 1.9),
                     new Ellipse(3.1, 3.1),
                     new Circle(3.1),
+                    new Triangle(4.2),
                 };
             foreach (Figure figure in figures)
             {
