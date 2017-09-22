@@ -95,36 +95,43 @@ namespace ComplexNumber.Tests
         [TestCaseSource(typeof(ComplexNumberFixtureData), "EqualityData")]
         public void CanCompareEquality(ComplexNumber x, ComplexNumber y)
         {
-// ReSharper disable InconsistentNaming
-            string pairXX = AsString(x) + " and " + AsString(x);
-            string pairXY = AsString(x) + " and " + AsString(y);
-            string pairYX = AsString(y) + " and " + AsString(x);
-            string pairYY = AsString(y) + " and " + AsString(y);
-// ReSharper restore InconsistentNaming
+            AssertTrueEquality(x, x);
+            AssertTrueEquality(y, y);
 
-            Debug.WriteLine("Checking " + pairXY);
+            AssertTrueEquality(x, new ComplexNumber(x.Real, x.Imaginary));
+            AssertTrueEquality(new ComplexNumber(x.Real, x.Imaginary), x);
 
-            AssertTrueEquality(x, x, pairXX + " must be equal");
-            AssertTrueEquality(y, y, pairYY + " must be equal");
-
-            AssertTrueEquality(x, new ComplexNumber(x.Real, x.Imaginary), pairXX + " must be equal");
-            AssertTrueEquality(new ComplexNumber(x.Real, x.Imaginary), x, pairXX + " must be equal");
-
-            AssertFalseEquality(x, y, pairXY + " must be not equal");
-            AssertFalseEquality(y, x, pairYX + " must be not equal");
+            AssertFalseEquality(x, y);
+            AssertFalseEquality(y, x);
         }
 
-        [SuppressMessage("ReSharper", "UnusedParameter.Local")]
-        private static void AssertTrueEquality(ComplexNumber a, ComplexNumber b, string message)
+        [Test]
+        [Category("Operator overloading")]
+        public void CanCompareTrickedEquality()
         {
+            double r = 3.951;
+            r -= dp("0.05") + dp("3.8") + dp("0.101");
+            ComplexNumber a = new ComplexNumber(r, r);
+            ComplexNumber b = new ComplexNumber(0, 0);
+
+            AssertTrueEquality(a, b);
+            AssertFalseNonEquality(a, b);
+        }
+        static double dp(string s) { return double.Parse(s, CultureInfo.InvariantCulture); }
+
+        private void AssertTrueEquality(ComplexNumber a, ComplexNumber b)
+        {
+            string message = AsString(a) + " and " + AsString(b) + " must be equal";
+
             Assert.IsTrue(a == b, message);
             Assert.IsTrue(a.Equals((object)b), message);
             Assert.IsTrue(((IEquatable<ComplexNumber>)a).Equals(b), message);
         }
 
-        [SuppressMessage("ReSharper", "UnusedParameter.Local")]
-        private static void AssertFalseEquality(ComplexNumber a, ComplexNumber b, string message)
+        private void AssertFalseEquality(ComplexNumber a, ComplexNumber b)
         {
+            string message = AsString(a) + " and " + AsString(b) + " must be not equal";
+
             Assert.IsFalse(a == b, message);
             Assert.IsFalse(a.Equals((object)b), message);
             Assert.IsFalse(((IEquatable<ComplexNumber>)a).Equals(b), message);
@@ -135,42 +142,35 @@ namespace ComplexNumber.Tests
         [TestCaseSource(typeof(ComplexNumberFixtureData), "EqualityData")]
         public void CanCompareNonEquality(ComplexNumber x, ComplexNumber y)
         {
-            // ReSharper disable InconsistentNaming
-            string pairXX = AsString(x) + " and " + AsString(x);
-            string pairXY = AsString(x) + " and " + AsString(y);
-            string pairYX = AsString(y) + " and " + AsString(x);
-            string pairYY = AsString(y) + " and " + AsString(y);
-            // ReSharper restore InconsistentNaming
-
-            Debug.WriteLine("Checking " + pairXY);
-
             #pragma warning disable 1718 // Comparison made to same variable
             // ReSharper disable EqualExpressionComparison
 
-                AssertFalseNonEquality(x, x, pairXX + " must be equal");
-                AssertFalseNonEquality(y, y, pairYY + " must be equal");
+                AssertFalseNonEquality(x, x);
+                AssertFalseNonEquality(y, y);
 
             // ReSharper restore EqualExpressionComparison
             #pragma warning restore 1718 // Comparison made to same variable
 
-            AssertFalseNonEquality(x, new ComplexNumber(x.Real, x.Imaginary), pairXX + " must be equal");
-            AssertFalseNonEquality(new ComplexNumber(x.Real, x.Imaginary), x, pairXX + " must be equal");
+            AssertFalseNonEquality(x, new ComplexNumber(x.Real, x.Imaginary));
+            AssertFalseNonEquality(new ComplexNumber(x.Real, x.Imaginary), x);
 
-            AssertTrueNonEquality(x, y, pairXY + " must be not equal");
-            AssertTrueNonEquality(y, x, pairYX + " must be not equal");
+            AssertTrueNonEquality(x, y);
+            AssertTrueNonEquality(y, x);
         }
 
-        [SuppressMessage("ReSharper", "UnusedParameter.Local")]
-        private static void AssertTrueNonEquality(ComplexNumber a, ComplexNumber b, string message)
+        private void AssertTrueNonEquality(ComplexNumber a, ComplexNumber b)
         {
+            string message = AsString(a) + " and " + AsString(b) + " must be not equal";
+
             Assert.IsTrue(a != b, message);
             Assert.IsFalse(a.Equals((object)b), message);
             Assert.IsFalse(((IEquatable<ComplexNumber>)a).Equals(b), message);
         }
 
-        [SuppressMessage("ReSharper", "UnusedParameter.Local")]
-        private static void AssertFalseNonEquality(ComplexNumber a, ComplexNumber b, string message)
+        private void AssertFalseNonEquality(ComplexNumber a, ComplexNumber b)
         {
+            string message = AsString(a) + " and " + AsString(b) + " must be equal";
+
             Assert.IsFalse(a != b, message);
             Assert.IsTrue(a.Equals((object)b), message);
             Assert.IsTrue(((IEquatable<ComplexNumber>)a).Equals(b), message);
