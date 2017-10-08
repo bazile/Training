@@ -63,27 +63,6 @@
 				add Breed property to Dog
 
 - #3
-	- Сборщик мусора
-		- класс GC
-		- настройки GC
-			 configuration\runtime
-				<gcAllowVeryLargeObjects enabled="true|false (default)" />
-					Specifies whether arrays that are greater than 2 GB in total size are enabled on 64-bit platforms. 
-					.NET 4.5
-				<gcConcurrent enabled="true (default)|false"/>
-					Specifies whether the runtime runs garbage collection concurrently.
-				<GCCpuGroup enabled="true|false (default)"/>
-					Specifies whether garbage collection supports multiple CPU groups.
-					.NET 4.5
-				<gcServer enabled="true|false (default)"/>
-					Specifies whether the runtime runs server garbage collection.
-					.NET 2.0+
-		- Класс MemoryFailPoint (System.Runtime)
-		- boxing/unboxing, IComparable vs generic IComparable
-	- Классы
-		System.ServiceModel.Channels.BufferManager					
-	- Caching
-		- cache without discard policy is a memory leak
 
 - #4 (IO)
 	- Поиск файлов и короткие имена
@@ -427,6 +406,34 @@
 	- Add anti-patterns
 	- Add code anti-patterns
 		http://blogs.msdn.com/b/oldnewthing/archive/2011/12/27/10251210.aspx
+
+- memory_management_and_gc
+	- Сборщик мусора
+		- класс GC
+		- настройки GC
+			 configuration\runtime
+				<gcAllowVeryLargeObjects enabled="true|false (default)" />
+					Specifies whether arrays that are greater than 2 GB in total size are enabled on 64-bit platforms. 
+					.NET 4.5
+				<gcConcurrent enabled="true (default)|false"/>
+					Specifies whether the runtime runs garbage collection concurrently.
+				<GCCpuGroup enabled="true|false (default)"/>
+					Specifies whether garbage collection supports multiple CPU groups.
+					.NET 4.5
+				<gcServer enabled="true|false (default)"/>
+					Specifies whether the runtime runs server garbage collection.
+					.NET 2.0+
+		- Класс MemoryFailPoint (System.Runtime)
+		- boxing/unboxing, IComparable vs generic IComparable
+	- Классы
+		System.ServiceModel.Channels.BufferManager
+		System.Buffers.ArrayPool
+			https://www.nuget.org/packages/System.Buffers/
+		ValueTask<T>
+		System.Runtime.CompilerServices.Unsafe class
+	- Caching
+		- cache without discard policy is a memory leak
+
 
 - Tools	WinSDK
 	- mt (generate manifests for managed assemblies and unmanaged side-by-side assemblies)
