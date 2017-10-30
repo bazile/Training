@@ -476,6 +476,9 @@
 - C# duck typing
 	- foreach
 	- dynamic
+		ExpandoObject
+		DynamicObject base class
+		System.Runtime.CompilerServices.ConditionalWeakTable<TKey, TValue>
 	- object initialier (Add method)
 
 - Debugging
