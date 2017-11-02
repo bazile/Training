@@ -4,7 +4,7 @@
     {
         /// <summary>Астрономическая единица (а.е.) в метрах</summary>
         /// <remarks>а.е. это приблизительное среднеее расстоянию от Земли до Солнца.</remarks>
-        private const long AstronomicalUnit = 149597870700L;
+        private const long ASTRONOMICAL_UNIT = 149597870700L;
 
         public readonly string Name;
         public readonly long DistanceFromSun;
@@ -17,7 +17,7 @@
 
         public double DistanceFromSunAU
         {
-            get { return (double)DistanceFromSun / AstronomicalUnit; }
+            get { return (double)DistanceFromSun / ASTRONOMICAL_UNIT; }
         }
     }
 }
