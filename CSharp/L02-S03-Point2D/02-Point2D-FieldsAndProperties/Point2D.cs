@@ -6,7 +6,7 @@ namespace TrainingCenter.PointDemo
 
 	#region Только координаты
 
-	public class Point2D
+	class Point2D
 	{
 		/// <summary>
 		/// Поля X и Y
@@ -21,7 +21,11 @@ namespace TrainingCenter.PointDemo
 
 		public void PrintDistance(Point2D other)
 		{
-			Console.WriteLine("Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}", X, Y, other.X, other.Y, CalculateDistance(other));
+			Console.WriteLine(
+                "Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}",
+                X, Y, other.X, other.Y,
+                CalculateDistance(other)
+            );
 		}
 	}
 
@@ -29,7 +33,7 @@ namespace TrainingCenter.PointDemo
 
 	#region Координаты и цвет
 
-	//public class Point2D
+	//class Point2D
 	//{
 	//    public int X, Y;
 	//    public ConsoleColor Color = ConsoleColor.DarkGreen;
@@ -66,7 +70,7 @@ namespace TrainingCenter.PointDemo
 	#region Пример с использованием свойств
 
 	///// <summary>Класс Point2D для хранения точки внутри квадрата на Декартовой плоскости</summary>
-	//public class Point2D
+	//class Point2D
 	//{
 	//    /// <summary>Координата вершин квадрата внутри которого должна находиться точка</summary>
 	//    private const int maxCoord = 10;
@@ -113,7 +117,11 @@ namespace TrainingCenter.PointDemo
 
 	//    public void PrintDistance(Point2D other)
 	//    {
-	//        Console.WriteLine("Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}", X, Y, other.X, other.Y, CalculateDistance(other));
+	//        Console.WriteLine(
+    //            "Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}",
+    //            X, Y, other.X, other.Y,
+    //            CalculateDistance(other)
+    //        );
 	//    }
 	//}
 
@@ -121,7 +129,7 @@ namespace TrainingCenter.PointDemo
 
 	#region Пример с использованием авто-свойств (auto properties)
 
-	//public class Point2D
+	//class Point2D
 	//{
 	//    public int X { get; set; }
 	//    public int Y { get; set; }
@@ -132,10 +140,13 @@ namespace TrainingCenter.PointDemo
 	//        return Math.Sqrt((other.X - X) * (other.X - X) + (other.Y - Y) * (other.Y - Y));
 	//    }
 
-	//    public void PrintDistance(Point2D other)
-	//    {
-	//        Console.WriteLine("Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}", X, Y, other.X, other.Y, CalculateDistance(other));
-	//    }
+    //    public void PrintDistance(Point2D other)
+    //    {
+    //        Console.WriteLine(
+    //            "Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}",
+    //            X, Y, other.X, other.Y,
+    //            CalculateDistance(other)
+    //        );
 	//}
 
 	#endregion
@@ -145,7 +156,7 @@ namespace TrainingCenter.PointDemo
 	///// <summary>
 	///// В данной реализации свойствам X и Y можно присвоить только положительные или нулевые координаты
 	///// </summary>
-	//public class Point2D
+	//class Point2D
 	//{
 	//    private int x, y;
 	//    private ConsoleColor color;
@@ -185,10 +196,14 @@ namespace TrainingCenter.PointDemo
 	//        return Math.Sqrt((other.X - X) * (other.X - X) + (other.Y - Y) * (other.Y - Y));
 	//    }
 
-	//    public void PrintDistance(Point2D other)
-	//    {
-	//        Console.WriteLine("Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}", X, Y, other.X, other.Y, CalculateDistance(other));
-	//    }
+    //    public void PrintDistance(Point2D other)
+    //    {
+    //        Console.WriteLine(
+    //            "Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}",
+    //            X, Y, other.X, other.Y,
+    //            CalculateDistance(other)
+    //        );
+    //    }
 	//}
 
 	#endregion

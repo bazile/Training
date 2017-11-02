@@ -43,7 +43,11 @@ namespace TrainingCenter.PointDemo
 
         private static void PrintDistance(int x1, int y1, int x2, int y2)
         {
-            Console.WriteLine("Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}", x1, y1, x2, y2, CalculateDistance(x1, y1, x2, y2));
+            Console.WriteLine(
+                "Расстояние между точками ({0},{1}) и ({2},{3}) = {4:F3}",
+                x1, y1, x2, y2,
+                CalculateDistance(x1, y1, x2, y2)
+            );
         }
 
         #region Добавляем цвет
