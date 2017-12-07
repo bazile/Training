@@ -13,7 +13,7 @@ void Main()
 	
 	var rng = RandomNumberGenerator.Create();
     var assignedTasks = new List<ExamTask>();
-	while (examTasks.Count > 0)
+	while (names.Count > 0)
 	{
 		int taskNum = examTasks.Count == 1 ? 0 : rng.Next(examTasks.Count);
         assignedTasks.Add(new ExamTask { Имя = names[0], Задание = examTasks[taskNum] });
