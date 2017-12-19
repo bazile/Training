@@ -41,21 +41,16 @@
 				http://www.nuget.org/packages/C5/
 				
 - #2
-	GetHashCode()
-		https://blogs.msdn.microsoft.com/ericlippert/2011/02/28/guidelines-and-rules-for-gethashcode/
-		http://stackoverflow.com/questions/263400/what-is-the-best-algorithm-for-an-overridden-system-object-gethashcode
 	==, !=, Equals
 		http://msdn.microsoft.com/en-us/library/ms173147%28v=vs.80%29.aspx (Guidelines for Overloading Equals() and Operator ==)
 	- partial классы и методы		
 	- generic типы и методы
-		- generic функции (done)
 		- делегаты
 		- типы
 		- Математические операторы для generic типов
 			библиотека MiscUtil, классы Operator, Operator<T>
 			http://www.yoda.arachsys.com/csharp/miscutil/usage/genericoperators.html
 	- IEquatable<T>
-	- inheritance - is a, interface - can
 	- Анти-паттерны
 		Magic strings
 		Слишком длинная цепочка наследования
@@ -154,9 +149,10 @@
 - #8 (mult-threading)
 	- Анти-паттерны (http://gautam-soni-techtalk.blogspot.com/2010/02/multithreading-anti-patterns.html)
 	- Пример неправильного использования Thread.Abort
-	- Примеры для TPL (Parallel, Task, TaskFactory)
 	- [MethodImpl(MethodImplOptions.Synchronized)] => неявный lock(this)
+	- Примеры для TPL (Parallel, Task, TaskFactory)
 	- Примеры async/await
+		- AsyncLocal<T>
 	- Порядок (via http://sergeyteplyakov.blogspot.com/2013/09/blog-post_24.html)
 		APM http://msdn.microsoft.com/en-us/library/ms228963.aspx
 		EAP http://msdn.microsoft.com/en-us/library/wewwczdw.aspx
@@ -233,27 +229,23 @@
 			DB First - Model properties
 			Code first - Configuration.LazyLoadingEnabled
 		make smaller models
-		Init strategy:
-			CreateDatabaseIfNotExists (default)
-			DropCreateDatabaseAlways
-			DropCreateDatabaseIfModelChanges
 		Seed method
 
 		Validation and Annotations
 			https://msdn.microsoft.com/ru-ru/data/jj591583
-			StringLength(n)
-			Range - range of values
-			Required
-			MinLength/MaxLength
-			Key - PK
-			Column - column name
-			Table - table name for a class
-			NotMapped
-			ConcurrencyCheck
-			TimeStamp + byte[] property
-			DatabaseGenerated
-			Index - EF 6.1+
-			MetadataType
+StringLength(n)
+Range - range of values
+Required
+MinLength/MaxLength
+Key - PK
+Column - column name
+Table - table name for a class
+NotMapped
+ConcurrencyCheck
+TimeStamp + byte[] property
+DatabaseGenerated
+Index - EF 6.1+
+MetadataType
 
 			System.ComponentModel.DataAnnotations
 			System.ComponentModel.DataAnnotations.Schema 
