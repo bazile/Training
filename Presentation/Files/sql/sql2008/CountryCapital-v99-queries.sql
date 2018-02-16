@@ -4,7 +4,7 @@
 
 */
 
-USE BelhardTraining
+USE TrainingCenter_Capitals
 GO
 
 -- Количество новых членов ООН по десятилетиям

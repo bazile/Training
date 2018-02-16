@@ -12,10 +12,10 @@
 
 USE master
 GO
-CREATE DATABASE BelhardTraining
+CREATE DATABASE TrainingCenter_Capitals
     COLLATE Cyrillic_General_CI_AI
 GO
-USE BelhardTraining
+USE TrainingCenter_Capitals
 GO
 
 CREATE TABLE PartOfWorld
@@ -260,5 +260,5 @@ FROM
 
 /*
 USE master
-DROP DATABASE BelhardTraining
+DROP DATABASE TrainingCenter_Capitals
 */
