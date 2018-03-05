@@ -66,10 +66,10 @@ namespace TrainingCenter.LessonIO
 
 		public int Length { get; set; }
 
-		[XmlArrayItem("Pax")]
+		//[XmlArrayItem("Pax")]
 		public string[] Travellers { get; set; }
 
-		// Для XML сериализации требуется наличие конструктора без аргументов
+		// Для XML сериализации требуется наличие конструктора по умолчанию
 		public TrainXml()
 		{
 		}

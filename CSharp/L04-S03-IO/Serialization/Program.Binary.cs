@@ -33,7 +33,7 @@ namespace TrainingCenter.LessonIO
 			BinaryFormatter bf = new BinaryFormatter();
 
 			// Выполняем сериализацию
-			using (FileStream fs = File.Open(tempFileName, FileMode.Create))
+			using (FileStream fs = File.Create(tempFileName))
 			{
 				bf.Serialize(fs, train);
 			}
@@ -48,7 +48,7 @@ namespace TrainingCenter.LessonIO
 			}
 
 			// Выполняем десериализацию
-			using (FileStream fs = File.Open(tempFileName, FileMode.Open))
+			using (FileStream fs = File.OpenRead(tempFileName))
 			{
 				TrainBinary trainCopy = (TrainBinary)bf.Deserialize(fs);
 				Comment("Копия объекта после сериализации.");
