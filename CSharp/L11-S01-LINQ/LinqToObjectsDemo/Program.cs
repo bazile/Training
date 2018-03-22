@@ -59,6 +59,10 @@ namespace TrainingCenter.LinqToObjectsDemo
             //}
 
             #endregion
+
+            int[] power2numbers = { 1, 2, 4, 8, 16, 32, 64, 128, 256 };
+            //IEnumerable<string> binaryNumbers = from n in power2numbers
+            //select Convert.ToString(n, 2)
         }
 
         static void WriteColorLine(ConsoleColor foregroundColor, string message)
@@ -75,6 +79,11 @@ namespace TrainingCenter.LinqToObjectsDemo
         {
             public string Extension;
             public int Count;
+
+            public override string ToString()
+            {
+                return string.Format("{0}: {1}", Extension, Count);
+            }
         }
 
         class ExtensioInfoEqualityComparer : IEqualityComparer<ExtensioInfo>
@@ -96,7 +105,7 @@ namespace TrainingCenter.LinqToObjectsDemo
             var extCount = new Dictionary<string, int>();
             foreach (string fileName in SafeEnumerateFiles(path, "*.*", SearchOption.AllDirectories))
             {
-                string extension = Path.GetExtension(fileName).ToLowerInvariant();
+                string extension = Path.GetExtension(fileName).ToLower();
                 if (extCount.ContainsKey(extension))
                 {
                     extCount[extension]++;
@@ -126,7 +135,7 @@ namespace TrainingCenter.LinqToObjectsDemo
         {
             return (
                     from fileName in SafeEnumerateFiles(path, "*.*", SearchOption.AllDirectories)
-                    group fileName by Path.GetExtension(fileName).ToLowerInvariant() into ext
+                    group fileName by Path.GetExtension(fileName).ToLower() into ext
                     orderby ext.Count() descending, ext.Key
                     select new ExtensioInfo { Extension = ext.Key, Count = ext.Count() }
                 ).ToArray();

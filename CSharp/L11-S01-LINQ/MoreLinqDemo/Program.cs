@@ -14,6 +14,9 @@ namespace TrainingCenter.MoreLinqDemo
 	{
 		static void Main()
 		{
+			Console.WriteLine(string.Join("\n", typeof(MoreEnumerable).GetMethods().Select(mi => mi.Name).Distinct().OrderBy(s => s)));
+			return;
+
 			#region Метод Batch
 
 			// Метод Batch возвращает данные из коллекции в виде пакета (batch) указанного размера
