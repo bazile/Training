@@ -67,8 +67,8 @@
 	Set "On Run, when projects are out of date" to "Always build"
 	Sets "On Run, when build or deployment error occur" to "Prompt to launch"
 -->
-<xsl:template match="ToolsOptions/ToolsOptionsCategory[@RegisteredName='Environment']/ToolsOptionsSubCategory[@RegisteredName='ProjectsAndSolution']/PropertyValue[@name='OnRunWhenOutOfDate']"><PropertyValue name="OnRunWhenOutOfDate">0</PropertyValue></xsl:template>
-<xsl:template match="ToolsOptions/ToolsOptionsCategory[@RegisteredName='Environment']/ToolsOptionsSubCategory[@RegisteredName='ProjectsAndSolution']/PropertyValue[@name='OnRunWhenErrors']"><PropertyValue name="OnRunWhenErrors">1</PropertyValue></xsl:template>
+<xsl:template match="ToolsOptions/ToolsOptionsCategory[@RegisteredName='Environment']/ToolsOptionsSubCategory[@RegisteredName='ProjectsAndSolution']/PropertyValue[@name='OnRunWhenOutOfDate']"><PropertyValue name="OnRunWhenOutOfDate">1</PropertyValue></xsl:template>
+<xsl:template match="ToolsOptions/ToolsOptionsCategory[@RegisteredName='Environment']/ToolsOptionsSubCategory[@RegisteredName='ProjectsAndSolution']/PropertyValue[@name='OnRunWhenErrors']"><PropertyValue name="OnRunWhenErrors">4</PropertyValue></xsl:template>
 
 <!-- Project and solutions -> VB Defaults
 	Option Strict = On
