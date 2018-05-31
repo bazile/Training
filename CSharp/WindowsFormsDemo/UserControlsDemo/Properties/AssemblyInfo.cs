@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Центр Обучающих Технологий")]
 [assembly: AssemblyProduct("Основы программирования на С#")]
-[assembly: AssemblyCopyright("Copyright \u00a9 2012-2017 Vasily Petruhin")]
+[assembly: AssemblyCopyright("Copyright \u00a9 2012-2018 Vasily Petruhin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
