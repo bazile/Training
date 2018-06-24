@@ -14,7 +14,7 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 		}
 
 		// Фунт, шиллинг, пенс
-		// 1:20:240
+		// 1:20:12
 
 		public int Pounds { get { return _totalPence / 240; } }
 		public int Shillings { get { return (_totalPence - (_totalPence / 240) * 240) / 12; } }
@@ -51,9 +51,8 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 		{
 			get
 			{
-				// http://inflation.stephenmorley.org/
-				// http://www.sp12.hull.ac.uk/tools/table.htm
-				const double inflation = 108.0;
+				// http://inflation.iamkate.com/
+				const double inflation = 112.0;
 				return Math.Round(inflation * _totalPence * 0.0042, 2);
 			}
 		}
