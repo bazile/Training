@@ -41,6 +41,8 @@ namespace EnvironmentInformation
         {
             listViewSysInfo.BeginUpdate();
 
+            // TODO: Add RuntimeInformation.IsOSPlatform(OSPlatform) (.NET 4.7.1)
+
             #region System.Environment
 
             AddEnvironmentItem(EnvGroup, "CommandLine", Environment.CommandLine);
