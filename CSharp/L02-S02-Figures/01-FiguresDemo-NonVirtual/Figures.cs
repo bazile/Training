@@ -1,10 +1,8 @@
 ﻿/*
- * Демонстрация наследования и модифактора new для методов
- * Также демонстрируется использование класса System.Diagnostics.Debug
+ * Демонстрация наследования и модификатора new для методов
 */
 
 using System;
-using System.Diagnostics;
 
 namespace TrainingCenter.FiguresDemo
 {
@@ -16,8 +14,6 @@ namespace TrainingCenter.FiguresDemo
 
         public double ComputeArea()
         {
-            Debug.WriteLine("Figure.ComputeArea()");
-
             // Возвращаем значение Not-A-Number чтобы показать вызывающему
             //      коду что эта фигура не имеет площади
             return double.NaN;
@@ -25,7 +21,6 @@ namespace TrainingCenter.FiguresDemo
 
         public string WhoAmI()
         {
-            Debug.WriteLine("Figure.WhoAmI()");
             return "Figure";
 
             // Вместо возврата значения можно было бы сгенерировать

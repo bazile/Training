@@ -1,10 +1,8 @@
 ﻿/*
  * Демонстрация наследования и виртуальных методов.
- * Также демонстрируется использование класса System.Diagnostics.Debug
 */
 
 using System;
-using System.Diagnostics;
 
 namespace TrainingCenter.FiguresDemo
 {
@@ -16,8 +14,6 @@ namespace TrainingCenter.FiguresDemo
 
         public virtual double ComputeArea()
         {
-            Debug.WriteLine("Figure.ComputeArea()");
-
             // Возвращаем значение Not-A-Number чтобы показать вызывающему
             //      коду что эта фигура не имеет площади
             return double.NaN;
@@ -25,7 +21,6 @@ namespace TrainingCenter.FiguresDemo
 
         public virtual string WhoAmI()
         {
-            Debug.WriteLine("Figure.WhoAmI()");
             return "Figure";
 
             // Вместо возврата значения можно было бы сгенерировать
