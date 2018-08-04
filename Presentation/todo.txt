@@ -162,6 +162,8 @@
 		async/await
 	- DoEvents
 		Is DoEvents Evil? http://blog.codinghorror.com/is-doevents-evil/
+	- SIMD
+		https://instil.co/2016/03/21/parallelism-on-a-single-core-simd-with-c/
 
 - #9 (SQL)
 	- Joins (диаграмма) и исправленные примеры
