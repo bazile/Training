@@ -19,6 +19,8 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 			//   Музыканты: номер билета 250654
 			//   Впередсмотрящие (Lookout) в ночь катастрофы: Frederick Fleet и LEE, Reginald Robinson
 
+			// В фильме Титаник главные герои жили в каютах B-52, B-54, and B-56, G-60
+
 			var temp = passengers.Where(pax => pax.JobTitle.Is("Lookout"));
 
 			Console.WriteLine(passengers.Count);
