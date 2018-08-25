@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -116,16 +116,18 @@ namespace TrainingCenter.LinqToObjectsDemo
                 }
             }
 
-            // Копируем данные из хеш таблицы в массив и сортируем его
+            // Копируем данные из Dictionary в массив
             ExtensioInfo[] extensions = new ExtensioInfo[extCount.Count];
             int idx = 0;
             foreach (KeyValuePair<string, int> entry in extCount)
             {
                 extensions[idx++] = new ExtensioInfo { Extension = entry.Key, Count = entry.Value };
             }
+
+            // Сортируем
             Array.Sort(
                 extensions,
-                (inf1, inf2) => inf2.Count - inf1.Count != 0 ? inf2.Count - inf1.Count : inf1.Extension.CompareTo(inf2.Extension)
+                (inf1, inf2) => inf1.Count != inf2.Count ? inf2.Count - inf1.Count : inf1.Extension.CompareTo(inf2.Extension)
             );
 
             return extensions;
