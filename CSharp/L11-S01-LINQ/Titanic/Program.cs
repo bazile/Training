@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -12,8 +12,7 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 	{
 		static void Main(string[] args)
 		{
-			List<TitanicPassenger> passengers = LoadPassengers();
-			//Console.WriteLine(passengers.SequenceEqual(passengers2));
+			TitanicPassenger[] passengers = LoadPassengers();
 
 			// Факты:
 			//   Музыканты: номер билета 250654
@@ -23,7 +22,7 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 
 			var temp = passengers.Where(pax => pax.JobTitle.Is("Lookout"));
 
-			Console.WriteLine(passengers.Count);
+			Console.WriteLine(passengers.Length);
 			Console.WriteLine(passengers.Max(p => p.TicketPrice));
 			Console.WriteLine(passengers.Where(p => p.TicketPrice.TotalPence > 0).Min(p => p.TicketPrice));
 			//Console.WriteLine(passengers.Sum(p => p.TicketPrice));
@@ -159,7 +158,7 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 			////passengers.Select(p => p.Lifeboat).Distinct().OrderBy(lb => lb).Dump();
 		}
 
-		static List<TitanicPassenger> LoadPassengers()
+		static TitanicPassenger[] LoadPassengers()
 		{
 			Type t = typeof(Program);
 			string resourceName = t.Namespace + ".titanic.xml.zip";
@@ -168,8 +167,8 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 			{
 				using (var entryStream = zip.GetEntry("titanic.xml").Open())
 				{
-					XmlSerializer s = new XmlSerializer(typeof(List<TitanicPassenger>));
-					return (List<TitanicPassenger>)s.Deserialize(entryStream);
+					XmlSerializer s = new XmlSerializer(typeof(TitanicPassenger[]));
+					return (TitanicPassenger[])s.Deserialize(entryStream);
 				}
 			}
 		}

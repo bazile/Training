@@ -1,52 +1,123 @@
-﻿using System;
+using System;
 
 namespace TrainingCenter.LinqToObjectsDemo.Titanic
 {
-	public enum Class
-	{
-		Unknown,
-		First, Second, Third,
-		DeckCrew, EngineeringCrew, VictuallingCrew
-	}
-
-	public enum Sex { Unknown, Male, Female }
-	public enum City { Belfast, Southampton, Cherbourg, Queenstown }
-	public enum AgeGroup { Unknown, Infant, Child, Teenager, Adult, Senior }
-	public enum Deck { Unknown, A, B, C, D, E, F, G }
-
+    /// <summary>
+    /// Информация о пассажире Титаника
+    /// </summary>
 	public class TitanicPassenger : IEquatable<TitanicPassenger>
 	{
+        /// <summary>
+        /// Класс (первый, второй, третий) или специализация для членов команды
+        /// </summary>
 		public Class Class { get; set; }
-		public string HonorificPrefix { get; set; }
-		public string HonorificSuffix { get; set; }
+
+        /// <summary>
+        /// Обращение в начале имени (Mr, Mrs, Miss, Sr и т.д.)
+        /// </summary>
+        public string HonorificPrefix { get; set; }
+
+        /// <summary>
+        /// Обращение в конце имени (Jr)
+        /// </summary>
+        public string HonorificSuffix { get; set; }
+
+        /// <summary>
+        /// Фамилия
+        /// </summary>
 		public string FamilyName { get; set; }
-		public string GivenName { get; set; }
-		public Sex Sex { get; set; }
-		public bool HasSurvived { get; set; }
-		public bool IsGuaranteeGroupMember { get; set; }
-		public bool IsServant { get; set; }
 
+        /// <summary>
+        /// Имя
+        /// </summary>
+        public string GivenName { get; set; }
+
+        /// <summary>
+        /// Пол
+        /// </summary>
+        public Sex Sex { get; set; }
+
+        /// <summary>
+        /// Выжил при крушении корабля?
+        /// </summary>
+        public bool HasSurvived { get; set; }
+
+        /// <summary>
+        /// Член гарантийной группы верфи Harland and Wolff?
+        /// </summary>
+        public bool IsGuaranteeGroupMember { get; set; }
+
+        /// <summary>
+        /// Слуга?
+        /// </summary>
+        public bool IsServant { get; set; }
+
+        /// <summary>
+        /// Возраст в месяцах (значение может отсутствовать)
+        /// </summary>
 		public int? AgeMonths { get; set; }
-		public DateTime? BirthDate { get; set; }
-		public DateTime? DeathDate { get; set; }
 
+        /// <summary>
+        /// Дата рождения
+        /// </summary>
+        public DateTime? BirthDate { get; set; }
+
+        /// <summary>
+        /// Дата смерти
+        /// </summary>
+        public DateTime? DeathDate { get; set; }
+
+        /// <summary>
+        /// Адрес места рождения
+        /// </summary>
 		public Address BirthAddress { get; set; }
-		public string TicketNo { get; set; }
-		public string CabinNo { get; set; }
-		public Price TicketPrice { get; set; }
+
+        /// <summary>
+        /// Номер билета
+        /// </summary>
+        public string TicketNo { get; set; }
+
+        /// <summary>
+        /// Номер каюты
+        /// </summary>
+        public string CabinNo { get; set; }
+
+        /// <summary>
+        /// Цена билета (в старых фунтах)
+        /// </summary>
+        public Price TicketPrice { get; set; }
+
+        /// <summary>
+        /// В каком городе сел на корабль
+        /// </summary>
 		public City Boarded { get; set; } // Переименовать в Embarked?
+
+        /// <summary>
+        /// Профессия
+        /// </summary>
 		public string JobTitle { get; set; }
-		public string Lifeboat { get; set; }
+
+        /// <summary>
+        /// Номер спасательной шлюпки
+        /// </summary>
+        public string Lifeboat { get; set; }
+
 		public string Url { get; set; }
 
 		[System.Xml.Serialization.XmlAttribute("id")]
 		public string Id { get; set; }
 
+        /// <summary>
+        /// Полное имя пассажира
+        /// </summary>
 		public string FullName
 		{
 			get { return HonorificPrefix + " " + FamilyName + ", " + GivenName + (string.IsNullOrEmpty(HonorificSuffix) ? "" : " " + HonorificSuffix); }
 		}
 
+        /// <summary>
+        /// Номер палубы
+        /// </summary>
 		public Deck Deck
 		{
 			get
@@ -60,6 +131,9 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 			}
 		}
 
+        /// <summary>
+        /// Возрастная группа
+        /// </summary>
 		public AgeGroup AgeGroup
 		{
 			get
@@ -97,43 +171,6 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 		public override string ToString()
 		{
 			return FullName;
-		}
-	}
-
-	public class Address : IEquatable<Address>
-	{
-		public string Country { get; set; }
-		public string State { get; set; }
-		public string City { get; set; }
-
-		public Address()
-		{
-			Country = "";
-			State = "";
-			City = "";
-		}
-
-		public bool Equals(Address other)
-		{
-			return string.Equals(Country, other.Country)
-				&& string.Equals(State, other.State)
-				&& string.Equals(City, other.City);
-		}
-
-		public override string ToString()
-		{
-			string s = Country;
-			if (State.Length > 0)
-			{
-				if (s.Length > 0) s += ", ";
-				s += State;
-			}
-			if (City.Length > 0)
-			{
-				if (s.Length > 0) s += ", ";
-				s += City;
-			}
-			return s;
 		}
 	}
 
