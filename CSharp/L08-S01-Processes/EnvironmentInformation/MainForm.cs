@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Windows.Forms;
@@ -19,8 +20,10 @@ namespace EnvironmentInformation
         const string ScreenGroup          = "System.Windows.Forms.Screen";
         const string ComputerInfoGroup    = "Microsoft.VisualBasic.Devices.ComputerInfo";
         const string RuntimeEnvGroup      = "System.Runtime.InteropServices.RuntimeEnvironment";
+        const string RuntimeInfoGroup     = "System.Runtime.InteropServices.RuntimeInformation";
         const string WindowsIdentityGroup = "WindowsIdentity";
         const string CultureGroup         = "CultureInfo";
+        const string VectorGroup          = "System.Numerics.Vector";
 
         Action[] _initTabAction;
 
@@ -40,8 +43,6 @@ namespace EnvironmentInformation
         private void InitSystemInfoData()
         {
             listViewSysInfo.BeginUpdate();
-
-            // TODO: Add RuntimeInformation.IsOSPlatform(OSPlatform) (.NET 4.7.1)
 
             #region System.Environment
 
@@ -84,8 +85,19 @@ namespace EnvironmentInformation
             AddEnvironmentItem(RuntimeEnvGroup, "SystemVersion", RuntimeEnvironment.GetSystemVersion());
             #endregion
 
+            #region System.Runtime.InteropServices.RuntimeInformation
+            AddEnvironmentItem(RuntimeInfoGroup, "FrameworkDescription", RuntimeInformation.FrameworkDescription);
+            AddEnvironmentItem(RuntimeInfoGroup, "OSArchitecture", RuntimeInformation.OSArchitecture);
+            AddEnvironmentItem(RuntimeInfoGroup, "OSDescription", RuntimeInformation.OSDescription);
+            AddEnvironmentItem(RuntimeInfoGroup, "ProcessArchitecture", RuntimeInformation.ProcessArchitecture);
+            #endregion
+
             #region System.BitConverter
             AddEnvironmentItem(BitConvGroup, "IsLittleEndian", BitConverter.IsLittleEndian);
+            #endregion
+
+            #region System.Numerics.Vector
+            AddEnvironmentItem(VectorGroup, "Count (size of SIMD register)", Vector<byte>.Count);
             #endregion
 
             #region System.IO.Path
