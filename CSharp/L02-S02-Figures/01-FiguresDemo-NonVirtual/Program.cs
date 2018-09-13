@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace TrainingCenter.FiguresDemo
 {
@@ -24,6 +24,10 @@ namespace TrainingCenter.FiguresDemo
 
                 //// Это анти-пример
                 //// НИКОГДА НЕ ПИШИТЕ ТАКОЙ КОД!
+                ////
+                //// 1. Код громоздкий;
+                //// 2. Требует изменений в случае переименования/добавления/удаления классов;
+                //// 3. Подвержен ошибкам. Одна такая ошибка была внесена в код специально.
 
                 //if (figure is Ellipse)
                 //{
@@ -55,9 +59,38 @@ namespace TrainingCenter.FiguresDemo
                 //    PrintFigure(figure.WhoAmI(), figure.GetType().Name, figure.ComputeArea());
                 //}
 
+                #region Чуть более простой, но все еще плохой вариант, использующий возможности C# 7
+
+                //if (figure is Ellipse ellipse)
+                //{
+                //    PrintFigure(ellipse.WhoAmI(), ellipse.GetType().Name, ellipse.ComputeArea());
+                //}
+                //else if (figure is Circle circle)
+                //{
+                //    PrintFigure(circle.WhoAmI(), circle.GetType().Name, circle.ComputeArea());
+                //}
+                //else if (figure is Square square)
+                //{
+                //    PrintFigure(square.WhoAmI(), square.GetType().Name, square.ComputeArea());
+                //}
+                //else if (figure is Rectangle rectangle)
+                //{
+                //    PrintFigure(rectangle.WhoAmI(), rectangle.GetType().Name, rectangle.ComputeArea());
+                //}
+                //else if (figure is Triangle triangle)
+                //{
+                //    PrintFigure(triangle.WhoAmI(), triangle.GetType().Name, triangle.ComputeArea());
+                //}
+                //else // Фигура
+                //{
+                //    PrintFigure(figure.WhoAmI(), figure.GetType().Name, figure.ComputeArea());
+                //}
+
                 #endregion
 
-                #region Еще одна неправильная попытка исправить код с помощью pattern matching из C# 7
+                #endregion
+
+                #region Еще одна неправильная попытка исправить код с помощью switch и pattern matching из C# 7
 
                 //// Это анти-пример
                 //// Требуется компилятор поддерживающий C# 7 (VS 2017)!
