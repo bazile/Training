@@ -10,6 +10,23 @@ namespace TrainingCenter.LinqToObjectsDemo
     {
         static void Main()
         {
+            int[] arr = { -71, -51, -17, 39, -22, -42, -12, -35, -45, 89, -20, 34, -38, -52, -26, -54, -96, -85, -33, 65, -85, -95, -44, 15, -100 };
+            double average1 = 0;
+            int count = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > 0)
+                {
+                    average1 += arr[i];
+                    count++;
+                }
+            }
+            average1 /= count;
+
+            double average2 = arr.Where(n => n > 0).Average();
+            Console.WriteLine(average1);
+            Console.WriteLine(average2);
+
             #region Поиск файлов без LINQ и с ним
 
             //string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -60,7 +77,7 @@ namespace TrainingCenter.LinqToObjectsDemo
 
             #endregion
 
-            int[] power2numbers = { 1, 2, 4, 8, 16, 32, 64, 128, 256 };
+            //int[] power2numbers = { 1, 2, 4, 8, 16, 32, 64, 128, 256 };
             //IEnumerable<string> binaryNumbers = from n in power2numbers
             //select Convert.ToString(n, 2)
         }
