@@ -55,6 +55,18 @@
 		Слишком длинная цепочка наследования
 			MinaturePoodle -> Poodle -> WorkingDog -> Dog -> Animal
 				add Breed property to Dog
+		Anemic Domain Model: The use of the domain model without any business logic. The domain model's objects cannot guarantee their correctness at any moment, because their validation and mutation logic is placed somewhere outside (most likely in multiple places).
+    	BaseBean: Inheriting functionality from a utility class rather than delegating to it
+    	Call super: Requiring subclasses to call a superclass's overridden method
+    	Circle-ellipse problem: Subtyping variable-types on the basis of value-subtypes
+    	Circular dependency: Introducing unnecessary direct or indirect mutual dependencies between objects or software modules
+    	Constant interface: Using interfaces to define constants
+    	God object: Concentrating too many functions in a single part of the design (class)
+    	Object cesspool: Reusing objects whose state does not conform to the (possibly implicit) contract for re-use
+    	Object orgy: Failing to properly encapsulate objects permitting unrestricted access to their internals
+    	Poltergeists: Objects whose sole purpose is to pass information to another object
+    	Sequential coupling: A class that requires its methods to be called in a particular order
+    	Yo-yo problem: A structure (e.g., of inheritance) that is hard to understand due to excessive fragmentation
 
 - #3
 
