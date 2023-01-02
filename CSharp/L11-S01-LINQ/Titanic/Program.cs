@@ -66,6 +66,10 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
 
             //Console.WriteLine(passengers.Where(p => p.Sex == Sex.Unknown).Count());
 
+            // var survivedCountBySide = passengers.Where(pax => pax.HasSurvived && pax.Lifeboat != null)
+            //     .GroupBy(pax => pax.LifeboatSide)
+            //     .Select(g => new { Side = g.Key, Count = g.Count() });
+
             // Sum
             //passengers.Sum(pax => pax.Price)
 
@@ -116,7 +120,7 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
             ////	.ToList()
             ////	.Shuffle();
             ////Console.WriteLine(firstClassPassengers.SequenceEqual(firstClassPassengers2));
-            ////var passengersByClass = 
+            ////var passengersByClass =
             ////	from pax in passengers
             ////	group pax by pax.Class into classGroup
             ////	select new { Class = classGroup.Key, Count = classGroup.Count() } into cac

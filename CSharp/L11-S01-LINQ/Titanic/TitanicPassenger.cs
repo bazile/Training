@@ -102,6 +102,23 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
         /// </summary>
         public string Lifeboat { get; set; }
 
+        /// <summary>
+        /// На каком борту находилась спасательная шлюпка
+        /// </summary>
+        public Side LifeboatSide
+        {
+            get
+            {
+                if (Lifeboat == "1" || Lifeboat == "3" || Lifeboat == "5" || Lifeboat == "7" || Lifeboat == "9" || Lifeboat == "11" || Lifeboat == "13" || Lifeboat == "15" || Lifeboat == "A" || Lifeboat == "C")
+                    return Side.Starboard;
+
+                if (Lifeboat == "2" || Lifeboat == "4" || Lifeboat == "6" || Lifeboat == "8" || Lifeboat == "10" || Lifeboat == "12" || Lifeboat == "14" || Lifeboat == "16" || Lifeboat == "B" || Lifeboat == "D")
+                    return Side.Port;
+
+                throw new Exception("This should not happen");
+            }
+        }
+
 		public string Url { get; set; }
 
 		[System.Xml.Serialization.XmlAttribute("id")]

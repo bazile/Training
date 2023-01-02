@@ -30,4 +30,17 @@ namespace TrainingCenter.LinqToObjectsDemo.Titanic
     /// Номер палубы. A - самая верхняя палуба, G - самая нижняя
     /// </summary>
     public enum Deck { Unknown, A, B, C, D, E, F, G }
+
+    public enum Side
+    {
+        /// <summary>
+        /// left (red)
+        /// </summary>
+        Port,
+
+        /// <summary>
+        /// right (green)
+        /// </summary>
+        Starboard
+    }
 }
