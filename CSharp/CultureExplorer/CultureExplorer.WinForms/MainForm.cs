@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -17,7 +17,7 @@ namespace CultureExplorer.WinForms
         }
 
         #region Коды стран ISO 3166-1 alpha-2
-        static Dictionary<string, string> isoCodeToName = new Dictionary<string, string>()
+        static readonly IReadOnlyDictionary<string, string> __isoCodeToName = new Dictionary<string, string>()
         {
             {"AD", "Andorra"},
             {"AE", "United Arab Emirates"},
@@ -376,9 +376,9 @@ namespace CultureExplorer.WinForms
                 if (nameParts.Length > 1)
                 {
                     countryCode = nameParts[nameParts.Length - 1];
-                    if (isoCodeToName.ContainsKey(countryCode))
+                    if (__isoCodeToName.ContainsKey(countryCode))
                     {
-                        countryName = isoCodeToName[countryCode] + " (" + countryCode + ")";
+                        countryName = __isoCodeToName[countryCode] + " (" + countryCode + ")";
                     }
                 }
 
@@ -473,9 +473,9 @@ namespace CultureExplorer.WinForms
             }
         }
 
-#endregion
+        #endregion
 
-            #region Event Handlers
+        #region Event Handlers
 
         private void OnCultureTypeMenuItem_Click(object sender, EventArgs e)
         {
